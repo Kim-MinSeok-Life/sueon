@@ -1,0 +1,16 @@
+{
+  "id": "/",
+  "name": "SUEO:N - 수어온 (실험용)",
+  "short_name": "SUEO:N",
+  "description": "한국어 텍스트 및 음성 입력을 지원하는 한국수어 3D 아바타 기술 검증용 웹앱",
+  "lang": "ko-KR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f4f6f8",
+  "theme_color": "#0f766e",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

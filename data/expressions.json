@@ -1,0 +1,432 @@
+{
+  "schema": "sueon-expressions/v1",
+  "updated": "2026-11-01",
+  "notice": "AI-Hub REAL02 촬영본의 3D 키포인트·형태소(같은 촬영자)로 만든 실험 모션입니다. 한국수어 동작 정확성은 검증되지 않았습니다.",
+  "entries": [
+    {
+      "expression_id": "KSL-0001",
+      "kind": "ksl",
+      "korean": "안녕하세요",
+      "match": [
+        "안녕하세요",
+        "안녕"
+      ],
+      "motion_path": null,
+      "source": null,
+      "source_candidate": "KSL-Guide (AI Hub 배포, 신청 필요) 또는 국립국어원 한국수어사전",
+      "verification_status": "data_pending",
+      "supported": false
+    },
+    {
+      "expression_id": "KSL-0002",
+      "kind": "ksl",
+      "korean": "감사합니다",
+      "match": [
+        "감사합니다",
+        "고맙습니다",
+        "감사해요",
+        "고마워요"
+      ],
+      "motion_path": null,
+      "source": null,
+      "source_candidate": "KSL-Guide (AI Hub 배포, 신청 필요) 또는 국립국어원 한국수어사전",
+      "verification_status": "data_pending",
+      "supported": false
+    },
+    {
+      "expression_id": "KSL-0003",
+      "kind": "ksl",
+      "korean": "괜찮아요",
+      "match": [
+        "괜찮아요",
+        "괜찮습니다",
+        "괜찮아"
+      ],
+      "motion_path": null,
+      "source": null,
+      "source_candidate": "KSL-Guide (AI Hub 배포, 신청 필요) 또는 국립국어원 한국수어사전",
+      "verification_status": "data_pending",
+      "supported": false
+    },
+    {
+      "expression_id": "KSL-0004",
+      "kind": "ksl",
+      "korean": "도와주세요",
+      "match": [
+        "도와주세요",
+        "도와줘요"
+      ],
+      "motion_path": null,
+      "source": null,
+      "source_candidate": "KSL-Guide (AI Hub 배포, 신청 필요) 또는 국립국어원 한국수어사전",
+      "verification_status": "data_pending",
+      "supported": false
+    },
+    {
+      "expression_id": "KSL-0005",
+      "kind": "ksl",
+      "korean": "화장실",
+      "match": [
+        "화장실"
+      ],
+      "motion_path": null,
+      "source": null,
+      "source_candidate": "KSL-Guide (AI Hub 배포, 신청 필요) 또는 국립국어원 한국수어사전",
+      "verification_status": "data_pending",
+      "supported": false
+    },
+    {
+      "expression_id": "KSL-0006",
+      "kind": "ksl",
+      "korean": "어디",
+      "match": [
+        "어디",
+        "어디에요",
+        "어디예요"
+      ],
+      "motion_path": null,
+      "source": null,
+      "source_candidate": "KSL-Guide (AI Hub 배포, 신청 필요) 또는 국립국어원 한국수어사전",
+      "verification_status": "data_pending",
+      "supported": false
+    },
+    {
+      "expression_id": "TEST-0001",
+      "kind": "test",
+      "korean": "손가락 관절 테스트",
+      "match": [
+        "#손가락테스트"
+      ],
+      "motion_path": "/motions/test/test_finger_curl.json",
+      "source": "수어온 개발용으로 직접 제작한 키프레임 (scripts/build-test-motions.mjs)",
+      "verification_status": "not_sign_language",
+      "supported": true,
+      "note": "양손을 펴고 쥐고, 손가락을 하나씩 접는 관절 확인용 동작입니다. 한국수어가 아닙니다."
+    },
+    {
+      "expression_id": "TEST-0002",
+      "kind": "test",
+      "korean": "팔·손목 관절 테스트",
+      "match": [
+        "#팔테스트"
+      ],
+      "motion_path": "/motions/test/test_arm_wrist.json",
+      "source": "수어온 개발용으로 직접 제작한 키프레임 (scripts/build-test-motions.mjs)",
+      "verification_status": "not_sign_language",
+      "supported": true,
+      "note": "어깨·팔꿈치·손목을 차례로 움직이는 관절 확인용 동작입니다. 한국수어가 아닙니다."
+    },
+    {
+      "expression_id": "AIHUB-SAMPLE-WORD1501",
+      "kind": "test",
+      "korean": "운전면허",
+      "match": [
+        "#WORD1501",
+        "운전면허"
+      ],
+      "motion_path": "/motions/aihub_real02/word1501_real02.json",
+      "source": "AI-Hub 수어 영상(데이터셋 103) NIA_SL_WORD1501_REAL02_F 3D 키포인트 → scripts/retarget_vrm.py 수학적 리타기팅; 표제어·구간: data/morphemes/NIA_SL_WORD1501_REAL02_F_morpheme.json(같은 촬영본)",
+      "verification_status": "not_sign_language",
+      "supported": true,
+      "note": "표제어·시간 구간·모션이 모두 같은 촬영본(REAL02_F)에서 왔고 형태소 구간으로 잘랐음. 원본 영상 대조와 한국수어 사용자 검수는 미수행이므로 정확한 한국수어라고 표시하지 않음.",
+      "morpheme_ref": "WORD1501",
+      "motion_source_actor": "REAL02",
+      "source_video": "NIA_SL_WORD1501_REAL02_F.mp4",
+      "gloss_interval_sec": [
+        1.531,
+        3.305
+      ],
+      "motion_quality": "experimental_unvalidated",
+      "legacy_motion_path": "/motions/stabilized/word1501_stabilized.json",
+      "motion_take": "NIA_SL_WORD1501_REAL02_F",
+      "label_motion_same_actor": true
+    },
+    {
+      "expression_id": "AIHUB-SAMPLE-WORD1502",
+      "kind": "test",
+      "korean": "골키퍼",
+      "match": [
+        "#WORD1502",
+        "골키퍼"
+      ],
+      "motion_path": "/motions/aihub_real02/word1502_real02.json",
+      "source": "AI-Hub 수어 영상(데이터셋 103) NIA_SL_WORD1502_REAL02_F 3D 키포인트 → scripts/retarget_vrm.py 수학적 리타기팅; 표제어·구간: data/morphemes/NIA_SL_WORD1502_REAL02_F_morpheme.json(같은 촬영본)",
+      "verification_status": "not_sign_language",
+      "supported": true,
+      "note": "표제어·시간 구간·모션이 모두 같은 촬영본(REAL02_F)에서 왔고 형태소 구간으로 잘랐음. 원본 영상 대조와 한국수어 사용자 검수는 미수행이므로 정확한 한국수어라고 표시하지 않음.",
+      "morpheme_ref": "WORD1502",
+      "motion_source_actor": "REAL02",
+      "source_video": "NIA_SL_WORD1502_REAL02_F.mp4",
+      "gloss_interval_sec": [
+        1.646,
+        2.626
+      ],
+      "motion_quality": "experimental_unvalidated",
+      "legacy_motion_path": "/motions/stabilized/word1502_stabilized.json",
+      "motion_take": "NIA_SL_WORD1502_REAL02_F",
+      "label_motion_same_actor": true
+    },
+    {
+      "expression_id": "AIHUB-SAMPLE-WORD1503",
+      "kind": "test",
+      "korean": "구경",
+      "match": [
+        "#WORD1503",
+        "구경"
+      ],
+      "motion_path": "/motions/aihub_real02/word1503_real02.json",
+      "source": "AI-Hub 수어 영상(데이터셋 103) NIA_SL_WORD1503_REAL02_F 3D 키포인트 → scripts/retarget_vrm.py 수학적 리타기팅; 표제어·구간: data/morphemes/NIA_SL_WORD1503_REAL02_F_morpheme.json(같은 촬영본)",
+      "verification_status": "not_sign_language",
+      "supported": true,
+      "note": "표제어·시간 구간·모션이 모두 같은 촬영본(REAL02_F)에서 왔고 형태소 구간으로 잘랐음. 원본 영상 대조와 한국수어 사용자 검수는 미수행이므로 정확한 한국수어라고 표시하지 않음.",
+      "morpheme_ref": "WORD1503",
+      "motion_source_actor": "REAL02",
+      "source_video": "NIA_SL_WORD1503_REAL02_F.mp4",
+      "gloss_interval_sec": [
+        1.676,
+        2.706
+      ],
+      "motion_quality": "experimental_unvalidated",
+      "legacy_motion_path": "/motions/stabilized/word1503_stabilized.json",
+      "motion_take": "NIA_SL_WORD1503_REAL02_F",
+      "label_motion_same_actor": true
+    },
+    {
+      "expression_id": "AIHUB-SAMPLE-WORD1504",
+      "kind": "test",
+      "korean": "성토",
+      "match": [
+        "#WORD1504",
+        "성토"
+      ],
+      "motion_path": "/motions/aihub_real02/word1504_real02.json",
+      "source": "AI-Hub 수어 영상(데이터셋 103) NIA_SL_WORD1504_REAL02_F 3D 키포인트 → scripts/retarget_vrm.py 수학적 리타기팅; 표제어·구간: data/morphemes/NIA_SL_WORD1504_REAL02_F_morpheme.json(같은 촬영본)",
+      "verification_status": "not_sign_language",
+      "supported": true,
+      "note": "표제어·시간 구간·모션이 모두 같은 촬영본(REAL02_F)에서 왔고 형태소 구간으로 잘랐음. 원본 영상 대조와 한국수어 사용자 검수는 미수행이므로 정확한 한국수어라고 표시하지 않음.",
+      "morpheme_ref": "WORD1504",
+      "motion_source_actor": "REAL02",
+      "source_video": "NIA_SL_WORD1504_REAL02_F.mp4",
+      "gloss_interval_sec": [
+        1.509,
+        3.033
+      ],
+      "motion_quality": "experimental_unvalidated",
+      "legacy_motion_path": "/motions/stabilized/word1504_stabilized.json",
+      "motion_take": "NIA_SL_WORD1504_REAL02_F",
+      "label_motion_same_actor": true
+    },
+    {
+      "expression_id": "AIHUB-SAMPLE-WORD1505",
+      "kind": "test",
+      "korean": "권투",
+      "match": [
+        "#WORD1505",
+        "권투"
+      ],
+      "motion_path": "/motions/aihub_real02/word1505_real02.json",
+      "source": "AI-Hub 수어 영상(데이터셋 103) NIA_SL_WORD1505_REAL02_F 3D 키포인트 → scripts/retarget_vrm.py 수학적 리타기팅; 표제어·구간: data/morphemes/NIA_SL_WORD1505_REAL02_F_morpheme.json(같은 촬영본)",
+      "verification_status": "not_sign_language",
+      "supported": true,
+      "note": "표제어·시간 구간·모션이 모두 같은 촬영본(REAL02_F)에서 왔고 형태소 구간으로 잘랐음. 원본 영상 대조와 한국수어 사용자 검수는 미수행이므로 정확한 한국수어라고 표시하지 않음.",
+      "morpheme_ref": "WORD1505",
+      "motion_source_actor": "REAL02",
+      "source_video": "NIA_SL_WORD1505_REAL02_F.mp4",
+      "gloss_interval_sec": [
+        1.183,
+        2.163
+      ],
+      "motion_quality": "experimental_unvalidated",
+      "legacy_motion_path": "/motions/stabilized/word1505_stabilized.json",
+      "motion_take": "NIA_SL_WORD1505_REAL02_F",
+      "label_motion_same_actor": true
+    },
+    {
+      "expression_id": "AIHUB-SAMPLE-WORD1506",
+      "kind": "test",
+      "korean": "그립다",
+      "match": [
+        "#WORD1506",
+        "그립다"
+      ],
+      "motion_path": "/motions/aihub_real02/word1506_real02.json",
+      "source": "AI-Hub 수어 영상(데이터셋 103) NIA_SL_WORD1506_REAL02_F 3D 키포인트 → scripts/retarget_vrm.py 수학적 리타기팅; 표제어·구간: data/morphemes/NIA_SL_WORD1506_REAL02_F_morpheme.json(같은 촬영본)",
+      "verification_status": "not_sign_language",
+      "supported": true,
+      "note": "표제어·시간 구간·모션이 모두 같은 촬영본(REAL02_F)에서 왔고 형태소 구간으로 잘랐음. 원본 영상 대조와 한국수어 사용자 검수는 미수행이므로 정확한 한국수어라고 표시하지 않음.",
+      "morpheme_ref": "WORD1506",
+      "motion_source_actor": "REAL02",
+      "source_video": "NIA_SL_WORD1506_REAL02_F.mp4",
+      "gloss_interval_sec": [
+        1.204,
+        2.306
+      ],
+      "motion_quality": "experimental_unvalidated",
+      "legacy_motion_path": "/motions/stabilized/word1506_stabilized.json",
+      "motion_take": "NIA_SL_WORD1506_REAL02_F",
+      "label_motion_same_actor": true
+    },
+    {
+      "expression_id": "AIHUB-SAMPLE-WORD1507",
+      "kind": "test",
+      "korean": "키우다",
+      "match": [
+        "#WORD1507",
+        "키우다"
+      ],
+      "motion_path": "/motions/aihub_real02/word1507_real02.json",
+      "source": "AI-Hub 수어 영상(데이터셋 103) NIA_SL_WORD1507_REAL02_F 3D 키포인트 → scripts/retarget_vrm.py 수학적 리타기팅; 표제어·구간: data/morphemes/NIA_SL_WORD1507_REAL02_F_morpheme.json(같은 촬영본)",
+      "verification_status": "not_sign_language",
+      "supported": true,
+      "note": "표제어·시간 구간·모션이 모두 같은 촬영본(REAL02_F)에서 왔고 형태소 구간으로 잘랐음. 원본 영상 대조와 한국수어 사용자 검수는 미수행이므로 정확한 한국수어라고 표시하지 않음.",
+      "morpheme_ref": "WORD1507",
+      "motion_source_actor": "REAL02",
+      "source_video": "NIA_SL_WORD1507_REAL02_F.mp4",
+      "gloss_interval_sec": [
+        0.985,
+        2.087
+      ],
+      "motion_quality": "experimental_unvalidated",
+      "legacy_motion_path": "/motions/stabilized/word1507_stabilized.json",
+      "motion_take": "NIA_SL_WORD1507_REAL02_F",
+      "label_motion_same_actor": true
+    },
+    {
+      "expression_id": "AIHUB-SAMPLE-WORD1508",
+      "kind": "test",
+      "korean": "힘",
+      "match": [
+        "#WORD1508",
+        "힘"
+      ],
+      "motion_path": "/motions/aihub_real02/word1508_real02.json",
+      "source": "AI-Hub 수어 영상(데이터셋 103) NIA_SL_WORD1508_REAL02_F 3D 키포인트 → scripts/retarget_vrm.py 수학적 리타기팅; 표제어·구간: data/morphemes/NIA_SL_WORD1508_REAL02_F_morpheme.json(같은 촬영본)",
+      "verification_status": "not_sign_language",
+      "supported": true,
+      "note": "표제어·시간 구간·모션이 모두 같은 촬영본(REAL02_F)에서 왔고 형태소 구간으로 잘랐음. 원본 영상 대조와 한국수어 사용자 검수는 미수행이므로 정확한 한국수어라고 표시하지 않음.",
+      "morpheme_ref": "WORD1508",
+      "motion_source_actor": "REAL02",
+      "source_video": "NIA_SL_WORD1508_REAL02_F.mp4",
+      "gloss_interval_sec": [
+        1.354,
+        2.334
+      ],
+      "motion_quality": "experimental_unvalidated",
+      "legacy_motion_path": "/motions/stabilized/word1508_stabilized.json",
+      "motion_take": "NIA_SL_WORD1508_REAL02_F",
+      "label_motion_same_actor": true
+    },
+    {
+      "expression_id": "AIHUB-SAMPLE-WORD0001",
+      "kind": "test",
+      "korean": "고민",
+      "match": [
+        "#WORD0001",
+        "고민"
+      ],
+      "motion_path": "/motions/aihub_real02/word0001_real02.json",
+      "source": "AI-Hub 수어 영상(데이터셋 103) NIA_SL_WORD0001_REAL02_F 3D 키포인트 → scripts/retarget_vrm.py 수학적 리타기팅; 표제어·구간: data/morphemes/NIA_SL_WORD0001_REAL02_F_morpheme.json(같은 촬영본)",
+      "verification_status": "not_sign_language",
+      "supported": true,
+      "note": "표제어·시간 구간·모션이 모두 같은 촬영본(REAL02_F)에서 왔고 형태소 구간으로 잘랐음. 원본 영상 대조와 한국수어 사용자 검수는 미수행이므로 정확한 한국수어라고 표시하지 않음.",
+      "motion_source_actor": "REAL02",
+      "motion_take": "NIA_SL_WORD0001_REAL02_F",
+      "motion_quality": "experimental_unvalidated",
+      "morpheme_ref": "WORD0001",
+      "source_video": "NIA_SL_WORD0001_REAL02_F.mp4",
+      "gloss_interval_sec": [
+        3.066,
+        4.404
+      ],
+      "label_motion_same_actor": true
+    },
+    {
+      "expression_id": "AIHUB-SAMPLE-SEN0001",
+      "kind": "test",
+      "korean": "[왼쪽] 실제 촬영 수어 문장 SEN0001 (한국어 원문 미확보)",
+      "match": [
+        "#SEN0001"
+      ],
+      "motion_path": "/motions/aihub_real02/sen0001_real02.json",
+      "source": "AI-Hub 수어 영상(데이터셋 103) NIA_SL_SEN0001_REAL02_F 3D 키포인트 + 같은 촬영본 형태소 → scripts/retarget_vrm.py 수학적 리타기팅",
+      "verification_status": "not_sign_language",
+      "supported": true,
+      "note": "실제 촬영된 문장 1개를 그대로 재생(검색). 문장을 새로 생성하거나 한국어를 번역한 결과가 아님. 한국수어 정확성 미검증.",
+      "motion_source_actor": "REAL02",
+      "motion_take": "NIA_SL_SEN0001_REAL02_F",
+      "label_motion_same_actor": true,
+      "gloss_sequence": [
+        "왼쪽"
+      ],
+      "motion_quality": "experimental_unvalidated"
+    },
+    {
+      "expression_id": "AIHUB-SAMPLE-SEN0009",
+      "kind": "test",
+      "korean": "[운전 천천히] 실제 촬영 수어 문장 SEN0009 (한국어 원문 미확보)",
+      "match": [
+        "#SEN0009"
+      ],
+      "motion_path": "/motions/aihub_real02/sen0009_real02.json",
+      "source": "AI-Hub 수어 영상(데이터셋 103) NIA_SL_SEN0009_REAL02_F 3D 키포인트 + 같은 촬영본 형태소 → scripts/retarget_vrm.py 수학적 리타기팅",
+      "verification_status": "not_sign_language",
+      "supported": true,
+      "note": "실제 촬영된 문장 1개를 그대로 재생(검색). 문장을 새로 생성하거나 한국어를 번역한 결과가 아님. 한국수어 정확성 미검증.",
+      "motion_source_actor": "REAL02",
+      "motion_take": "NIA_SL_SEN0009_REAL02_F",
+      "label_motion_same_actor": true,
+      "gloss_sequence": [
+        "운전",
+        "천천히"
+      ],
+      "motion_quality": "experimental_unvalidated"
+    },
+    {
+      "expression_id": "AIHUB-SAMPLE-SEN0038",
+      "kind": "test",
+      "korean": "[택시 기본 돈 얼마] 실제 촬영 수어 문장 SEN0038 (한국어 원문 미확보)",
+      "match": [
+        "#SEN0038"
+      ],
+      "motion_path": "/motions/aihub_real02/sen0038_real02.json",
+      "source": "AI-Hub 수어 영상(데이터셋 103) NIA_SL_SEN0038_REAL02_F 3D 키포인트 + 같은 촬영본 형태소 → scripts/retarget_vrm.py 수학적 리타기팅",
+      "verification_status": "not_sign_language",
+      "supported": true,
+      "note": "실제 촬영된 문장 1개를 그대로 재생(검색). 문장을 새로 생성하거나 한국어를 번역한 결과가 아님. 한국수어 정확성 미검증.",
+      "motion_source_actor": "REAL02",
+      "motion_take": "NIA_SL_SEN0038_REAL02_F",
+      "label_motion_same_actor": true,
+      "gloss_sequence": [
+        "택시",
+        "기본",
+        "돈",
+        "얼마"
+      ],
+      "motion_quality": "experimental_unvalidated"
+    },
+    {
+      "expression_id": "AIHUB-SAMPLE-SEN0043",
+      "kind": "test",
+      "korean": "[밤 12시 후 돈 추가] 실제 촬영 수어 문장 SEN0043 (한국어 원문 미확보)",
+      "match": [
+        "#SEN0043"
+      ],
+      "motion_path": "/motions/aihub_real02/sen0043_real02.json",
+      "source": "AI-Hub 수어 영상(데이터셋 103) NIA_SL_SEN0043_REAL02_F 3D 키포인트 + 같은 촬영본 형태소 → scripts/retarget_vrm.py 수학적 리타기팅",
+      "verification_status": "not_sign_language",
+      "supported": true,
+      "note": "실제 촬영된 문장 1개를 그대로 재생(검색). 문장을 새로 생성하거나 한국어를 번역한 결과가 아님. 한국수어 정확성 미검증.",
+      "motion_source_actor": "REAL02",
+      "motion_take": "NIA_SL_SEN0043_REAL02_F",
+      "label_motion_same_actor": true,
+      "gloss_sequence": [
+        "밤",
+        "12시",
+        "후",
+        "돈",
+        "추가"
+      ],
+      "motion_quality": "experimental_unvalidated"
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+/**
+ * LLM 판단 계층 — 공급자와 무관한 부분(프롬프트·응답 정리·규칙 검증). 직접 구현.
+ *
+ * 역할 나눔
+ *  - LLM(선택 기능, 유료 API): 한국어 문장을 "수어 단어(기본형) 순서 후보"로 바꾼다. 동작·영상을 만들지 않는다.
+ *  - 이 파일(규칙): 후보를 기존 사전·동작 목록으로 검사한다.
+ *      1 없는 단어 금지: 국립국어원 사전에도 동작 목록에도 없는 말은 버린다(지문자 표시한 고유명사만 허용)
+ *      2 근거 검사: 입력 문장이나 규칙 분석 결과에서 찾을 수 없는 말을 덧붙이면 기록하고 확인을 요청한다
+ *      3 누락 검사: 규칙 분석이 찾은 동작 있는 단어를 LLM이 빼면 기록한다
+ *      4 뜻 검사: LLM이 준 뜻 힌트가 사전 분류와 맞을 때만 그 뜻을 쓰고, 동작의 뜻과 다르면 재생하지 않는다
+ *      5 어순: 시간 앞·의문사 뒤·부정 동사 뒤 규칙을 다시 적용한다(같은 그룹 안에서는 LLM 순서 유지)
+ *    검사에서 크게 어긋나면 LLM 후보를 버리고 규칙 결과(planner.ts)를 그대로 쓴다.
+ *  - 키가 없거나, 시간 초과·오류가 나면 화면은 규칙 분석만 쓴다(SignTranslator.tsx).
+ *
+ * 공급자별 호출 코드는 서버 전용 파일 llmProviders.ts에 있다. 이 파일은 브라우저·서버·테스트 어디서나 쓴다.
+ */
+import { findMotion, isWhWord, orderTokens, resolveToken, strip, type Lexicon, type PlanToken, type SignPlan } from "./planner.ts";
+
+/** LLM이 돌려줘야 하는 형식(정리 후) */
+export interface LlmCandidate {
+  glosses: { word: string; sense?: string; fingerspell?: boolean }[];
+  question: "yesno" | "wh" | null;
+  negation: boolean;
+  note: string;
+}
+
+export interface LlmVerification {
+  /** 화면에 쓸 최종 계획. accepted=false면 규칙 계획 그대로(llmNotes만 덧붙임) */
+  plan: SignPlan;
+  accepted: boolean;
+  notes: string[];
+}
+
+export const LLM_LIMITS = { maxWords: 20, maxWordLength: 20, maxNoteLength: 200 } as const;
+
+/**
+ * 시스템 프롬프트. allowed는 동작이 있는 수어 단어 목록(public/motions/aihub_gloss/index.json의 키).
+ * 목록 밖의 말도 쓸 수 있게 하되(사전에 있으면 '동작 없음'으로 표시) 검사기가 다시 거른다.
+ */
+export function buildSystemPrompt(allowed: string[]): string {
+  return [
+    "너는 한국어 문장을 한국수어(KSL) 단어 순서 후보로 바꾸는 보조 도구다. 번역의 정확성을 보장하지 않으며, 결과는 규칙·사전으로 다시 검사된다.",
+    "규칙:",
+    "1. 각 단어는 사전 기본형으로 쓴다(명사, 용언은 '-다' 형). 조사·어미·높임 보조용언('주세요')은 뺀다.",
+    "2. 아래 '동작 있는 단어' 목록에 같은 뜻의 말이 있으면 반드시 그 말을 쓴다(예: 요금→돈, 정류장→곳).",
+    "3. 목록에 없는 말은 국립국어원 한국수어사전에 있을 법한 표준 기본형으로 쓴다. 입력에 없는 내용을 지어내지 않는다.",
+    "4. 사람·장소 이름처럼 지문자가 필요한 고유명사는 fingerspell: true로 표시한다.",
+    "5. 어순: 시간 표현은 앞, 의문사(무엇·어디·언제·누구·왜·얼마·몇·방법)는 끝, 부정은 동사 뒤.",
+    "6. 뜻이 여러 개인 단어(예: 배)는 sense에 분류 한 단어를 적는다(예: 교통, 신체, 과일).",
+    '출력은 JSON 하나만: {"glosses":[{"word":"택시","sense":"교통"}],"question":"wh"|"yesno"|null,"negation":false,"note":"짧은 설명"}',
+    `동작 있는 단어: ${allowed.join(", ")}`,
+  ].join("\n");
+}
+
+/** LLM 응답 문자열에서 JSON을 꺼내 형식·길이를 제한한다. 쓸 수 없으면 null */
+export function parseCandidate(raw: unknown): LlmCandidate | null {
+  let obj: unknown = raw;
+  if (typeof raw === "string") {
+    const m = raw.match(/\{[\s\S]*\}/); // 코드 블록·앞뒤 설명이 섞여도 첫 JSON 객체만
+    if (!m) return null;
+    try { obj = JSON.parse(m[0]); } catch { return null; }
+  }
+  if (!obj || typeof obj !== "object") return null;
+  const o = obj as Record<string, unknown>;
+  if (!Array.isArray(o.glosses)) return null;
+  const glosses: LlmCandidate["glosses"] = [];
+  for (const g of o.glosses.slice(0, LLM_LIMITS.maxWords)) {
+    const item = typeof g === "string" ? { word: g } : g && typeof g === "object" ? g as Record<string, unknown> : null;
+    const word = typeof item?.word === "string" ? strip(item.word).slice(0, LLM_LIMITS.maxWordLength) : "";
+    if (!word || !/^[가-힣0-9]+$/.test(word)) continue;
+    glosses.push({
+      word,
+      ...(typeof item?.sense === "string" && item.sense.trim() ? { sense: item.sense.trim().slice(0, 20) } : {}),
+      ...(item?.fingerspell === true ? { fingerspell: true } : {}),
+    });
+  }
+  return {
+    glosses,
+    question: o.question === "wh" || o.question === "yesno" ? o.question : null,
+    negation: o.negation === true,
+    note: typeof o.note === "string" ? o.note.slice(0, LLM_LIMITS.maxNoteLength) : "",
+  };
+}
+
+const NEG_WORDS = new Set(["아니다", "안되다", "않다", "없다", "못하다"]);
+const PRONOUN_SOURCES: Record<string, RegExp> = { "나": /(저|제|내|나)/, "무엇": /(뭐|무엇|뭘|무슨)/ };
+
+/** 입력 문장이나 규칙 분석에서 그 단어의 근거를 찾을 수 있는가 */
+function grounded(word: string, input: string, rule: SignPlan): boolean {
+  const flat = input.replace(/\s+/g, "");
+  const stem = word.endsWith("다") && word.length >= 2 ? word.slice(0, -1) : word;
+  if (rule.tokens.some((t) => t.lemma === word) || rule.corrections.some((c) => c.to === word)) return true;
+  if (flat.includes(stem) || (stem.length >= 3 && flat.includes(stem.slice(0, 2)))) return true;
+  // 활용으로 첫 글자 받침이 바뀌는 용언(타다→탔, 가다→갔)은 첫 글자 초성·중성이 같으면 근거로 본다
+  if (stem.length === 1 && [...flat].some((ch) => sameOnset(ch, stem))) return true;
+  return PRONOUN_SOURCES[word]?.test(flat) ?? false;
+}
+
+function sameOnset(a: string, b: string) {
+  const code = (c: string) => c.charCodeAt(0) - 0xac00;
+  const x = code(a), y = code(b);
+  return x >= 0 && y >= 0 && x < 11172 && y < 11172 && Math.floor(x / 28) === Math.floor(y / 28);
+}
+
+/** LLM이 준 뜻 힌트(교통·신체…)를 사전 분류와 맞춰 본다. 맞으면 그 뜻으로 토큰을 고친다 */
+function applySenseHint(t: PlanToken, hint: string, lex: Lexicon): string | null {
+  const entries = lex.senses.get(t.lemma);
+  if (!entries || entries.length < 2) return null;
+  const hit = entries.find((e) => e.c.includes(hint));
+  if (!hit) return `'${t.lemma}' 뜻 힌트 '${hint}'가 사전 분류와 맞지 않아 규칙 선택을 유지`;
+  if (t.sense?.id === hit.id) return null;
+  const prev = t.sense;
+  t.sense = { id: hit.id, category: hit.c, handshape: hit.h, reason: `LLM 뜻 제안(사전 분류 '${hint}' 일치)` };
+  t.alternatives = entries.filter((e) => e.id !== hit.id).map((e) => ({ id: e.id, category: e.c }));
+  // 동작의 뜻이 바뀐 뜻과 다르면 재생하지 않는다(규칙 분석과 같은 원칙)
+  const borrowed = !lex.motions.has(strip(t.lemma));
+  const motion = borrowed ? t.motion : findMotion(t.lemma, lex)?.find((m) => !m.senseId || m.senseId === hit.id);
+  if (motion) { t.motion = motion; t.status = "playable"; t.note = undefined; }
+  else if (t.status === "playable") {
+    t.status = "no_motion";
+    t.motion = undefined;
+    t.note = `보유 동작은 다른 뜻이라 재생하지 않음`;
+  }
+  return `'${t.lemma}' 뜻을 ${prev?.category.split(" > ").at(-1) ?? "미정"} → ${hit.c.split(" > ").at(-1)}(으)로 바꿈(LLM 제안, 사전 확인)`;
+}
+
+/**
+ * LLM 후보를 규칙·사전으로 검사해 최종 계획을 정한다.
+ * rule은 같은 입력의 규칙 분석 결과(planSentence). 후보를 버릴 때 그대로 돌려준다.
+ */
+export function verifyCandidate(input: string, cand: LlmCandidate | null, lex: Lexicon, rule: SignPlan): LlmVerification {
+  const reject = (why: string, notes: string[] = []): LlmVerification => {
+    const all = [...notes, `LLM 후보를 쓰지 않음: ${why}. 규칙 분석 결과를 사용`];
+    return { plan: { ...rule, llmNotes: all }, accepted: false, notes: all };
+  };
+  if (!cand) return reject("응답 형식 오류");
+  if (!cand.glosses.length) return reject("빈 후보");
+
+  const notes: string[] = [];
+  const words = cand.glosses.filter((g, i) => cand.glosses.findIndex((x) => x.word === g.word) === i); // 중복 제거
+  // 1 없는 단어 금지
+  const known = (w: string) => lex.motions.has(w) || lex.senses.has(w) || !!findMotion(w, lex) || /^\d/.test(w);
+  const invented = words.filter((g) => !known(g.word) && !g.fingerspell).map((g) => g.word);
+  if (invented.length) notes.push(`사전·동작 목록에 없는 말 버림: ${invented.join(", ")}`);
+  const kept = words.filter((g) => !invented.includes(g.word));
+  if (!kept.length || invented.length * 2 >= words.length) return reject("사전에 없는 말이 너무 많음", notes);
+
+  // 2 근거 검사(입력에 없는 말 덧붙이기)
+  const ungrounded = kept.filter((g) => !NEG_WORDS.has(g.word) && !isWhWord(g.word) && !grounded(g.word, input, rule)).map((g) => g.word);
+  if (ungrounded.length) notes.push(`입력에서 근거를 찾지 못한 말: ${ungrounded.join(", ")}`);
+  if (ungrounded.length * 3 > kept.length) return reject("입력에 없는 말을 너무 많이 덧붙임", notes);
+
+  // 부정은 규칙과 같은 방식(동사 뒤 부정 수어 하나)으로 통일한다
+  const negation = cand.negation || rule.negation || kept.some((g) => g.word === "않다");
+  const content = kept.filter((g) => !(negation && (g.word === "아니다" || g.word === "않다")));
+  const lemmas = content.map((g) => g.word);
+  let ambiguous = 0;
+  const tokens = content.map((g) => {
+    const kind: PlanToken["kind"] = /^\d/.test(g.word) ? "number" : g.word.endsWith("다") && g.word.length >= 2 && lex.predLemmas.has(g.word) ? "pred" : "noun";
+    const r = known(g.word)
+      ? resolveToken(g.word, { lemma: g.word, kind }, lemmas.filter((l) => l !== g.word), lex)
+      : resolveToken(g.word, null, [], lex);
+    if (g.fingerspell && r.token.status === "unknown") r.token.note = "고유명사(지문자 필요, LLM 표시)";
+    if (g.sense) {
+      const n = applySenseHint(r.token, g.sense, lex);
+      if (n) notes.push(n);
+      else if (r.ambiguous) ambiguous++;
+    } else if (r.ambiguous) ambiguous++;
+    return r.token;
+  });
+
+  // 3 누락 검사: 규칙이 찾은 동작 있는 단어를 빼먹었는가
+  const llmSet = new Set(tokens.map((t) => t.lemma));
+  const rulePlayable = rule.tokens.filter((t) => t.status === "playable").map((t) => t.lemma);
+  const dropped = rulePlayable.filter((l) => !llmSet.has(l));
+  if (dropped.length) notes.push(`규칙 분석에는 있는데 LLM이 뺀 말: ${dropped.join(", ")}`);
+  if (dropped.length * 2 > rulePlayable.length && rulePlayable.length >= 2) return reject("규칙이 찾은 단어를 절반 넘게 뺌", notes);
+
+  // 5 어순 규칙 재적용
+  const order = orderTokens(tokens, negation, lex);
+  const question = tokens.some((t) => isWhWord(t.lemma)) ? "wh" : cand.question === "yesno" || rule.question === "yesno" ? "yesno" : null;
+  const unknown = tokens.filter((t) => t.status === "unknown" && !t.note?.includes("LLM 표시")).length;
+  const reasons = [...rule.reasons.filter((r) => r.startsWith("의문문"))];
+  if (ungrounded.length || dropped.length || invented.length) reasons.push("LLM 후보 일부가 규칙 검사와 맞지 않음");
+  if (unknown) reasons.push(`사전에 없는 말 ${unknown}개`);
+  if (ambiguous) reasons.push(`뜻이 여러 개인데 문맥 단서가 없는 말 ${ambiguous}개`);
+  const confidence = unknown || !tokens.length ? "low" : ungrounded.length || dropped.length || invented.length || ambiguous ? "medium" : "high";
+  if (cand.note) notes.push(`LLM 설명: ${cand.note}`);
+  return {
+    plan: {
+      input, tokens, order, question, negation, corrections: rule.corrections, confidence,
+      needsConfirm: confidence !== "high", reasons, source: "llm", llmNotes: notes,
+    },
+    accepted: true,
+    notes,
+  };
+}

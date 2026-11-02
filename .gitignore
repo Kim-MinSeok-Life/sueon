@@ -1,0 +1,44 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+.env
+.env.local
+.env.*.local
+test-results/
+# 개발 중 생성한 테스트 결과
+/tests/__pycache__/
+/scripts/__pycache__/
+# AI-Hub 파생 동작(public/motions/*)은 Git에 포함한다(2026-11-02 사용자 결정:
+# 경진대회 목적으로 이용약관에 동의하고 받은 데이터, AI 학습용 명시). 공개 서비스 배포는 src/proxy.ts가 계속 막는다.
+# AI-Hub 원본 ZIP·원본 좌표 발췌 키포인트는 제외
+/New_sample.zip
+/*.zip
+/data/keypoints/
+/aihub_download/
+/수어 영상/
+/004.수어영상/
+# 원본 자료(PDF·도구·모델 코드) — 배포 ZIP과 Git에서 제외
+/03.AI모델/
+/*.pdf
+/*.docx
+/*.pptx
+/*.csv
+# AI-Hub 원본 자료(영상·키포인트·형태소 ZIP) 보관 폴더
+alhub_data/
+aihub_data/
+data/video_compare.json
+reports/video_review_*.json
+# IntelliJ·개발 도구 개인 설정
+.idea/
+.claude/
+AGENTS.md
+# 내부 작업 노트·과거 기록(로컬과 팀 공유 ZIP에만 둠)
+/AI_HANDOFF.md
+/README.txt
+/개발자참고.pdf
+/docs/개발자참고.md
+/docs/history/
+/reports/*.log
+/scripts/build_dev_pdf.py

@@ -1,0 +1,38 @@
+{
+  "name": "sueon",
+  "version": "0.1.0",
+  "private": true,
+  "description": "수어온(SUEO:N) — 한국어 텍스트를 한국수어 동작 데이터와 연결해 3D 아바타로 재생하는 프로토타입",
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start -p 3001",
+    "typecheck": "tsc --noEmit",
+    "motions:build": "node scripts/build-test-motions.mjs",
+    "data:validate": "node scripts/validate-data.mjs",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "morphemes:validate": "python scripts/validate-morphemes.py",
+    "motions:stabilize": "python scripts/stabilize-sample-motions.py",
+    "test:py": "python -m unittest tests/test_keypoints_retarget.py",
+    "keypoints:report": "python scripts/aihub_keypoints.py report",
+    "keypoints:extract": "python scripts/aihub_keypoints.py extract",
+    "motions:retarget": "python scripts/retarget_vrm.py --compare-legacy",
+    "videos:compare": "python scripts/build_video_compare.py"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "1.3.0",
+    "@pixiv/three-vrm": "3.5.5",
+    "next": "16.4.1",
+    "pretendard": "1.3.9",
+    "react": "19.2.9",
+    "react-dom": "19.2.9",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.4",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "@types/three": "0.186.0",
+    "typescript": "5.9.3"
+  }
+}

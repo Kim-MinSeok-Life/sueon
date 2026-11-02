@@ -1,0 +1,1235 @@
+{
+  "NIA_SL_WORD0001_REAL02_F": {
+    "clip": "aihub_real02/word0001_real02.json",
+    "label_from_other_actor": null,
+    "frames": 53,
+    "duration_sec": 1.7333,
+    "shoulder_width_m": 0.3291934788236243,
+    "neck_to_midhip_m": 0.5275313421968405,
+    "depth_corrected_frames": {
+      "left": 0,
+      "right": 0
+    },
+    "trim": "morpheme NIA_SL_WORD0001_REAL02_F (앞뒤 0.2초 여유)",
+    "gloss": [
+      "고민"
+    ],
+    "ik": true,
+    "avatar_scale": 0.6595,
+    "penetration_before_cm": {
+      "left": 13.78,
+      "right": 3.53
+    },
+    "penetration_after_cm": {
+      "left": 0.0,
+      "right": 0.0
+    },
+    "forward_offset_cm": {
+      "left": [
+        5.0,
+        8.8
+      ],
+      "right": [
+        5.0,
+        5.0
+      ]
+    },
+    "outward_offset_cm": {
+      "left": 5.0,
+      "right": 0.0
+    },
+    "trim_frames": [
+      86,
+      138
+    ],
+    "total_frames": 185,
+    "fps": 30.0,
+    "retarget_error_v2": {
+      "arm": {
+        "mean_deg": 8.92,
+        "p95_deg": 29.43,
+        "max_deg": 35.5
+      },
+      "hand_dir": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "palm_normal": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "thumb": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "fingers": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "wrist_position_cm": {
+        "mean": 0.0,
+        "max": 0.0,
+        "note": "어깨 중점 기준으로 축척한 원본 손목 위치와 아바타 손목 사이 거리"
+      }
+    },
+    "retarget_error_direction_only": {
+      "arm": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "hand_dir": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "palm_normal": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "thumb": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "fingers": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "wrist_position_cm": {
+        "mean": 7.31,
+        "max": 11.29,
+        "note": "어깨 중점 기준으로 축척한 원본 손목 위치와 아바타 손목 사이 거리"
+      }
+    },
+    "retarget_error_legacy": {
+      "arm": {
+        "mean_deg": 1.41,
+        "p95_deg": 5.6,
+        "max_deg": 8.91
+      },
+      "hand_dir": {
+        "mean_deg": 6.56,
+        "p95_deg": 6.58,
+        "max_deg": 6.58
+      },
+      "palm_normal": {
+        "mean_deg": 97.49,
+        "p95_deg": 165.98,
+        "max_deg": 173.64
+      },
+      "thumb": {
+        "mean_deg": 59.27,
+        "p95_deg": 93.83,
+        "max_deg": 139.77
+      },
+      "fingers": {
+        "mean_deg": 60.77,
+        "p95_deg": 137.53,
+        "max_deg": 158.86
+      }
+    }
+  },
+  "NIA_SL_WORD1501_REAL02_F": {
+    "clip": "aihub_real02/word1501_real02.json",
+    "label_from_other_actor": "운전면허",
+    "frames": 66,
+    "duration_sec": 2.1667,
+    "shoulder_width_m": 0.2964780782789851,
+    "neck_to_midhip_m": 0.5089872102027713,
+    "depth_corrected_frames": {
+      "left": 0,
+      "right": 0
+    },
+    "trim": "morpheme NIA_SL_WORD1501_REAL02_F (앞뒤 0.2초 여유)",
+    "gloss": [
+      "운전면허"
+    ],
+    "ik": true,
+    "avatar_scale": 0.7323,
+    "penetration_before_cm": {
+      "left": 11.21,
+      "right": 6.56
+    },
+    "penetration_after_cm": {
+      "left": 0.0,
+      "right": 0.0
+    },
+    "forward_offset_cm": {
+      "left": [
+        5.0,
+        10.0
+      ],
+      "right": [
+        5.0,
+        9.5
+      ]
+    },
+    "outward_offset_cm": {
+      "left": 6.0,
+      "right": 0.0
+    },
+    "trim_frames": [
+      40,
+      105
+    ],
+    "total_frames": 140,
+    "fps": 30.0,
+    "retarget_error_v2": {
+      "arm": {
+        "mean_deg": 13.63,
+        "p95_deg": 33.15,
+        "max_deg": 34.75
+      },
+      "hand_dir": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "palm_normal": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "thumb": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "fingers": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "wrist_position_cm": {
+        "mean": 0.0,
+        "max": 0.0,
+        "note": "어깨 중점 기준으로 축척한 원본 손목 위치와 아바타 손목 사이 거리"
+      }
+    },
+    "retarget_error_direction_only": {
+      "arm": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "hand_dir": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "palm_normal": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "thumb": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "fingers": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "wrist_position_cm": {
+        "mean": 7.26,
+        "max": 10.86,
+        "note": "어깨 중점 기준으로 축척한 원본 손목 위치와 아바타 손목 사이 거리"
+      }
+    },
+    "retarget_error_legacy": {
+      "arm": {
+        "mean_deg": 1.21,
+        "p95_deg": 4.09,
+        "max_deg": 7.2
+      },
+      "hand_dir": {
+        "mean_deg": 6.56,
+        "p95_deg": 6.58,
+        "max_deg": 6.58
+      },
+      "palm_normal": {
+        "mean_deg": 96.02,
+        "p95_deg": 169.11,
+        "max_deg": 173.64
+      },
+      "thumb": {
+        "mean_deg": 68.01,
+        "p95_deg": 120.99,
+        "max_deg": 151.62
+      },
+      "fingers": {
+        "mean_deg": 58.23,
+        "p95_deg": 147.8,
+        "max_deg": 176.04
+      }
+    }
+  },
+  "NIA_SL_WORD1502_REAL02_F": {
+    "clip": "aihub_real02/word1502_real02.json",
+    "label_from_other_actor": "골키퍼",
+    "frames": 43,
+    "duration_sec": 1.4,
+    "shoulder_width_m": 0.3029563090612242,
+    "neck_to_midhip_m": 0.5029483867157742,
+    "depth_corrected_frames": {
+      "left": 36,
+      "right": 0
+    },
+    "trim": "morpheme NIA_SL_WORD1502_REAL02_F (앞뒤 0.2초 여유)",
+    "gloss": [
+      "골키퍼"
+    ],
+    "ik": true,
+    "avatar_scale": 0.7166,
+    "penetration_before_cm": {
+      "left": 28.82,
+      "right": 9.85
+    },
+    "penetration_after_cm": {
+      "left": 0.0,
+      "right": 0.0
+    },
+    "forward_offset_cm": {
+      "left": [
+        28.3,
+        31.3
+      ],
+      "right": [
+        8.4,
+        12.7
+      ]
+    },
+    "outward_offset_cm": {
+      "left": 13.0,
+      "right": 0.0
+    },
+    "trim_frames": [
+      43,
+      85
+    ],
+    "total_frames": 105,
+    "fps": 30.0,
+    "retarget_error_v2": {
+      "arm": {
+        "mean_deg": 36.58,
+        "p95_deg": 53.95,
+        "max_deg": 59.48
+      },
+      "hand_dir": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "palm_normal": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "thumb": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "fingers": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "wrist_position_cm": {
+        "mean": 0.03,
+        "max": 1.76,
+        "note": "어깨 중점 기준으로 축척한 원본 손목 위치와 아바타 손목 사이 거리"
+      }
+    },
+    "retarget_error_direction_only": {
+      "arm": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "hand_dir": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "palm_normal": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "thumb": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "fingers": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "wrist_position_cm": {
+        "mean": 9.01,
+        "max": 11.67,
+        "note": "어깨 중점 기준으로 축척한 원본 손목 위치와 아바타 손목 사이 거리"
+      }
+    },
+    "retarget_error_legacy": {
+      "arm": {
+        "mean_deg": 0.54,
+        "p95_deg": 2.41,
+        "max_deg": 5.09
+      },
+      "hand_dir": {
+        "mean_deg": 6.56,
+        "p95_deg": 6.58,
+        "max_deg": 6.58
+      },
+      "palm_normal": {
+        "mean_deg": 61.64,
+        "p95_deg": 112.79,
+        "max_deg": 118.92
+      },
+      "thumb": {
+        "mean_deg": 45.25,
+        "p95_deg": 79.2,
+        "max_deg": 94.07
+      },
+      "fingers": {
+        "mean_deg": 46.65,
+        "p95_deg": 137.61,
+        "max_deg": 156.15
+      }
+    }
+  },
+  "NIA_SL_WORD1503_REAL02_F": {
+    "clip": "aihub_real02/word1503_real02.json",
+    "label_from_other_actor": "구경",
+    "frames": 44,
+    "duration_sec": 1.4333,
+    "shoulder_width_m": 0.30504638089969205,
+    "neck_to_midhip_m": 0.4956167558961258,
+    "depth_corrected_frames": {
+      "left": 0,
+      "right": 0
+    },
+    "trim": "morpheme NIA_SL_WORD1503_REAL02_F (앞뒤 0.2초 여유)",
+    "gloss": [
+      "구경"
+    ],
+    "ik": true,
+    "avatar_scale": 0.7117,
+    "penetration_before_cm": {
+      "left": 14.01,
+      "right": 0.65
+    },
+    "penetration_after_cm": {
+      "left": 0.0,
+      "right": 0.0
+    },
+    "forward_offset_cm": {
+      "left": [
+        5.0,
+        5.0
+      ],
+      "right": [
+        5.0,
+        5.0
+      ]
+    },
+    "outward_offset_cm": {
+      "left": 5.0,
+      "right": 0.0
+    },
+    "trim_frames": [
+      44,
+      87
+    ],
+    "total_frames": 110,
+    "fps": 30.0,
+    "retarget_error_v2": {
+      "arm": {
+        "mean_deg": 15.56,
+        "p95_deg": 32.54,
+        "max_deg": 32.92
+      },
+      "hand_dir": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "palm_normal": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "thumb": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "fingers": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "wrist_position_cm": {
+        "mean": 0.0,
+        "max": 0.0,
+        "note": "어깨 중점 기준으로 축척한 원본 손목 위치와 아바타 손목 사이 거리"
+      }
+    },
+    "retarget_error_direction_only": {
+      "arm": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "hand_dir": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "palm_normal": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "thumb": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "fingers": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "wrist_position_cm": {
+        "mean": 8.11,
+        "max": 10.19,
+        "note": "어깨 중점 기준으로 축척한 원본 손목 위치와 아바타 손목 사이 거리"
+      }
+    },
+    "retarget_error_legacy": {
+      "arm": {
+        "mean_deg": 0.82,
+        "p95_deg": 2.28,
+        "max_deg": 4.95
+      },
+      "hand_dir": {
+        "mean_deg": 6.56,
+        "p95_deg": 6.58,
+        "max_deg": 6.58
+      },
+      "palm_normal": {
+        "mean_deg": 81.56,
+        "p95_deg": 163.04,
+        "max_deg": 173.61
+      },
+      "thumb": {
+        "mean_deg": 61.0,
+        "p95_deg": 111.3,
+        "max_deg": 170.2
+      },
+      "fingers": {
+        "mean_deg": 78.98,
+        "p95_deg": 168.73,
+        "max_deg": 178.76
+      }
+    }
+  },
+  "NIA_SL_WORD1504_REAL02_F": {
+    "clip": "aihub_real02/word1504_real02.json",
+    "label_from_other_actor": "성토",
+    "frames": 59,
+    "duration_sec": 1.9333,
+    "shoulder_width_m": 0.3020948826114074,
+    "neck_to_midhip_m": 0.5005858240601705,
+    "depth_corrected_frames": {
+      "left": 0,
+      "right": 0
+    },
+    "trim": "morpheme NIA_SL_WORD1504_REAL02_F (앞뒤 0.2초 여유)",
+    "gloss": [
+      "성토"
+    ],
+    "ik": true,
+    "avatar_scale": 0.7187,
+    "penetration_before_cm": {
+      "left": 13.4,
+      "right": 10.11
+    },
+    "penetration_after_cm": {
+      "left": 0.0,
+      "right": 0.0
+    },
+    "forward_offset_cm": {
+      "left": [
+        5.0,
+        5.0
+      ],
+      "right": [
+        5.0,
+        12.6
+      ]
+    },
+    "outward_offset_cm": {
+      "left": 5.0,
+      "right": 0.0
+    },
+    "trim_frames": [
+      39,
+      97
+    ],
+    "total_frames": 120,
+    "fps": 30.0,
+    "retarget_error_v2": {
+      "arm": {
+        "mean_deg": 18.59,
+        "p95_deg": 33.5,
+        "max_deg": 33.94
+      },
+      "hand_dir": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "palm_normal": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "thumb": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "fingers": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "wrist_position_cm": {
+        "mean": 0.0,
+        "max": 0.0,
+        "note": "어깨 중점 기준으로 축척한 원본 손목 위치와 아바타 손목 사이 거리"
+      }
+    },
+    "retarget_error_direction_only": {
+      "arm": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "hand_dir": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "palm_normal": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "thumb": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "fingers": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "wrist_position_cm": {
+        "mean": 7.4,
+        "max": 9.94,
+        "note": "어깨 중점 기준으로 축척한 원본 손목 위치와 아바타 손목 사이 거리"
+      }
+    },
+    "retarget_error_legacy": {
+      "arm": {
+        "mean_deg": 0.94,
+        "p95_deg": 2.98,
+        "max_deg": 5.88
+      },
+      "hand_dir": {
+        "mean_deg": 6.56,
+        "p95_deg": 6.58,
+        "max_deg": 6.58
+      },
+      "palm_normal": {
+        "mean_deg": 68.41,
+        "p95_deg": 173.14,
+        "max_deg": 173.6
+      },
+      "thumb": {
+        "mean_deg": 80.27,
+        "p95_deg": 131.93,
+        "max_deg": 170.98
+      },
+      "fingers": {
+        "mean_deg": 38.0,
+        "p95_deg": 105.99,
+        "max_deg": 160.67
+      }
+    }
+  },
+  "NIA_SL_WORD1505_REAL02_F": {
+    "clip": "aihub_real02/word1505_real02.json",
+    "label_from_other_actor": "권투",
+    "frames": 43,
+    "duration_sec": 1.4,
+    "shoulder_width_m": 0.3041395727293638,
+    "neck_to_midhip_m": 0.5099764046502544,
+    "depth_corrected_frames": {
+      "left": 0,
+      "right": 0
+    },
+    "trim": "morpheme NIA_SL_WORD1505_REAL02_F (앞뒤 0.2초 여유)",
+    "gloss": [
+      "권투"
+    ],
+    "ik": true,
+    "avatar_scale": 0.7139,
+    "penetration_before_cm": {
+      "left": 5.79,
+      "right": 6.71
+    },
+    "penetration_after_cm": {
+      "left": 0.0,
+      "right": 0.0
+    },
+    "forward_offset_cm": {
+      "left": [
+        5.0,
+        8.3
+      ],
+      "right": [
+        5.0,
+        9.2
+      ]
+    },
+    "outward_offset_cm": {
+      "left": 0.0,
+      "right": 0.0
+    },
+    "trim_frames": [
+      29,
+      71
+    ],
+    "total_frames": 95,
+    "fps": 30.0,
+    "retarget_error_v2": {
+      "arm": {
+        "mean_deg": 8.52,
+        "p95_deg": 16.2,
+        "max_deg": 30.29
+      },
+      "hand_dir": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "palm_normal": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "thumb": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "fingers": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "wrist_position_cm": {
+        "mean": 0.0,
+        "max": 0.0,
+        "note": "어깨 중점 기준으로 축척한 원본 손목 위치와 아바타 손목 사이 거리"
+      }
+    },
+    "retarget_error_direction_only": {
+      "arm": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "hand_dir": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "palm_normal": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "thumb": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "fingers": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "wrist_position_cm": {
+        "mean": 7.2,
+        "max": 11.44,
+        "note": "어깨 중점 기준으로 축척한 원본 손목 위치와 아바타 손목 사이 거리"
+      }
+    },
+    "retarget_error_legacy": {
+      "arm": {
+        "mean_deg": 1.85,
+        "p95_deg": 5.98,
+        "max_deg": 11.98
+      },
+      "hand_dir": {
+        "mean_deg": 6.56,
+        "p95_deg": 6.58,
+        "max_deg": 6.58
+      },
+      "palm_normal": {
+        "mean_deg": 64.53,
+        "p95_deg": 115.47,
+        "max_deg": 148.99
+      },
+      "thumb": {
+        "mean_deg": 53.42,
+        "p95_deg": 118.85,
+        "max_deg": 148.92
+      },
+      "fingers": {
+        "mean_deg": 45.06,
+        "p95_deg": 108.98,
+        "max_deg": 144.59
+      }
+    }
+  },
+  "NIA_SL_WORD1506_REAL02_F": {
+    "clip": "aihub_real02/word1506_real02.json",
+    "label_from_other_actor": "그립다",
+    "frames": 46,
+    "duration_sec": 1.5,
+    "shoulder_width_m": 0.3039063721773534,
+    "neck_to_midhip_m": 0.5037820952306662,
+    "depth_corrected_frames": {
+      "left": 0,
+      "right": 0
+    },
+    "trim": "morpheme NIA_SL_WORD1506_REAL02_F (앞뒤 0.2초 여유)",
+    "gloss": [
+      "그립다"
+    ],
+    "ik": true,
+    "avatar_scale": 0.7144,
+    "penetration_before_cm": {
+      "left": 12.89,
+      "right": 0.0
+    },
+    "penetration_after_cm": {
+      "left": 0.0,
+      "right": 0.0
+    },
+    "forward_offset_cm": {
+      "left": [
+        5.0,
+        5.0
+      ],
+      "right": [
+        5.0,
+        5.0
+      ]
+    },
+    "outward_offset_cm": {
+      "left": 7.0,
+      "right": 0.0
+    },
+    "trim_frames": [
+      30,
+      75
+    ],
+    "total_frames": 104,
+    "fps": 30.0,
+    "retarget_error_v2": {
+      "arm": {
+        "mean_deg": 20.07,
+        "p95_deg": 35.23,
+        "max_deg": 35.76
+      },
+      "hand_dir": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "palm_normal": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "thumb": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "fingers": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "wrist_position_cm": {
+        "mean": 0.0,
+        "max": 0.0,
+        "note": "어깨 중점 기준으로 축척한 원본 손목 위치와 아바타 손목 사이 거리"
+      }
+    },
+    "retarget_error_direction_only": {
+      "arm": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "hand_dir": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "palm_normal": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "thumb": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "fingers": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "wrist_position_cm": {
+        "mean": 8.2,
+        "max": 10.77,
+        "note": "어깨 중점 기준으로 축척한 원본 손목 위치와 아바타 손목 사이 거리"
+      }
+    },
+    "retarget_error_legacy": {
+      "arm": {
+        "mean_deg": 1.18,
+        "p95_deg": 3.58,
+        "max_deg": 6.3
+      },
+      "hand_dir": {
+        "mean_deg": 6.56,
+        "p95_deg": 6.58,
+        "max_deg": 6.58
+      },
+      "palm_normal": {
+        "mean_deg": 46.43,
+        "p95_deg": 102.01,
+        "max_deg": 113.92
+      },
+      "thumb": {
+        "mean_deg": 60.74,
+        "p95_deg": 97.32,
+        "max_deg": 141.76
+      },
+      "fingers": {
+        "mean_deg": 24.16,
+        "p95_deg": 54.74,
+        "max_deg": 102.66
+      }
+    }
+  },
+  "NIA_SL_WORD1507_REAL02_F": {
+    "clip": "aihub_real02/word1507_real02.json",
+    "label_from_other_actor": "키우다",
+    "frames": 46,
+    "duration_sec": 1.5,
+    "shoulder_width_m": 0.29758651368131583,
+    "neck_to_midhip_m": 0.5052706335470131,
+    "depth_corrected_frames": {
+      "left": 0,
+      "right": 0
+    },
+    "trim": "morpheme NIA_SL_WORD1507_REAL02_F (앞뒤 0.2초 여유)",
+    "gloss": [
+      "키우다"
+    ],
+    "ik": true,
+    "avatar_scale": 0.7296,
+    "penetration_before_cm": {
+      "left": 1.5,
+      "right": 3.26
+    },
+    "penetration_after_cm": {
+      "left": 0.0,
+      "right": 0.0
+    },
+    "forward_offset_cm": {
+      "left": [
+        5.0,
+        5.0
+      ],
+      "right": [
+        5.0,
+        5.0
+      ]
+    },
+    "outward_offset_cm": {
+      "left": 0.0,
+      "right": 0.0
+    },
+    "trim_frames": [
+      24,
+      69
+    ],
+    "total_frames": 94,
+    "fps": 30.0,
+    "retarget_error_v2": {
+      "arm": {
+        "mean_deg": 7.29,
+        "p95_deg": 15.78,
+        "max_deg": 20.69
+      },
+      "hand_dir": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "palm_normal": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "thumb": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "fingers": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "wrist_position_cm": {
+        "mean": 0.0,
+        "max": 0.0,
+        "note": "어깨 중점 기준으로 축척한 원본 손목 위치와 아바타 손목 사이 거리"
+      }
+    },
+    "retarget_error_direction_only": {
+      "arm": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "hand_dir": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "palm_normal": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "thumb": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "fingers": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "wrist_position_cm": {
+        "mean": 7.04,
+        "max": 8.79,
+        "note": "어깨 중점 기준으로 축척한 원본 손목 위치와 아바타 손목 사이 거리"
+      }
+    },
+    "retarget_error_legacy": {
+      "arm": {
+        "mean_deg": 1.73,
+        "p95_deg": 7.18,
+        "max_deg": 11.9
+      },
+      "hand_dir": {
+        "mean_deg": 6.56,
+        "p95_deg": 6.58,
+        "max_deg": 6.58
+      },
+      "palm_normal": {
+        "mean_deg": 132.47,
+        "p95_deg": 164.85,
+        "max_deg": 172.75
+      },
+      "thumb": {
+        "mean_deg": 79.73,
+        "p95_deg": 148.67,
+        "max_deg": 167.92
+      },
+      "fingers": {
+        "mean_deg": 45.3,
+        "p95_deg": 112.76,
+        "max_deg": 161.2
+      }
+    }
+  },
+  "NIA_SL_WORD1508_REAL02_F": {
+    "clip": "aihub_real02/word1508_real02.json",
+    "label_from_other_actor": "힘",
+    "frames": 42,
+    "duration_sec": 1.3667,
+    "shoulder_width_m": 0.30506242393975697,
+    "neck_to_midhip_m": 0.5053241622958475,
+    "depth_corrected_frames": {
+      "left": 0,
+      "right": 0
+    },
+    "trim": "morpheme NIA_SL_WORD1508_REAL02_F (앞뒤 0.2초 여유)",
+    "gloss": [
+      "힘"
+    ],
+    "ik": true,
+    "avatar_scale": 0.7117,
+    "penetration_before_cm": {
+      "left": 13.37,
+      "right": 2.9
+    },
+    "penetration_after_cm": {
+      "left": 0.0,
+      "right": 0.0
+    },
+    "forward_offset_cm": {
+      "left": [
+        5.0,
+        5.0
+      ],
+      "right": [
+        5.0,
+        5.0
+      ]
+    },
+    "outward_offset_cm": {
+      "left": 5.0,
+      "right": 0.0
+    },
+    "trim_frames": [
+      35,
+      76
+    ],
+    "total_frames": 93,
+    "fps": 30.0,
+    "retarget_error_v2": {
+      "arm": {
+        "mean_deg": 16.87,
+        "p95_deg": 31.08,
+        "max_deg": 31.8
+      },
+      "hand_dir": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "palm_normal": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "thumb": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "fingers": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "wrist_position_cm": {
+        "mean": 0.0,
+        "max": 0.0,
+        "note": "어깨 중점 기준으로 축척한 원본 손목 위치와 아바타 손목 사이 거리"
+      }
+    },
+    "retarget_error_direction_only": {
+      "arm": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "hand_dir": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "palm_normal": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "thumb": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "fingers": {
+        "mean_deg": 0.0,
+        "p95_deg": 0.0,
+        "max_deg": 0.0
+      },
+      "wrist_position_cm": {
+        "mean": 7.9,
+        "max": 11.05,
+        "note": "어깨 중점 기준으로 축척한 원본 손목 위치와 아바타 손목 사이 거리"
+      }
+    },
+    "retarget_error_legacy": {
+      "arm": {
+        "mean_deg": 0.87,
+        "p95_deg": 2.94,
+        "max_deg": 6.49
+      },
+      "hand_dir": {
+        "mean_deg": 6.56,
+        "p95_deg": 6.58,
+        "max_deg": 6.58
+      },
+      "palm_normal": {
+        "mean_deg": 72.86,
+        "p95_deg": 158.69,
+        "max_deg": 173.63
+      },
+      "thumb": {
+        "mean_deg": 65.77,
+        "p95_deg": 127.62,
+        "max_deg": 159.32
+      },
+      "fingers": {
+        "mean_deg": 48.54,
+        "p95_deg": 140.03,
+        "max_deg": 169.52
+      }
+    }
+  }
+}

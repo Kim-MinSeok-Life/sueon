@@ -1,0 +1,623 @@
+{
+ "items": 3000,
+ "actors_per_item_hist": {
+  "16": 2994,
+  "15": 6
+ },
+ "label_inconsistent_items": 274,
+ "label_inconsistent_examples": {
+  "WORD0030": {
+   "REAL01": "결승전",
+   "REAL02": "결승전1",
+   "REAL03": "결승전",
+   "REAL04": "결승전",
+   "REAL05": "결승전",
+   "REAL06": "결승전",
+   "REAL07": "결승전",
+   "REAL08": "결승전",
+   "REAL09": "결승전",
+   "REAL10": "결승전",
+   "REAL11": "결승전",
+   "REAL12": "결승전",
+   "REAL13": "결승전",
+   "REAL14": "결승전",
+   "REAL15": "결승전",
+   "REAL16": "결승전"
+  },
+  "WORD0077": {
+   "REAL01": "배추국",
+   "REAL02": "배추국",
+   "REAL03": "배춧국",
+   "REAL04": "배춧국",
+   "REAL05": "배춧국",
+   "REAL06": "배춧국",
+   "REAL07": "배춧국",
+   "REAL08": "배추국",
+   "REAL09": "배추국",
+   "REAL10": "배춧국",
+   "REAL11": "배춧국",
+   "REAL12": "배춧국",
+   "REAL13": "배춧국",
+   "REAL14": "배추국",
+   "REAL15": "배춧국",
+   "REAL16": "배춧국"
+  },
+  "WORD0078": {
+   "REAL01": "꽈베기",
+   "REAL02": "꽈베기",
+   "REAL03": "꽈배기",
+   "REAL04": "꽈배기",
+   "REAL05": "꽈배기",
+   "REAL06": "꽈배기",
+   "REAL07": "꽈배기",
+   "REAL08": "꽈베기",
+   "REAL09": "꽈베기",
+   "REAL10": "꽈배기",
+   "REAL11": "꽈배기",
+   "REAL12": "꽈배기",
+   "REAL13": "꽈배기",
+   "REAL14": "꽈베기",
+   "REAL15": "꽈배기",
+   "REAL16": "꽈배기"
+  },
+  "WORD0085": {
+   "REAL01": "된장찌게",
+   "REAL02": "된장찌개",
+   "REAL03": "된장찌개",
+   "REAL04": "돼지고기",
+   "REAL05": "돼지고기",
+   "REAL06": "돼지고기",
+   "REAL07": "돼지고기",
+   "REAL08": "된장찌게",
+   "REAL09": "돼지고기",
+   "REAL10": "된장찌게",
+   "REAL11": "된장찌개",
+   "REAL12": "된장찌개",
+   "REAL13": "된장찌개",
+   "REAL14": "된장찌개",
+   "REAL15": "된장찌개",
+   "REAL16": "된장찌개"
+  },
+  "WORD0086": {
+   "REAL01": "돼지고기",
+   "REAL02": "돼지고기",
+   "REAL03": "돼지고기",
+   "REAL04": "된장찌개",
+   "REAL05": "된장찌개",
+   "REAL06": "된장찌개",
+   "REAL07": "된장찌개",
+   "REAL08": "돼지고기",
+   "REAL09": "된장찌개",
+   "REAL10": "돼지고기",
+   "REAL11": "돼지고기",
+   "REAL12": "돼지고기",
+   "REAL13": "돼지고기",
+   "REAL14": "돼지고기",
+   "REAL15": "돼지고기",
+   "REAL16": "돼지고기"
+  },
+  "WORD0111": {
+   "REAL01": "유리그릇",
+   "REAL02": "유리그릇",
+   "REAL03": "유리그릇",
+   "REAL04": "유리그릇",
+   "REAL05": "유리그릇",
+   "REAL06": "유리그릇",
+   "REAL07": "유리그릇",
+   "REAL08": "백설기",
+   "REAL09": "유리그릇",
+   "REAL10": "유리그릇",
+   "REAL11": "유리그릇",
+   "REAL12": "유리그릇",
+   "REAL13": "유리그릇",
+   "REAL14": "유리그릇",
+   "REAL15": "유리그릇",
+   "REAL16": "유리그릇"
+  },
+  "WORD0135": {
+   "REAL01": "경고",
+   "REAL02": "경고",
+   "REAL03": "경고",
+   "REAL04": "경고",
+   "REAL05": "경고",
+   "REAL06": "경고",
+   "REAL07": "체감",
+   "REAL08": "경고",
+   "REAL09": "경고",
+   "REAL10": "경고",
+   "REAL11": "경고",
+   "REAL12": "경고",
+   "REAL13": "경고",
+   "REAL14": "경고",
+   "REAL15": "경고",
+   "REAL16": "경고"
+  },
+  "WORD0161": {
+   "REAL01": "운동선수",
+   "REAL02": "운동선수",
+   "REAL03": "운동선수",
+   "REAL04": "운동선수",
+   "REAL05": "운동선수",
+   "REAL06": "운동선수",
+   "REAL07": "강요",
+   "REAL08": "운동선수",
+   "REAL09": "운동선수",
+   "REAL10": "운동선수",
+   "REAL11": "운동선수",
+   "REAL12": "운동선수",
+   "REAL13": "운동선수",
+   "REAL14": "운동선수",
+   "REAL15": "운동선수",
+   "REAL16": "운동선수"
+  },
+  "WORD0164": {
+   "REAL01": "이력서",
+   "REAL02": "이력서",
+   "REAL03": "이력서",
+   "REAL04": "이력서",
+   "REAL05": "이력서",
+   "REAL06": "이력서",
+   "REAL07": "이력서",
+   "REAL08": "이력서",
+   "REAL09": "이력서",
+   "REAL10": "이력서",
+   "REAL11": "이력서",
+   "REAL12": "이력서",
+   "REAL13": "이력서",
+   "REAL14": "이력서",
+   "REAL15": "이력서",
+   "REAL16": "자가용"
+  },
+  "WORD0170": {
+   "REAL01": "출근",
+   "REAL02": "출근",
+   "REAL03": "출근",
+   "REAL04": "출근",
+   "REAL05": "출근",
+   "REAL06": "출근",
+   "REAL07": "채팅",
+   "REAL08": "출근",
+   "REAL09": "출근",
+   "REAL10": "출근",
+   "REAL11": "출근",
+   "REAL12": "출근",
+   "REAL13": "출근",
+   "REAL14": "출근",
+   "REAL15": "출근",
+   "REAL16": "출근"
+  },
+  "WORD0188": {
+   "REAL01": "교통법교육",
+   "REAL02": "교통법교육",
+   "REAL03": "교통법교육\n\n",
+   "REAL04": "교통법교육",
+   "REAL05": "교통법교육",
+   "REAL06": "교통법교육",
+   "REAL07": "교통법교육",
+   "REAL08": "교통법교육",
+   "REAL09": "교통법교육",
+   "REAL10": "교통법교육",
+   "REAL11": "교통법교육",
+   "REAL12": "교통법교육",
+   "REAL13": "교통법교육",
+   "REAL14": "교통법교육",
+   "REAL15": "교통법교육",
+   "REAL16": "교통법교육"
+  },
+  "WORD0220": {
+   "REAL01": "독서실",
+   "REAL02": "독서실",
+   "REAL03": "도서관",
+   "REAL04": "독서실",
+   "REAL05": "독서실",
+   "REAL06": "독서실",
+   "REAL07": "독서실",
+   "REAL08": "독서실",
+   "REAL09": "독서실",
+   "REAL10": "독서실",
+   "REAL11": "독서실",
+   "REAL12": "독서실",
+   "REAL13": "독서실",
+   "REAL14": "독서실",
+   "REAL15": "독서실",
+   "REAL16": "독서실"
+  },
+  "WORD0243": {
+   "REAL01": "경기도",
+   "REAL02": "경남",
+   "REAL03": "경남",
+   "REAL04": "경남",
+   "REAL05": "경남",
+   "REAL06": "경남",
+   "REAL07": "경남",
+   "REAL08": "경남",
+   "REAL09": "경남",
+   "REAL10": "경남",
+   "REAL11": "경남",
+   "REAL12": "경남",
+   "REAL13": "경남",
+   "REAL14": "경남",
+   "REAL15": "경남",
+   "REAL16": "경남"
+  },
+  "WORD0309": {
+   "REAL01": "어젯밤",
+   "REAL02": "어제밤",
+   "REAL03": "어젯밤",
+   "REAL04": "어젯밤",
+   "REAL05": "어젯밤",
+   "REAL06": "어젯밤",
+   "REAL07": "어젯밤",
+   "REAL08": "어제밤",
+   "REAL09": "어제밤",
+   "REAL10": "어젯밤",
+   "REAL11": "어젯밤",
+   "REAL12": "어젯밤",
+   "REAL13": "어젯밤",
+   "REAL14": "어젯밤",
+   "REAL15": "어젯밤",
+   "REAL16": "어제밤"
+  },
+  "WORD0324": {
+   "REAL01": "분혹색",
+   "REAL02": "분홍색",
+   "REAL03": "분홍색",
+   "REAL04": "분홍색",
+   "REAL05": "분홍색",
+   "REAL06": "분홍색",
+   "REAL07": "분홍색",
+   "REAL08": "분홍색",
+   "REAL09": "분홍색",
+   "REAL10": "분홍색",
+   "REAL11": "분홍색",
+   "REAL12": "분홍색",
+   "REAL13": "분홍색",
+   "REAL14": "분홍색",
+   "REAL15": "분홍색",
+   "REAL16": "분홍색"
+  }
+ },
+ "real25_files": 275,
+ "real25_items": [
+  "WORD1002",
+  "WORD1005",
+  "WORD1006",
+  "WORD1007",
+  "WORD1008",
+  "WORD1009",
+  "WORD1011",
+  "WORD1012",
+  "WORD1014",
+  "WORD1015",
+  "WORD1017",
+  "WORD1018",
+  "WORD1020",
+  "WORD1021",
+  "WORD1023",
+  "WORD1024",
+  "WORD1026",
+  "WORD1027",
+  "WORD1028",
+  "WORD1029",
+  "WORD1037",
+  "WORD1038",
+  "WORD1040",
+  "WORD1041",
+  "WORD1043",
+  "WORD1044",
+  "WORD1049",
+  "WORD1050",
+  "WORD1052",
+  "WORD1053",
+  "WORD1055",
+  "WORD1056",
+  "WORD1058",
+  "WORD1059",
+  "WORD1061",
+  "WORD1062",
+  "WORD1067",
+  "WORD1068",
+  "WORD1073",
+  "WORD1074",
+  "WORD1076",
+  "WORD1077",
+  "WORD1079",
+  "WORD1080",
+  "WORD1081",
+  "WORD1083",
+  "WORD1084",
+  "WORD1086",
+  "WORD1087",
+  "WORD1089",
+  "WORD1090",
+  "WORD1092",
+  "WORD1093",
+  "WORD1099",
+  "WORD1100"
+ ],
+ "real02_missing_items": [
+  "WORD1002",
+  "WORD1005",
+  "WORD1006",
+  "WORD1007",
+  "WORD1008",
+  "WORD1009",
+  "WORD1011",
+  "WORD1012",
+  "WORD1014",
+  "WORD1015",
+  "WORD1017",
+  "WORD1018",
+  "WORD1020",
+  "WORD1021",
+  "WORD1023",
+  "WORD1024",
+  "WORD1026",
+  "WORD1027",
+  "WORD1028",
+  "WORD1029",
+  "WORD1037",
+  "WORD1038",
+  "WORD1040",
+  "WORD1041",
+  "WORD1043",
+  "WORD1044",
+  "WORD1049",
+  "WORD1050",
+  "WORD1052",
+  "WORD1053",
+  "WORD1055",
+  "WORD1056",
+  "WORD1058",
+  "WORD1059",
+  "WORD1061",
+  "WORD1062",
+  "WORD1067",
+  "WORD1068",
+  "WORD1073",
+  "WORD1074",
+  "WORD1076",
+  "WORD1077",
+  "WORD1079",
+  "WORD1080",
+  "WORD1081",
+  "WORD1083",
+  "WORD1084",
+  "WORD1086",
+  "WORD1087",
+  "WORD1089",
+  "WORD1090",
+  "WORD1092",
+  "WORD1093",
+  "WORD1099",
+  "WORD1100"
+ ],
+ "real25_equals_missing02": true,
+ "badnames": [
+  "morpheme/09/NIA_SL_WORD0557_REAL09_U_D_morpheme.json",
+  "morpheme/09/NIA_SL_WORD0557_REAL09_U_F_morpheme.json",
+  "morpheme/09/NIA_SL_WORD0557_REAL09_U_L_morpheme.json",
+  "morpheme/09/NIA_SL_WORD0557_REAL09_U_R_morpheme.json",
+  "morpheme/09/NIA_SL_WORD0557_REAL09_U_U_morpheme.json",
+  "morpheme/10/NIA_SL_WORD0681_REAL10_U_D_morpheme.json",
+  "morpheme/10/NIA_SL_WORD0681_REAL10_U_F_morpheme.json",
+  "morpheme/10/NIA_SL_WORD0681_REAL10_U_L_morpheme.json",
+  "morpheme/10/NIA_SL_WORD0681_REAL10_U_R_morpheme.json",
+  "morpheme/10/NIA_SL_WORD0681_REAL10_U_U_morpheme.json",
+  "morpheme/10/NIA_SL_WORD1536_REAL10_U_D_morpheme.json",
+  "morpheme/10/NIA_SL_WORD1536_REAL10_U_F_morpheme.json",
+  "morpheme/10/NIA_SL_WORD1536_REAL10_U_L_morpheme.json",
+  "morpheme/10/NIA_SL_WORD1536_REAL10_U_R_morpheme.json",
+  "morpheme/10/NIA_SL_WORD1536_REAL10_U_U_morpheme.json",
+  "morpheme/14/NIA_SL_WORD0446_REAL14_U_D_morpheme.json",
+  "morpheme/14/NIA_SL_WORD0446_REAL14_U_F_morpheme.json",
+  "morpheme/14/NIA_SL_WORD0446_REAL14_U_L_morpheme.json",
+  "morpheme/14/NIA_SL_WORD0446_REAL14_U_R_morpheme.json",
+  "morpheme/14/NIA_SL_WORD0446_REAL14_U_U_morpheme.json",
+  "morpheme/14/NIA_SL_WORD0499_REAL14_U_D_morpheme.json",
+  "morpheme/14/NIA_SL_WORD0499_REAL14_U_F_morpheme.json",
+  "morpheme/14/NIA_SL_WORD0499_REAL14_U_L_morpheme.json",
+  "morpheme/14/NIA_SL_WORD0499_REAL14_U_R_morpheme.json",
+  "morpheme/14/NIA_SL_WORD0499_REAL14_U_U_morpheme.json",
+  "morpheme/14/NIA_SL_WORD0500_REAL14_U_D_morpheme.json",
+  "morpheme/14/NIA_SL_WORD0500_REAL14_U_F_morpheme.json",
+  "morpheme/14/NIA_SL_WORD0500_REAL14_U_L_morpheme.json",
+  "morpheme/14/NIA_SL_WORD0500_REAL14_U_R_morpheme.json",
+  "morpheme/14/NIA_SL_WORD0500_REAL14_U_U_morpheme.json"
+ ],
+ "multi_segment_F": [
+  [
+   "morpheme/02/NIA_SL_WORD1056_REAL25_F_morpheme.json",
+   0
+  ],
+  [
+   "morpheme/02/NIA_SL_WORD2742_REAL02_F_morpheme.json",
+   0
+  ],
+  [
+   "morpheme/04/NIA_SL_WORD0796_REAL04_F_morpheme.json",
+   0
+  ],
+  [
+   "morpheme/09/NIA_SL_WORD1082_REAL09_F_morpheme.json",
+   0
+  ],
+  [
+   "morpheme/09/NIA_SL_WORD1612_REAL09_F_morpheme.json",
+   0
+  ],
+  [
+   "morpheme/09/NIA_SL_WORD1613_REAL09_F_morpheme.json",
+   0
+  ],
+  [
+   "morpheme/09/NIA_SL_WORD1614_REAL09_F_morpheme.json",
+   0
+  ],
+  [
+   "morpheme/09/NIA_SL_WORD1615_REAL09_F_morpheme.json",
+   0
+  ],
+  [
+   "morpheme/13/NIA_SL_WORD0528_REAL13_F_morpheme.json",
+   0
+  ],
+  [
+   "morpheme/14/NIA_SL_WORD1528_REAL14_F_morpheme.json",
+   0
+  ]
+ ],
+ "multi_segment_count": 11,
+ "kp_vs_morph_duration_checked": 3000,
+ "kp_vs_morph_duration_over_0.1s": 751,
+ "examples_big": [
+  [
+   "NIA_SL_WORD0007_REAL02_F",
+   -4.15
+  ],
+  [
+   "NIA_SL_WORD0014_REAL02_F",
+   -1.051
+  ],
+  [
+   "NIA_SL_WORD0040_REAL02_F",
+   -3.017
+  ],
+  [
+   "NIA_SL_WORD0128_REAL02_F",
+   -2.684
+  ],
+  [
+   "NIA_SL_WORD0304_REAL02_F",
+   -4.417
+  ],
+  [
+   "NIA_SL_WORD0359_REAL02_F",
+   -3.084
+  ],
+  [
+   "NIA_SL_WORD0447_REAL02_F",
+   -2.017
+  ],
+  [
+   "NIA_SL_WORD0568_REAL02_F",
+   -2.083
+  ],
+  [
+   "NIA_SL_WORD0711_REAL02_F",
+   -2.584
+  ],
+  [
+   "NIA_SL_WORD0796_REAL02_F",
+   -0.367
+  ]
+ ],
+ "duration_diff_stats": [
+  -4.417,
+  1.183
+ ],
+ "real02_targets": {
+  "WORD0001": "고민",
+  "WORD1501": "운전면허",
+  "WORD1502": "골키퍼",
+  "WORD1503": "구경",
+  "WORD1504": "성토",
+  "WORD1505": "권투",
+  "WORD1506": "그립다",
+  "WORD1507": "키우다",
+  "WORD1508": "힘"
+ },
+ "real16_targets": {
+  "WORD1501": "운전면허",
+  "WORD1502": "골키퍼",
+  "WORD1503": "구경",
+  "WORD1504": "성토",
+  "WORD1505": "권투",
+  "WORD1506": "그립다",
+  "WORD1507": "키우다",
+  "WORD1508": "힘"
+ },
+ "real02_segments": {
+  "NIA_SL_WORD0001_REAL02_F": {
+   "start": 3.066,
+   "end": 4.404,
+   "attributes": [
+    {
+     "name": "고민"
+    }
+   ]
+  },
+  "NIA_SL_WORD1501_REAL02_F": {
+   "start": 1.531,
+   "end": 3.305,
+   "attributes": [
+    {
+     "name": "운전면허"
+    }
+   ]
+  },
+  "NIA_SL_WORD1502_REAL02_F": {
+   "start": 1.646,
+   "end": 2.626,
+   "attributes": [
+    {
+     "name": "골키퍼"
+    }
+   ]
+  },
+  "NIA_SL_WORD1503_REAL02_F": {
+   "start": 1.676,
+   "end": 2.706,
+   "attributes": [
+    {
+     "name": "구경"
+    }
+   ]
+  },
+  "NIA_SL_WORD1504_REAL02_F": {
+   "start": 1.509,
+   "end": 3.033,
+   "attributes": [
+    {
+     "name": "성토"
+    }
+   ]
+  },
+  "NIA_SL_WORD1505_REAL02_F": {
+   "start": 1.183,
+   "end": 2.163,
+   "attributes": [
+    {
+     "name": "권투"
+    }
+   ]
+  },
+  "NIA_SL_WORD1506_REAL02_F": {
+   "start": 1.204,
+   "end": 2.306,
+   "attributes": [
+    {
+     "name": "그립다"
+    }
+   ]
+  },
+  "NIA_SL_WORD1507_REAL02_F": {
+   "start": 0.985,
+   "end": 2.087,
+   "attributes": [
+    {
+     "name": "키우다"
+    }
+   ]
+  },
+  "NIA_SL_WORD1508_REAL02_F": {
+   "start": 1.354,
+   "end": 2.334,
+   "attributes": [
+    {
+     "name": "힘"
+    }
+   ]
+  }
+ }
+}

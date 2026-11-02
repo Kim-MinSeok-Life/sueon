@@ -1,0 +1,6591 @@
+{
+ "format": "sueon-gloss-library/v1",
+ "description": "AI-Hub REAL 문장 3D 키포인트를 같은 촬영본 형태소 구간으로 잘라 만든 수어 단어 동작 사전. 실제 문장 속 동작(앞뒤 전환 포함). 한국수어 정확성 미검증, 재배포 권한 미확인.",
+ "actor": "REAL02",
+ "pad_sec": 0.15,
+ "glosses": 317,
+ "skipped_misaligned_sentences": 71,
+ "items": {
+  "왼쪽": {
+   "id": "g0001",
+   "path": "/motions/aihub_gloss/g0001.json",
+   "source_take": "NIA_SL_SEN0001_REAL02_F",
+   "segment_sec": [
+    1.472,
+    2.39
+   ],
+   "position": "1/1",
+   "duration": 1.2,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "오른쪽": {
+   "id": "g0002",
+   "path": "/motions/aihub_gloss/g0002.json",
+   "source_take": "NIA_SL_SEN0003_REAL02_F",
+   "segment_sec": [
+    1.536,
+    2.657
+   ],
+   "position": "1/1",
+   "duration": 1.4,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "운전": {
+   "id": "g0003",
+   "path": "/motions/aihub_gloss/g0003.json",
+   "source_take": "NIA_SL_SEN0009_REAL02_F",
+   "segment_sec": [
+    1.741,
+    2.241
+   ],
+   "position": "1/2",
+   "duration": 0.8,
+   "occurrences": 3,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "천천히"
+   ]
+  },
+  "천천히": {
+   "id": "g0004",
+   "path": "/motions/aihub_gloss/g0004.json",
+   "source_take": "NIA_SL_SEN0009_REAL02_F",
+   "segment_sec": [
+    2.559,
+    3.572
+   ],
+   "position": "2/2",
+   "duration": 1.3333,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "운전"
+   ]
+  },
+  "시간": {
+   "id": "g0005",
+   "path": "/motions/aihub_gloss/g0005.json",
+   "source_take": "NIA_SL_SEN0013_REAL02_F",
+   "segment_sec": [
+    1.661,
+    2.161
+   ],
+   "position": "1/2",
+   "duration": 0.8,
+   "occurrences": 22,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "급하다"
+   ]
+  },
+  "급하다": {
+   "id": "g0006",
+   "path": "/motions/aihub_gloss/g0006.json",
+   "source_take": "NIA_SL_SEN0015_REAL02_F",
+   "segment_sec": [
+    1.62,
+    2.633
+   ],
+   "position": "1/1",
+   "duration": 1.3,
+   "occurrences": 4,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "약속": {
+   "id": "g0007",
+   "path": "/motions/aihub_gloss/g0007.json",
+   "source_take": "NIA_SL_SEN0017_REAL02_F",
+   "segment_sec": [
+    1.46,
+    1.96
+   ],
+   "position": "1/2",
+   "duration": 0.8,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "늦다"
+   ]
+  },
+  "늦다": {
+   "id": "g0008",
+   "path": "/motions/aihub_gloss/g0008.json",
+   "source_take": "NIA_SL_SEN0017_REAL02_F",
+   "segment_sec": [
+    2.129,
+    3.176
+   ],
+   "position": "2/2",
+   "duration": 1.3667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "약속"
+   ]
+  },
+  "나": {
+   "id": "g0009",
+   "path": "/motions/aihub_gloss/g0009.json",
+   "source_take": "NIA_SL_SEN0019_REAL02_F",
+   "segment_sec": [
+    1.488,
+    2.406
+   ],
+   "position": "1/1",
+   "duration": 1.2333,
+   "occurrences": 4,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "당신": {
+   "id": "g0010",
+   "path": "/motions/aihub_gloss/g0010.json",
+   "source_take": "NIA_SL_SEN0021_REAL02_F",
+   "segment_sec": [
+    1.756,
+    2.695
+   ],
+   "position": "1/1",
+   "duration": 1.2333,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "그남자": {
+   "id": "g0011",
+   "path": "/motions/aihub_gloss/g0011.json",
+   "source_take": "NIA_SL_SEN0023_REAL02_F",
+   "segment_sec": [
+    1.92,
+    2.42
+   ],
+   "position": "1/2",
+   "duration": 0.8,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "맞다"
+   ]
+  },
+  "말하다": {
+   "id": "g0012",
+   "path": "/motions/aihub_gloss/g0012.json",
+   "source_take": "NIA_SL_SEN0025_REAL02_F",
+   "segment_sec": [
+    3.034,
+    3.534
+   ],
+   "position": "1/2",
+   "duration": 0.8,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "잘못"
+   ]
+  },
+  "잘못": {
+   "id": "g0013",
+   "path": "/motions/aihub_gloss/g0013.json",
+   "source_take": "NIA_SL_SEN0025_REAL02_F",
+   "segment_sec": [
+    3.676,
+    4.824
+   ],
+   "position": "2/2",
+   "duration": 1.4333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "말하다"
+   ]
+  },
+  "위험": {
+   "id": "g0014",
+   "path": "/motions/aihub_gloss/g0014.json",
+   "source_take": "NIA_SL_SEN0027_REAL02_F",
+   "segment_sec": [
+    1.433,
+    2.503
+   ],
+   "position": "1/1",
+   "duration": 1.4,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "항상": {
+   "id": "g0015",
+   "path": "/motions/aihub_gloss/g0015.json",
+   "source_take": "NIA_SL_SEN0029_REAL02_F",
+   "segment_sec": [
+    1.485,
+    2.672
+   ],
+   "position": "1/1",
+   "duration": 1.5,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "원래": {
+   "id": "g0016",
+   "path": "/motions/aihub_gloss/g0016.json",
+   "source_take": "NIA_SL_SEN0031_REAL02_F",
+   "segment_sec": [
+    1.528,
+    2.447
+   ],
+   "position": "1/1",
+   "duration": 1.2333,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "오천원": {
+   "id": "g0017",
+   "path": "/motions/aihub_gloss/g0017.json",
+   "source_take": "NIA_SL_SEN0033_REAL02_F",
+   "segment_sec": [
+    1.49,
+    2.547
+   ],
+   "position": "1/1",
+   "duration": 1.3667,
+   "occurrences": 3,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "기본": {
+   "id": "g0018",
+   "path": "/motions/aihub_gloss/g0018.json",
+   "source_take": "NIA_SL_SEN0037_REAL02_F",
+   "segment_sec": [
+    2.799,
+    3.299
+   ],
+   "position": "2/3",
+   "duration": 0.8,
+   "occurrences": 4,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "택시",
+    "오천원"
+   ]
+  },
+  "얼마": {
+   "id": "g0019",
+   "path": "/motions/aihub_gloss/g0019.json",
+   "source_take": "NIA_SL_SEN0038_REAL02_F",
+   "segment_sec": [
+    3.379,
+    4.128
+   ],
+   "position": "4/4",
+   "duration": 1.0333,
+   "occurrences": 6,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "택시",
+    "기본",
+    "돈"
+   ]
+  },
+  "만원": {
+   "id": "g0020",
+   "path": "/motions/aihub_gloss/g0020.json",
+   "source_take": "NIA_SL_SEN0040_REAL02_F",
+   "segment_sec": [
+    3.862,
+    4.879
+   ],
+   "position": "3/3",
+   "duration": 1.3333,
+   "occurrences": 4,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "택시",
+    "기본"
+   ]
+  },
+  "밤": {
+   "id": "g0021",
+   "path": "/motions/aihub_gloss/g0021.json",
+   "source_take": "NIA_SL_SEN0043_REAL02_F",
+   "segment_sec": [
+    1.565,
+    2.065
+   ],
+   "position": "1/5",
+   "duration": 0.8,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "12시",
+    "후",
+    "돈",
+    "추가"
+   ]
+  },
+  "12시": {
+   "id": "g0022",
+   "path": "/motions/aihub_gloss/g0022.json",
+   "source_take": "NIA_SL_SEN0043_REAL02_F",
+   "segment_sec": [
+    2.237,
+    2.737
+   ],
+   "position": "2/5",
+   "duration": 0.8,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "밤",
+    "후",
+    "돈",
+    "추가"
+   ]
+  },
+  "후": {
+   "id": "g0023",
+   "path": "/motions/aihub_gloss/g0023.json",
+   "source_take": "NIA_SL_SEN0043_REAL02_F",
+   "segment_sec": [
+    2.91,
+    3.41
+   ],
+   "position": "3/5",
+   "duration": 0.8,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "밤",
+    "12시",
+    "돈",
+    "추가"
+   ]
+  },
+  "추가": {
+   "id": "g0024",
+   "path": "/motions/aihub_gloss/g0024.json",
+   "source_take": "NIA_SL_SEN0043_REAL02_F",
+   "segment_sec": [
+    4.013,
+    4.755
+   ],
+   "position": "5/5",
+   "duration": 1.0333,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "밤",
+    "12시",
+    "후",
+    "돈"
+   ]
+  },
+  "장애인복지카드": {
+   "id": "g0025",
+   "path": "/motions/aihub_gloss/g0025.json",
+   "source_take": "NIA_SL_SEN0049_REAL02_F",
+   "segment_sec": [
+    1.608,
+    3.26
+   ],
+   "position": "1/1",
+   "duration": 1.9333,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "어린이교통카드": {
+   "id": "g0026",
+   "path": "/motions/aihub_gloss/g0026.json",
+   "source_take": "NIA_SL_SEN0051_REAL02_F",
+   "segment_sec": [
+    1.392,
+    3.436
+   ],
+   "position": "1/1",
+   "duration": 2.3667,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "1회": {
+   "id": "g0027",
+   "path": "/motions/aihub_gloss/g0027.json",
+   "source_take": "NIA_SL_SEN0053_REAL02_F",
+   "segment_sec": [
+    2.302,
+    3.268
+   ],
+   "position": "2/2",
+   "duration": 1.2667,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "카드"
+   ]
+  },
+  "카드": {
+   "id": "g0028",
+   "path": "/motions/aihub_gloss/g0028.json",
+   "source_take": "NIA_SL_SEN0054_REAL02_F",
+   "segment_sec": [
+    1.41,
+    1.91
+   ],
+   "position": "1/3",
+   "duration": 0.8,
+   "occurrences": 63,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "1회",
+    "되다"
+   ]
+  },
+  "충전": {
+   "id": "g0029",
+   "path": "/motions/aihub_gloss/g0029.json",
+   "source_take": "NIA_SL_SEN0055_REAL02_F",
+   "segment_sec": [
+    2.602,
+    3.472
+   ],
+   "position": "3/3",
+   "duration": 1.1667,
+   "occurrences": 4,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지금",
+    "카드"
+   ]
+  },
+  "끝": {
+   "id": "g0030",
+   "path": "/motions/aihub_gloss/g0030.json",
+   "source_take": "NIA_SL_SEN0058_REAL02_F",
+   "segment_sec": [
+    2.123,
+    3.073
+   ],
+   "position": "2/2",
+   "duration": 1.2667,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "돈받다"
+   ]
+  },
+  "표": {
+   "id": "g0031",
+   "path": "/motions/aihub_gloss/g0031.json",
+   "source_take": "NIA_SL_SEN0059_REAL02_F",
+   "segment_sec": [
+    1.404,
+    1.904
+   ],
+   "position": "1/2",
+   "duration": 0.8,
+   "occurrences": 4,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "사다"
+   ]
+  },
+  "계산": {
+   "id": "g0032",
+   "path": "/motions/aihub_gloss/g0032.json",
+   "source_take": "NIA_SL_SEN0061_REAL02_F",
+   "segment_sec": [
+    2.384,
+    2.884
+   ],
+   "position": "2/3",
+   "duration": 0.8,
+   "occurrences": 8,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "돈",
+    "잘못하다"
+   ]
+  },
+  "일정하다": {
+   "id": "g0033",
+   "path": "/motions/aihub_gloss/g0033.json",
+   "source_take": "NIA_SL_SEN0063_REAL02_F",
+   "segment_sec": [
+    2.999,
+    3.805
+   ],
+   "position": "3/4",
+   "duration": 1.1333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "시간",
+    "위아래"
+   ]
+  },
+  "위아래": {
+   "id": "g0034",
+   "path": "/motions/aihub_gloss/g0034.json",
+   "source_take": "NIA_SL_SEN0063_REAL02_F",
+   "segment_sec": [
+    4.016,
+    5.159
+   ],
+   "position": "4/4",
+   "duration": 1.4333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "시간",
+    "일정하다"
+   ]
+  },
+  "잘못하다": {
+   "id": "g0035",
+   "path": "/motions/aihub_gloss/g0035.json",
+   "source_take": "NIA_SL_SEN0065_REAL02_F",
+   "segment_sec": [
+    3.353,
+    4.271
+   ],
+   "position": "3/3",
+   "duration": 1.2333,
+   "occurrences": 3,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "사람",
+    "계산"
+   ]
+  },
+  "사람": {
+   "id": "g0036",
+   "path": "/motions/aihub_gloss/g0036.json",
+   "source_take": "NIA_SL_SEN0065_REAL02_F",
+   "segment_sec": [
+    2.125,
+    2.625
+   ],
+   "position": "1/3",
+   "duration": 0.8,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "계산",
+    "잘못하다"
+   ]
+  },
+  "틀리다": {
+   "id": "g0037",
+   "path": "/motions/aihub_gloss/g0037.json",
+   "source_take": "NIA_SL_SEN0066_REAL02_F",
+   "segment_sec": [
+    2.791,
+    3.838
+   ],
+   "position": "3/3",
+   "duration": 1.3667,
+   "occurrences": 3,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "사람",
+    "계산"
+   ]
+  },
+  "2호": {
+   "id": "g0038",
+   "path": "/motions/aihub_gloss/g0038.json",
+   "source_take": "NIA_SL_SEN0071_REAL02_F",
+   "segment_sec": [
+    1.759,
+    2.983
+   ],
+   "position": "1/1",
+   "duration": 1.5333,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "여기": {
+   "id": "g0039",
+   "path": "/motions/aihub_gloss/g0039.json",
+   "source_take": "NIA_SL_SEN0075_REAL02_F",
+   "segment_sec": [
+    1.69,
+    2.19
+   ],
+   "position": "1/3",
+   "duration": 0.8,
+   "occurrences": 73,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "명동",
+    "지하철"
+   ]
+  },
+  "명동": {
+   "id": "g0040",
+   "path": "/motions/aihub_gloss/g0040.json",
+   "source_take": "NIA_SL_SEN0075_REAL02_F",
+   "segment_sec": [
+    2.353,
+    2.853
+   ],
+   "position": "2/3",
+   "duration": 0.8,
+   "occurrences": 26,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "여기",
+    "지하철"
+   ]
+  },
+  "신촌": {
+   "id": "g0041",
+   "path": "/motions/aihub_gloss/g0041.json",
+   "source_take": "NIA_SL_SEN0078_REAL02_F",
+   "segment_sec": [
+    2.641,
+    3.141
+   ],
+   "position": "2/3",
+   "duration": 0.8,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "여기",
+    "지하철"
+   ]
+  },
+  "서울": {
+   "id": "g0042",
+   "path": "/motions/aihub_gloss/g0042.json",
+   "source_take": "NIA_SL_SEN0079_REAL02_F",
+   "segment_sec": [
+    2.148,
+    2.648
+   ],
+   "position": "2/3",
+   "duration": 0.8,
+   "occurrences": 4,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "여기",
+    "지하철"
+   ]
+  },
+  "1호": {
+   "id": "g0043",
+   "path": "/motions/aihub_gloss/g0043.json",
+   "source_take": "NIA_SL_SEN0084_REAL02_F",
+   "segment_sec": [
+    2.095,
+    2.595
+   ],
+   "position": "2/3",
+   "duration": 0.8,
+   "occurrences": 14,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "여기",
+    "되다"
+   ]
+  },
+  "기차": {
+   "id": "g0044",
+   "path": "/motions/aihub_gloss/g0044.json",
+   "source_take": "NIA_SL_SEN0085_REAL02_F",
+   "segment_sec": [
+    2.317,
+    2.817
+   ],
+   "position": "2/3",
+   "duration": 0.8,
+   "occurrences": 21,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "여기",
+    "되다"
+   ]
+  },
+  "다음": {
+   "id": "g0045",
+   "path": "/motions/aihub_gloss/g0045.json",
+   "source_take": "NIA_SL_SEN0091_REAL02_F",
+   "segment_sec": [
+    2.044,
+    2.544
+   ],
+   "position": "2/3",
+   "duration": 0.8,
+   "occurrences": 385,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "하나",
+    "도착"
+   ]
+  },
+  "하나": {
+   "id": "g0046",
+   "path": "/motions/aihub_gloss/g0046.json",
+   "source_take": "NIA_SL_SEN0091_REAL02_F",
+   "segment_sec": [
+    1.317,
+    1.817
+   ],
+   "position": "1/3",
+   "duration": 0.8,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "다음",
+    "도착"
+   ]
+  },
+  "국립박물관": {
+   "id": "g0047",
+   "path": "/motions/aihub_gloss/g0047.json",
+   "source_take": "NIA_SL_SEN0093_REAL02_F",
+   "segment_sec": [
+    3.019,
+    4.596
+   ],
+   "position": "3/3",
+   "duration": 1.8667,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "도착",
+    "곳"
+   ]
+  },
+  "빨리": {
+   "id": "g0048",
+   "path": "/motions/aihub_gloss/g0048.json",
+   "source_take": "NIA_SL_SEN0095_REAL02_F",
+   "segment_sec": [
+    2.784,
+    3.284
+   ],
+   "position": "2/3",
+   "duration": 0.8,
+   "occurrences": 16,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "오다오다"
+   ]
+  },
+  "오다오다": {
+   "id": "g0049",
+   "path": "/motions/aihub_gloss/g0049.json",
+   "source_take": "NIA_SL_SEN0095_REAL02_F",
+   "segment_sec": [
+    3.359,
+    4.129
+   ],
+   "position": "3/3",
+   "duration": 1.0667,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "빨리"
+   ]
+  },
+  "지하철오다": {
+   "id": "g0050",
+   "path": "/motions/aihub_gloss/g0050.json",
+   "source_take": "NIA_SL_SEN0097_REAL02_F",
+   "segment_sec": [
+    1.475,
+    2.088
+   ],
+   "position": "1/2",
+   "duration": 0.9,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "중"
+   ]
+  },
+  "중": {
+   "id": "g0051",
+   "path": "/motions/aihub_gloss/g0051.json",
+   "source_take": "NIA_SL_SEN0097_REAL02_F",
+   "segment_sec": [
+    2.234,
+    3.538
+   ],
+   "position": "2/2",
+   "duration": 1.5667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철오다"
+   ]
+  },
+  "4사람": {
+   "id": "g0052",
+   "path": "/motions/aihub_gloss/g0052.json",
+   "source_take": "NIA_SL_SEN0099_REAL02_F",
+   "segment_sec": [
+    1.387,
+    2.508
+   ],
+   "position": "1/1",
+   "duration": 1.4333,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "1": {
+   "id": "g0053",
+   "path": "/motions/aihub_gloss/g0053.json",
+   "source_take": "NIA_SL_SEN0101_REAL02_F",
+   "segment_sec": [
+    4.048,
+    5.106
+   ],
+   "position": "4/4",
+   "duration": 1.3667,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "곳",
+    "번호"
+   ]
+  },
+  "12": {
+   "id": "g0054",
+   "path": "/motions/aihub_gloss/g0054.json",
+   "source_take": "NIA_SL_SEN0104_REAL02_F",
+   "segment_sec": [
+    3.218,
+    3.718
+   ],
+   "position": "3/4",
+   "duration": 0.8,
+   "occurrences": 4,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "곳",
+    "무엇"
+   ]
+  },
+  "신분당": {
+   "id": "g0055",
+   "path": "/motions/aihub_gloss/g0055.json",
+   "source_take": "NIA_SL_SEN0117_REAL02_F",
+   "segment_sec": [
+    1.58,
+    2.311
+   ],
+   "position": "1/2",
+   "duration": 1.0333,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "곳"
+   ]
+  },
+  "갈아타다": {
+   "id": "g0056",
+   "path": "/motions/aihub_gloss/g0056.json",
+   "source_take": "NIA_SL_SEN0121_REAL02_F",
+   "segment_sec": [
+    2.109,
+    2.609
+   ],
+   "position": "2/3",
+   "duration": 0.8,
+   "occurrences": 20,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "1호",
+    "목적"
+   ]
+  },
+  "목적": {
+   "id": "g0057",
+   "path": "/motions/aihub_gloss/g0057.json",
+   "source_take": "NIA_SL_SEN0122_REAL02_F",
+   "segment_sec": [
+    3.016,
+    3.516
+   ],
+   "position": "3/4",
+   "duration": 0.8,
+   "occurrences": 75,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "1호",
+    "갈아타다",
+    "곳곳"
+   ]
+  },
+  "9호": {
+   "id": "g0058",
+   "path": "/motions/aihub_gloss/g0058.json",
+   "source_take": "NIA_SL_SEN0123_REAL02_F",
+   "segment_sec": [
+    1.452,
+    1.952
+   ],
+   "position": "1/3",
+   "duration": 0.8,
+   "occurrences": 7,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "갈아타다",
+    "목적"
+   ]
+  },
+  "지연되다": {
+   "id": "g0059",
+   "path": "/motions/aihub_gloss/g0059.json",
+   "source_take": "NIA_SL_SEN0129_REAL02_F",
+   "segment_sec": [
+    2.103,
+    2.603
+   ],
+   "position": "2/3",
+   "duration": 0.8,
+   "occurrences": 5,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "시간",
+    "5분"
+   ]
+  },
+  "5분": {
+   "id": "g0060",
+   "path": "/motions/aihub_gloss/g0060.json",
+   "source_take": "NIA_SL_SEN0129_REAL02_F",
+   "segment_sec": [
+    2.79,
+    3.766
+   ],
+   "position": "3/3",
+   "duration": 1.2667,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "시간",
+    "지연되다"
+   ]
+  },
+  "아직": {
+   "id": "g0061",
+   "path": "/motions/aihub_gloss/g0061.json",
+   "source_take": "NIA_SL_SEN0131_REAL02_F",
+   "segment_sec": [
+    2.053,
+    3.084
+   ],
+   "position": "2/2",
+   "duration": 1.3333,
+   "occurrences": 3,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "도착"
+   ]
+  },
+  "자전거": {
+   "id": "g0062",
+   "path": "/motions/aihub_gloss/g0062.json",
+   "source_take": "NIA_SL_SEN0137_REAL02_F",
+   "segment_sec": [
+    1.517,
+    2.017
+   ],
+   "position": "1/2",
+   "duration": 0.8,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "있다"
+   ]
+  },
+  "가깝다": {
+   "id": "g0063",
+   "path": "/motions/aihub_gloss/g0063.json",
+   "source_take": "NIA_SL_SEN0141_REAL02_F",
+   "segment_sec": [
+    2.681,
+    3.494
+   ],
+   "position": "3/3",
+   "duration": 1.1,
+   "occurrences": 6,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "택시",
+    "곳"
+   ]
+  },
+  "짐": {
+   "id": "g0064",
+   "path": "/motions/aihub_gloss/g0064.json",
+   "source_take": "NIA_SL_SEN0148_REAL02_F",
+   "segment_sec": [
+    1.469,
+    2.377
+   ],
+   "position": "1/2",
+   "duration": 1.2,
+   "occurrences": 4,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "없다"
+   ]
+  },
+  "나르다": {
+   "id": "g0065",
+   "path": "/motions/aihub_gloss/g0065.json",
+   "source_take": "NIA_SL_SEN0152_REAL02_F",
+   "segment_sec": [
+    3.55,
+    4.308
+   ],
+   "position": "4/4",
+   "duration": 1.0667,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "짐",
+    "차",
+    "트렁크열다"
+   ]
+  },
+  "트렁크닫다": {
+   "id": "g0066",
+   "path": "/motions/aihub_gloss/g0066.json",
+   "source_take": "NIA_SL_SEN0153_REAL02_F",
+   "segment_sec": [
+    2.103,
+    3.039
+   ],
+   "position": "2/2",
+   "duration": 1.2333,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "뒤"
+   ]
+  },
+  "설명": {
+   "id": "g0067",
+   "path": "/motions/aihub_gloss/g0067.json",
+   "source_take": "NIA_SL_SEN0157_REAL02_F",
+   "segment_sec": [
+    1.603,
+    2.103
+   ],
+   "position": "1/2",
+   "duration": 0.8,
+   "occurrences": 4,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "어렵다"
+   ]
+  },
+  "어렵다": {
+   "id": "g0068",
+   "path": "/motions/aihub_gloss/g0068.json",
+   "source_take": "NIA_SL_SEN0157_REAL02_F",
+   "segment_sec": [
+    2.317,
+    3.375
+   ],
+   "position": "2/2",
+   "duration": 1.3667,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "설명"
+   ]
+  },
+  "힘들다": {
+   "id": "g0069",
+   "path": "/motions/aihub_gloss/g0069.json",
+   "source_take": "NIA_SL_SEN0160_REAL02_F",
+   "segment_sec": [
+    1.77,
+    2.869
+   ],
+   "position": "1/1",
+   "duration": 1.4,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "번호": {
+   "id": "g0070",
+   "path": "/motions/aihub_gloss/g0070.json",
+   "source_take": "NIA_SL_SEN0163_REAL02_F",
+   "segment_sec": [
+    2.037,
+    2.877
+   ],
+   "position": "2/2",
+   "duration": 1.1333,
+   "occurrences": 10,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "핸드폰"
+   ]
+  },
+  "지하위": {
+   "id": "g0071",
+   "path": "/motions/aihub_gloss/g0071.json",
+   "source_take": "NIA_SL_SEN0166_REAL02_F",
+   "segment_sec": [
+    1.884,
+    2.384
+   ],
+   "position": "2/3",
+   "duration": 0.8,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "곳곳"
+   ]
+  },
+  "타다": {
+   "id": "g0072",
+   "path": "/motions/aihub_gloss/g0072.json",
+   "source_take": "NIA_SL_SEN0168_REAL02_F",
+   "segment_sec": [
+    2.117,
+    2.617
+   ],
+   "position": "2/3",
+   "duration": 0.8,
+   "occurrences": 4,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "버스",
+    "곳곳"
+   ]
+  },
+  "신분증": {
+   "id": "g0073",
+   "path": "/motions/aihub_gloss/g0073.json",
+   "source_take": "NIA_SL_SEN0169_REAL02_F",
+   "segment_sec": [
+    1.634,
+    3.359
+   ],
+   "position": "1/1",
+   "duration": 2.0,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "기다리다": {
+   "id": "g0074",
+   "path": "/motions/aihub_gloss/g0074.json",
+   "source_take": "NIA_SL_SEN0173_REAL02_F",
+   "segment_sec": [
+    2.081,
+    2.976
+   ],
+   "position": "2/2",
+   "duration": 1.2,
+   "occurrences": 6,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "잠깐"
+   ]
+  },
+  "바꾸다": {
+   "id": "g0075",
+   "path": "/motions/aihub_gloss/g0075.json",
+   "source_take": "NIA_SL_SEN0177_REAL02_F",
+   "segment_sec": [
+    2.046,
+    2.941
+   ],
+   "position": "2/2",
+   "duration": 1.2,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "곳"
+   ]
+  },
+  "보다": {
+   "id": "g0076",
+   "path": "/motions/aihub_gloss/g0076.json",
+   "source_take": "NIA_SL_SEN0179_REAL02_F",
+   "segment_sec": [
+    3.654,
+    4.154
+   ],
+   "position": "4/5",
+   "duration": 0.8,
+   "occurrences": 65,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "한달",
+    "누적사용",
+    "내역",
+    "원하다"
+   ]
+  },
+  "한달": {
+   "id": "g0077",
+   "path": "/motions/aihub_gloss/g0077.json",
+   "source_take": "NIA_SL_SEN0179_REAL02_F",
+   "segment_sec": [
+    1.961,
+    2.284
+   ],
+   "position": "1/5",
+   "duration": 0.6333,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "누적사용",
+    "내역",
+    "보다",
+    "원하다"
+   ]
+  },
+  "누적사용": {
+   "id": "g0078",
+   "path": "/motions/aihub_gloss/g0078.json",
+   "source_take": "NIA_SL_SEN0179_REAL02_F",
+   "segment_sec": [
+    2.375,
+    2.875
+   ],
+   "position": "2/5",
+   "duration": 0.8,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "한달",
+    "내역",
+    "보다",
+    "원하다"
+   ]
+  },
+  "내역": {
+   "id": "g0079",
+   "path": "/motions/aihub_gloss/g0079.json",
+   "source_take": "NIA_SL_SEN0179_REAL02_F",
+   "segment_sec": [
+    3.035,
+    3.535
+   ],
+   "position": "3/5",
+   "duration": 0.8,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "한달",
+    "누적사용",
+    "보다",
+    "원하다"
+   ]
+  },
+  "보여주다": {
+   "id": "g0080",
+   "path": "/motions/aihub_gloss/g0080.json",
+   "source_take": "NIA_SL_SEN0180_REAL02_F",
+   "segment_sec": [
+    3.74,
+    4.934
+   ],
+   "position": "4/4",
+   "duration": 1.5,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "한달",
+    "누적사용",
+    "내역"
+   ]
+  },
+  "실수하다": {
+   "id": "g0081",
+   "path": "/motions/aihub_gloss/g0081.json",
+   "source_take": "NIA_SL_SEN0183_REAL02_F",
+   "segment_sec": [
+    1.382,
+    2.604
+   ],
+   "position": "1/1",
+   "duration": 1.5333,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "발생하다": {
+   "id": "g0082",
+   "path": "/motions/aihub_gloss/g0082.json",
+   "source_take": "NIA_SL_SEN0185_REAL02_F",
+   "segment_sec": [
+    1.241,
+    2.258
+   ],
+   "position": "1/1",
+   "duration": 1.3,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "좋다": {
+   "id": "g0083",
+   "path": "/motions/aihub_gloss/g0083.json",
+   "source_take": "NIA_SL_SEN0189_REAL02_F",
+   "segment_sec": [
+    1.644,
+    2.675
+   ],
+   "position": "1/1",
+   "duration": 1.3333,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "충분하다": {
+   "id": "g0084",
+   "path": "/motions/aihub_gloss/g0084.json",
+   "source_take": "NIA_SL_SEN0191_REAL02_F",
+   "segment_sec": [
+    1.609,
+    3.103
+   ],
+   "position": "1/1",
+   "duration": 1.8,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "모르다": {
+   "id": "g0085",
+   "path": "/motions/aihub_gloss/g0085.json",
+   "source_take": "NIA_SL_SEN0195_REAL02_F",
+   "segment_sec": [
+    1.367,
+    2.629
+   ],
+   "position": "1/1",
+   "duration": 1.5333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "문자보내다": {
+   "id": "g0086",
+   "path": "/motions/aihub_gloss/g0086.json",
+   "source_take": "NIA_SL_SEN0199_REAL02_F",
+   "segment_sec": [
+    1.982,
+    2.482
+   ],
+   "position": "2/3",
+   "duration": 0.8,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "택시",
+    "나"
+   ]
+  },
+  "문자받다": {
+   "id": "g0087",
+   "path": "/motions/aihub_gloss/g0087.json",
+   "source_take": "NIA_SL_SEN0200_REAL02_F",
+   "segment_sec": [
+    2.228,
+    2.946
+   ],
+   "position": "2/2",
+   "duration": 1.0333,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "택시"
+   ]
+  },
+  "부르다": {
+   "id": "g0088",
+   "path": "/motions/aihub_gloss/g0088.json",
+   "source_take": "NIA_SL_SEN0201_REAL02_F",
+   "segment_sec": [
+    3.261,
+    4.041
+   ],
+   "position": "2/2",
+   "duration": 1.1,
+   "occurrences": 5,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "역무원"
+   ]
+  },
+  "역무원": {
+   "id": "g0089",
+   "path": "/motions/aihub_gloss/g0089.json",
+   "source_take": "NIA_SL_SEN0202_REAL02_F",
+   "segment_sec": [
+    1.635,
+    2.916
+   ],
+   "position": "1/2",
+   "duration": 1.5667,
+   "occurrences": 3,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "부르다"
+   ]
+  },
+  "마포대교": {
+   "id": "g0090",
+   "path": "/motions/aihub_gloss/g0090.json",
+   "source_take": "NIA_SL_SEN0206_REAL02_F",
+   "segment_sec": [
+    1.803,
+    2.955
+   ],
+   "position": "1/2",
+   "duration": 1.4333,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "가다"
+   ]
+  },
+  "잠실대교": {
+   "id": "g0091",
+   "path": "/motions/aihub_gloss/g0091.json",
+   "source_take": "NIA_SL_SEN0208_REAL02_F",
+   "segment_sec": [
+    1.539,
+    2.791
+   ],
+   "position": "1/2",
+   "duration": 1.5333,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "가다"
+   ]
+  },
+  "철로": {
+   "id": "g0092",
+   "path": "/motions/aihub_gloss/g0092.json",
+   "source_take": "NIA_SL_SEN0223_REAL02_F",
+   "segment_sec": [
+    2.42,
+    3.443
+   ],
+   "position": "2/4",
+   "duration": 1.3333,
+   "occurrences": 3,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "물건",
+    "떨어지다"
+   ]
+  },
+  "좌회전": {
+   "id": "g0093",
+   "path": "/motions/aihub_gloss/g0093.json",
+   "source_take": "NIA_SL_SEN0229_REAL02_F",
+   "segment_sec": [
+    1.704,
+    2.319
+   ],
+   "position": "1/2",
+   "duration": 0.9,
+   "occurrences": 26,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "차내리다"
+   ]
+  },
+  "횡단보도": {
+   "id": "g0094",
+   "path": "/motions/aihub_gloss/g0094.json",
+   "source_take": "NIA_SL_SEN0231_REAL02_F",
+   "segment_sec": [
+    2.704,
+    3.612
+   ],
+   "position": "2/3",
+   "duration": 1.2,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "신호등",
+    "건너다"
+   ]
+  },
+  "롯데월드": {
+   "id": "g0095",
+   "path": "/motions/aihub_gloss/g0095.json",
+   "source_take": "NIA_SL_SEN0237_REAL02_F",
+   "segment_sec": [
+    2.081,
+    2.853
+   ],
+   "position": "1/5",
+   "duration": 1.0667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "가다",
+    "목적",
+    "지하철",
+    "번호"
+   ]
+  },
+  "강남": {
+   "id": "g0096",
+   "path": "/motions/aihub_gloss/g0096.json",
+   "source_take": "NIA_SL_SEN0240_REAL02_F",
+   "segment_sec": [
+    1.668,
+    2.075
+   ],
+   "position": "1/6",
+   "duration": 0.7,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "가다",
+    "목적",
+    "지하철",
+    "갈아타다",
+    "몇호"
+   ]
+  },
+  "8호": {
+   "id": "g0097",
+   "path": "/motions/aihub_gloss/g0097.json",
+   "source_take": "NIA_SL_SEN0249_REAL02_F",
+   "segment_sec": [
+    1.67,
+    2.084
+   ],
+   "position": "1/2",
+   "duration": 0.7,
+   "occurrences": 4,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "곳곳"
+   ]
+  },
+  "막차": {
+   "id": "g0098",
+   "path": "/motions/aihub_gloss/g0098.json",
+   "source_take": "NIA_SL_SEN0250_REAL02_F",
+   "segment_sec": [
+    1.563,
+    2.672
+   ],
+   "position": "1/2",
+   "duration": 1.4333,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "시간"
+   ]
+  },
+  "몇분": {
+   "id": "g0099",
+   "path": "/motions/aihub_gloss/g0099.json",
+   "source_take": "NIA_SL_SEN0252_REAL02_F",
+   "segment_sec": [
+    2.605,
+    3.549
+   ],
+   "position": "2/2",
+   "duration": 1.2333,
+   "occurrences": 5,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "다음"
+   ]
+  },
+  "오늘": {
+   "id": "g0100",
+   "path": "/motions/aihub_gloss/g0100.json",
+   "source_take": "NIA_SL_SEN0253_REAL02_F",
+   "segment_sec": [
+    1.556,
+    1.898
+   ],
+   "position": "1/3",
+   "duration": 0.6333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "하루",
+    "수고"
+   ]
+  },
+  "하루": {
+   "id": "g0101",
+   "path": "/motions/aihub_gloss/g0101.json",
+   "source_take": "NIA_SL_SEN0253_REAL02_F",
+   "segment_sec": [
+    2.041,
+    2.713
+   ],
+   "position": "2/3",
+   "duration": 0.9667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "오늘",
+    "수고"
+   ]
+  },
+  "만나다": {
+   "id": "g0102",
+   "path": "/motions/aihub_gloss/g0102.json",
+   "source_take": "NIA_SL_SEN0254_REAL02_F",
+   "segment_sec": [
+    1.78,
+    2.137
+   ],
+   "position": "1/2",
+   "duration": 0.6667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "반갑다"
+   ]
+  },
+  "반갑다": {
+   "id": "g0103",
+   "path": "/motions/aihub_gloss/g0103.json",
+   "source_take": "NIA_SL_SEN0254_REAL02_F",
+   "segment_sec": [
+    2.357,
+    3.358
+   ],
+   "position": "2/2",
+   "duration": 1.3,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "만나다"
+   ]
+  },
+  "50분": {
+   "id": "g0104",
+   "path": "/motions/aihub_gloss/g0104.json",
+   "source_take": "NIA_SL_SEN0255_REAL02_F",
+   "segment_sec": [
+    1.673,
+    2.08
+   ],
+   "position": "1/2",
+   "duration": 0.7,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "정도"
+   ]
+  },
+  "정도": {
+   "id": "g0105",
+   "path": "/motions/aihub_gloss/g0105.json",
+   "source_take": "NIA_SL_SEN0255_REAL02_F",
+   "segment_sec": [
+    2.286,
+    3.352
+   ],
+   "position": "2/2",
+   "duration": 1.3667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "50분"
+   ]
+  },
+  "40분": {
+   "id": "g0106",
+   "path": "/motions/aihub_gloss/g0106.json",
+   "source_take": "NIA_SL_SEN0257_REAL02_F",
+   "segment_sec": [
+    2.223,
+    2.959
+   ],
+   "position": "2/2",
+   "duration": 1.0333,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "대략"
+   ]
+  },
+  "대략": {
+   "id": "g0107",
+   "path": "/motions/aihub_gloss/g0107.json",
+   "source_take": "NIA_SL_SEN0257_REAL02_F",
+   "segment_sec": [
+    1.502,
+    1.966
+   ],
+   "position": "1/2",
+   "duration": 0.7333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "40분"
+   ]
+  },
+  "돈받다": {
+   "id": "g0108",
+   "path": "/motions/aihub_gloss/g0108.json",
+   "source_take": "NIA_SL_SEN0259_REAL02_F",
+   "segment_sec": [
+    2.584,
+    3.399
+   ],
+   "position": "3/3",
+   "duration": 1.1,
+   "occurrences": 3,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "계산",
+    "남다"
+   ]
+  },
+  "돈주다": {
+   "id": "g0109",
+   "path": "/motions/aihub_gloss/g0109.json",
+   "source_take": "NIA_SL_SEN0260_REAL02_F",
+   "segment_sec": [
+    2.662,
+    3.585
+   ],
+   "position": "3/3",
+   "duration": 1.2333,
+   "occurrences": 5,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "계산",
+    "남다"
+   ]
+  },
+  "남다": {
+   "id": "g0110",
+   "path": "/motions/aihub_gloss/g0110.json",
+   "source_take": "NIA_SL_SEN0260_REAL02_F",
+   "segment_sec": [
+    2.12,
+    2.513
+   ],
+   "position": "2/3",
+   "duration": 0.7,
+   "occurrences": 4,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "계산",
+    "돈주다"
+   ]
+  },
+  "용산역": {
+   "id": "g0111",
+   "path": "/motions/aihub_gloss/g0111.json",
+   "source_take": "NIA_SL_SEN0267_REAL02_F",
+   "segment_sec": [
+    1.648,
+    2.778
+   ],
+   "position": "1/3",
+   "duration": 1.4333,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "주차",
+    "되다"
+   ]
+  },
+  "주차": {
+   "id": "g0112",
+   "path": "/motions/aihub_gloss/g0112.json",
+   "source_take": "NIA_SL_SEN0268_REAL02_F",
+   "segment_sec": [
+    2.672,
+    3.444
+   ],
+   "position": "2/2",
+   "duration": 1.0667,
+   "occurrences": 6,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "어린이집"
+   ]
+  },
+  "어린이집": {
+   "id": "g0113",
+   "path": "/motions/aihub_gloss/g0113.json",
+   "source_take": "NIA_SL_SEN0268_REAL02_F",
+   "segment_sec": [
+    1.765,
+    2.415
+   ],
+   "position": "1/2",
+   "duration": 0.9667,
+   "occurrences": 4,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "주차"
+   ]
+  },
+  "학교": {
+   "id": "g0114",
+   "path": "/motions/aihub_gloss/g0114.json",
+   "source_take": "NIA_SL_SEN0271_REAL02_F",
+   "segment_sec": [
+    1.634,
+    1.998
+   ],
+   "position": "1/3",
+   "duration": 0.6333,
+   "occurrences": 20,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "주차",
+    "되다"
+   ]
+  },
+  "표지판": {
+   "id": "g0115",
+   "path": "/motions/aihub_gloss/g0115.json",
+   "source_take": "NIA_SL_SEN0280_REAL02_F",
+   "segment_sec": [
+    1.611,
+    2.756
+   ],
+   "position": "1/3",
+   "duration": 1.4333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "보다",
+    "찾다"
+   ]
+  },
+  "가능": {
+   "id": "g0116",
+   "path": "/motions/aihub_gloss/g0116.json",
+   "source_take": "NIA_SL_SEN0281_REAL02_F",
+   "segment_sec": [
+    5.384,
+    6.184
+   ],
+   "position": "5/5",
+   "duration": 1.1,
+   "occurrences": 18,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "길",
+    "지도",
+    "보다",
+    "찾다"
+   ]
+  },
+  "지도": {
+   "id": "g0117",
+   "path": "/motions/aihub_gloss/g0117.json",
+   "source_take": "NIA_SL_SEN0281_REAL02_F",
+   "segment_sec": [
+    3.37,
+    3.813
+   ],
+   "position": "2/5",
+   "duration": 0.7333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "길",
+    "보다",
+    "찾다",
+    "가능"
+   ]
+  },
+  "위로올리다": {
+   "id": "g0118",
+   "path": "/motions/aihub_gloss/g0118.json",
+   "source_take": "NIA_SL_SEN0282_REAL02_F",
+   "segment_sec": [
+    2.769,
+    3.434
+   ],
+   "position": "3/4",
+   "duration": 0.9667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "가방",
+    "까먹다"
+   ]
+  },
+  "까먹다": {
+   "id": "g0119",
+   "path": "/motions/aihub_gloss/g0119.json",
+   "source_take": "NIA_SL_SEN0282_REAL02_F",
+   "segment_sec": [
+    3.633,
+    4.548
+   ],
+   "position": "4/4",
+   "duration": 1.2333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "가방",
+    "위로올리다"
+   ]
+  },
+  "반대": {
+   "id": "g0120",
+   "path": "/motions/aihub_gloss/g0120.json",
+   "source_take": "NIA_SL_SEN0283_REAL02_F",
+   "segment_sec": [
+    2.419,
+    2.683
+   ],
+   "position": "2/4",
+   "duration": 0.5667,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "건너다",
+    "가다"
+   ]
+  },
+  "건너다": {
+   "id": "g0121",
+   "path": "/motions/aihub_gloss/g0121.json",
+   "source_take": "NIA_SL_SEN0284_REAL02_F",
+   "segment_sec": [
+    2.722,
+    3.286
+   ],
+   "position": "3/4",
+   "duration": 0.8667,
+   "occurrences": 26,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "반대",
+    "방법"
+   ]
+  },
+  "어지럽다": {
+   "id": "g0122",
+   "path": "/motions/aihub_gloss/g0122.json",
+   "source_take": "NIA_SL_SEN0287_REAL02_F",
+   "segment_sec": [
+    1.861,
+    2.267
+   ],
+   "position": "1/2",
+   "duration": 0.7333,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "쓰러지다"
+   ]
+  },
+  "쓰러지다": {
+   "id": "g0123",
+   "path": "/motions/aihub_gloss/g0123.json",
+   "source_take": "NIA_SL_SEN0288_REAL02_F",
+   "segment_sec": [
+    2.5,
+    3.559
+   ],
+   "position": "2/2",
+   "duration": 1.3667,
+   "occurrences": 4,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "어지럽다"
+   ]
+  },
+  "배": {
+   "id": "g0124",
+   "path": "/motions/aihub_gloss/g0124.json",
+   "source_take": "NIA_SL_SEN0289_REAL02_F",
+   "segment_sec": [
+    1.884,
+    2.234
+   ],
+   "position": "1/3",
+   "duration": 0.6667,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "위쪼이다",
+    "아프다"
+   ]
+  },
+  "아프다": {
+   "id": "g0125",
+   "path": "/motions/aihub_gloss/g0125.json",
+   "source_take": "NIA_SL_SEN0289_REAL02_F",
+   "segment_sec": [
+    3.483,
+    4.383
+   ],
+   "position": "3/3",
+   "duration": 1.2,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "배",
+    "위쪼이다"
+   ]
+  },
+  "위쪼이다": {
+   "id": "g0126",
+   "path": "/motions/aihub_gloss/g0126.json",
+   "source_take": "NIA_SL_SEN0289_REAL02_F",
+   "segment_sec": [
+    2.469,
+    3.177
+   ],
+   "position": "2/3",
+   "duration": 1.0,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "배",
+    "아프다"
+   ]
+  },
+  "떨어지다": {
+   "id": "g0127",
+   "path": "/motions/aihub_gloss/g0127.json",
+   "source_take": "NIA_SL_SEN0292_REAL02_F",
+   "segment_sec": [
+    4.036,
+    4.966
+   ],
+   "position": "4/4",
+   "duration": 1.2,
+   "occurrences": 6,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "철로",
+    "물건"
+   ]
+  },
+  "틈": {
+   "id": "g0128",
+   "path": "/motions/aihub_gloss/g0128.json",
+   "source_take": "NIA_SL_SEN0294_REAL02_F",
+   "segment_sec": [
+    2.959,
+    3.552
+   ],
+   "position": "3/5",
+   "duration": 0.9,
+   "occurrences": 3,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "문",
+    "물건",
+    "떨어지다"
+   ]
+  },
+  "이어폰": {
+   "id": "g0129",
+   "path": "/motions/aihub_gloss/g0129.json",
+   "source_take": "NIA_SL_SEN0296_REAL02_F",
+   "segment_sec": [
+    3.797,
+    4.297
+   ],
+   "position": "4/5",
+   "duration": 0.8,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "문",
+    "틈",
+    "떨어지다"
+   ]
+  },
+  "필요": {
+   "id": "g0130",
+   "path": "/motions/aihub_gloss/g0130.json",
+   "source_take": "NIA_SL_SEN0297_REAL02_F",
+   "segment_sec": [
+    5.997,
+    6.927
+   ],
+   "position": "3/3",
+   "duration": 1.2333,
+   "occurrences": 8,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "연착",
+    "확인증"
+   ]
+  },
+  "연착": {
+   "id": "g0131",
+   "path": "/motions/aihub_gloss/g0131.json",
+   "source_take": "NIA_SL_SEN0297_REAL02_F",
+   "segment_sec": [
+    2.235,
+    3.781
+   ],
+   "position": "1/3",
+   "duration": 1.8333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "확인증",
+    "필요"
+   ]
+  },
+  "확인증": {
+   "id": "g0132",
+   "path": "/motions/aihub_gloss/g0132.json",
+   "source_take": "NIA_SL_SEN0297_REAL02_F",
+   "segment_sec": [
+    4.173,
+    5.64
+   ],
+   "position": "2/3",
+   "duration": 1.7667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "연착",
+    "필요"
+   ]
+  },
+  "잠깐": {
+   "id": "g0133",
+   "path": "/motions/aihub_gloss/g0133.json",
+   "source_take": "NIA_SL_SEN0298_REAL02_F",
+   "segment_sec": [
+    1.563,
+    1.998
+   ],
+   "position": "1/2",
+   "duration": 0.7333,
+   "occurrences": 3,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "기다리다"
+   ]
+  },
+  "혼자": {
+   "id": "g0134",
+   "path": "/motions/aihub_gloss/g0134.json",
+   "source_take": "NIA_SL_SEN0302_REAL02_F",
+   "segment_sec": [
+    2.435,
+    2.978
+   ],
+   "position": "2/3",
+   "duration": 0.8333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "아이",
+    "방황"
+   ]
+  },
+  "방황": {
+   "id": "g0135",
+   "path": "/motions/aihub_gloss/g0135.json",
+   "source_take": "NIA_SL_SEN0302_REAL02_F",
+   "segment_sec": [
+    3.414,
+    4.723
+   ],
+   "position": "3/3",
+   "duration": 1.6,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "아이",
+    "혼자"
+   ]
+  },
+  "차따라가다": {
+   "id": "g0136",
+   "path": "/motions/aihub_gloss/g0136.json",
+   "source_take": "NIA_SL_SEN0303_REAL02_F",
+   "segment_sec": [
+    2.426,
+    3.284
+   ],
+   "position": "2/2",
+   "duration": 1.1667,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "뒤"
+   ]
+  },
+  "교통카드": {
+   "id": "g0137",
+   "path": "/motions/aihub_gloss/g0137.json",
+   "source_take": "NIA_SL_SEN0306_REAL02_F",
+   "segment_sec": [
+    1.608,
+    2.667
+   ],
+   "position": "1/3",
+   "duration": 1.3667,
+   "occurrences": 3,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "충전",
+    "되다"
+   ]
+  },
+  "사다": {
+   "id": "g0138",
+   "path": "/motions/aihub_gloss/g0138.json",
+   "source_take": "NIA_SL_SEN0307_REAL02_F",
+   "segment_sec": [
+    3.127,
+    3.419
+   ],
+   "position": "3/4",
+   "duration": 0.6,
+   "occurrences": 6,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "정기권",
+    "원하다"
+   ]
+  },
+  "정기권": {
+   "id": "g0139",
+   "path": "/motions/aihub_gloss/g0139.json",
+   "source_take": "NIA_SL_SEN0307_REAL02_F",
+   "segment_sec": [
+    2.126,
+    2.912
+   ],
+   "position": "2/4",
+   "duration": 1.1,
+   "occurrences": 4,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "사다",
+    "원하다"
+   ]
+  },
+  "미리": {
+   "id": "g0140",
+   "path": "/motions/aihub_gloss/g0140.json",
+   "source_take": "NIA_SL_SEN0311_REAL02_F",
+   "segment_sec": [
+    1.456,
+    1.727
+   ],
+   "position": "1/2",
+   "duration": 0.5667,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "카드"
+   ]
+  },
+  "고속": {
+   "id": "g0141",
+   "path": "/motions/aihub_gloss/g0141.json",
+   "source_take": "NIA_SL_SEN0315_REAL02_F",
+   "segment_sec": [
+    1.703,
+    2.117
+   ],
+   "position": "1/4",
+   "duration": 0.7,
+   "occurrences": 6,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "9호",
+    "갈아타다"
+   ]
+  },
+  "천호": {
+   "id": "g0142",
+   "path": "/motions/aihub_gloss/g0142.json",
+   "source_take": "NIA_SL_SEN0317_REAL02_F",
+   "segment_sec": [
+    1.514,
+    1.849
+   ],
+   "position": "1/4",
+   "duration": 0.6333,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "8호",
+    "갈아타다"
+   ]
+  },
+  "약수": {
+   "id": "g0143",
+   "path": "/motions/aihub_gloss/g0143.json",
+   "source_take": "NIA_SL_SEN0320_REAL02_F",
+   "segment_sec": [
+    1.88,
+    2.101
+   ],
+   "position": "1/5",
+   "duration": 0.5333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "3호",
+    "갈아타다",
+    "방법"
+   ]
+  },
+  "3호": {
+   "id": "g0144",
+   "path": "/motions/aihub_gloss/g0144.json",
+   "source_take": "NIA_SL_SEN0320_REAL02_F",
+   "segment_sec": [
+    2.906,
+    3.148
+   ],
+   "position": "3/5",
+   "duration": 0.5333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "약수",
+    "지하철",
+    "갈아타다",
+    "방법"
+   ]
+  },
+  "물건": {
+   "id": "g0145",
+   "path": "/motions/aihub_gloss/g0145.json",
+   "source_take": "NIA_SL_SEN0323_REAL02_F",
+   "segment_sec": [
+    1.377,
+    1.712
+   ],
+   "position": "1/4",
+   "duration": 0.6333,
+   "occurrences": 9,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "잃어버리다",
+    "보관",
+    "곳곳"
+   ]
+  },
+  "보관": {
+   "id": "g0146",
+   "path": "/motions/aihub_gloss/g0146.json",
+   "source_take": "NIA_SL_SEN0323_REAL02_F",
+   "segment_sec": [
+    2.611,
+    3.211
+   ],
+   "position": "3/4",
+   "duration": 0.9,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "물건",
+    "잃어버리다",
+    "곳곳"
+   ]
+  },
+  "카페": {
+   "id": "g0147",
+   "path": "/motions/aihub_gloss/g0147.json",
+   "source_take": "NIA_SL_SEN0324_REAL02_F",
+   "segment_sec": [
+    2.674,
+    3.095
+   ],
+   "position": "3/4",
+   "duration": 0.7,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "곳",
+    "있다"
+   ]
+  },
+  "지하철": {
+   "id": "g0148",
+   "path": "/motions/aihub_gloss/g0148.json",
+   "source_take": "NIA_SL_SEN0325_REAL02_F",
+   "segment_sec": [
+    1.406,
+    1.82
+   ],
+   "position": "1/4",
+   "duration": 0.7,
+   "occurrences": 105,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "곳",
+    "카페",
+    "있다"
+   ]
+  },
+  "편의점": {
+   "id": "g0149",
+   "path": "/motions/aihub_gloss/g0149.json",
+   "source_take": "NIA_SL_SEN0326_REAL02_F",
+   "segment_sec": [
+    3.16,
+    3.724
+   ],
+   "position": "3/4",
+   "duration": 0.8667,
+   "occurrences": 8,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "곳",
+    "있다"
+   ]
+  },
+  "있다": {
+   "id": "g0150",
+   "path": "/motions/aihub_gloss/g0150.json",
+   "source_take": "NIA_SL_SEN0327_REAL02_F",
+   "segment_sec": [
+    3.453,
+    4.203
+   ],
+   "position": "4/4",
+   "duration": 1.0667,
+   "occurrences": 14,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "곳",
+    "편의점"
+   ]
+  },
+  "옷가게": {
+   "id": "g0151",
+   "path": "/motions/aihub_gloss/g0151.json",
+   "source_take": "NIA_SL_SEN0328_REAL02_F",
+   "segment_sec": [
+    2.498,
+    3.119
+   ],
+   "position": "3/4",
+   "duration": 0.9333,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "곳",
+    "있다"
+   ]
+  },
+  "충분": {
+   "id": "g0152",
+   "path": "/motions/aihub_gloss/g0152.json",
+   "source_take": "NIA_SL_SEN0330_REAL02_F",
+   "segment_sec": [
+    2.453,
+    3.325
+   ],
+   "position": "3/3",
+   "duration": 1.1667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "돈",
+    "남다"
+   ]
+  },
+  "첫차": {
+   "id": "g0153",
+   "path": "/motions/aihub_gloss/g0153.json",
+   "source_take": "NIA_SL_SEN0334_REAL02_F",
+   "segment_sec": [
+    2.172,
+    4.072
+   ],
+   "position": "2/3",
+   "duration": 2.2,
+   "occurrences": 4,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "1호",
+    "시간"
+   ]
+  },
+  "분당": {
+   "id": "g0154",
+   "path": "/motions/aihub_gloss/g0154.json",
+   "source_take": "NIA_SL_SEN0335_REAL02_F",
+   "segment_sec": [
+    2.102,
+    2.337
+   ],
+   "position": "1/3",
+   "duration": 0.5333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "첫차",
+    "시간"
+   ]
+  },
+  "이름": {
+   "id": "g0155",
+   "path": "/motions/aihub_gloss/g0155.json",
+   "source_take": "NIA_SL_SEN0337_REAL02_F",
+   "segment_sec": [
+    1.595,
+    1.902
+   ],
+   "position": "1/2",
+   "duration": 0.6333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "무엇"
+   ]
+  },
+  "누구": {
+   "id": "g0156",
+   "path": "/motions/aihub_gloss/g0156.json",
+   "source_take": "NIA_SL_SEN0339_REAL02_F",
+   "segment_sec": [
+    1.772,
+    2.795
+   ],
+   "position": "1/1",
+   "duration": 1.3,
+   "occurrences": 1,
+   "nonmanual": [
+    "1형태소 의문사 있는 의문형"
+   ],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "어떻게": {
+   "id": "g0157",
+   "path": "/motions/aihub_gloss/g0157.json",
+   "source_take": "NIA_SL_SEN0340_REAL02_F",
+   "segment_sec": [
+    1.573,
+    3.018
+   ],
+   "position": "1/1",
+   "duration": 1.7333,
+   "occurrences": 1,
+   "nonmanual": [
+    "1형태소 의문사 있는 의문형"
+   ],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "왜": {
+   "id": "g0158",
+   "path": "/motions/aihub_gloss/g0158.json",
+   "source_take": "NIA_SL_SEN0341_REAL02_F",
+   "segment_sec": [
+    2.082,
+    2.911
+   ],
+   "position": "1/1",
+   "duration": 1.1333,
+   "occurrences": 1,
+   "nonmanual": [
+    "1형태소 의문사 있는 의문형"
+   ],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "몇호": {
+   "id": "g0159",
+   "path": "/motions/aihub_gloss/g0159.json",
+   "source_take": "NIA_SL_SEN0342_REAL02_F",
+   "segment_sec": [
+    2.533,
+    3.728
+   ],
+   "position": "2/2",
+   "duration": 1.5,
+   "occurrences": 5,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철"
+   ]
+  },
+  "몇사람": {
+   "id": "g0160",
+   "path": "/motions/aihub_gloss/g0160.json",
+   "source_take": "NIA_SL_SEN0343_REAL02_F",
+   "segment_sec": [
+    1.579,
+    2.63
+   ],
+   "position": "1/1",
+   "duration": 1.3333,
+   "occurrences": 1,
+   "nonmanual": [
+    "1형태소 의문사 있는 의문형"
+   ],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "안": {
+   "id": "g0161",
+   "path": "/motions/aihub_gloss/g0161.json",
+   "source_take": "NIA_SL_SEN0345_REAL02_F",
+   "segment_sec": [
+    3.479,
+    4.015
+   ],
+   "position": "2/3",
+   "duration": 0.8333,
+   "occurrences": 16,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "냄새"
+   ]
+  },
+  "냄새": {
+   "id": "g0162",
+   "path": "/motions/aihub_gloss/g0162.json",
+   "source_take": "NIA_SL_SEN0345_REAL02_F",
+   "segment_sec": [
+    4.257,
+    5.48
+   ],
+   "position": "3/3",
+   "duration": 1.5333,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "안"
+   ]
+  },
+  "신고": {
+   "id": "g0163",
+   "path": "/motions/aihub_gloss/g0163.json",
+   "source_take": "NIA_SL_SEN0347_REAL02_F",
+   "segment_sec": [
+    3.063,
+    3.906
+   ],
+   "position": "3/3",
+   "duration": 1.1667,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "불편하다",
+    "있다"
+   ]
+  },
+  "불편하다": {
+   "id": "g0164",
+   "path": "/motions/aihub_gloss/g0164.json",
+   "source_take": "NIA_SL_SEN0348_REAL02_F",
+   "segment_sec": [
+    1.718,
+    2.096
+   ],
+   "position": "1/3",
+   "duration": 0.6667,
+   "occurrences": 4,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "신고",
+    "곳"
+   ]
+  },
+  "핸드폰": {
+   "id": "g0165",
+   "path": "/motions/aihub_gloss/g0165.json",
+   "source_take": "NIA_SL_SEN0349_REAL02_F",
+   "segment_sec": [
+    1.59,
+    1.889
+   ],
+   "position": "1/3",
+   "duration": 0.6,
+   "occurrences": 12,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "잃어버리다",
+    "찾다"
+   ]
+  },
+  "문": {
+   "id": "g0166",
+   "path": "/motions/aihub_gloss/g0166.json",
+   "source_take": "NIA_SL_SEN0353_REAL02_F",
+   "segment_sec": [
+    2.814,
+    3.235
+   ],
+   "position": "2/4",
+   "duration": 0.7333,
+   "occurrences": 7,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "여기",
+    "번호"
+   ]
+  },
+  "안녕하세요": {
+   "id": "g0167",
+   "path": "/motions/aihub_gloss/g0167.json",
+   "source_take": "NIA_SL_SEN0354_REAL02_F",
+   "segment_sec": [
+    1.747,
+    3.092
+   ],
+   "position": "1/1",
+   "duration": 1.6333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "감사합니다": {
+   "id": "g0168",
+   "path": "/motions/aihub_gloss/g0168.json",
+   "source_take": "NIA_SL_SEN0355_REAL02_F",
+   "segment_sec": [
+    1.948,
+    2.806
+   ],
+   "position": "1/1",
+   "duration": 1.1667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "미안합니다": {
+   "id": "g0169",
+   "path": "/motions/aihub_gloss/g0169.json",
+   "source_take": "NIA_SL_SEN0356_REAL02_F",
+   "segment_sec": [
+    1.821,
+    3.001
+   ],
+   "position": "1/1",
+   "duration": 1.5,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "조심": {
+   "id": "g0170",
+   "path": "/motions/aihub_gloss/g0170.json",
+   "source_take": "NIA_SL_SEN0357_REAL02_F",
+   "segment_sec": [
+    1.65,
+    2.63
+   ],
+   "position": "1/1",
+   "duration": 1.2667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "10분": {
+   "id": "g0171",
+   "path": "/motions/aihub_gloss/g0171.json",
+   "source_take": "NIA_SL_SEN0370_REAL02_F",
+   "segment_sec": [
+    2.216,
+    3.039
+   ],
+   "position": "2/2",
+   "duration": 1.1333,
+   "occurrences": 3,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "도착"
+   ]
+  },
+  "1시": {
+   "id": "g0172",
+   "path": "/motions/aihub_gloss/g0172.json",
+   "source_take": "NIA_SL_SEN0372_REAL02_F",
+   "segment_sec": [
+    2.163,
+    2.799
+   ],
+   "position": "2/2",
+   "duration": 0.9333,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "도착"
+   ]
+  },
+  "1시간": {
+   "id": "g0173",
+   "path": "/motions/aihub_gloss/g0173.json",
+   "source_take": "NIA_SL_SEN0376_REAL02_F",
+   "segment_sec": [
+    2.012,
+    2.39
+   ],
+   "position": "2/3",
+   "duration": 0.6667,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "도착",
+    "전"
+   ]
+  },
+  "3시": {
+   "id": "g0174",
+   "path": "/motions/aihub_gloss/g0174.json",
+   "source_take": "NIA_SL_SEN0378_REAL02_F",
+   "segment_sec": [
+    2.061,
+    2.862
+   ],
+   "position": "2/2",
+   "duration": 1.1,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "도착"
+   ]
+  },
+  "딱": {
+   "id": "g0175",
+   "path": "/motions/aihub_gloss/g0175.json",
+   "source_take": "NIA_SL_SEN0381_REAL02_F",
+   "segment_sec": [
+    2.779,
+    3.659
+   ],
+   "position": "3/3",
+   "duration": 1.1667,
+   "occurrences": 3,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "도착",
+    "시간"
+   ]
+  },
+  "도움받다": {
+   "id": "g0176",
+   "path": "/motions/aihub_gloss/g0176.json",
+   "source_take": "NIA_SL_SEN0384_REAL02_F",
+   "segment_sec": [
+    3.694,
+    4.423
+   ],
+   "position": "4/4",
+   "duration": 1.0333,
+   "occurrences": 8,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "갈아타다",
+    "곳곳"
+   ]
+  },
+  "도와주다": {
+   "id": "g0177",
+   "path": "/motions/aihub_gloss/g0177.json",
+   "source_take": "NIA_SL_SEN0387_REAL02_F",
+   "segment_sec": [
+    2.415,
+    3.309
+   ],
+   "position": "3/3",
+   "duration": 1.2,
+   "occurrences": 3,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "길",
+    "안내하다"
+   ]
+  },
+  "안내하다": {
+   "id": "g0178",
+   "path": "/motions/aihub_gloss/g0178.json",
+   "source_take": "NIA_SL_SEN0388_REAL02_F",
+   "segment_sec": [
+    2.309,
+    2.809
+   ],
+   "position": "2/3",
+   "duration": 0.8,
+   "occurrences": 6,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "엘리베이터",
+    "도움받다"
+   ]
+  },
+  "5호": {
+   "id": "g0179",
+   "path": "/motions/aihub_gloss/g0179.json",
+   "source_take": "NIA_SL_SEN0390_REAL02_F",
+   "segment_sec": [
+    2.108,
+    2.501
+   ],
+   "position": "1/4",
+   "duration": 0.7,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "갈아타다",
+    "안내하다",
+    "도움받다"
+   ]
+  },
+  "알려받다": {
+   "id": "g0180",
+   "path": "/motions/aihub_gloss/g0180.json",
+   "source_take": "NIA_SL_SEN0397_REAL02_F",
+   "segment_sec": [
+    2.484,
+    3.636
+   ],
+   "position": "3/3",
+   "duration": 1.4667,
+   "occurrences": 7,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "도착",
+    "곳"
+   ]
+  },
+  "알려주다": {
+   "id": "g0181",
+   "path": "/motions/aihub_gloss/g0181.json",
+   "source_take": "NIA_SL_SEN0398_REAL02_F",
+   "segment_sec": [
+    2.617,
+    3.747
+   ],
+   "position": "3/3",
+   "duration": 1.4333,
+   "occurrences": 7,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "도착",
+    "곳"
+   ]
+  },
+  "전화걸다": {
+   "id": "g0182",
+   "path": "/motions/aihub_gloss/g0182.json",
+   "source_take": "NIA_SL_SEN0411_REAL02_F",
+   "segment_sec": [
+    2.135,
+    3.114
+   ],
+   "position": "2/2",
+   "duration": 1.2667,
+   "occurrences": 3,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "경찰"
+   ]
+  },
+  "카톡보내다": {
+   "id": "g0183",
+   "path": "/motions/aihub_gloss/g0183.json",
+   "source_take": "NIA_SL_SEN0412_REAL02_F",
+   "segment_sec": [
+    2.707,
+    3.522
+   ],
+   "position": "2/2",
+   "duration": 1.1,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "택시"
+   ]
+  },
+  "신호등": {
+   "id": "g0184",
+   "path": "/motions/aihub_gloss/g0184.json",
+   "source_take": "NIA_SL_SEN0440_REAL02_F",
+   "segment_sec": [
+    1.51,
+    2.231
+   ],
+   "position": "1/4",
+   "duration": 1.0,
+   "occurrences": 27,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "전",
+    "도착",
+    "내리다"
+   ]
+  },
+  "전": {
+   "id": "g0185",
+   "path": "/motions/aihub_gloss/g0185.json",
+   "source_take": "NIA_SL_SEN0441_REAL02_F",
+   "segment_sec": [
+    2.09,
+    2.59
+   ],
+   "position": "2/4",
+   "duration": 0.8,
+   "occurrences": 94,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "신호등",
+    "도착",
+    "차내리다"
+   ]
+  },
+  "화장실": {
+   "id": "g0186",
+   "path": "/motions/aihub_gloss/g0186.json",
+   "source_take": "NIA_SL_SEN0455_REAL02_F",
+   "segment_sec": [
+    1.171,
+    1.513
+   ],
+   "position": "1/2",
+   "duration": 0.6333,
+   "occurrences": 6,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "곳"
+   ]
+  },
+  "곳곳": {
+   "id": "g0187",
+   "path": "/motions/aihub_gloss/g0187.json",
+   "source_take": "NIA_SL_SEN0458_REAL02_F",
+   "segment_sec": [
+    1.184,
+    2.094
+   ],
+   "position": "2/2",
+   "duration": 1.2,
+   "occurrences": 19,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "화장실"
+   ]
+  },
+  "문안열리다": {
+   "id": "g0188",
+   "path": "/motions/aihub_gloss/g0188.json",
+   "source_take": "NIA_SL_SEN0466_REAL02_F",
+   "segment_sec": [
+    3.449,
+    4.1
+   ],
+   "position": "2/3",
+   "duration": 0.9667,
+   "occurrences": 4,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "물품보관",
+    "고장"
+   ]
+  },
+  "지갑": {
+   "id": "g0189",
+   "path": "/motions/aihub_gloss/g0189.json",
+   "source_take": "NIA_SL_SEN0471_REAL02_F",
+   "segment_sec": [
+    1.348,
+    1.892
+   ],
+   "position": "1/3",
+   "duration": 0.8333,
+   "occurrences": 16,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "잃어버리다",
+    "없다"
+   ]
+  },
+  "안전벨트": {
+   "id": "g0190",
+   "path": "/motions/aihub_gloss/g0190.json",
+   "source_take": "NIA_SL_SEN0474_REAL02_F",
+   "segment_sec": [
+    1.469,
+    2.757
+   ],
+   "position": "1/1",
+   "duration": 1.5667,
+   "occurrences": 4,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "꼿다": {
+   "id": "g0191",
+   "path": "/motions/aihub_gloss/g0191.json",
+   "source_take": "NIA_SL_SEN0475_REAL02_F",
+   "segment_sec": [
+    2.231,
+    3.317
+   ],
+   "position": "2/2",
+   "duration": 1.4,
+   "occurrences": 3,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "안전벨트"
+   ]
+  },
+  "교환하다": {
+   "id": "g0192",
+   "path": "/motions/aihub_gloss/g0192.json",
+   "source_take": "NIA_SL_SEN0480_REAL02_F",
+   "segment_sec": [
+    2.483,
+    3.355
+   ],
+   "position": "3/3",
+   "duration": 1.1667,
+   "occurrences": 5,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "카드",
+    "다르다"
+   ]
+  },
+  "또": {
+   "id": "g0193",
+   "path": "/motions/aihub_gloss/g0193.json",
+   "source_take": "NIA_SL_SEN0481_REAL02_F",
+   "segment_sec": [
+    2.754,
+    3.115
+   ],
+   "position": "3/4",
+   "duration": 0.6667,
+   "occurrences": 3,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "카드",
+    "다르다",
+    "없다"
+   ]
+  },
+  "다르다": {
+   "id": "g0194",
+   "path": "/motions/aihub_gloss/g0194.json",
+   "source_take": "NIA_SL_SEN0485_REAL02_F",
+   "segment_sec": [
+    1.062,
+    1.506
+   ],
+   "position": "2/3",
+   "duration": 0.7667,
+   "occurrences": 8,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "카드",
+    "교환하다"
+   ]
+  },
+  "단말기터치": {
+   "id": "g0195",
+   "path": "/motions/aihub_gloss/g0195.json",
+   "source_take": "NIA_SL_SEN0490_REAL02_F",
+   "segment_sec": [
+    1.625,
+    2.213
+   ],
+   "position": "1/2",
+   "duration": 0.9,
+   "occurrences": 28,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "다시"
+   ]
+  },
+  "다시": {
+   "id": "g0196",
+   "path": "/motions/aihub_gloss/g0196.json",
+   "source_take": "NIA_SL_SEN0491_REAL02_F",
+   "segment_sec": [
+    2.275,
+    3.115
+   ],
+   "position": "2/2",
+   "duration": 1.1333,
+   "occurrences": 10,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "단말기터치"
+   ]
+  },
+  "해보다": {
+   "id": "g0197",
+   "path": "/motions/aihub_gloss/g0197.json",
+   "source_take": "NIA_SL_SEN0494_REAL02_F",
+   "segment_sec": [
+    4.064,
+    4.797
+   ],
+   "position": "4/4",
+   "duration": 1.0333,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "카드",
+    "단말기터치",
+    "다시"
+   ]
+  },
+  "트렁크열다": {
+   "id": "g0198",
+   "path": "/motions/aihub_gloss/g0198.json",
+   "source_take": "NIA_SL_SEN0496_REAL02_F",
+   "segment_sec": [
+    2.199,
+    3.14
+   ],
+   "position": "2/2",
+   "duration": 1.2667,
+   "occurrences": 8,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "차"
+   ]
+  },
+  "엉덩이": {
+   "id": "g0199",
+   "path": "/motions/aihub_gloss/g0199.json",
+   "source_take": "NIA_SL_SEN0500_REAL02_F",
+   "segment_sec": [
+    1.788,
+    2.263
+   ],
+   "position": "2/3",
+   "duration": 0.7667,
+   "occurrences": 5,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "뒤",
+    "들어올리다"
+   ]
+  },
+  "유리": {
+   "id": "g0200",
+   "path": "/motions/aihub_gloss/g0200.json",
+   "source_take": "NIA_SL_SEN0507_REAL02_F",
+   "segment_sec": [
+    1.602,
+    2.127
+   ],
+   "position": "1/2",
+   "duration": 0.8,
+   "occurrences": 11,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "올리다"
+   ]
+  },
+  "춥다": {
+   "id": "g0201",
+   "path": "/motions/aihub_gloss/g0201.json",
+   "source_take": "NIA_SL_SEN0512_REAL02_F",
+   "segment_sec": [
+    1.391,
+    1.891
+   ],
+   "position": "1/2",
+   "duration": 0.8,
+   "occurrences": 6,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "끄다"
+   ]
+  },
+  "받다": {
+   "id": "g0202",
+   "path": "/motions/aihub_gloss/g0202.json",
+   "source_take": "NIA_SL_SEN0530_REAL02_F",
+   "segment_sec": [
+    2.207,
+    3.136
+   ],
+   "position": "2/2",
+   "duration": 1.2333,
+   "occurrences": 5,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "영수증"
+   ]
+  },
+  "영수증": {
+   "id": "g0203",
+   "path": "/motions/aihub_gloss/g0203.json",
+   "source_take": "NIA_SL_SEN0533_REAL02_F",
+   "segment_sec": [
+    1.493,
+    2.611
+   ],
+   "position": "1/2",
+   "duration": 1.4333,
+   "occurrences": 15,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "받다"
+   ]
+  },
+  "주세요": {
+   "id": "g0204",
+   "path": "/motions/aihub_gloss/g0204.json",
+   "source_take": "NIA_SL_SEN0534_REAL02_F",
+   "segment_sec": [
+    2.204,
+    3.126
+   ],
+   "position": "2/2",
+   "duration": 1.2,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "영수증"
+   ]
+  },
+  "올리다": {
+   "id": "g0205",
+   "path": "/motions/aihub_gloss/g0205.json",
+   "source_take": "NIA_SL_SEN0543_REAL02_F",
+   "segment_sec": [
+    1.773,
+    2.992
+   ],
+   "position": "2/2",
+   "duration": 1.5,
+   "occurrences": 9,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "차"
+   ]
+  },
+  "확인": {
+   "id": "g0206",
+   "path": "/motions/aihub_gloss/g0206.json",
+   "source_take": "NIA_SL_SEN0548_REAL02_F",
+   "segment_sec": [
+    2.417,
+    3.144
+   ],
+   "position": "2/3",
+   "duration": 1.0333,
+   "occurrences": 28,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "좌회전",
+    "맞다"
+   ]
+  },
+  "우회전": {
+   "id": "g0207",
+   "path": "/motions/aihub_gloss/g0207.json",
+   "source_take": "NIA_SL_SEN0560_REAL02_F",
+   "segment_sec": [
+    1.257,
+    1.927
+   ],
+   "position": "1/2",
+   "duration": 0.9667,
+   "occurrences": 27,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "맞다"
+   ]
+  },
+  "유턴": {
+   "id": "g0208",
+   "path": "/motions/aihub_gloss/g0208.json",
+   "source_take": "NIA_SL_SEN0565_REAL02_F",
+   "segment_sec": [
+    1.613,
+    2.308
+   ],
+   "position": "1/2",
+   "duration": 1.0,
+   "occurrences": 15,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "맞다"
+   ]
+  },
+  "응급실": {
+   "id": "g0209",
+   "path": "/motions/aihub_gloss/g0209.json",
+   "source_take": "NIA_SL_SEN0581_REAL02_F",
+   "segment_sec": [
+    1.521,
+    2.733
+   ],
+   "position": "1/2",
+   "duration": 1.5,
+   "occurrences": 10,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "가다"
+   ]
+  },
+  "서울역": {
+   "id": "g0210",
+   "path": "/motions/aihub_gloss/g0210.json",
+   "source_take": "NIA_SL_SEN0603_REAL02_F",
+   "segment_sec": [
+    1.367,
+    2.205
+   ],
+   "position": "1/3",
+   "duration": 1.1333,
+   "occurrences": 12,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "차내리다",
+    "가다"
+   ]
+  },
+  "가다": {
+   "id": "g0211",
+   "path": "/motions/aihub_gloss/g0211.json",
+   "source_take": "NIA_SL_SEN0606_REAL02_F",
+   "segment_sec": [
+    3.553,
+    4.208
+   ],
+   "position": "3/3",
+   "duration": 0.9667,
+   "occurrences": 209,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "서울역",
+    "목적"
+   ]
+  },
+  "고속터미널": {
+   "id": "g0212",
+   "path": "/motions/aihub_gloss/g0212.json",
+   "source_take": "NIA_SL_SEN0618_REAL02_F",
+   "segment_sec": [
+    1.461,
+    2.339
+   ],
+   "position": "1/3",
+   "duration": 1.2,
+   "occurrences": 9,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "가다",
+    "내리다"
+   ]
+  },
+  "지름길": {
+   "id": "g0213",
+   "path": "/motions/aihub_gloss/g0213.json",
+   "source_take": "NIA_SL_SEN0625_REAL02_F",
+   "segment_sec": [
+    1.9,
+    2.787
+   ],
+   "position": "1/3",
+   "duration": 1.2,
+   "occurrences": 24,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "도착",
+    "가다"
+   ]
+  },
+  "내리다": {
+   "id": "g0214",
+   "path": "/motions/aihub_gloss/g0214.json",
+   "source_take": "NIA_SL_SEN0633_REAL02_F",
+   "segment_sec": [
+    2.258,
+    3.12
+   ],
+   "position": "2/2",
+   "duration": 1.1667,
+   "occurrences": 334,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "명동"
+   ]
+  },
+  "손바닥찍다": {
+   "id": "g0215",
+   "path": "/motions/aihub_gloss/g0215.json",
+   "source_take": "NIA_SL_SEN0643_REAL02_F",
+   "segment_sec": [
+    1.547,
+    2.047
+   ],
+   "position": "1/3",
+   "duration": 0.8,
+   "occurrences": 19,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "차내리다",
+    "가다"
+   ]
+  },
+  "나사렛": {
+   "id": "g0216",
+   "path": "/motions/aihub_gloss/g0216.json",
+   "source_take": "NIA_SL_SEN0671_REAL02_F",
+   "segment_sec": [
+    3.226,
+    3.798
+   ],
+   "position": "1/3",
+   "duration": 0.8667,
+   "occurrences": 38,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "내리다",
+    "가다"
+   ]
+  },
+  "아파트": {
+   "id": "g0217",
+   "path": "/motions/aihub_gloss/g0217.json",
+   "source_take": "NIA_SL_SEN0692_REAL02_F",
+   "segment_sec": [
+    1.447,
+    1.875
+   ],
+   "position": "1/2",
+   "duration": 0.7333,
+   "occurrences": 16,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "저기"
+   ]
+  },
+  "시청": {
+   "id": "g0218",
+   "path": "/motions/aihub_gloss/g0218.json",
+   "source_take": "NIA_SL_SEN0780_REAL02_F",
+   "segment_sec": [
+    1.44,
+    2.238
+   ],
+   "position": "1/3",
+   "duration": 1.1,
+   "occurrences": 22,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "차내리다",
+    "오케이"
+   ]
+  },
+  "지금": {
+   "id": "g0219",
+   "path": "/motions/aihub_gloss/g0219.json",
+   "source_take": "NIA_SL_SEN0793_REAL02_F",
+   "segment_sec": [
+    1.879,
+    2.282
+   ],
+   "position": "1/3",
+   "duration": 0.7,
+   "occurrences": 14,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "내리다",
+    "맞다"
+   ]
+  },
+  "곳": {
+   "id": "g0220",
+   "path": "/motions/aihub_gloss/g0220.json",
+   "source_take": "NIA_SL_SEN0812_REAL02_F",
+   "segment_sec": [
+    2.004,
+    2.37
+   ],
+   "position": "2/3",
+   "duration": 0.6667,
+   "occurrences": 525,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "버스",
+    "맞다"
+   ]
+  },
+  "버스": {
+   "id": "g0221",
+   "path": "/motions/aihub_gloss/g0221.json",
+   "source_take": "NIA_SL_SEN0815_REAL02_F",
+   "segment_sec": [
+    1.28,
+    1.64
+   ],
+   "position": "1/4",
+   "duration": 0.6667,
+   "occurrences": 79,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "곳",
+    "차내리다",
+    "맞다"
+   ]
+  },
+  "맞다": {
+   "id": "g0222",
+   "path": "/motions/aihub_gloss/g0222.json",
+   "source_take": "NIA_SL_SEN0819_REAL02_F",
+   "segment_sec": [
+    2.607,
+    3.51
+   ],
+   "position": "4/4",
+   "duration": 1.2,
+   "occurrences": 161,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "버스",
+    "곳",
+    "차내리다"
+   ]
+  },
+  "차두다": {
+   "id": "g0223",
+   "path": "/motions/aihub_gloss/g0223.json",
+   "source_take": "NIA_SL_SEN0827_REAL02_F",
+   "segment_sec": [
+    2.166,
+    3.285
+   ],
+   "position": "2/2",
+   "duration": 1.4333,
+   "occurrences": 3,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "건너다"
+   ]
+  },
+  "뒤": {
+   "id": "g0224",
+   "path": "/motions/aihub_gloss/g0224.json",
+   "source_take": "NIA_SL_SEN0856_REAL02_F",
+   "segment_sec": [
+    2.09,
+    2.512
+   ],
+   "position": "2/3",
+   "duration": 0.7333,
+   "occurrences": 11,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "차",
+    "들어올리다"
+   ]
+  },
+  "들어올리다": {
+   "id": "g0225",
+   "path": "/motions/aihub_gloss/g0225.json",
+   "source_take": "NIA_SL_SEN0856_REAL02_F",
+   "segment_sec": [
+    2.605,
+    3.755
+   ],
+   "position": "3/3",
+   "duration": 1.4333,
+   "occurrences": 6,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "차",
+    "뒤"
+   ]
+  },
+  "차": {
+   "id": "g0226",
+   "path": "/motions/aihub_gloss/g0226.json",
+   "source_take": "NIA_SL_SEN0859_REAL02_F",
+   "segment_sec": [
+    1.742,
+    2.098
+   ],
+   "position": "1/3",
+   "duration": 0.6333,
+   "occurrences": 15,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "뒤",
+    "트렁크열다"
+   ]
+  },
+  "한국농아인협회": {
+   "id": "g0227",
+   "path": "/motions/aihub_gloss/g0227.json",
+   "source_take": "NIA_SL_SEN0865_REAL02_F",
+   "segment_sec": [
+    1.527,
+    3.358
+   ],
+   "position": "1/2",
+   "duration": 2.1333,
+   "occurrences": 20,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "내리다"
+   ]
+  },
+  "오케이": {
+   "id": "g0228",
+   "path": "/motions/aihub_gloss/g0228.json",
+   "source_take": "NIA_SL_SEN0870_REAL02_F",
+   "segment_sec": [
+    4.951,
+    5.874
+   ],
+   "position": "3/3",
+   "duration": 1.2333,
+   "occurrences": 41,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "한국농아인협회",
+    "내리다"
+   ]
+  },
+  "서대문농아인복지관": {
+   "id": "g0229",
+   "path": "/motions/aihub_gloss/g0229.json",
+   "source_take": "NIA_SL_SEN0884_REAL02_F",
+   "segment_sec": [
+    1.947,
+    2.447
+   ],
+   "position": "1/2",
+   "duration": 0.8,
+   "occurrences": 19,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "내리다"
+   ]
+  },
+  "에어컨": {
+   "id": "g0230",
+   "path": "/motions/aihub_gloss/g0230.json",
+   "source_take": "NIA_SL_SEN0898_REAL02_F",
+   "segment_sec": [
+    1.413,
+    2.449
+   ],
+   "position": "1/2",
+   "duration": 1.3333,
+   "occurrences": 44,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "켜다"
+   ]
+  },
+  "켜다": {
+   "id": "g0231",
+   "path": "/motions/aihub_gloss/g0231.json",
+   "source_take": "NIA_SL_SEN0898_REAL02_F",
+   "segment_sec": [
+    2.537,
+    3.532
+   ],
+   "position": "2/2",
+   "duration": 1.2667,
+   "occurrences": 22,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "에어컨"
+   ]
+  },
+  "난방": {
+   "id": "g0232",
+   "path": "/motions/aihub_gloss/g0232.json",
+   "source_take": "NIA_SL_SEN0919_REAL02_F",
+   "segment_sec": [
+    1.339,
+    2.329
+   ],
+   "position": "1/2",
+   "duration": 1.2667,
+   "occurrences": 17,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "켜다"
+   ]
+  },
+  "따뜻하다": {
+   "id": "g0233",
+   "path": "/motions/aihub_gloss/g0233.json",
+   "source_take": "NIA_SL_SEN0922_REAL02_F",
+   "segment_sec": [
+    1.667,
+    2.218
+   ],
+   "position": "1/2",
+   "duration": 0.8333,
+   "occurrences": 8,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "켜다"
+   ]
+  },
+  "서울농아인협회": {
+   "id": "g0234",
+   "path": "/motions/aihub_gloss/g0234.json",
+   "source_take": "NIA_SL_SEN0934_REAL02_F",
+   "segment_sec": [
+    1.87,
+    3.34
+   ],
+   "position": "1/2",
+   "duration": 1.7667,
+   "occurrences": 20,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "가다"
+   ]
+  },
+  "청음회관": {
+   "id": "g0235",
+   "path": "/motions/aihub_gloss/g0235.json",
+   "source_take": "NIA_SL_SEN0954_REAL02_F",
+   "segment_sec": [
+    1.99,
+    2.438
+   ],
+   "position": "1/2",
+   "duration": 0.7667,
+   "occurrences": 20,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "가다"
+   ]
+  },
+  "천안아산역": {
+   "id": "g0236",
+   "path": "/motions/aihub_gloss/g0236.json",
+   "source_take": "NIA_SL_SEN0966_REAL02_F",
+   "segment_sec": [
+    1.436,
+    2.013
+   ],
+   "position": "1/2",
+   "duration": 0.8667,
+   "occurrences": 5,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "내리다"
+   ]
+  },
+  "끄다": {
+   "id": "g0237",
+   "path": "/motions/aihub_gloss/g0237.json",
+   "source_take": "NIA_SL_SEN0969_REAL02_F",
+   "segment_sec": [
+    1.958,
+    3.01
+   ],
+   "position": "2/2",
+   "duration": 1.3667,
+   "occurrences": 17,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "춥다"
+   ]
+  },
+  "그만": {
+   "id": "g0238",
+   "path": "/motions/aihub_gloss/g0238.json",
+   "source_take": "NIA_SL_SEN0977_REAL02_F",
+   "segment_sec": [
+    1.777,
+    2.731
+   ],
+   "position": "2/2",
+   "duration": 1.2333,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "따뜻하다"
+   ]
+  },
+  "엘리베이터": {
+   "id": "g0239",
+   "path": "/motions/aihub_gloss/g0239.json",
+   "source_take": "NIA_SL_SEN0994_REAL02_F",
+   "segment_sec": [
+    1.954,
+    2.749
+   ],
+   "position": "1/2",
+   "duration": 1.1,
+   "occurrences": 12,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "무엇"
+   ]
+  },
+  "약": {
+   "id": "g0240",
+   "path": "/motions/aihub_gloss/g0240.json",
+   "source_take": "NIA_SL_SEN1001_REAL02_F",
+   "segment_sec": [
+    1.488,
+    1.936
+   ],
+   "position": "1/2",
+   "duration": 0.7667,
+   "occurrences": 9,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "곳"
+   ]
+  },
+  "뼈곳": {
+   "id": "g0241",
+   "path": "/motions/aihub_gloss/g0241.json",
+   "source_take": "NIA_SL_SEN1005_REAL02_F",
+   "segment_sec": [
+    1.746,
+    2.64
+   ],
+   "position": "2/2",
+   "duration": 1.2,
+   "occurrences": 7,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "약"
+   ]
+  },
+  "은행": {
+   "id": "g0242",
+   "path": "/motions/aihub_gloss/g0242.json",
+   "source_take": "NIA_SL_SEN1006_REAL02_F",
+   "segment_sec": [
+    2.007,
+    2.507
+   ],
+   "position": "1/3",
+   "duration": 0.8,
+   "occurrences": 28,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "무엇",
+    "길"
+   ]
+  },
+  "어디": {
+   "id": "g0243",
+   "path": "/motions/aihub_gloss/g0243.json",
+   "source_take": "NIA_SL_SEN1012_REAL02_F",
+   "segment_sec": [
+    3.044,
+    3.417
+   ],
+   "position": "2/3",
+   "duration": 0.6667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "자판기",
+    "길"
+   ]
+  },
+  "길": {
+   "id": "g0244",
+   "path": "/motions/aihub_gloss/g0244.json",
+   "source_take": "NIA_SL_SEN1013_REAL02_F",
+   "segment_sec": [
+    3.362,
+    3.896
+   ],
+   "position": "2/3",
+   "duration": 0.8333,
+   "occurrences": 84,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "자판기",
+    "무엇"
+   ]
+  },
+  "의자": {
+   "id": "g0245",
+   "path": "/motions/aihub_gloss/g0245.json",
+   "source_take": "NIA_SL_SEN1024_REAL02_F",
+   "segment_sec": [
+    2.172,
+    2.521
+   ],
+   "position": "1/2",
+   "duration": 0.6333,
+   "occurrences": 6,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "무엇"
+   ]
+  },
+  "돈얼마": {
+   "id": "g0246",
+   "path": "/motions/aihub_gloss/g0246.json",
+   "source_take": "NIA_SL_SEN1035_REAL02_F",
+   "segment_sec": [
+    1.881,
+    2.645
+   ],
+   "position": "2/2",
+   "duration": 1.0667,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "돈주다"
+   ]
+  },
+  "회의실": {
+   "id": "g0247",
+   "path": "/motions/aihub_gloss/g0247.json",
+   "source_take": "NIA_SL_SEN1036_REAL02_F",
+   "segment_sec": [
+    1.83,
+    2.743
+   ],
+   "position": "1/3",
+   "duration": 1.2333,
+   "occurrences": 5,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "곳",
+    "무엇"
+   ]
+  },
+  "안내소": {
+   "id": "g0248",
+   "path": "/motions/aihub_gloss/g0248.json",
+   "source_take": "NIA_SL_SEN1040_REAL02_F",
+   "segment_sec": [
+    2.447,
+    3.692
+   ],
+   "position": "1/2",
+   "duration": 1.5333,
+   "occurrences": 6,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "곳"
+   ]
+  },
+  "아니다": {
+   "id": "g0249",
+   "path": "/motions/aihub_gloss/g0249.json",
+   "source_take": "NIA_SL_SEN1045_REAL02_F",
+   "segment_sec": [
+    1.421,
+    2.276
+   ],
+   "position": "1/1",
+   "duration": 1.1667,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "계단": {
+   "id": "g0250",
+   "path": "/motions/aihub_gloss/g0250.json",
+   "source_take": "NIA_SL_SEN1048_REAL02_F",
+   "segment_sec": [
+    1.914,
+    2.334
+   ],
+   "position": "1/2",
+   "duration": 0.7333,
+   "occurrences": 9,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "곳"
+   ]
+  },
+  "죽다": {
+   "id": "g0251",
+   "path": "/motions/aihub_gloss/g0251.json",
+   "source_take": "NIA_SL_SEN1053_REAL02_F",
+   "segment_sec": [
+    3.328,
+    4.08
+   ],
+   "position": "3/3",
+   "duration": 1.0667,
+   "occurrences": 21,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "물품보관",
+    "불량"
+   ]
+  },
+  "자판기": {
+   "id": "g0252",
+   "path": "/motions/aihub_gloss/g0252.json",
+   "source_take": "NIA_SL_SEN1063_REAL02_F",
+   "segment_sec": [
+    1.306,
+    2.219
+   ],
+   "position": "1/3",
+   "duration": 1.2,
+   "occurrences": 26,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "불량",
+    "죽다"
+   ]
+  },
+  "사용": {
+   "id": "g0253",
+   "path": "/motions/aihub_gloss/g0253.json",
+   "source_take": "NIA_SL_SEN1072_REAL02_F",
+   "segment_sec": [
+    3.369,
+    3.806
+   ],
+   "position": "2/4",
+   "duration": 0.7333,
+   "occurrences": 52,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "공기청정기",
+    "안되다",
+    "불량"
+   ]
+  },
+  "공기청정기": {
+   "id": "g0254",
+   "path": "/motions/aihub_gloss/g0254.json",
+   "source_take": "NIA_SL_SEN1075_REAL02_F",
+   "segment_sec": [
+    1.18,
+    2.276
+   ],
+   "position": "1/3",
+   "duration": 1.4,
+   "occurrences": 7,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "안되다",
+    "고장"
+   ]
+  },
+  "잘": {
+   "id": "g0255",
+   "path": "/motions/aihub_gloss/g0255.json",
+   "source_take": "NIA_SL_SEN1082_REAL02_F",
+   "segment_sec": [
+    2.241,
+    2.494
+   ],
+   "position": "3/4",
+   "duration": 0.5333,
+   "occurrences": 27,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "단말기터치",
+    "불량",
+    "안되다"
+   ]
+  },
+  "고장": {
+   "id": "g0256",
+   "path": "/motions/aihub_gloss/g0256.json",
+   "source_take": "NIA_SL_SEN1087_REAL02_F",
+   "segment_sec": [
+    4.317,
+    4.874
+   ],
+   "position": "4/4",
+   "duration": 0.8667,
+   "occurrences": 39,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "카드",
+    "사용",
+    "안되다"
+   ]
+  },
+  "안되다": {
+   "id": "g0257",
+   "path": "/motions/aihub_gloss/g0257.json",
+   "source_take": "NIA_SL_SEN1103_REAL02_F",
+   "segment_sec": [
+    3.362,
+    3.971
+   ],
+   "position": "4/4",
+   "duration": 0.9333,
+   "occurrences": 85,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "에어컨",
+    "고장",
+    "잘"
+   ]
+  },
+  "불가능": {
+   "id": "g0258",
+   "path": "/motions/aihub_gloss/g0258.json",
+   "source_take": "NIA_SL_SEN1107_REAL02_F",
+   "segment_sec": [
+    3.375,
+    4.093
+   ],
+   "position": "4/4",
+   "duration": 1.0,
+   "occurrences": 24,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "난방",
+    "사용",
+    "안되다"
+   ]
+  },
+  "물품보관": {
+   "id": "g0259",
+   "path": "/motions/aihub_gloss/g0259.json",
+   "source_take": "NIA_SL_SEN1117_REAL02_F",
+   "segment_sec": [
+    1.164,
+    2.277
+   ],
+   "position": "1/2",
+   "duration": 1.4333,
+   "occurrences": 21,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "불량"
+   ]
+  },
+  "불량": {
+   "id": "g0260",
+   "path": "/motions/aihub_gloss/g0260.json",
+   "source_take": "NIA_SL_SEN1152_REAL02_F",
+   "segment_sec": [
+    1.842,
+    2.4
+   ],
+   "position": "2/4",
+   "duration": 0.8333,
+   "occurrences": 32,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "카드",
+    "잘",
+    "안되다"
+   ]
+  },
+  "공항": {
+   "id": "g0261",
+   "path": "/motions/aihub_gloss/g0261.json",
+   "source_take": "NIA_SL_SEN1179_REAL02_F",
+   "segment_sec": [
+    2.579,
+    2.993
+   ],
+   "position": "1/6",
+   "duration": 0.7,
+   "occurrences": 27,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "버스",
+    "보다",
+    "곳",
+    "전",
+    "차내리다"
+   ]
+  },
+  "스타벅스": {
+   "id": "g0262",
+   "path": "/motions/aihub_gloss/g0262.json",
+   "source_take": "NIA_SL_SEN1211_REAL02_F",
+   "segment_sec": [
+    2.272,
+    2.879
+   ],
+   "position": "1/5",
+   "duration": 0.9,
+   "occurrences": 18,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "곳",
+    "저기",
+    "전",
+    "차내리다"
+   ]
+  },
+  "택시": {
+   "id": "g0263",
+   "path": "/motions/aihub_gloss/g0263.json",
+   "source_take": "NIA_SL_SEN1230_REAL02_F",
+   "segment_sec": [
+    2.657,
+    3.071
+   ],
+   "position": "1/4",
+   "duration": 0.7333,
+   "occurrences": 34,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "전",
+    "저기",
+    "내리다"
+   ]
+  },
+  "맥도날드": {
+   "id": "g0264",
+   "path": "/motions/aihub_gloss/g0264.json",
+   "source_take": "NIA_SL_SEN1253_REAL02_F",
+   "segment_sec": [
+    2.277,
+    2.67
+   ],
+   "position": "1/5",
+   "duration": 0.7,
+   "occurrences": 20,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "보다",
+    "다음",
+    "곳",
+    "차내리다"
+   ]
+  },
+  "열쇠": {
+   "id": "g0265",
+   "path": "/motions/aihub_gloss/g0265.json",
+   "source_take": "NIA_SL_SEN1267_REAL02_F",
+   "segment_sec": [
+    2.23,
+    2.73
+   ],
+   "position": "1/3",
+   "duration": 0.8,
+   "occurrences": 16,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "잃어버리다",
+    "실종"
+   ]
+  },
+  "백화점": {
+   "id": "g0266",
+   "path": "/motions/aihub_gloss/g0266.json",
+   "source_take": "NIA_SL_SEN1282_REAL02_F",
+   "segment_sec": [
+    2.365,
+    3.245
+   ],
+   "position": "1/5",
+   "duration": 1.2,
+   "occurrences": 19,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "다음",
+    "곳",
+    "보다",
+    "내리다"
+   ]
+  },
+  "이마트": {
+   "id": "g0267",
+   "path": "/motions/aihub_gloss/g0267.json",
+   "source_take": "NIA_SL_SEN1299_REAL02_F",
+   "segment_sec": [
+    2.488,
+    2.895
+   ],
+   "position": "1/5",
+   "duration": 0.7,
+   "occurrences": 18,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "곳",
+    "저기",
+    "다음",
+    "저기"
+   ]
+  },
+  "잃어버리다": {
+   "id": "g0268",
+   "path": "/motions/aihub_gloss/g0268.json",
+   "source_take": "NIA_SL_SEN1308_REAL02_F",
+   "segment_sec": [
+    3.196,
+    3.982
+   ],
+   "position": "3/3",
+   "duration": 1.1,
+   "occurrences": 74,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "우산",
+    "없다"
+   ]
+  },
+  "파리바게트": {
+   "id": "g0269",
+   "path": "/motions/aihub_gloss/g0269.json",
+   "source_take": "NIA_SL_SEN1323_REAL02_F",
+   "segment_sec": [
+    1.526,
+    2.406
+   ],
+   "position": "1/6",
+   "duration": 1.2,
+   "occurrences": 19,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "다음",
+    "저기",
+    "곳",
+    "도착",
+    "내리다"
+   ]
+  },
+  "3": {
+   "id": "g0270",
+   "path": "/motions/aihub_gloss/g0270.json",
+   "source_take": "NIA_SL_SEN1333_REAL02_F",
+   "segment_sec": [
+    1.703,
+    2.053
+   ],
+   "position": "1/4",
+   "duration": 0.6333,
+   "occurrences": 15,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "곳",
+    "길",
+    "방법"
+   ]
+  },
+  "서울대학교": {
+   "id": "g0271",
+   "path": "/motions/aihub_gloss/g0271.json",
+   "source_take": "NIA_SL_SEN1352_REAL02_F",
+   "segment_sec": [
+    2.311,
+    3.183
+   ],
+   "position": "1/6",
+   "duration": 1.1667,
+   "occurrences": 20,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "찾다",
+    "목적",
+    "길",
+    "가다",
+    "방법"
+   ]
+  },
+  "무엇": {
+   "id": "g0272",
+   "path": "/motions/aihub_gloss/g0272.json",
+   "source_take": "NIA_SL_SEN1353_REAL02_F",
+   "segment_sec": [
+    5.253,
+    5.982
+   ],
+   "position": "5/5",
+   "duration": 1.0333,
+   "occurrences": 106,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "서울대학교",
+    "찾다",
+    "가다",
+    "길"
+   ]
+  },
+  "방법": {
+   "id": "g0273",
+   "path": "/motions/aihub_gloss/g0273.json",
+   "source_take": "NIA_SL_SEN1372_REAL02_F",
+   "segment_sec": [
+    4.598,
+    5.37
+   ],
+   "position": "5/5",
+   "duration": 1.1,
+   "occurrences": 108,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "송파",
+    "지하철",
+    "목적",
+    "무엇"
+   ]
+  },
+  "송파": {
+   "id": "g0274",
+   "path": "/motions/aihub_gloss/g0274.json",
+   "source_take": "NIA_SL_SEN1377_REAL02_F",
+   "segment_sec": [
+    1.791,
+    2.119
+   ],
+   "position": "1/5",
+   "duration": 0.6333,
+   "occurrences": 22,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "지하철",
+    "곳",
+    "목적",
+    "무엇"
+   ]
+  },
+  "여의도": {
+   "id": "g0275",
+   "path": "/motions/aihub_gloss/g0275.json",
+   "source_take": "NIA_SL_SEN1383_REAL02_F",
+   "segment_sec": [
+    2.191,
+    2.526
+   ],
+   "position": "1/2",
+   "duration": 0.6333,
+   "occurrences": 20,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "방법"
+   ]
+  },
+  "원하다": {
+   "id": "g0276",
+   "path": "/motions/aihub_gloss/g0276.json",
+   "source_take": "NIA_SL_SEN1387_REAL02_F",
+   "segment_sec": [
+    2.756,
+    3.141
+   ],
+   "position": "3/4",
+   "duration": 0.7,
+   "occurrences": 15,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "여의도",
+    "가다",
+    "방법"
+   ]
+  },
+  "영등포": {
+   "id": "g0277",
+   "path": "/motions/aihub_gloss/g0277.json",
+   "source_take": "NIA_SL_SEN1406_REAL02_F",
+   "segment_sec": [
+    2.035,
+    2.535
+   ],
+   "position": "1/5",
+   "duration": 0.8,
+   "occurrences": 18,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "길",
+    "곳",
+    "방법",
+    "무엇"
+   ]
+  },
+  "찾다": {
+   "id": "g0278",
+   "path": "/motions/aihub_gloss/g0278.json",
+   "source_take": "NIA_SL_SEN1413_REAL02_F",
+   "segment_sec": [
+    3.228,
+    3.826
+   ],
+   "position": "3/5",
+   "duration": 0.9,
+   "occurrences": 65,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "영등포",
+    "곳",
+    "길",
+    "방법"
+   ]
+  },
+  "이화여대": {
+   "id": "g0279",
+   "path": "/motions/aihub_gloss/g0279.json",
+   "source_take": "NIA_SL_SEN1421_REAL02_F",
+   "segment_sec": [
+    2.731,
+    3.231
+   ],
+   "position": "1/4",
+   "duration": 0.8,
+   "occurrences": 20,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "가다",
+    "목적",
+    "방법"
+   ]
+  },
+  "종로": {
+   "id": "g0280",
+   "path": "/motions/aihub_gloss/g0280.json",
+   "source_take": "NIA_SL_SEN1442_REAL02_F",
+   "segment_sec": [
+    1.609,
+    2.109
+   ],
+   "position": "1/4",
+   "duration": 0.8,
+   "occurrences": 21,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "찾다",
+    "가다",
+    "무엇"
+   ]
+  },
+  "터널": {
+   "id": "g0281",
+   "path": "/motions/aihub_gloss/g0281.json",
+   "source_take": "NIA_SL_SEN1470_REAL02_F",
+   "segment_sec": [
+    1.696,
+    2.196
+   ],
+   "position": "1/3",
+   "duration": 0.8,
+   "occurrences": 20,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "다음",
+    "여기"
+   ]
+  },
+  "차내리다": {
+   "id": "g0282",
+   "path": "/motions/aihub_gloss/g0282.json",
+   "source_take": "NIA_SL_SEN1483_REAL02_F",
+   "segment_sec": [
+    2.998,
+    3.886
+   ],
+   "position": "4/4",
+   "duration": 1.2,
+   "occurrences": 310,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "군청",
+    "곳",
+    "다음"
+   ]
+  },
+  "병원": {
+   "id": "g0283",
+   "path": "/motions/aihub_gloss/g0283.json",
+   "source_take": "NIA_SL_SEN1494_REAL02_F",
+   "segment_sec": [
+    1.559,
+    1.881
+   ],
+   "position": "1/3",
+   "duration": 0.6333,
+   "occurrences": 21,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "다음",
+    "차내리다"
+   ]
+  },
+  "샛길": {
+   "id": "g0284",
+   "path": "/motions/aihub_gloss/g0284.json",
+   "source_take": "NIA_SL_SEN1501_REAL02_F",
+   "segment_sec": [
+    1.549,
+    2.42
+   ],
+   "position": "1/3",
+   "duration": 1.1667,
+   "occurrences": 34,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "다음",
+    "여기"
+   ]
+  },
+  "119": {
+   "id": "g0285",
+   "path": "/motions/aihub_gloss/g0285.json",
+   "source_take": "NIA_SL_SEN1526_REAL02_F",
+   "segment_sec": [
+    2.46,
+    3.055
+   ],
+   "position": "1/5",
+   "duration": 0.9,
+   "occurrences": 21,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "곳",
+    "저기",
+    "다음",
+    "곳"
+   ]
+  },
+  "대로": {
+   "id": "g0286",
+   "path": "/motions/aihub_gloss/g0286.json",
+   "source_take": "NIA_SL_SEN1543_REAL02_F",
+   "segment_sec": [
+    1.185,
+    1.823
+   ],
+   "position": "1/3",
+   "duration": 0.9333,
+   "occurrences": 20,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "다음",
+    "차내리다"
+   ]
+  },
+  "육교": {
+   "id": "g0287",
+   "path": "/motions/aihub_gloss/g0287.json",
+   "source_take": "NIA_SL_SEN1554_REAL02_F",
+   "segment_sec": [
+    2.957,
+    4.099
+   ],
+   "position": "1/4",
+   "duration": 1.4333,
+   "occurrences": 20,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "곳",
+    "다음",
+    "차내리다"
+   ]
+  },
+  "도착": {
+   "id": "g0288",
+   "path": "/motions/aihub_gloss/g0288.json",
+   "source_take": "NIA_SL_SEN1557_REAL02_F",
+   "segment_sec": [
+    4.725,
+    5.27
+   ],
+   "position": "4/5",
+   "duration": 0.8667,
+   "occurrences": 244,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "육교",
+    "곳",
+    "다음",
+    "내리다"
+   ]
+  },
+  "언덕": {
+   "id": "g0289",
+   "path": "/motions/aihub_gloss/g0289.json",
+   "source_take": "NIA_SL_SEN1571_REAL02_F",
+   "segment_sec": [
+    1.382,
+    1.998
+   ],
+   "position": "1/3",
+   "duration": 0.9,
+   "occurrences": 18,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "다음",
+    "여기"
+   ]
+  },
+  "저기": {
+   "id": "g0290",
+   "path": "/motions/aihub_gloss/g0290.json",
+   "source_take": "NIA_SL_SEN1594_REAL02_F",
+   "segment_sec": [
+    2.15,
+    2.543
+   ],
+   "position": "2/5",
+   "duration": 0.7,
+   "occurrences": 235,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "경찰",
+    "곳",
+    "다음",
+    "차내리다"
+   ]
+  },
+  "편지": {
+   "id": "g0291",
+   "path": "/motions/aihub_gloss/g0291.json",
+   "source_take": "NIA_SL_SEN1605_REAL02_F",
+   "segment_sec": [
+    1.409,
+    1.909
+   ],
+   "position": "1/5",
+   "duration": 0.8,
+   "occurrences": 19,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "저기",
+    "곳",
+    "다음",
+    "차내리다"
+   ]
+  },
+  "군청": {
+   "id": "g0292",
+   "path": "/motions/aihub_gloss/g0292.json",
+   "source_take": "NIA_SL_SEN1649_REAL02_F",
+   "segment_sec": [
+    3.015,
+    3.419
+   ],
+   "position": "1/5",
+   "duration": 0.7,
+   "occurrences": 17,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "곳",
+    "다음",
+    "도착",
+    "차내리다"
+   ]
+  },
+  "사거리": {
+   "id": "g0293",
+   "path": "/motions/aihub_gloss/g0293.json",
+   "source_take": "NIA_SL_SEN1697_REAL02_F",
+   "segment_sec": [
+    2.218,
+    3.19
+   ],
+   "position": "1/4",
+   "duration": 1.2667,
+   "occurrences": 25,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "다음",
+    "도착",
+    "내리다"
+   ]
+  },
+  "보건소": {
+   "id": "g0294",
+   "path": "/motions/aihub_gloss/g0294.json",
+   "source_take": "NIA_SL_SEN1724_REAL02_F",
+   "segment_sec": [
+    1.964,
+    2.968
+   ],
+   "position": "1/4",
+   "duration": 1.3333,
+   "occurrences": 19,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "곳",
+    "다음",
+    "차내리다"
+   ]
+  },
+  "경찰": {
+   "id": "g0295",
+   "path": "/motions/aihub_gloss/g0295.json",
+   "source_take": "NIA_SL_SEN1751_REAL02_F",
+   "segment_sec": [
+    2.572,
+    2.979
+   ],
+   "position": "1/3",
+   "duration": 0.7,
+   "occurrences": 24,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "다음",
+    "여기"
+   ]
+  },
+  "알다": {
+   "id": "g0296",
+   "path": "/motions/aihub_gloss/g0296.json",
+   "source_take": "NIA_SL_SEN1773_REAL02_F",
+   "segment_sec": [
+    1.693,
+    3.031
+   ],
+   "position": "1/1",
+   "duration": 1.6333,
+   "occurrences": 3,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "필요없다": {
+   "id": "g0297",
+   "path": "/motions/aihub_gloss/g0297.json",
+   "source_take": "NIA_SL_SEN1775_REAL02_F",
+   "segment_sec": [
+    1.317,
+    2.624
+   ],
+   "position": "1/1",
+   "duration": 1.6,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "아이": {
+   "id": "g0298",
+   "path": "/motions/aihub_gloss/g0298.json",
+   "source_take": "NIA_SL_SEN1791_REAL02_F",
+   "segment_sec": [
+    1.103,
+    1.603
+   ],
+   "position": "1/3",
+   "duration": 0.8,
+   "occurrences": 17,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "잃어버리다",
+    "실종"
+   ]
+  },
+  "없다": {
+   "id": "g0299",
+   "path": "/motions/aihub_gloss/g0299.json",
+   "source_take": "NIA_SL_SEN1796_REAL02_F",
+   "segment_sec": [
+    2.117,
+    2.617
+   ],
+   "position": "2/3",
+   "duration": 0.8,
+   "occurrences": 46,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "열쇠",
+    "실종"
+   ]
+  },
+  "우산": {
+   "id": "g0300",
+   "path": "/motions/aihub_gloss/g0300.json",
+   "source_take": "NIA_SL_SEN1801_REAL02_F",
+   "segment_sec": [
+    1.685,
+    2.185
+   ],
+   "position": "1/2",
+   "duration": 0.8,
+   "occurrences": 14,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "잃어버리다"
+   ]
+  },
+  "사진기": {
+   "id": "g0301",
+   "path": "/motions/aihub_gloss/g0301.json",
+   "source_take": "NIA_SL_SEN1865_REAL02_F",
+   "segment_sec": [
+    0.839,
+    1.339
+   ],
+   "position": "1/2",
+   "duration": 0.8,
+   "occurrences": 8,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "실종"
+   ]
+  },
+  "사라지다": {
+   "id": "g0302",
+   "path": "/motions/aihub_gloss/g0302.json",
+   "source_take": "NIA_SL_SEN1868_REAL02_F",
+   "segment_sec": [
+    2.889,
+    3.332
+   ],
+   "position": "2/3",
+   "duration": 0.7333,
+   "occurrences": 17,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "사진기",
+    "실종"
+   ]
+  },
+  "가방": {
+   "id": "g0303",
+   "path": "/motions/aihub_gloss/g0303.json",
+   "source_take": "NIA_SL_SEN1872_REAL02_F",
+   "segment_sec": [
+    1.49,
+    2.122
+   ],
+   "position": "1/3",
+   "duration": 0.9333,
+   "occurrences": 18,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "없다",
+    "실종"
+   ]
+  },
+  "안경": {
+   "id": "g0304",
+   "path": "/motions/aihub_gloss/g0304.json",
+   "source_take": "NIA_SL_SEN1892_REAL02_F",
+   "segment_sec": [
+    2.182,
+    2.524
+   ],
+   "position": "1/3",
+   "duration": 0.6333,
+   "occurrences": 3,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "실종",
+    "잃어버리다"
+   ]
+  },
+  "차밀리다": {
+   "id": "g0305",
+   "path": "/motions/aihub_gloss/g0305.json",
+   "source_take": "NIA_SL_SEN1919_REAL02_F",
+   "segment_sec": [
+    1.801,
+    2.491
+   ],
+   "position": "1/2",
+   "duration": 0.9667,
+   "occurrences": 10,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "심하다"
+   ]
+  },
+  "심하다": {
+   "id": "g0306",
+   "path": "/motions/aihub_gloss/g0306.json",
+   "source_take": "NIA_SL_SEN1919_REAL02_F",
+   "segment_sec": [
+    2.752,
+    3.666
+   ],
+   "position": "2/2",
+   "duration": 1.2,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "차밀리다"
+   ]
+  },
+  "괜찮다": {
+   "id": "g0307",
+   "path": "/motions/aihub_gloss/g0307.json",
+   "source_take": "NIA_SL_SEN1925_REAL02_F",
+   "segment_sec": [
+    2.856,
+    3.617
+   ],
+   "position": "2/2",
+   "duration": 1.0667,
+   "occurrences": 7,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "차밀리다"
+   ]
+  },
+  "돈": {
+   "id": "g0308",
+   "path": "/motions/aihub_gloss/g0308.json",
+   "source_take": "NIA_SL_SEN1939_REAL02_F",
+   "segment_sec": [
+    1.487,
+    2.178
+   ],
+   "position": "1/1",
+   "duration": 1.0,
+   "occurrences": 26,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "시계": {
+   "id": "g0309",
+   "path": "/motions/aihub_gloss/g0309.json",
+   "source_take": "NIA_SL_SEN1956_REAL02_F",
+   "segment_sec": [
+    1.362,
+    1.7
+   ],
+   "position": "1/2",
+   "duration": 0.6333,
+   "occurrences": 8,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "실종"
+   ]
+  },
+  "반지": {
+   "id": "g0310",
+   "path": "/motions/aihub_gloss/g0310.json",
+   "source_take": "NIA_SL_SEN1967_REAL02_F",
+   "segment_sec": [
+    1.382,
+    1.801
+   ],
+   "position": "1/3",
+   "duration": 0.7333,
+   "occurrences": 7,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "사라지다",
+    "실종"
+   ]
+  },
+  "실종": {
+   "id": "g0311",
+   "path": "/motions/aihub_gloss/g0311.json",
+   "source_take": "NIA_SL_SEN1968_REAL02_F",
+   "segment_sec": [
+    2.788,
+    3.561
+   ],
+   "position": "3/3",
+   "duration": 1.0667,
+   "occurrences": 103,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "반지",
+    "잃어버리다"
+   ]
+  },
+  "노트북": {
+   "id": "g0312",
+   "path": "/motions/aihub_gloss/g0312.json",
+   "source_take": "NIA_SL_SEN1975_REAL02_F",
+   "segment_sec": [
+    1.634,
+    2.183
+   ],
+   "position": "1/3",
+   "duration": 0.8333,
+   "occurrences": 8,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "사라지다",
+    "실종"
+   ]
+  },
+  "화나다": {
+   "id": "g0313",
+   "path": "/motions/aihub_gloss/g0313.json",
+   "source_take": "NIA_SL_SEN1978_REAL02_F",
+   "segment_sec": [
+    1.571,
+    2.644
+   ],
+   "position": "1/1",
+   "duration": 1.3667,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  },
+  "되다": {
+   "id": "g0314",
+   "path": "/motions/aihub_gloss/g0314.json",
+   "source_take": "NIA_SL_SEN1982_REAL02_F",
+   "segment_sec": [
+    2.829,
+    3.708
+   ],
+   "position": "3/3",
+   "duration": 1.2,
+   "occurrences": 23,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "빨리",
+    "접근"
+   ]
+  },
+  "접근": {
+   "id": "g0315",
+   "path": "/motions/aihub_gloss/g0315.json",
+   "source_take": "NIA_SL_SEN1983_REAL02_F",
+   "segment_sec": [
+    1.29,
+    1.79
+   ],
+   "position": "1/2",
+   "duration": 0.8,
+   "occurrences": 13,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "도착"
+   ]
+  },
+  "보청기": {
+   "id": "g0316",
+   "path": "/motions/aihub_gloss/g0316.json",
+   "source_take": "NIA_SL_SEN1996_REAL02_F",
+   "segment_sec": [
+    1.318,
+    1.789
+   ],
+   "position": "1/2",
+   "duration": 0.7667,
+   "occurrences": 5,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [
+    "실종"
+   ]
+  },
+  "수고": {
+   "id": "g0317",
+   "path": "/motions/aihub_gloss/g0317.json",
+   "source_take": "NIA_SL_SEN2000_REAL02_F",
+   "segment_sec": [
+    1.848,
+    3.035
+   ],
+   "position": "1/1",
+   "duration": 1.5,
+   "occurrences": 2,
+   "nonmanual": [],
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": []
+  }
+ }
+}
