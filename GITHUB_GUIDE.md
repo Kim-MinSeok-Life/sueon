@@ -8,7 +8,7 @@
 | 1~3 | 도구 설치 · Git 설정 · 로그인 | 처음 한 번 |
 | 4~5 | 처음 올리기 · 저장소 설정 | 만든 사람 1명 |
 | 6 | 받아서 실행하기 | 팀원 |
-| 7 | 매일 작업 흐름(브랜치 → PR → 병합) | 모두 |
+| 7 | **브랜치 전략**과 매일 작업 흐름(`tester` → `develop` → `main`) | 모두 |
 | 8~9 | 자주 생기는 문제 · 명령 요약 | 모두 |
 
 ---
@@ -20,6 +20,7 @@
 | 저장소 이름 | **`sueon`** (GitHub 이름에는 `:`를 못 써요) |
 | 공개 범위 | **Public(공개)** — 2026-11-03 팀 결정. 누구나 보고 받을 수 있음. 올리기(push)는 초대한 팀원만 |
 | 설명 | SUEO:N - Korean speech/text to Korean Sign Language 3D avatar web app (in development) |
+| 브랜치 | `main`(최종) · `develop`(취합·확인) · `tester1`·`tester2`(각자 작업). 자세한 규칙은 7절 |
 
 **GitHub와 ZIP은 용도가 다릅니다**
 
@@ -84,7 +85,7 @@
 | ③ 올라갈 파일 보기 | `git status --short --untracked-files=all` | 목록 훑어보기 |
 | ④ **위험 파일 검사** | 아래 상자의 명령 | **아무것도 안 나와야 안전** |
 | ⑤ 담기 | `git add .` | `LF will be replaced by CRLF` 경고는 무시 |
-| ⑥ 첫 커밋 | `git commit -m "init: SUEO:N MVP"` | 메시지는 영어로(한글을 넣으면 IntelliJ 터미널이 멈출 수 있음) |
+| ⑥ 첫 커밋 | `git commit -m "[시작] SUEO:N MVP"` | 메시지는 한국어로. Windows IntelliJ 터미널에서 한글 입력이 멈추면 7.3의 커밋 창 사용 |
 | ⑦ 저장소 만들고 올리기 | `gh repo create sueon --public --source . --remote origin --push --description "SUEO:N - Korean speech/text to Korean Sign Language 3D avatar web app"` | 설명을 한글로 쓰려면 GitHub 웹의 About ⚙에서 |
 | ⑧ 웹에서 확인 | `gh repo view --web` | 이름 옆에 **Public** 표시 |
 
@@ -110,12 +111,18 @@ git status --short --untracked-files=all | Select-String "alhub_data|data/keypoi
 
 | 하고 싶은 것 | 명령 |
 |---|---|
-| 이슈 켜기·위키 끄기·병합 후 브랜치 자동 삭제 | `gh repo edit --enable-issues --enable-wiki=false --delete-branch-on-merge` |
+| 이슈 켜기·위키 끄기 | `gh repo edit --enable-issues --enable-wiki=false` |
+| 병합 후 브랜치 **자동 삭제 끄기** | `gh repo edit --delete-branch-on-merge=false` |
+
+> ⚠️ `tester1`·`tester2`·`develop`은 계속 쓰는 브랜치라, "병합 후 브랜치 자동 삭제"를 켜면 PR을 합칠 때마다 지워집니다. **꺼 둔 상태를 유지하세요.**
+
+| 하고 싶은 것 | 명령 |
+|---|---|
 | 주제 태그 | `gh repo edit --add-topic sign-language --add-topic ksl --add-topic vrm --add-topic nextjs --add-topic threejs` |
 | 팀원 초대(쓰기 권한, 1명씩) | `gh api -X PUT repos/<내아이디>/sueon/collaborators/<팀원아이디> -f permission=push` |
 
 - 팀원은 이메일이나 https://github.com/notifications 에서 초대를 **수락**해야 합니다.
-- **main 보호(선택)**: Settings → Branches(또는 Rules → Rulesets) → `main` → "Require a pull request before merging". 공개 저장소는 무료 계정에서도 쓸 수 있어요. 켜면 main에는 PR로만 합칠 수 있습니다.
+- **main·develop 보호(선택)**: Settings → Rules → Rulesets → **New branch ruleset** → 대상에 `main`, `develop` 추가 → **Require a pull request before merging** 체크 → Create. 공개 저장소는 무료 계정에서도 쓸 수 있어요. 켜면 두 브랜치에는 PR로만 합칠 수 있어 실수로 바로 올리는 것을 막습니다.
 
 ---
 
@@ -123,36 +130,164 @@ git status --short --untracked-files=all | Select-String "alhub_data|data/keypoi
 
 | 단계 | Windows | Mac |
 |:---:|---|---|
-| ① 받기 | `gh repo clone <만든사람아이디>/sueon` | 같음 |
+| ① 받기 | `git clone https://github.com/Kim-MinSeok-Life/sueon.git` | 같음 |
 | ② 폴더 이동 | `cd sueon` | 같음 |
-| ③ 설치 | `npm.cmd ci` | `npm ci` |
-| ④ 실행 | `npm.cmd run dev` → http://localhost:3001 | `npm run dev` |
-| ⑤ 키포인트 복사(선택, 개발용) | `robocopy C:\tmp\sueon_share\sueon\data\keypoints data\keypoints /E` | `cp -R ~/Downloads/sueon_share/sueon/data/keypoints data/` |
+| ③ **내 작업 브랜치로 이동** | `git switch tester2` (내 브랜치 이름) | 같음 |
+| ④ 설치 | `npm.cmd ci` | `npm ci` |
+| ⑤ 실행 | `npm.cmd run dev` → http://localhost:3001 | `npm run dev` |
+| ⑥ 키포인트 복사(선택, 개발용) | `robocopy C:\tmp\sueon_share\sueon\data\keypoints data\keypoints /E` | `cp -R ~/Downloads/sueon_share/sueon/data/keypoints data/` |
 
-> 수어 동작 파일은 저장소에 들어 있어 ①~④만 하면 아바타가 움직입니다. ⑤는 리타기팅 실험(`retarget_vrm.py`)을 할 사람만, 팀 공유 ZIP을 `C:\tmp\sueon_share`(Mac은 다운로드의 `sueon_share`)에 풀었다고 가정한 경로입니다.
+> 받은 직후에는 `main`에 있습니다. ③에서 자기 브랜치로 옮긴 뒤 작업하세요(브랜치 배정은 7.1). 처음 `git switch tester2`를 치면 GitHub의 `tester2`를 자동으로 연결해 가져옵니다.
+>
+> 수어 동작 파일은 저장소에 들어 있어 ①~⑤만 하면 아바타가 움직입니다. ⑥은 리타기팅 실험(`retarget_vrm.py`)을 할 사람만, 팀 공유 ZIP을 `C:\tmp\sueon_share`(Mac은 다운로드의 `sueon_share`)에 풀었다고 가정한 경로입니다.
 
 ---
 
-## 7. 매일 작업 흐름 (브랜치 → PR → 병합)
+## 7. 브랜치 전략과 매일 작업 흐름
+
+### 7.1 브랜치 구성
+
+| 브랜치 | 역할 | 누가 쓰나 | 직접 커밋 |
+|---|---|---|:---:|
+| `main` | **최종본.** 저장소 첫 화면에 보이는 버전. `develop`에서 확인이 끝난 것만 들어옴 | — | ❌ |
+| `develop` | **취합·확인.** 각자 작업을 모아 함께 실행·테스트하는 곳 | — | ❌ |
+| `tester1` | 작업 브랜치 | `Kim-MinSeok-Life` | ✅ |
+| `tester2` | 작업 브랜치 | `jhsong7907` | ✅ |
+
+> 팀원이 늘면 `tester3`처럼 같은 방식으로 추가합니다(7.7).
+
+```
+main     ●─────────────────────────────────────●   최종본
+          \                                   /
+develop    ●──────────●──────────●───────────●     취합·확인
+            \        /          /
+tester1      ●──●───●          /                   작업 (Kim-MinSeok-Life)
+              \               /
+tester2        ●──●──●───────●                     작업 (jhsong7907)
+```
+
+### 7.2 흐름 한눈에 보기
+
+| 순서 | 무엇을 | 어떻게 | 누가 |
+|:---:|---|---|---|
+| 1 | 작업 시작 전 최신 받기 | `git pull origin develop` (7.3) | 각자 |
+| 2 | 내 브랜치에서 작업·커밋·올리기 | `git add` → `git commit` → `git push` (7.3) | 각자 |
+| 3 | **내 브랜치 → `develop`** 으로 PR | `gh pr create --base develop` (7.4) | 각자 |
+| 4 | PR 확인 후 `develop`에 합치기 | `gh pr merge --merge` (7.4) | 다른 팀원이 확인하고 합치기 권장 |
+| 5 | `develop`에서 합친 결과 실행·테스트 | `npm.cmd test`, 브라우저 확인 (7.5) | 합친 사람 |
+| 6 | **`develop` → `main`** 으로 PR·합치기 | 발표·보고서 전 등 정리된 시점에 (7.5) | 합의 후 |
+
+### 7.3 매일 작업 (내 브랜치에서)
 
 | 단계 | 명령 | 설명 |
 |:---:|---|---|
-| ① 최신 받기 | `git switch main` → `git pull` | 작업 전 항상 |
-| ② 브랜치 만들기 | `git switch -c feature/<작업이름>` | 예: `feature/llm-key`, `fix/face-depth`, `docs/mentoring2` |
-| ③ 확인 | `npm.cmd test` → `git status` | 테스트 통과 확인 |
-| ④ 저장 | `git add -A` → `git commit -m "feat: <한 줄 설명>"` | |
-| ⑤ 올리기 | `git push -u origin feature/<작업이름>` | |
-| ⑥ PR 만들기 | `gh pr create --base main --fill` | 제목·본문은 커밋 내용으로 채워짐 |
-| ⑦ 리뷰·병합 | `gh pr view --web` → `gh pr merge --squash --delete-branch` | |
-| ⑧ 정리 | `git switch main` → `git pull` | |
+| ① 내 브랜치인지 확인 | `git branch --show-current` | 내 브랜치(`tester1` 또는 `tester2`)가 나와야 함. 아니면 `git switch 내브랜치` |
+| ② 최신 받기 | `git pull origin develop` | 남이 `develop`에 합친 내용을 내 브랜치로 가져옴. **작업 시작 전 매번** |
+| ③ 작업 후 확인 | `npm.cmd test` (Mac은 `npm test`) → `git status` | 테스트 통과, 바뀐 파일 확인 |
+| ④ 담기·저장 | `git add -A` → `git commit -m "[기능] 한 줄 설명"` | 메시지는 **한국어로**. 머리말은 아래 표 |
+| ⑤ 올리기 | `git push` | 처음 한 번만 `git push -u origin tester1` |
 
 **커밋 메시지 머리말**
 
-| 머리말 | 뜻 | 머리말 | 뜻 |
-|---|---|---|---|
-| `feat:` | 기능 | `refactor:` | 구조 정리 |
-| `fix:` | 버그 | `test:` | 테스트 |
-| `docs:` | 문서 | `chore:` | 설정·도구 |
+| 머리말 | 뜻 | 예 |
+|---|---|---|
+| `[기능]` | 새 기능 추가 | `[기능] LLM 키 있을 때 분석 결과 표시` |
+| `[수정]` | 버그 고침 | `[수정] 배 단어 뜻이 잘못 골라지는 문제` |
+| `[문서]` | 문서만 바꿈 | `[문서] 브랜치 규칙 추가` |
+| `[정리]` | 동작은 같고 코드 구조만 정리 | `[정리] 분석기 함수 나누기` |
+| `[테스트]` | 테스트 추가·수정 | `[테스트] 가능 표현 테스트 추가` |
+| `[설정]` | 설정·도구·패키지 | `[설정] 패키지 버전 올림` |
+
+> **Windows IntelliJ 터미널에서 한글을 치면 멈출 때:** 터미널 대신 IntelliJ의 **커밋 창**을 쓰세요(한글 정상).
+>
+> | 단계 | 할 일 |
+> |---|---|
+> | ① | `Ctrl + K` (또는 왼쪽 세로 막대의 **Commit** 탭) |
+> | ② | 올릴 파일에 체크 → 아래 칸에 한국어 메시지 입력 |
+> | ③ | **Commit and Push...**(커밋하고 올리기) 클릭 → 다음 창에서 **Push**(올리기) |
+>
+> Mac 터미널은 한글이 그대로 됩니다.
+
+### 7.4 PR로 `develop`에 합치기
+
+| 단계 | 명령 | 설명 |
+|:---:|---|---|
+| ① PR 만들기 | `gh pr create --base develop --head tester1 --fill` | `--base` = 받는 쪽, `--head` = 보내는 쪽, `--fill` = 커밋 메시지로 제목·설명 채움 |
+| ② PR 확인 | `gh pr view --web` | 바뀐 파일(Files changed)을 같이 봄 |
+| ③ 합치기 | `gh pr merge --merge` | 일반 병합. **`--squash`와 `--delete-branch`는 쓰지 않음**(아래) |
+
+> ⚠️ **웹에서 PR을 만들 때:** GitHub는 받는 쪽을 기본으로 `main`으로 잡습니다. 화면 위 **base: `main` ▾**를 **`develop`**으로 바꾸세요.
+>
+> ⚠️ **`--squash`를 쓰지 않는 이유:** `tester1`·`tester2`는 계속 쓰는 브랜치입니다. squash(커밋을 하나로 뭉쳐 합치기)를 하면 다음 PR 때 이미 합친 변경이 다시 나오거나 충돌합니다. **`--delete-branch`**는 내 브랜치를 지워 버리므로 쓰지 않습니다.
+
+#### PR이란
+
+| 용어 | 뜻 |
+|---|---|
+| **PR (Pull Request)** | "내 브랜치의 변경을 저 브랜치에 합쳐 주세요"라는 **요청서**. 바뀐 내용을 화면으로 보여 주고, 댓글로 의견을 남길 수 있음 |
+| base | **받는 쪽** 브랜치 (우리 규칙: `develop`) |
+| compare | **보내는 쪽** 브랜치 (내 `tester1`·`tester2`) |
+| Merge | 요청을 받아들여 실제로 합치기 |
+| Conflict | 두 사람이 같은 파일의 같은 줄을 다르게 고쳐서 자동으로 못 합치는 상태 |
+
+#### 웹에서 PR 만들기·합치기 (`gh` 없이, 클릭만으로)
+
+> GitHub 화면은 영어만 있습니다. 아래 표의 **굵은 영어**는 화면에 보이는 버튼 글자 그대로이고, 괄호 안이 뜻입니다.
+
+**만들기 (작업한 사람)**
+
+| 단계 | 할 일 |
+|:---:|---|
+| ① | 커밋 후 올리기(`git push` 또는 IntelliJ 커밋 창의 Commit and Push) |
+| ② | 저장소 첫 화면 https://github.com/Kim-MinSeok-Life/sueon 열기 → 위쪽 노란 띠("tester2 had recent pushes" = tester2에 방금 올라온 게 있음)의 **Compare & pull request**(비교하고 PR 만들기) 클릭. 띠가 없으면 위쪽 **Pull requests** 탭 → **New pull request**(새 PR) |
+| ③ | 화면 위쪽 두 칸 확인: **base**(받는 쪽) = `develop`, **compare**(보내는 쪽) = 내 브랜치. base가 `main`이면 눌러서 **`develop`으로 바꾸기** |
+| ④ | 맨 위 칸에 제목, 큰 칸에 설명을 **한국어로** 쓰기(무엇을 바꿨는지) |
+| ⑤ | **Create pull request**(PR 만들기) 클릭 |
+
+**합치기 (다른 팀원이 확인 후)**
+
+| 단계 | 할 일 |
+|:---:|---|
+| ① | 위쪽 **Pull requests** 탭 → 해당 PR 클릭 |
+| ② | **Files changed**(바뀐 파일) 탭에서 내용 확인. 빨간 줄 = 지운 것, 초록 줄 = 추가한 것. 의견은 줄 옆 **+** 눌러 댓글 |
+| ③ | **Conversation**(대화) 탭으로 돌아와 아래 초록 버튼 옆 **▾** → **Create a merge commit**(일반 병합) 선택. Squash·Rebase는 고르지 않기 |
+| ④ | **Merge pull request**(합치기) → **Confirm merge**(합치기 확인) |
+| ⑤ | 합친 뒤 나오는 **Delete branch**(브랜치 삭제)는 **누르지 않기** (`tester` 브랜치는 계속 씀) |
+| ⑥ | 각자 터미널에서 `git pull origin develop`으로 합쳐진 내용 받기 |
+
+> 초록 버튼 대신 "**This branch has conflicts**"(충돌 있음)가 보이면, 둘이 같은 곳을 고친 것입니다. 혼자 고치지 말고 팀원에게 화면을 공유해 같이 해결하세요(8절).
+
+### 7.5 `develop` 확인 후 `main`으로
+
+| 단계 | 명령 | 설명 |
+|:---:|---|---|
+| ① `develop`으로 이동·최신화 | `git switch develop` → `git pull` | 합쳐진 최신 상태 |
+| ② 함께 확인 | `npm.cmd ci` → `npm.cmd test` → `npm.cmd run dev` | 두 사람 작업이 합쳐진 상태로 동작하는지 |
+| ③ PR 만들기 | `gh pr create --base main --head develop --fill` | 최종 반영 요청 |
+| ④ 합치기 | `gh pr merge --merge` | 저장소 첫 화면(README 포함)이 이 버전으로 바뀜 |
+| ⑤ 내 브랜치로 돌아가기 | `git switch tester1` | `develop`·`main`에서 직접 작업하지 않음 |
+
+### 7.6 지킬 규칙
+
+| 규칙 | 이유 |
+|---|---|
+| `main`·`develop`에 직접 `git push` 하지 않기 | 확인 안 된 코드가 최종본에 섞이지 않게(5절 보호 규칙을 켜면 자동으로 막힘) |
+| 작업 시작 전 `git pull origin develop` | 충돌을 작게 유지 |
+| `git push --force` 쓰지 않기 | 다른 사람이 받은 이력이 깨짐 |
+| 커밋 메시지·PR 제목은 한국어로, 머리말(`[기능]` 등) 붙이기 | 누가 무엇을 바꿨는지 한눈에 보이게. Windows 터미널에서 한글이 멈추면 IntelliJ 커밋 창 사용(7.3) |
+| PR은 다른 팀원이 한 번 보고 합치기 | 실수를 서로 잡기 |
+
+### 7.7 브랜치를 새로 만들 때 (처음 한 번, 저장소 관리자)
+
+| 단계 | 명령 | 설명 |
+|:---:|---|---|
+| ① `main` 최신화 | `git switch main` → `git pull` | 출발점 맞추기 |
+| ② 만들기 | `git branch develop` · `git branch tester1` · `git branch tester2` | 지금 위치에서 갈라지는 줄기를 만들기만 함 |
+| ③ GitHub에 올리기 | `git push -u origin develop tester1 tester2` | 원격에도 생성, `-u`로 연결 |
+| ④ 내 브랜치로 이동 | `git switch tester1` | |
+| ⑤ 확인 | `git branch -a` | `remotes/origin/` 아래 4개(`main`, `develop`, `tester1`, `tester2`) |
+
+> 2026-11-03에 위 순서로 `develop`·`tester1`·`tester2`를 만들어 두었습니다. 사이트에서는 https://github.com/Kim-MinSeok-Life/sueon/branches 에서 볼 수 있습니다.
 
 ---
 
@@ -180,5 +315,8 @@ git status --short --untracked-files=all | Select-String "alhub_data|data/keypoi
 | 받기 / 올리기 | `git pull` / `git push` |
 | 마지막 커밋 메시지 고치기(push 전) | `git commit --amend` |
 | 저장 안 한 수정 되돌리기 | `git restore <파일>` |
+| 내 브랜치 → develop PR | `gh pr create --base develop --head tester1 --fill` |
+| develop → main PR | `gh pr create --base main --head develop --fill` |
+| develop 최신 내용 받기 | `git pull origin develop` |
 | PR 목록 / 상태 | `gh pr list` / `gh pr status` |
 | 저장소 웹으로 열기 | `gh repo view --web` |
