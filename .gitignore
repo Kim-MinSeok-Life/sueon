@@ -11,7 +11,7 @@ test-results/
 /tests/__pycache__/
 /scripts/__pycache__/
 # AI-Hub 파생 동작(public/motions/*)은 Git에 포함한다(2026-11-02 사용자 결정:
-# 경진대회 목적으로 이용약관에 동의하고 받은 데이터, AI 학습용 명시). 공개 서비스 배포는 src/proxy.ts가 계속 막는다.
+# 경진대회 목적으로 이용약관에 동의하고 받은 데이터, AI 학습용 명시. 2026-11-03 저장소 공개). 웹 서비스 배포는 src/proxy.ts가 계속 막는다.
 # AI-Hub 원본 ZIP·원본 좌표 발췌 키포인트는 제외
 /New_sample.zip
 /*.zip

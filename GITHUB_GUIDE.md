@@ -18,8 +18,8 @@
 | 항목 | 결정 |
 |---|---|
 | 저장소 이름 | **`sueon`** (GitHub 이름에는 `:`를 못 써요) |
-| 공개 범위 | **Private(비공개) 필수** — AI-Hub 파생 데이터와 개발 중인 코드 보호 |
-| 설명 | SUEO:N(수어온) - 한국어·음성을 한국수어 3D 아바타로 보여 주는 모바일 웹앱 (AION) |
+| 공개 범위 | **Public(공개)** — 2026-11-03 팀 결정. 누구나 보고 받을 수 있음. 올리기(push)는 초대한 팀원만 |
+| 설명 | SUEO:N - Korean speech/text to Korean Sign Language 3D avatar web app (in development) |
 
 **GitHub와 ZIP은 용도가 다릅니다**
 
@@ -30,7 +30,7 @@
 | 만드는 법 | `git push` (또는 `make_release_zip.py ... --github`로 같은 내용 ZIP) | `python scripts/make_release_zip.py <밖경로.zip>` |
 | 팀원이 쓰는 법 | `gh repo clone` 후 바로 설치·실행(6절) | 압축 풀고 바로 실행 |
 
-> **동작 파일도 Git에 올리는 이유:** 2026-11-02 팀 결정. AI-Hub 데이터는 경진대회 목적으로 이용약관에 동의하고 받았고, AI 학습용으로 명시돼 있어 비공개 저장소의 팀 공유는 가능하다고 판단했습니다. 다만 **원본(ZIP·영상)과 원본 좌표를 그대로 잘라 낸 발췌 키포인트는 올리지 않고**, 인터넷 공개 서비스로 배포할 때는 `src/proxy.ts`가 동작 경로를 계속 막습니다.
+> **동작 파일도 Git에 올리는 이유:** 팀 결정(2026-11-02 포함, 2026-11-03 저장소 공개). AI-Hub 데이터는 경진대회 목적으로 이용약관에 동의하고 받았고, AI 학습용으로 명시돼 있습니다. 동작 파일의 재사용 조건은 AI-Hub 이용약관을 따릅니다. **원본(ZIP·영상)과 원본 좌표를 그대로 잘라 낸 발췌 키포인트는 올리지 않습니다.** 웹 서비스로 배포할 때 동작 경로를 막는 장치(`src/proxy.ts`)는 그대로 둡니다.
 
 ---
 
@@ -85,8 +85,8 @@
 | ④ **위험 파일 검사** | 아래 상자의 명령 | **아무것도 안 나와야 안전** |
 | ⑤ 담기 | `git add .` | `LF will be replaced by CRLF` 경고는 무시 |
 | ⑥ 첫 커밋 | `git commit -m "init: SUEO:N MVP"` | 메시지는 영어로(한글을 넣으면 IntelliJ 터미널이 멈출 수 있음) |
-| ⑦ 저장소 만들고 올리기 | `gh repo create sueon --private --source . --remote origin --push --description "SUEO:N - Korean speech/text to Korean Sign Language 3D avatar web app"` | 설명을 한글로 쓰려면 GitHub 웹의 About ⚙에서 |
-| ⑧ 웹에서 확인 | `gh repo view --web` | 이름 옆에 **Private** 표시 |
+| ⑦ 저장소 만들고 올리기 | `gh repo create sueon --public --source . --remote origin --push --description "SUEO:N - Korean speech/text to Korean Sign Language 3D avatar web app"` | 설명을 한글로 쓰려면 GitHub 웹의 About ⚙에서 |
+| ⑧ 웹에서 확인 | `gh repo view --web` | 이름 옆에 **Public** 표시 |
 
 ④ 위험 파일 검사 — 원본 데이터·발췌 키포인트·API 키가 목록에 있으면 출력됩니다. **아무것도 안 나오면 ⑤로.** 뭔가 나오면 멈추고 개발 담당자에게 보여 주세요. (`public/motions/...` 동작 파일은 올라가는 게 정상이라 검사하지 않습니다.)
 
@@ -96,7 +96,7 @@ git status --short --untracked-files=all | Select-String "alhub_data|data/keypoi
 
 > Mac은 `Select-String "…"` 대신 `grep -E "…"` 를 씁니다.
 
-**`gh` 없이 하려면** GitHub 웹 → New repository → 이름 `sueon`, **Private**, README 추가 안 함 → 만든 뒤:
+**`gh` 없이 하려면** GitHub 웹 → New repository → 이름 `sueon`, **Public**, README 추가 안 함 → 만든 뒤:
 
 | 명령 |
 |---|
@@ -115,7 +115,7 @@ git status --short --untracked-files=all | Select-String "alhub_data|data/keypoi
 | 팀원 초대(쓰기 권한, 1명씩) | `gh api -X PUT repos/<내아이디>/sueon/collaborators/<팀원아이디> -f permission=push` |
 
 - 팀원은 이메일이나 https://github.com/notifications 에서 초대를 **수락**해야 합니다.
-- **main 보호(선택)**: Settings → Branches(또는 Rules → Rulesets) → `main` → "Require a pull request before merging". 무료 계정의 비공개 저장소에서는 막혀 있을 수 있어요. 그러면 "main에 직접 push 금지"를 팀 규칙으로 정하세요.
+- **main 보호(선택)**: Settings → Branches(또는 Rules → Rulesets) → `main` → "Require a pull request before merging". 공개 저장소는 무료 계정에서도 쓸 수 있어요. 켜면 main에는 PR로만 합칠 수 있습니다.
 
 ---
 

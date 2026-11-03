@@ -5,8 +5,8 @@
 | 자료 | 출처 | 라이선스·조건 | Git | 공유 ZIP |
 |---|---|---|:---:|:---:|
 | 3D 아바타 `public/models/avatar.vrm` | pixiv Inc. VRM 샘플 | VRM Public License 1.0 (재배포·수정 허용) | ✅ | ✅ |
-| 수어 단어 동작 `public/motions/aihub_gloss`, `aihub_real02` | AI-Hub 수어 영상(데이터셋 103) 파생 | 경진대회 목적 이용약관 동의 · AI 학습용 → **팀 내부(비공개)만** | ✅(비공개) | ✅(팀 내부만) |
-| 옛 근사 동작 `public/motions/sample`, `stabilized` | AI-Hub 경량 샘플 파생(attempt1~3) | 위와 같음 | ✅(비공개) | ✅(팀 내부만) |
+| 수어 단어 동작 `public/motions/aihub_gloss`, `aihub_real02` | AI-Hub 수어 영상(데이터셋 103) 파생 | 경진대회 목적 이용약관 동의 · AI 학습용. 재사용 조건은 **AI-Hub 이용약관**을 따름 | ✅ | ✅ |
+| 옛 근사 동작 `public/motions/sample`, `stabilized` | AI-Hub 경량 샘플 파생(attempt1~3) | 위와 같음 | ✅ | ✅ |
 | 발췌 키포인트 `data/keypoints/` | AI-Hub 원본 좌표 발췌 | 원본 데이터로 취급 | ❌ | ✅(팀 내부만) |
 | 형태소 원본 `data/morphemes/` (작은 JSON 몇 개) | AI-Hub 형태소 라벨 | 권한 확인 때 함께 검토 | ✅ | ✅ |
 | 수어사전 `public/ksl/dictionary.json` | 국립국어원 한국수어사전(공공데이터포털 15135637) | 공공데이터포털 이용 조건 확인 필요 | ✅ | ✅ |
@@ -14,7 +14,7 @@
 | AI-Hub 원본(약 95GB) | AI-Hub | 이용 신청자만 | ❌ | ❌ |
 
 > **한국수어 전문가·국립국어원 기준으로 검수한 동작: 0건.** 모든 동작은 실험용이며 실제 수어 번역으로 취급하지 않습니다.
-> AI-Hub 파생 동작은 2026-11-02 팀 결정으로 **비공개** GitHub 저장소에 포함합니다. 인터넷 공개 서비스 배포는 운영 빌드에서 경로가 계속 차단됩니다(`src/proxy.ts`). 원본과 발췌 키포인트는 Git에서 제외합니다(`.gitignore`).
+> AI-Hub 파생 동작은 팀 결정으로 GitHub 저장소에 포함합니다(2026-11-03 공개 저장소). 이 파일들을 다른 곳에서 쓰려면 AI-Hub 이용약관을 먼저 확인하세요. 원본과 발췌 키포인트는 Git에서 제외합니다(`.gitignore`). 웹 서비스 운영 빌드에서는 동작 경로가 차단됩니다(`src/proxy.ts`).
 
 ---
 

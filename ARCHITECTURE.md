@@ -141,9 +141,9 @@ avatar.vrm(T-포즈 뼈 위치) + data/avatar_body_front.json ──────
 | 경로 | 내용 | Git |
 |---|---|:---:|
 | `public/models/avatar.vrm` | 아바타(VRM 1.0, 휴머노이드 본 54, 손가락 30) | ✅ |
-| `public/motions/aihub_gloss/` | 수어 단어 동작 317 + `index.json` — AI-Hub 파생 | ✅(비공개) |
-| `public/motions/aihub_real02/` | 단어 단독 9 + 원본 관절 오버레이 — AI-Hub 파생 | ✅(비공개) |
-| `public/motions/sample`, `stabilized` | attempt1~3 옛 근사 동작(비교용) | ✅(비공개) |
+| `public/motions/aihub_gloss/` | 수어 단어 동작 317 + `index.json` — AI-Hub 파생 | ✅ |
+| `public/motions/aihub_real02/` | 단어 단독 9 + 원본 관절 오버레이 — AI-Hub 파생 | ✅ |
+| `public/motions/sample`, `stabilized` | attempt1~3 옛 근사 동작(비교용) | ✅ |
 | `public/motions/test/` | 관절 테스트 동작 2(수어 아님) | ✅ |
 | `public/ksl/dictionary.json` | 국립국어원 사전 3,734 항목(뜻 분류·수형 설명) | ✅ |
 | `data/expressions.json` | 등록 표현(단어 예시·`#`명령용) | ✅ |
@@ -377,7 +377,7 @@ avatar.vrm(T-포즈 뼈 위치) + data/avatar_body_front.json ──────
 | `src/proxy.ts` | 운영(`NODE_ENV=production`)에서 `/motions/{sample,stabilized,aihub_real02,aihub_gloss}`를 403. 예외는 `NEXT_PUBLIC_SUEON_ALLOW_SAMPLE_PUBLIC=true`뿐이며, 켜려면 권리 확인 필요 |
 | `/api/aihub-video*`, `/compare` | 운영에서 404 또는 안내문만 |
 | `/api/analyze`, `/api/transcribe` | 키가 없으면 503. 운영에서는 `SUEON_ENABLE_PAID_API_PUBLIC=true`가 아니면 차단. `/api/analyze` GET은 사용 가능 여부·공급자 이름만 알려 주고 키 값은 보내지 않는다 |
-| `.gitignore` | AI-Hub 원본·발췌 키포인트·비교표·참고 문서(PDF·PPTX·DOCX·CSV)·`.env*`·IDE 개인 설정 제외. 파생 동작(`public/motions/*`)은 2026-11-02부터 **포함**(비공개 저장소) |
+| `.gitignore` | AI-Hub 원본·발췌 키포인트·비교표·참고 문서(PDF·PPTX·DOCX·CSV)·`.env*`·IDE 개인 설정 제외. 파생 동작(`public/motions/*`)은 2026-11-02부터 **포함**(2026-11-03 공개 저장소) |
 | `scripts/make_release_zip.py` | node_modules·.next·원본 폴더(alhub_data 등)·참고 문서·비밀 설정을 빼고 묶는다. 루트의 `개발자참고.pdf`만 PDF 예외. ZIP은 프로젝트 밖 경로에 |
 
 ---
