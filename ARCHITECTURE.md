@@ -141,7 +141,7 @@ avatar.vrm(T-포즈 뼈 위치) + data/avatar_body_front.json ──────
 | 경로 | 내용 | Git |
 |---|---|:---:|
 | `public/models/avatar.vrm` | 아바타(VRM 1.0, 휴머노이드 본 54, 손가락 30) | ✅ |
-| `public/motions/aihub_gloss/` | 수어 단어 동작 317 + `index.json` — AI-Hub 파생 | ✅ |
+| `public/motions/aihub_gloss/` | 수어 단어 동작 1,102(문장 속 `g…` 317 + 단어 영상 `w…` 785) + `index.json` — AI-Hub 파생 | ✅ |
 | `public/motions/aihub_real02/` | 단어 단독 9 + 원본 관절 오버레이 — AI-Hub 파생 | ✅ |
 | `public/motions/sample`, `stabilized` | attempt1~3 옛 근사 동작(비교용) | ✅ |
 | `public/motions/test/` | 관절 테스트 동작 2(수어 아님) | ✅ |
@@ -339,7 +339,7 @@ avatar.vrm(T-포즈 뼈 위치) + data/avatar_body_front.json ──────
 
 | 함수 | 규칙 |
 |---|---|
-| `buildSystemPrompt(allowed)` | 기본형만, 동작 있는 단어(317개) 우선, 고유명사는 `fingerspell`, 어순 규칙, 동음이의어는 `sense` 분류 한 단어. 출력 JSON `{glosses:[{word,sense?,fingerspell?}], question, negation, note}` |
+| `buildSystemPrompt(allowed)` | 기본형만, 동작 있는 단어(1,102개) 우선, 고유명사는 `fingerspell`, 어순 규칙, 동음이의어는 `sense` 분류 한 단어. 출력 JSON `{glosses:[{word,sense?,fingerspell?}], question, negation, note}` |
 | `parseCandidate` | 첫 JSON 객체만, 한글·숫자 단어만, 최대 20단어·단어 20자 |
 
 **검증** `verifyCandidate(input, cand, lex, rulePlan)`
@@ -393,7 +393,8 @@ avatar.vrm(T-포즈 뼈 위치) + data/avatar_body_front.json ──────
 | `npm.cmd run typecheck`, `data:validate` | 타입 검사, 데이터 구조 검사 |
 | `python scripts/aihub_keypoints.py report\|extract …` | ZIP 검사 리포트 / 촬영본 발췌(mm→m) |
 | `python scripts/retarget_vrm.py <발췌.json> [--morphemes …]` | 단일 촬영본 → 동작 + 정량 비교 |
-| `python scripts/build_gloss_library.py <sen_keypoint.zip> <sen_morpheme.zip> --actor 02` | 동작 사전 재생성(약 7분) |
+| `python scripts/build_gloss_library.py <sen_keypoint.zip> <sen_morpheme.zip> --actor 02` | 동작 사전 재생성(약 7분). `index.json`을 새로 쓰므로 **이어서 아래 단어 영상 명령도 다시 실행** |
+| `python scripts/add_word_glosses.py <word_keypoint.zip> <word_morpheme.zip> --actor 02` | 단어 영상 동작(`w…`) 추가(약 10분). 문장 동작이 없는 사전 일상어·시연 단어만. `--dry-run`은 고를 단어만 출력 |
 | `python scripts/build_ksl_dictionary.py <CSV>` | 사전 JSON |
 | `python scripts/build_video_compare.py [--root 폴더]` | 비교표 |
 | `python scripts/make_release_zip.py <밖경로.zip>` | 공유 ZIP(파생 동작 + 발췌 키포인트, 팀 내부용) |
@@ -417,5 +418,5 @@ avatar.vrm(T-포즈 뼈 위치) + data/avatar_body_front.json ──────
 |---|---|---|
 | LLM 계층 | 구조는 [5.5](#55-llm-판단-계층-llmts-llmprovidersts-apianalyze)에 완성 | 새 공급자는 `LlmProvider.complete(system, user, signal)` 하나만 구현해 `getLlmProvider`에 추가. 검증 기준은 `verifyCandidate` 안의 비율(1/2, 1/3)로 조정 |
 | 표정 | 의문 종류 규칙 근사([5.6](#56-의문문-표정-근사-avatarstagetsx)) | 얼굴 70점 → VRM expression(`vrm.expressionManager`)을 `MotionKeyframe`에 확장 필드로 추가. 형태소 `attribute`(비수지 표시)와 연동 |
-| 동작 확대 | REAL02 문장 317개 | `build_gloss_library.py --actor`로 다른 촬영자를 쓰거나 후보 선택 기준을 바꾼다. 같은 gloss의 여러 후보를 평균하지 말고(의미가 섞임) 대표 하나를 고른다 |
+| 동작 확대 | REAL02 문장 317개 + 단어 영상 785개(`add_word_glosses.py`, 사전 일상어·시연 단어만) | `build_gloss_library.py --actor`로 다른 촬영자를 쓰거나 후보 선택 기준을 바꾼다. 같은 gloss의 여러 후보를 평균하지 말고(의미가 섞임) 대표 하나를 고른다 |
 | 지문자 | 없음 | crowd 데이터(지문자·지숫자)로 자모별 동작을 만들고, 고유명사를 자모로 풀어 재생 |
