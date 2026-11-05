@@ -137,18 +137,21 @@ def main(argv=None):
         gloss = t['label'] if t['kind'] == 'gloss' else None
         ref, seg = find_reference(t['motion_take'], gloss, videos, morph, a.actor)
         if not ref:
+            # 원본 영상이 없어도 목록에 넣는다(아바타 ↔ 국립국어원 표준 영상 비교용)
             missing.append(t['key'])
+            items.append({**t, 'video_take': None, 'video': None, 'video_segment': None, 'video_duration': None,
+                          'video_glosses': [], 'same_actor': False})
             continue
         actor = TAKE_RE.fullmatch(ref)[4]
         items.append({**t, 'video_take': ref, 'video': videos[ref], 'video_segment': [seg['start'], seg['end']],
                       'video_duration': seg['duration'], 'video_glosses': seg['glosses'],
                       'same_actor': actor == a.actor})
-    items.sort(key=lambda x: (not x['same_actor'], x['kind'], -(x.get('occurrences') or 0), x['label']))
+    items.sort(key=lambda x: (x['video_take'] is None, not x['same_actor'], x['kind'], -(x.get('occurrences') or 0), x['label']))
     out = {
         'format': 'sueon-video-compare/v1',
         'description': '원본 영상과 아바타 동작 비교표(개발·검수 전용). 영상은 ZIP 안 위치만 기록하며 배포하지 않는다.',
         'actor': a.actor, 'items': items, 'missing_video': missing,
-        'summary': {'targets': len(targets), 'with_video': len(items),
+        'summary': {'targets': len(targets), 'with_video': sum(i['video_take'] is not None for i in items),
                     'same_actor': sum(i['same_actor'] for i in items), 'video_actors': sorted({TAKE_RE.fullmatch(t)[4] for t in videos})},
     }
     OUT.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding='utf-8')
