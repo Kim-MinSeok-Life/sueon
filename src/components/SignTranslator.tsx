@@ -9,7 +9,7 @@ import type { MotionPlayer, PlayerState } from "@/lib/MotionPlayer";
 import type { ExpressionEntry, MatchSegment, MotionClip } from "@/lib/types";
 import { QUESTION_EXPRESSION, type StageStatus } from "./AvatarStage";
 import { buildLexicon, describePlan, planSentence, type DictEntry, type Lexicon, type PlanToken, type SignPlan } from "@/lib/ksl/planner";
-import { parseCandidate, verifyCandidate } from "@/lib/ksl/llm";
+import { parseCandidate, ruleIsConfident, verifyCandidate } from "@/lib/ksl/llm";
 
 const AvatarStage = dynamic(() => import("./AvatarStage"), { ssr: false });
 // 사용권한 확인 전에는 배포 빌드에서 AI-Hub 파생 모션을 보이지 않게 한다.
@@ -85,6 +85,8 @@ export default function SignTranslator() {
   const recognitionRef = useRef<Recognition | null>(null);
   const recorderRef = useRef<MediaRecorder | null>(null);
   const seqRef = useRef(0);
+  /** 같은 문장의 LLM 검증 결과(새로고침하면 비워짐) */
+  const llmCacheRef = useRef(new Map<string, SignPlan>());
 
   useEffect(() => {
     // 실사용 화면과 관절 실험 도구를 명확히 분리한다.
@@ -112,16 +114,27 @@ export default function SignTranslator() {
     }).catch(() => undefined);
   }, []);
 
-  /** 규칙 분석 → (LLM이 켜져 있으면) LLM 후보를 받아 규칙·사전으로 검증. 실패·시간 초과면 규칙 결과 */
+  /**
+   * 규칙 분석 → (LLM이 켜져 있고 규칙이 확실하지 않을 때만) LLM 후보를 받아 규칙·사전으로 검증. 실패·시간 초과면 규칙 결과.
+   * 규칙이 확실하면 LLM을 부르지 않고(1~5초 → 1ms 미만), LLM 결과는 같은 문장에 다시 쓰도록 저장한다(캐시).
+   */
   async function analyze(input: string, lex: Lexicon): Promise<SignPlan> {
     const rule = planSentence(input, lex);
     if (!llm.enabled) return rule;
+    if (ruleIsConfident(rule)) return { ...rule, llmNotes: ["규칙 분석이 확실해 LLM을 부르지 않음(속도)"] };
+    const cached = llmCacheRef.current.get(input);
+    if (cached) return { ...cached, llmNotes: [...(cached.llmNotes ?? []), "같은 문장의 이전 LLM 결과 사용(캐시)"] };
     try {
       const res = await fetch("/api/analyze", { method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text: input }), signal: AbortSignal.timeout(8000) });
       const payload = await res.json() as { candidate?: unknown; error?: string };
       if (!res.ok) return { ...rule, llmNotes: [`LLM 사용 못 함(${payload.error ?? res.status}) → 규칙 분석`] };
-      return verifyCandidate(input, parseCandidate(payload.candidate), lex, rule).plan;
+      const plan = verifyCandidate(input, parseCandidate(payload.candidate), lex, rule).plan;
+      // 정상 응답만 저장한다(오류·시간 초과는 다음에 다시 시도). 너무 커지지 않게 오래된 것부터 지운다
+      const cache = llmCacheRef.current;
+      cache.set(input, plan);
+      if (cache.size > 200) cache.delete(cache.keys().next().value!);
+      return plan;
     } catch {
       return { ...rule, llmNotes: ["LLM 응답 시간 초과·오류 → 규칙 분석"] };
     }
