@@ -199,3 +199,13 @@ test("N호선은 AI-Hub 표기 'N호' 동작으로(있는 노선만), 없으면 
   assert.equal(four.order[0].lemma, "4호선");
   assert.notEqual(four.order[0].status, "playable");
 });
+
+test("돕다는 '도와'로 활용하고, 높임 보조용언 '드리다'는 떼어 낸다", () => {
+  assert.ok(predicateStems("돕다").includes("도와"));
+  assert.ok(predicateStems("춥다").includes("추워"));
+  const lx = buildLexicon({ glossItems: { ...glossItems, "도와주다": { path: "/m/help.json" } }, dictionary: [...dictionary, { id: 98, w: [["돕다"]], c: "인간", d: true, h: "", j: null }] });
+  const p = planSentence("도와드릴까요?", lx);
+  // 돕다 → 유의어 도와주다(동작 있음)까지 이어져 재생된다
+  assert.equal(p.order[0].lemma, "도와주다");
+  assert.equal(p.order[0].status, "playable");
+});
