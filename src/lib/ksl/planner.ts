@@ -181,9 +181,18 @@ export function normalizeTokens(text: string, corrections: Correction[]): { toke
 // ---------------------------------------------------------------- 2·3. 형태 분석 + 오타 교정
 interface Parsed { lemma: string; kind: PlanToken["kind"]; rest: string }
 
+/**
+ * 숫자+단위를 동작 목록의 표기로 맞춘다. AI-Hub 문장은 "1호선"을 수어 '1호'로 표기했다(1·2·3·5·8·9호 동작 있음).
+ * 맞는 동작이 없으면 그대로 두고, 화면에는 "지숫자 동작 필요"로 표시된다.
+ */
+export function numberGloss(lemma: string, lex: Pick<Lexicon, "motions">): string {
+  const line = lemma.match(/^(\d+)호선$/);
+  return line && lex.motions.has(`${line[1]}호`) ? `${line[1]}호` : lemma;
+}
+
 function parseExact(tok: string, lex: Lexicon): Parsed | null {
   const num = tok.match(/^(\d+(?:시간|시|분|호선|호|회|사람|원|번|살|개|명|층|월|일)?)(.*)$/);
-  if (num && PARTICLES.has(num[2])) return { lemma: num[1], kind: "number", rest: num[2] };
+  if (num && PARTICLES.has(num[2])) return { lemma: numberGloss(num[1], lex), kind: "number", rest: num[2] };
   // "배가 아파요": 사전에 '배가(倍加)'도 있지만 흔한 쓰임은 '배+가'. 짧은 명사+주요 조사 우선(긴 쪽에 동작이 있으면 예외)
   const last = tok.at(-1) ?? "";
   if (tok.length >= 2 && COMMON_PARTICLE.has(last) && lex.nouns.has(tok.slice(0, -1)) && !lex.motions.has(tok)) {

@@ -14,7 +14,7 @@
  *
  * 공급자별 호출 코드는 서버 전용 파일 llmProviders.ts에 있다. 이 파일은 브라우저·서버·테스트 어디서나 쓴다.
  */
-import { findMotion, isWhWord, orderTokens, predicateStems, resolveToken, strip, SYNONYMS, type Lexicon, type PlanToken, type SignPlan } from "./planner.ts";
+import { findMotion, isWhWord, numberGloss, orderTokens, predicateStems, resolveToken, strip, SYNONYMS, type Lexicon, type PlanToken, type SignPlan } from "./planner.ts";
 
 /** LLM이 돌려줘야 하는 형식(정리 후) */
 export interface LlmCandidate {
@@ -153,7 +153,8 @@ export function verifyCandidate(input: string, cand: LlmCandidate | null, lex: L
     const word = half && half + half === g.word && !lex.motions.has(g.word) && (lex.senses.has(half) || lex.motions.has(half)) ? half : g.word;
     if (word !== g.word) notes.push(`겹쳐 쓴 말 정리: ${g.word} → ${word}`);
     if (words.at(-1)?.word === word && words.at(-1)?.sense === g.sense) continue;
-    words.push({ ...g, word });
+    // 숫자 표기도 규칙과 같게(1호선 → 1호)
+    words.push({ ...g, word: /^\d/.test(word) ? numberGloss(word, lex) : word });
   }
   // 1 없는 단어 금지
   const known = (w: string) => lex.motions.has(w) || lex.senses.has(w) || !!findMotion(w, lex) || /^\d/.test(w);

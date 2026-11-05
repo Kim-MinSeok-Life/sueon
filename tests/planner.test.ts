@@ -189,3 +189,13 @@ test("'ㄹ 수 있다/없다'는 수어 가능/불가능으로 바꾼다('수'�
   assert.deepEqual(planSentence("택시 탈 수 있어요?", lx).order.map((t) => t.lemma), ["택시", "타다", "가능"]);
   assert.deepEqual(planSentence("지하철 갈 수 없어요", lx).order.map((t) => t.lemma), ["지하철", "가다", "불가능"]);
 });
+
+test("N호선은 AI-Hub 표기 'N호' 동작으로(있는 노선만), 없으면 지숫자 필요로 남긴다", () => {
+  const lx = buildLexicon({ glossItems: { ...glossItems, "1호": { path: "/m/line1.json" } }, dictionary });
+  const one = planSentence("1호선 타요", lx);
+  assert.equal(one.order[0].lemma, "1호");
+  assert.equal(one.order[0].status, "playable");
+  const four = planSentence("4호선 타요", lx);
+  assert.equal(four.order[0].lemma, "4호선");
+  assert.notEqual(four.order[0].status, "playable");
+});
