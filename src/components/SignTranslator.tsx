@@ -281,7 +281,9 @@ export default function SignTranslator() {
       const playable = plan.order.filter((t) => t.status === "playable").length;
       if (!playable) return "이해한 수어 단어 중 아직 동작 데이터가 있는 단어가 없습니다.";
       if (awaitingConfirm) return `동작이 있는 ${playable}개 단어를 먼저 보여 드려요. 확실하지 않은 부분이 있으니 아래 내용을 확인해 주세요.`;
-      return `수어 단어 ${plan.order.length}개 중 ${playable}개를 실제 촬영 문장에서 잘라 낸 동작으로 이어서 재생합니다. ${plan.source === "llm" ? "LLM 후보를 규칙·사전으로 검사한 분석이며" : "규칙 기반 분석이며"} 한국수어 문법·정확성은 검증되지 않았습니다.`;
+      // f…: 지문자 영상(2D 좌표만 있음)을 3D로 복원한 숫자·역 이름 동작
+      const fsCount = plan.order.filter((t) => t.status === "playable" && t.motion?.path.includes("/aihub_gloss/f")).length;
+      return `수어 단어 ${plan.order.length}개 중 ${playable}개를 실제 촬영 영상에서 옮긴 동작으로 이어서 재생합니다.${fsCount ? ` 이 중 ${fsCount}개는 지문자·지숫자 영상의 2D 좌표를 3D로 복원한 동작입니다.` : ""} ${plan.source === "llm" ? "LLM 후보를 규칙·사전으로 검사한 분석이며" : "규칙 기반 분석이며"} 한국수어 문법·정확성은 검증되지 않았습니다.`;
     }
     if (!segments.length) return "";
     const playable = segments.filter((s) => s.status === "playable").length;

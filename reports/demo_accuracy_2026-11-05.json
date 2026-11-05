@@ -1,0 +1,1142 @@
+[
+ {
+  "run": 1,
+  "kind": "A",
+  "text": "안녕하세요, 무엇을 도와드릴까요?",
+  "expected": "안녕하세요 돕다 무엇",
+  "rule": {
+   "ok": true,
+   "got": "안녕하세요 돕다 무엇",
+   "full": true,
+   "ms": 4.25
+  },
+  "app": {
+   "ok": true,
+   "got": "안녕하세요 돕다 무엇",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 1,
+  "kind": "A",
+  "text": "서울역은 1호선을 타고 가세요.",
+  "expected": "서울역 1호 타다 가다",
+  "rule": {
+   "ok": true,
+   "got": "서울역 1호 타다 가다",
+   "full": true,
+   "ms": 0.8746000000000436
+  },
+  "app": {
+   "ok": true,
+   "got": "서울역 1호 타다 가다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 1,
+  "kind": "A",
+  "text": "서울역에서 내리세요.",
+  "expected": "서울역 내리다",
+  "rule": {
+   "ok": true,
+   "got": "서울역 내리다",
+   "full": true,
+   "ms": 0.18780000000003838
+  },
+  "app": {
+   "ok": true,
+   "got": "서울역 내리다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 1,
+  "kind": "A",
+  "text": "교통카드는 매표소에서 사세요.",
+  "expected": "교통카드 매표소 사다",
+  "rule": {
+   "ok": true,
+   "got": "교통카드 매표소 사다",
+   "full": true,
+   "ms": 0.12199999999995725
+  },
+  "app": {
+   "ok": true,
+   "got": "교통카드 매표소 사다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 1,
+  "kind": "A",
+  "text": "매표소는 오른쪽에 있어요.",
+  "expected": "매표소 오른쪽 있다",
+  "rule": {
+   "ok": true,
+   "got": "매표소 오른쪽 있다",
+   "full": true,
+   "ms": 0.09780000000000655
+  },
+  "app": {
+   "ok": true,
+   "got": "매표소 오른쪽 있다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 1,
+  "kind": "A",
+  "text": "지하철이 5분 늦게 와요.",
+  "expected": "5분 지하철 늦다 오다",
+  "rule": {
+   "ok": true,
+   "got": "5분 지하철 늦다 오다",
+   "full": true,
+   "ms": 0.1449000000000069
+  },
+  "app": {
+   "ok": true,
+   "got": "5분 지하철 늦다 오다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 1,
+  "kind": "A",
+  "text": "잠깐 기다리세요.",
+  "expected": "잠깐 기다리다",
+  "rule": {
+   "ok": true,
+   "got": "잠깐 기다리다",
+   "full": true,
+   "ms": 0.04189999999999827
+  },
+  "app": {
+   "ok": true,
+   "got": "잠깐 기다리다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 1,
+  "kind": "A",
+  "text": "엘리베이터는 왼쪽에 있어요.",
+  "expected": "엘리베이터 왼쪽 있다",
+  "rule": {
+   "ok": true,
+   "got": "엘리베이터 왼쪽 있다",
+   "full": true,
+   "ms": 0.0402000000000271
+  },
+  "app": {
+   "ok": true,
+   "got": "엘리베이터 왼쪽 있다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 1,
+  "kind": "A",
+  "text": "계단은 위험해요.",
+  "expected": "계단 위험",
+  "rule": {
+   "ok": true,
+   "got": "계단 위험",
+   "full": true,
+   "ms": 0.034500000000036835
+  },
+  "app": {
+   "ok": true,
+   "got": "계단 위험",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 1,
+  "kind": "A",
+  "text": "천천히 조심해서 가세요.",
+  "expected": "천천히 조심 가다",
+  "rule": {
+   "ok": true,
+   "got": "천천히 조심 가다",
+   "full": true,
+   "ms": 0.05320000000000391
+  },
+  "app": {
+   "ok": true,
+   "got": "천천히 조심 가다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 1,
+  "kind": "B",
+  "text": "서울역에 가고 싶어요.",
+  "expected": "서울역 가다 싶다|원하다",
+  "rule": {
+   "ok": true,
+   "got": "서울역 가다 싶다",
+   "full": false,
+   "ms": 0.12430000000000518
+  },
+  "app": {
+   "ok": true,
+   "got": "서울역 가다 원하다",
+   "full": true,
+   "via": "LLM+검증",
+   "ms": 5310
+  }
+ },
+ {
+  "run": 1,
+  "kind": "B",
+  "text": "교통카드가 없어요.",
+  "expected": "교통카드 없다",
+  "rule": {
+   "ok": true,
+   "got": "교통카드 없다",
+   "full": true,
+   "ms": 0.5771999999997206
+  },
+  "app": {
+   "ok": true,
+   "got": "교통카드 없다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 1,
+  "kind": "B",
+  "text": "지하철은 언제 와요?",
+  "expected": "지하철 오다 언제",
+  "rule": {
+   "ok": true,
+   "got": "지하철 오다 언제",
+   "full": false,
+   "ms": 0.44439999999849533
+  },
+  "app": {
+   "ok": true,
+   "got": "지하철 오다 언제",
+   "full": false,
+   "via": "LLM+검증",
+   "ms": 2878
+  }
+ },
+ {
+  "run": 1,
+  "kind": "B",
+  "text": "엘리베이터는 어디예요?",
+  "expected": "엘리베이터 어디",
+  "rule": {
+   "ok": true,
+   "got": "엘리베이터 어디",
+   "full": true,
+   "ms": 0.22450000000026193
+  },
+  "app": {
+   "ok": true,
+   "got": "엘리베이터 어디",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 1,
+  "kind": "B",
+  "text": "감사합니다.",
+  "expected": "감사합니다",
+  "rule": {
+   "ok": true,
+   "got": "감사합니다",
+   "full": true,
+   "ms": 0.2651000000005297
+  },
+  "app": {
+   "ok": true,
+   "got": "감사합니다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 1,
+  "kind": "붙여쓰기",
+  "text": "서울역은일호선타고가세요",
+  "expected": "서울역 1호 타다 가다",
+  "rule": {
+   "ok": false,
+   "got": "서울역은일호선타고가세요",
+   "full": false,
+   "ms": 45.19369999999981
+  },
+  "app": {
+   "ok": true,
+   "got": "서울역 1호 타다 가다",
+   "full": true,
+   "via": "LLM+검증",
+   "ms": 1396
+  }
+ },
+ {
+  "run": 1,
+  "kind": "문맥(배)",
+  "text": "배가 아파서 배를 못 타요",
+  "expected": "배 아프다 배 타다 아니다|불가능|못하다",
+  "rule": {
+   "ok": false,
+   "got": "배<신체 부위 및 내부 구성> 아프다<병과 증상> 배<신체 부위 및 내부 구성> 타다<교통> 아니다",
+   "full": true,
+   "ms": 0.33779999999751453
+  },
+  "app": {
+   "ok": true,
+   "got": "배<신체 부위 및 내부 구성> 아프다<병과 증상> 배<교통> 타다<교통> 아니다",
+   "full": false,
+   "via": "LLM+검증",
+   "ms": 6627
+  }
+ },
+ {
+  "run": 1,
+  "kind": "오타",
+  "text": "지하철이 10분 늦께 와요",
+  "expected": "10분 지하철 늦다 오다",
+  "rule": {
+   "ok": false,
+   "got": "10분 지하철 늦께 오다",
+   "full": false,
+   "ms": 11.141700000000128
+  },
+  "app": {
+   "ok": false,
+   "got": "10분 지하철 오다 늦다",
+   "full": true,
+   "via": "LLM+검증",
+   "ms": 1700
+  }
+ },
+ {
+  "run": 1,
+  "kind": "소리 나는 대로",
+  "text": "엘리베이터는 왼쪽에 이써요",
+  "expected": "엘리베이터 왼쪽 있다",
+  "rule": {
+   "ok": true,
+   "got": "엘리베이터 왼쪽 있다",
+   "full": true,
+   "ms": 25.193899999998393
+  },
+  "app": {
+   "ok": true,
+   "got": "엘리베이터 왼쪽 있다",
+   "full": true,
+   "via": "규칙(LLM 시간 초과)",
+   "ms": 8003
+  }
+ },
+ {
+  "run": 1,
+  "kind": "군말",
+  "text": "음 그 매표소는 어 오른쪽에 있어요",
+  "expected": "매표소 오른쪽 있다",
+  "rule": {
+   "ok": false,
+   "got": "그 매표소 오른쪽 있다",
+   "full": false,
+   "ms": 0.26689999999507563
+  },
+  "app": {
+   "ok": true,
+   "got": "매표소 오른쪽 있다",
+   "full": true,
+   "via": "LLM+검증",
+   "ms": 4786
+  }
+ },
+ {
+  "run": 2,
+  "kind": "A",
+  "text": "안녕하세요, 무엇을 도와드릴까요?",
+  "expected": "안녕하세요 돕다 무엇",
+  "rule": {
+   "ok": true,
+   "got": "안녕하세요 돕다 무엇",
+   "full": true,
+   "ms": 0.5107999999963795
+  },
+  "app": {
+   "ok": true,
+   "got": "안녕하세요 돕다 무엇",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 2,
+  "kind": "A",
+  "text": "서울역은 1호선을 타고 가세요.",
+  "expected": "서울역 1호 타다 가다",
+  "rule": {
+   "ok": true,
+   "got": "서울역 1호 타다 가다",
+   "full": true,
+   "ms": 0.613100000002305
+  },
+  "app": {
+   "ok": true,
+   "got": "서울역 1호 타다 가다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 2,
+  "kind": "A",
+  "text": "서울역에서 내리세요.",
+  "expected": "서울역 내리다",
+  "rule": {
+   "ok": true,
+   "got": "서울역 내리다",
+   "full": true,
+   "ms": 0.4600999999966007
+  },
+  "app": {
+   "ok": true,
+   "got": "서울역 내리다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 2,
+  "kind": "A",
+  "text": "교통카드는 매표소에서 사세요.",
+  "expected": "교통카드 매표소 사다",
+  "rule": {
+   "ok": true,
+   "got": "교통카드 매표소 사다",
+   "full": true,
+   "ms": 0.14600000000064028
+  },
+  "app": {
+   "ok": true,
+   "got": "교통카드 매표소 사다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 2,
+  "kind": "A",
+  "text": "매표소는 오른쪽에 있어요.",
+  "expected": "매표소 오른쪽 있다",
+  "rule": {
+   "ok": true,
+   "got": "매표소 오른쪽 있다",
+   "full": true,
+   "ms": 0.12339999999676365
+  },
+  "app": {
+   "ok": true,
+   "got": "매표소 오른쪽 있다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 2,
+  "kind": "A",
+  "text": "지하철이 5분 늦게 와요.",
+  "expected": "5분 지하철 늦다 오다",
+  "rule": {
+   "ok": true,
+   "got": "5분 지하철 늦다 오다",
+   "full": true,
+   "ms": 0.18809999999939464
+  },
+  "app": {
+   "ok": true,
+   "got": "5분 지하철 늦다 오다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 2,
+  "kind": "A",
+  "text": "잠깐 기다리세요.",
+  "expected": "잠깐 기다리다",
+  "rule": {
+   "ok": true,
+   "got": "잠깐 기다리다",
+   "full": true,
+   "ms": 0.11340000000200234
+  },
+  "app": {
+   "ok": true,
+   "got": "잠깐 기다리다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 2,
+  "kind": "A",
+  "text": "엘리베이터는 왼쪽에 있어요.",
+  "expected": "엘리베이터 왼쪽 있다",
+  "rule": {
+   "ok": true,
+   "got": "엘리베이터 왼쪽 있다",
+   "full": true,
+   "ms": 0.1265999999959604
+  },
+  "app": {
+   "ok": true,
+   "got": "엘리베이터 왼쪽 있다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 2,
+  "kind": "A",
+  "text": "계단은 위험해요.",
+  "expected": "계단 위험",
+  "rule": {
+   "ok": true,
+   "got": "계단 위험",
+   "full": true,
+   "ms": 0.12550000000192085
+  },
+  "app": {
+   "ok": true,
+   "got": "계단 위험",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 2,
+  "kind": "A",
+  "text": "천천히 조심해서 가세요.",
+  "expected": "천천히 조심 가다",
+  "rule": {
+   "ok": true,
+   "got": "천천히 조심 가다",
+   "full": true,
+   "ms": 0.14759999999660067
+  },
+  "app": {
+   "ok": true,
+   "got": "천천히 조심 가다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 2,
+  "kind": "B",
+  "text": "서울역에 가고 싶어요.",
+  "expected": "서울역 가다 싶다|원하다",
+  "rule": {
+   "ok": true,
+   "got": "서울역 가다 싶다",
+   "full": false,
+   "ms": 0.11389999999664724
+  },
+  "app": {
+   "ok": true,
+   "got": "서울역 가다 싶다",
+   "full": false,
+   "via": "규칙(LLM 오류 502)",
+   "ms": 1693
+  }
+ },
+ {
+  "run": 2,
+  "kind": "B",
+  "text": "교통카드가 없어요.",
+  "expected": "교통카드 없다",
+  "rule": {
+   "ok": true,
+   "got": "교통카드 없다",
+   "full": true,
+   "ms": 0.18929999999818392
+  },
+  "app": {
+   "ok": true,
+   "got": "교통카드 없다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 2,
+  "kind": "B",
+  "text": "지하철은 언제 와요?",
+  "expected": "지하철 오다 언제",
+  "rule": {
+   "ok": true,
+   "got": "지하철 오다 언제",
+   "full": false,
+   "ms": 0.07679999999527354
+  },
+  "app": {
+   "ok": true,
+   "got": "지하철 오다 언제",
+   "full": false,
+   "via": "LLM+검증",
+   "ms": 1462
+  }
+ },
+ {
+  "run": 2,
+  "kind": "B",
+  "text": "엘리베이터는 어디예요?",
+  "expected": "엘리베이터 어디",
+  "rule": {
+   "ok": true,
+   "got": "엘리베이터 어디",
+   "full": true,
+   "ms": 0.14059999999881256
+  },
+  "app": {
+   "ok": true,
+   "got": "엘리베이터 어디",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 2,
+  "kind": "B",
+  "text": "감사합니다.",
+  "expected": "감사합니다",
+  "rule": {
+   "ok": true,
+   "got": "감사합니다",
+   "full": true,
+   "ms": 0.050900000002002344
+  },
+  "app": {
+   "ok": true,
+   "got": "감사합니다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 2,
+  "kind": "붙여쓰기",
+  "text": "서울역은일호선타고가세요",
+  "expected": "서울역 1호 타다 가다",
+  "rule": {
+   "ok": false,
+   "got": "서울역은일호선타고가세요",
+   "full": false,
+   "ms": 17.115300000004936
+  },
+  "app": {
+   "ok": true,
+   "got": "서울역 1호 타다 가다",
+   "full": true,
+   "via": "LLM+검증",
+   "ms": 2085
+  }
+ },
+ {
+  "run": 2,
+  "kind": "문맥(배)",
+  "text": "배가 아파서 배를 못 타요",
+  "expected": "배 아프다 배 타다 아니다|불가능|못하다",
+  "rule": {
+   "ok": false,
+   "got": "배<신체 부위 및 내부 구성> 아프다<병과 증상> 배<신체 부위 및 내부 구성> 타다<교통> 아니다",
+   "full": true,
+   "ms": 0.49289999999746215
+  },
+  "app": {
+   "ok": true,
+   "got": "배<신체 부위 및 내부 구성> 아프다<병과 증상> 배<교통> 타다<교통> 아니다",
+   "full": false,
+   "via": "LLM+검증",
+   "ms": 5454
+  }
+ },
+ {
+  "run": 2,
+  "kind": "오타",
+  "text": "지하철이 10분 늦께 와요",
+  "expected": "10분 지하철 늦다 오다",
+  "rule": {
+   "ok": false,
+   "got": "10분 지하철 늦께 오다",
+   "full": false,
+   "ms": 6.329599999997299
+  },
+  "app": {
+   "ok": false,
+   "got": "10분 지하철 늦께 오다",
+   "full": false,
+   "via": "규칙(LLM 오류 502)",
+   "ms": 2209
+  }
+ },
+ {
+  "run": 2,
+  "kind": "소리 나는 대로",
+  "text": "엘리베이터는 왼쪽에 이써요",
+  "expected": "엘리베이터 왼쪽 있다",
+  "rule": {
+   "ok": true,
+   "got": "엘리베이터 왼쪽 있다",
+   "full": true,
+   "ms": 16.241699999998673
+  },
+  "app": {
+   "ok": true,
+   "got": "엘리베이터 왼쪽 있다",
+   "full": true,
+   "via": "LLM+검증",
+   "ms": 3268
+  }
+ },
+ {
+  "run": 2,
+  "kind": "군말",
+  "text": "음 그 매표소는 어 오른쪽에 있어요",
+  "expected": "매표소 오른쪽 있다",
+  "rule": {
+   "ok": false,
+   "got": "그 매표소 오른쪽 있다",
+   "full": false,
+   "ms": 0.2554000000091037
+  },
+  "app": {
+   "ok": true,
+   "got": "매표소 오른쪽 있다",
+   "full": true,
+   "via": "LLM+검증",
+   "ms": 4809
+  }
+ },
+ {
+  "run": 3,
+  "kind": "A",
+  "text": "안녕하세요, 무엇을 도와드릴까요?",
+  "expected": "안녕하세요 돕다 무엇",
+  "rule": {
+   "ok": true,
+   "got": "안녕하세요 돕다 무엇",
+   "full": true,
+   "ms": 0.48140000000421423
+  },
+  "app": {
+   "ok": true,
+   "got": "안녕하세요 돕다 무엇",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 3,
+  "kind": "A",
+  "text": "서울역은 1호선을 타고 가세요.",
+  "expected": "서울역 1호 타다 가다",
+  "rule": {
+   "ok": true,
+   "got": "서울역 1호 타다 가다",
+   "full": true,
+   "ms": 0.3365999999950873
+  },
+  "app": {
+   "ok": true,
+   "got": "서울역 1호 타다 가다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 3,
+  "kind": "A",
+  "text": "서울역에서 내리세요.",
+  "expected": "서울역 내리다",
+  "rule": {
+   "ok": true,
+   "got": "서울역 내리다",
+   "full": true,
+   "ms": 0.18779999999969732
+  },
+  "app": {
+   "ok": true,
+   "got": "서울역 내리다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 3,
+  "kind": "A",
+  "text": "교통카드는 매표소에서 사세요.",
+  "expected": "교통카드 매표소 사다",
+  "rule": {
+   "ok": true,
+   "got": "교통카드 매표소 사다",
+   "full": true,
+   "ms": 0.12570000000414439
+  },
+  "app": {
+   "ok": true,
+   "got": "교통카드 매표소 사다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 3,
+  "kind": "A",
+  "text": "매표소는 오른쪽에 있어요.",
+  "expected": "매표소 오른쪽 있다",
+  "rule": {
+   "ok": true,
+   "got": "매표소 오른쪽 있다",
+   "full": true,
+   "ms": 0.12800000001152512
+  },
+  "app": {
+   "ok": true,
+   "got": "매표소 오른쪽 있다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 3,
+  "kind": "A",
+  "text": "지하철이 5분 늦게 와요.",
+  "expected": "5분 지하철 늦다 오다",
+  "rule": {
+   "ok": true,
+   "got": "5분 지하철 늦다 오다",
+   "full": true,
+   "ms": 0.19189999999071006
+  },
+  "app": {
+   "ok": true,
+   "got": "5분 지하철 늦다 오다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 3,
+  "kind": "A",
+  "text": "잠깐 기다리세요.",
+  "expected": "잠깐 기다리다",
+  "rule": {
+   "ok": true,
+   "got": "잠깐 기다리다",
+   "full": true,
+   "ms": 0.11370000000169966
+  },
+  "app": {
+   "ok": true,
+   "got": "잠깐 기다리다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 3,
+  "kind": "A",
+  "text": "엘리베이터는 왼쪽에 있어요.",
+  "expected": "엘리베이터 왼쪽 있다",
+  "rule": {
+   "ok": true,
+   "got": "엘리베이터 왼쪽 있다",
+   "full": true,
+   "ms": 0.14530000000377186
+  },
+  "app": {
+   "ok": true,
+   "got": "엘리베이터 왼쪽 있다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 3,
+  "kind": "A",
+  "text": "계단은 위험해요.",
+  "expected": "계단 위험",
+  "rule": {
+   "ok": true,
+   "got": "계단 위험",
+   "full": true,
+   "ms": 0.09590000000025611
+  },
+  "app": {
+   "ok": true,
+   "got": "계단 위험",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 3,
+  "kind": "A",
+  "text": "천천히 조심해서 가세요.",
+  "expected": "천천히 조심 가다",
+  "rule": {
+   "ok": true,
+   "got": "천천히 조심 가다",
+   "full": true,
+   "ms": 0.15890000000945292
+  },
+  "app": {
+   "ok": true,
+   "got": "천천히 조심 가다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 3,
+  "kind": "B",
+  "text": "서울역에 가고 싶어요.",
+  "expected": "서울역 가다 싶다|원하다",
+  "rule": {
+   "ok": true,
+   "got": "서울역 가다 싶다",
+   "full": false,
+   "ms": 0.1658000000024913
+  },
+  "app": {
+   "ok": false,
+   "got": "서울역 가다",
+   "full": true,
+   "via": "LLM+검증",
+   "ms": 2144
+  }
+ },
+ {
+  "run": 3,
+  "kind": "B",
+  "text": "교통카드가 없어요.",
+  "expected": "교통카드 없다",
+  "rule": {
+   "ok": true,
+   "got": "교통카드 없다",
+   "full": true,
+   "ms": 0.4128000000055181
+  },
+  "app": {
+   "ok": true,
+   "got": "교통카드 없다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 3,
+  "kind": "B",
+  "text": "지하철은 언제 와요?",
+  "expected": "지하철 오다 언제",
+  "rule": {
+   "ok": true,
+   "got": "지하철 오다 언제",
+   "full": false,
+   "ms": 0.20339999999850988
+  },
+  "app": {
+   "ok": true,
+   "got": "지하철 오다 언제",
+   "full": false,
+   "via": "LLM+검증",
+   "ms": 1430
+  }
+ },
+ {
+  "run": 3,
+  "kind": "B",
+  "text": "엘리베이터는 어디예요?",
+  "expected": "엘리베이터 어디",
+  "rule": {
+   "ok": true,
+   "got": "엘리베이터 어디",
+   "full": true,
+   "ms": 0.1631000000052154
+  },
+  "app": {
+   "ok": true,
+   "got": "엘리베이터 어디",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 3,
+  "kind": "B",
+  "text": "감사합니다.",
+  "expected": "감사합니다",
+  "rule": {
+   "ok": true,
+   "got": "감사합니다",
+   "full": true,
+   "ms": 0.03259999999136198
+  },
+  "app": {
+   "ok": true,
+   "got": "감사합니다",
+   "full": true,
+   "via": "규칙",
+   "ms": 0
+  }
+ },
+ {
+  "run": 3,
+  "kind": "붙여쓰기",
+  "text": "서울역은일호선타고가세요",
+  "expected": "서울역 1호 타다 가다",
+  "rule": {
+   "ok": false,
+   "got": "서울역은일호선타고가세요",
+   "full": false,
+   "ms": 16.429199999998673
+  },
+  "app": {
+   "ok": true,
+   "got": "서울역 1호 타다 가다",
+   "full": true,
+   "via": "LLM+검증",
+   "ms": 1805
+  }
+ },
+ {
+  "run": 3,
+  "kind": "문맥(배)",
+  "text": "배가 아파서 배를 못 타요",
+  "expected": "배 아프다 배 타다 아니다|불가능|못하다",
+  "rule": {
+   "ok": false,
+   "got": "배<신체 부위 및 내부 구성> 아프다<병과 증상> 배<신체 부위 및 내부 구성> 타다<교통> 아니다",
+   "full": true,
+   "ms": 1.1620000000111759
+  },
+  "app": {
+   "ok": true,
+   "got": "배<신체 부위 및 내부 구성> 아프다<병과 증상> 배<교통> 타다<교통> 아니다",
+   "full": false,
+   "via": "LLM+검증",
+   "ms": 5829
+  }
+ },
+ {
+  "run": 3,
+  "kind": "오타",
+  "text": "지하철이 10분 늦께 와요",
+  "expected": "10분 지하철 늦다 오다",
+  "rule": {
+   "ok": false,
+   "got": "10분 지하철 늦께 오다",
+   "full": false,
+   "ms": 9.77400000000489
+  },
+  "app": {
+   "ok": false,
+   "got": "10분 지하철 늦께 오다",
+   "full": false,
+   "via": "규칙(LLM 오류 502)",
+   "ms": 2019
+  }
+ },
+ {
+  "run": 3,
+  "kind": "소리 나는 대로",
+  "text": "엘리베이터는 왼쪽에 이써요",
+  "expected": "엘리베이터 왼쪽 있다",
+  "rule": {
+   "ok": true,
+   "got": "엘리베이터 왼쪽 있다",
+   "full": true,
+   "ms": 22.472600000008242
+  },
+  "app": {
+   "ok": true,
+   "got": "엘리베이터 왼쪽 있다",
+   "full": true,
+   "via": "LLM+검증",
+   "ms": 1593
+  }
+ },
+ {
+  "run": 3,
+  "kind": "군말",
+  "text": "음 그 매표소는 어 오른쪽에 있어요",
+  "expected": "매표소 오른쪽 있다",
+  "rule": {
+   "ok": false,
+   "got": "그 매표소 오른쪽 있다",
+   "full": false,
+   "ms": 0.9661999999952968
+  },
+  "app": {
+   "ok": true,
+   "got": "매표소 오른쪽 있다",
+   "full": true,
+   "via": "LLM+검증",
+   "ms": 4678
+  }
+ }
+]

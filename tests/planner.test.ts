@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
-import { buildLexicon, planSentence, predicateStems, describePlan, type DictEntry } from "../src/lib/ksl/planner.ts";
+import { buildLexicon, planSentence, predicateStems, describePlan, numberGloss, strip, type DictEntry } from "../src/lib/ksl/planner.ts";
 import { jamoDistance } from "../src/lib/ksl/hangul.ts";
 
 // 실제 파일 없이도 돌도록 작은 시험용 사전을 쓴다(국립국어원 '배' 항목 구조를 그대로 본뜸).
@@ -208,4 +208,20 @@ test("돕다는 '도와'로 활용하고, 높임 보조용언 '드리다'는 떼
   // 돕다 → 유의어 도와주다(동작 있음)까지 이어져 재생된다
   assert.equal(p.order[0].lemma, "도와주다");
   assert.equal(p.order[0].status, "playable");
+});
+
+// 지문자 데이터(2026-11-05): 숫자만 있는 말·역 이름 동작
+test("지숫자: '5'는 변이형 번호로 지우지 않고, '5번'처럼 단위 동작이 없으면 숫자 동작으로", () => {
+  assert.equal(strip("5"), "5");
+  assert.equal(strip("12"), "12");
+  assert.equal(strip("가방2"), "가방");
+  assert.equal(strip("종로3가"), "종로3가");
+  const l = buildLexicon({
+    glossItems: { "5": { path: "/m/5.json" }, "5분": { path: "/m/5m.json" }, "사당": { path: "/m/sadang.json" }, "곳": { path: "/m/place.json" }, "내리다": { path: "/m/off.json" } },
+    dictionary: [{ id: 1, w: [["역"]], c: "사회생활 > 교통", d: true, h: "", j: null }],
+  });
+  assert.equal(numberGloss("5번", l), "5");
+  assert.equal(numberGloss("5분", l), "5분");
+  assert.equal(numberGloss("7번", l), "7번");
+  assert.deepEqual(planSentence("사당역에서 5분 뒤에 내려요", l).order.filter((t) => t.status === "playable").map((t) => t.lemma), ["5분", "사당", "곳", "내리다"]); // 시간 표현은 앞으로
 });

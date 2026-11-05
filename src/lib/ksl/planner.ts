@@ -64,7 +64,8 @@ export interface SignPlan {
   llmNotes?: string[];
 }
 
-export const strip = (w: string) => w.replace(/\s+/g, "").replace(/\d+$/, "");
+// "가방2"처럼 같은 단어의 변이형 번호만 뗀다. "5" "12"처럼 숫자만 있는 말(지숫자)은 그대로 둔다
+export const strip = (w: string) => w.replace(/\s+/g, "").replace(/(\D)\d+$/, "$1");
 
 // ---------------------------------------------------------------- 용언 활용
 /** "타다" → {타, 탔, 탄, 탈, 탑} 처럼 활용형의 앞부분(어간 변이형)을 만든다. */
@@ -189,7 +190,11 @@ interface Parsed { lemma: string; kind: PlanToken["kind"]; rest: string }
  */
 export function numberGloss(lemma: string, lex: Pick<Lexicon, "motions">): string {
   const line = lemma.match(/^(\d+)호선$/);
-  return line && lex.motions.has(`${line[1]}호`) ? `${line[1]}호` : lemma;
+  if (line && lex.motions.has(`${line[1]}호`)) return `${line[1]}호`;
+  if (lex.motions.has(lemma)) return lemma;
+  // "5번"처럼 단위까지 붙은 지숫자 동작이 없으면 숫자만이라도 보여 준다(지문자 데이터의 숫자 1~12 등)
+  const n = lemma.match(/^(\d+)\D+$/);
+  return n && lex.motions.has(n[1]) ? n[1] : lemma;
 }
 
 function parseExact(tok: string, lex: Lexicon): Parsed | null {
