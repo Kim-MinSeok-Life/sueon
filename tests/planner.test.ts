@@ -225,3 +225,9 @@ test("지숫자: '5'는 변이형 번호로 지우지 않고, '5번'처럼 단�
   assert.equal(numberGloss("7번", l), "7번");
   assert.deepEqual(planSentence("사당역에서 5분 뒤에 내려요", l).order.filter((t) => t.status === "playable").map((t) => t.lemma), ["5분", "사당", "곳", "내리다"]); // 시간 표현은 앞으로
 });
+
+// 사용자 피드백(2026-11-05): 확인 상자를 없애면서 "ㅇㅇ"가 '왜'로 바뀌어 그대로 재생되던 문제
+test("자음·모음만 있는 말(ㅇㅇ, ㅋㅋ)은 오타 교정하지 않고 군말로 뺌", () => {
+  const l = buildLexicon({ glossItems: { "화장실": { path: "/m/wc.json" }, "왜": { path: "/m/why.json" } } });
+  assert.deepEqual(planSentence("ㅇㅇ 화장실 ㅋㅋ", l).order.map((t) => t.lemma), ["화장실"]);
+});

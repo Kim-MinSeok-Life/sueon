@@ -172,7 +172,8 @@ export function normalizeTokens(text: string, corrections: Correction[]): { toke
   const out: string[] = [];
   for (let i = 0; i < raw.length; i++) {
     const t = raw[i];
-    if (FILLERS.has(t)) { corrections.push({ from: t, to: "", reason: "filler" }); continue; }
+    // "ㅇㅇ" "ㅋㅋ"처럼 자음·모음만 있는 말은 단어가 아니라 군말로 본다(오타 교정으로 엉뚱한 단어가 되지 않게)
+    if (FILLERS.has(t) || /^[ㄱ-ㅣ]+$/.test(t)) { corrections.push({ from: t, to: "", reason: "filler" }); continue; }
     const softRun = raw[i + 1] === t || raw[i - 1] === t || SOFT_FILLERS.has(raw[i + 1] ?? "") || (raw[i + 1] ?? "").startsWith(t);
     if (SOFT_FILLERS.has(t) && softRun) { corrections.push({ from: t, to: "", reason: "filler" }); continue; }
     if (out.at(-1) === t) { corrections.push({ from: t, to: "", reason: "repeat" }); continue; }
