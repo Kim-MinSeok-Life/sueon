@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { buildLexicon, planSentence, type DictEntry } from "../src/lib/ksl/planner.ts";
-import { buildSystemPrompt, parseCandidate, verifyCandidate } from "../src/lib/ksl/llm.ts";
+import { buildSystemPrompt, parseCandidate, ruleIsConfident, verifyCandidate } from "../src/lib/ksl/llm.ts";
 import { getLlmProvider } from "../src/lib/ksl/llmProviders.ts";
 
 // LLM 응답을 흉내 낸 후보로 검증 규칙만 시험한다(실제 API 호출 없음).
@@ -134,4 +134,11 @@ test("공급자 선택: 키가 없으면 null(규칙 분석), mock은 개발에�
   assert.equal(getLlmProvider({ NODE_ENV: "development", GEMINI_API_KEY: "x" } as NodeJS.ProcessEnv)?.id, "gemini");
   assert.equal(getLlmProvider({ NODE_ENV: "development", SUEON_LLM_PROVIDER: "gemini" } as NodeJS.ProcessEnv), null);
   assert.equal(getLlmProvider({ NODE_ENV: "development", SUEON_LLM_PROVIDER: "gemini", GEMINI_API_KEY: "x", SUEON_LLM_MODEL: "gemini-2.5-flash-lite" } as NodeJS.ProcessEnv)?.model, "gemini-2.5-flash-lite");
+});
+
+test("규칙이 확실하면 LLM 생략: 모든 단어에 동작이 있고 확신도 high일 때만", () => {
+  assert.equal(ruleIsConfident(planSentence("택시 타고 가요", lex)), true);
+  // 동작 없는 말(먹다)·모르는 말·뜻이 애매한 말이 섞이면 LLM을 불러 본다
+  assert.equal(ruleIsConfident(planSentence("밥을 먹다", lex)), false);
+  assert.equal(ruleIsConfident(planSentence("학교를간다", lex)), false);
 });

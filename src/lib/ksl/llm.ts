@@ -34,6 +34,14 @@ export interface LlmVerification {
 export const LLM_LIMITS = { maxWords: 20, maxWordLength: 20, maxNoteLength: 200 } as const;
 
 /**
+ * 규칙 분석만으로 충분한가(속도 개선, 11/5 결정): 확신도 high이고 모든 수어 단어에 동작이 있으면 LLM을 부르지 않는다.
+ * 오타·모르는 말·뜻이 애매한 말·동작 없는 말이 하나라도 있으면 LLM 후보를 받아 본다.
+ */
+export function ruleIsConfident(rule: SignPlan): boolean {
+  return rule.confidence === "high" && rule.order.length > 0 && rule.order.every((t) => t.status === "playable");
+}
+
+/**
  * 시스템 프롬프트. allowed는 동작이 있는 수어 단어 목록(public/motions/aihub_gloss/index.json의 키).
  * 목록 밖의 말도 쓸 수 있게 하되(사전에 있으면 '동작 없음'으로 표시) 검사기가 다시 거른다.
  */
