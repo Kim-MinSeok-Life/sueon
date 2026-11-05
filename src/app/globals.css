@@ -154,7 +154,7 @@ textarea:focus, .reply-panel input:focus { border-color: var(--ok); outline: non
 .mini { font-size: .72rem; color: var(--ink-soft); }
 .mini-same { color: var(--ok); } .mini-different { color: var(--bad); } .mini-unsure { color: var(--test); }
 .compare-main { min-width: 0; display: grid; gap: 12px; }
-.compare-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.compare-pair { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .compare-pair figure { margin: 0; min-width: 0; }
 .compare-pair figcaption { font-size: .8rem; color: var(--ink-soft); margin-bottom: 6px; overflow-wrap: anywhere; }
 .compare-pair video { width: 100%; height: min(56vh, 480px); object-fit: contain; background: #000; border-radius: 18px; display: block; }
