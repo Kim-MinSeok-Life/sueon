@@ -102,6 +102,11 @@ test("실측 보완(11/5): 떨어진 반복 단어는 각자 뜻 유지, 겹쳐 
   const doubled = verify("버스 언제 와요?", { glosses: [{ word: "택시" }, { word: "오다오다" }] });
   assert.ok(doubled.plan.tokens.some((t) => t.lemma === "오다"));
   assert.ok(doubled.notes.some((n) => n.includes("겹쳐 쓴 말 정리")));
+  // 동작 목록에 겹친 모양 그대로 있으면(AI-Hub 표기 '오다오다') 바꾸지 않는다
+  const lexDup = buildLexicon({ glossItems: { ...glossItems, "오다오다": { path: "/m/come.json" } }, dictionary });
+  const kept = verifyCandidate("택시 언제 와요?", parseCandidate({ glosses: [{ word: "택시" }, { word: "오다오다" }] }), lexDup, planSentence("택시 언제 와요?", lexDup));
+  assert.equal(kept.accepted, true); // '와요'가 '오다오다'의 근거로 인정됨(활용형 와)
+  assert.ok(kept.plan.tokens.some((t) => t.lemma === "오다오다" && t.status === "playable"));
   // 동작 없는 '역' → 동작 있는 '곳'
   const station = verify("다음 역에서 내려요", { glosses: [{ word: "다음" }, { word: "역" }, { word: "내리다" }] });
   assert.ok(station.plan.order.some((t) => t.lemma === "곳" && t.status === "playable"));
@@ -110,6 +115,12 @@ test("실측 보완(11/5): 떨어진 반복 단어는 각자 뜻 유지, 겹쳐 
   assert.equal(missing.accepted, true);
   assert.deepEqual(missing.plan.order.map((t) => t.lemma), ["택시", "기본", "돈", "얼마"]);
   assert.equal(missing.plan.question, "wh");
+  // 되살린 말은 원래 자리로(맨 앞 단어가 빠졌으면 맨 앞에)
+  const front = verify("택시 기본요금 얼마예요?", { glosses: [{ word: "기본" }, { word: "돈" }, { word: "얼마" }] });
+  assert.deepEqual(front.plan.order.map((t) => t.lemma), ["택시", "기본", "돈", "얼마"]);
+  // 명사 바로 뒤 '하다'는 뺀다
+  const hada = verify("택시 타요", { glosses: [{ word: "택시" }, { word: "하다" }, { word: "타다" }] });
+  assert.ok(!hada.plan.order.some((t) => t.lemma === "하다"));
 });
 
 test("공급자 선택: 키가 없으면 null(규칙 분석), mock은 개발에서만", () => {

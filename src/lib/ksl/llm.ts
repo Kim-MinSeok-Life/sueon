@@ -14,7 +14,7 @@
  *
  * 공급자별 호출 코드는 서버 전용 파일 llmProviders.ts에 있다. 이 파일은 브라우저·서버·테스트 어디서나 쓴다.
  */
-import { findMotion, isWhWord, orderTokens, resolveToken, strip, SYNONYMS, type Lexicon, type PlanToken, type SignPlan } from "./planner.ts";
+import { findMotion, isWhWord, orderTokens, predicateStems, resolveToken, strip, SYNONYMS, type Lexicon, type PlanToken, type SignPlan } from "./planner.ts";
 
 /** LLM이 돌려줘야 하는 형식(정리 후) */
 export interface LlmCandidate {
@@ -90,7 +90,12 @@ const PRONOUN_SOURCES: Record<string, RegExp> = { "나": /(저|제|내|나)/, "�
 /** 입력 문장이나 규칙 분석에서 그 단어의 근거를 찾을 수 있는가 */
 function grounded(word: string, input: string, rule: SignPlan): boolean {
   const flat = input.replace(/\s+/g, "");
+  // AI-Hub 표기처럼 겹친 말(오다오다)은 앞 절반으로 근거를 찾는다
+  const half = word.length % 2 === 0 ? word.slice(0, word.length / 2) : "";
+  if (half && half + half === word && half !== word && grounded(half, input, rule)) return true;
   const stem = word.endsWith("다") && word.length >= 2 ? word.slice(0, -1) : word;
+  // 용언 활용형(오다→와·왔, 걷다→걸어)이 입력에 있으면 근거로 본다(규칙 분석과 같은 계산)
+  if (word.endsWith("다") && predicateStems(word).some((s) => flat.includes(s))) return true;
   if (rule.tokens.some((t) => t.lemma === word) || rule.corrections.some((c) => c.to === word)) return true;
   if (flat.includes(stem) || (stem.length >= 3 && flat.includes(stem.slice(0, 2)))) return true;
   // 활용으로 첫 글자 받침이 바뀌는 용언(타다→탔, 가다→갔)은 첫 글자 초성·중성이 같으면 근거로 본다
@@ -144,7 +149,8 @@ export function verifyCandidate(input: string, cand: LlmCandidate | null, lex: L
   const words: LlmCandidate["glosses"] = [];
   for (const g of cand.glosses) {
     const half = g.word.length % 2 === 0 ? g.word.slice(0, g.word.length / 2) : "";
-    const word = half && half + half === g.word && (lex.senses.has(half) || lex.motions.has(half)) ? half : g.word;
+    // 단, 동작 목록에 겹친 모양 그대로 있는 말은 진짜 수어 단어다(AI-Hub 표기 '오다오다' 등)
+    const word = half && half + half === g.word && !lex.motions.has(g.word) && (lex.senses.has(half) || lex.motions.has(half)) ? half : g.word;
     if (word !== g.word) notes.push(`겹쳐 쓴 말 정리: ${g.word} → ${word}`);
     if (words.at(-1)?.word === word && words.at(-1)?.sense === g.sense) continue;
     words.push({ ...g, word });
@@ -163,7 +169,9 @@ export function verifyCandidate(input: string, cand: LlmCandidate | null, lex: L
 
   // 부정은 규칙과 같은 방식(동사 뒤 부정 수어 하나)으로 통일한다
   const negation = cand.negation || rule.negation || kept.some((g) => g.word === "않다");
-  const content = kept.filter((g) => !(negation && (g.word === "아니다" || g.word === "않다")));
+  const content = kept.filter((g, i) => !(negation && (g.word === "아니다" || g.word === "않다"))
+    // "충전하세요"를 충전·하다로 쪼갠 경우: 명사 바로 뒤의 하다·되다는 말씨일 뿐이라 뺀다(11/5 실측)
+    && !((g.word === "하다" || g.word === "되다") && i > 0 && lex.nouns.has(kept[i - 1].word)));
   const lemmas = content.map((g) => g.word);
   let ambiguous = 0;
   const tokens = content.map((g) => {
@@ -197,7 +205,11 @@ export function verifyCandidate(input: string, cand: LlmCandidate | null, lex: L
   // 조금 뺀 경우에는 규칙 결과에서 되살린다. 같은 문장도 실행마다 LLM 답이 달라 '얼마'처럼 핵심어가 빠진 적이 있음(11/5 실측)
   for (const lemma of dropped) {
     const restored = rule.tokens.find((t) => t.lemma === lemma && t.status === "playable");
-    if (restored) tokens.push(restored);
+    // 규칙 결과에서의 자리 앞에 있던 단어 바로 뒤에 넣는다(안녕하세요가 맨 뒤로 가지 않게)
+    if (!restored) continue;
+    const before = rule.tokens.slice(0, rule.tokens.indexOf(restored)).map((t) => t.lemma);
+    const at = tokens.reduce((pos, t, i) => (before.includes(t.lemma) ? i + 1 : pos), 0);
+    tokens.splice(at, 0, restored);
   }
   if (dropped.length) notes.push(`LLM이 빠뜨린 말을 규칙 결과에서 되살림: ${dropped.join(", ")}`);
 
