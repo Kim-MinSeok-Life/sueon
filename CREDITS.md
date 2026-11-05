@@ -52,8 +52,10 @@ VRM 파일 안의 이용 조건(`VRMC_vrm.meta`, 파일에서 직접 읽은 값)
 | attempt5 | `[라벨]02_real_word_keypoint.zip`(촬영자 REAL02) | `aihub_keypoints.py`(발췌·단위 정규화) → `retarget_vrm.py`(수학적 리타기팅) | `motions/aihub_real02` (단어 9개) |
 | attempt5~6 | `[라벨]02_real_sen_keypoint.zip` + `[라벨]01_real_sen_morpheme.zip`(REAL02 문장) | `build_gloss_library.py`로 형태소 구간을 잘라 리타기팅 | `motions/aihub_gloss` 문장 속 단어 317개(g…) |
 | 2026-11 | `[라벨]02_real_word_keypoint.zip` + `[라벨]01_real_word_morpheme.zip`(REAL02 단어) | `add_word_glosses.py`로 단어 구간을 잘라 리타기팅 | `motions/aihub_gloss` 단어 영상 785개(w…) |
+| 2026-11 | `[라벨]01_crowd_keypoint.zip` + `[라벨]01_crowd_morpheme.zip`(지문자, 일반인 CROWD01~10, **2D 좌표만**) | `lift_2d.py`로 2D → 3D 기하 복원(뼈 길이·손바닥 모양은 REAL02 3D 실측값) → `add_fingerspell_glosses.py`로 리타기팅 | `motions/aihub_gloss` 숫자·역 이름 지문자 249개(f…) |
 
 - 모두 **AI 모델 학습 결과가 아니라** 실제 촬영 좌표를 수학적으로 옮긴 것입니다.
+- 지문자(f…)는 깊이를 추정했으므로 실제 농인 3D(g…, w…)보다 손 모양 정확도가 낮습니다. 검증 수치: `reports/lift_2d_validation_2026-11-05.json`.
 - attempt3까지의 근사 동작은 촬영자(REAL01)와 라벨(REAL16)이 달랐습니다. attempt5부터는 같은 촬영자(REAL02)의 형태소를 씁니다.
 - 원본 출처: [AI-Hub 수어 영상 (데이터셋 103)](https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=103)
 - 아바타 저작권과 AI-Hub 데이터 이용권은 별개입니다.

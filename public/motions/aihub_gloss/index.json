@@ -1,9 +1,9 @@
 {
  "format": "sueon-gloss-library/v1",
- "description": "AI-Hub REAL 문장 3D 키포인트를 같은 촬영본 형태소 구간으로 잘라 만든 수어 단어 동작(g…)과 REAL 단어 영상 3D 키포인트로 만든 동작(w…)의 사전. 한국수어 정확성 미검증.",
+ "description": "AI-Hub REAL 문장 3D 키포인트를 같은 촬영본 형태소 구간으로 잘라 만든 수어 단어 동작(g…), REAL 단어 영상 3D 키포인트로 만든 동작(w…), 지문자 영상 2D 키포인트를 3D로 복원해 만든 숫자·역 이름 동작(f…)의 사전. 한국수어 정확성 미검증.",
  "actor": "REAL02",
  "pad_sec": 0.15,
- "glosses": 1102,
+ "glosses": 1351,
  "skipped_misaligned_sentences": 71,
  "items": {
   "왼쪽": {
@@ -21501,7 +21501,4988 @@
    },
    "context": [],
    "from": "word"
+  },
+  "10": {
+   "id": "f0001",
+   "path": "/motions/aihub_gloss/f0001.json",
+   "source_take": "NIA_SL_FS0810_CROWD08_F",
+   "segment_sec": [
+    2.088,
+    3.805
+   ],
+   "position": "1/1",
+   "duration": 2.0333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.756,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "102900": {
+   "id": "f0002",
+   "path": "/motions/aihub_gloss/f0002.json",
+   "source_take": "NIA_SL_FS0997_CROWD07_F",
+   "segment_sec": [
+    1.327,
+    4.67
+   ],
+   "position": "1/1",
+   "duration": 3.6667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.685,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "10km": {
+   "id": "f0003",
+   "path": "/motions/aihub_gloss/f0003.json",
+   "source_take": "NIA_SL_FS0989_CROWD07_F",
+   "segment_sec": [
+    1.472,
+    3.598
+   ],
+   "position": "1/1",
+   "duration": 2.4,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.738,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "10명": {
+   "id": "f0004",
+   "path": "/motions/aihub_gloss/f0004.json",
+   "source_take": "NIA_SL_FS0831_CROWD02_F",
+   "segment_sec": [
+    1.578,
+    2.865
+   ],
+   "position": "1/1",
+   "duration": 1.5667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.784,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "10시": {
+   "id": "f0005",
+   "path": "/motions/aihub_gloss/f0005.json",
+   "source_take": "NIA_SL_FS0928_CROWD02_F",
+   "segment_sec": [
+    0.922,
+    2.768
+   ],
+   "position": "1/1",
+   "duration": 2.1667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.646,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "10시간": {
+   "id": "f0006",
+   "path": "/motions/aihub_gloss/f0006.json",
+   "source_take": "NIA_SL_FS0940_CROWD10_F",
+   "segment_sec": [
+    1.434,
+    3.488
+   ],
+   "position": "1/1",
+   "duration": 2.3333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.669,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "10월": {
+   "id": "f0007",
+   "path": "/motions/aihub_gloss/f0007.json",
+   "source_take": "NIA_SL_FS0959_CROWD08_F",
+   "segment_sec": [
+    1.04,
+    3.262
+   ],
+   "position": "1/1",
+   "duration": 2.5,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.598,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "10회": {
+   "id": "f0008",
+   "path": "/motions/aihub_gloss/f0008.json",
+   "source_take": "NIA_SL_FS0856_CROWD03_F",
+   "segment_sec": [
+    1.402,
+    3.706
+   ],
+   "position": "1/1",
+   "duration": 2.6,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.805,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "11": {
+   "id": "f0009",
+   "path": "/motions/aihub_gloss/f0009.json",
+   "source_take": "NIA_SL_FS0811_CROWD08_F",
+   "segment_sec": [
+    2.233,
+    3.134
+   ],
+   "position": "1/1",
+   "duration": 1.2333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.837,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "11분": {
+   "id": "f0010",
+   "path": "/motions/aihub_gloss/f0010.json",
+   "source_take": "NIA_SL_FS0869_CROWD08_F",
+   "segment_sec": [
+    1.314,
+    3.445
+   ],
+   "position": "1/1",
+   "duration": 2.4333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.763,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "11시": {
+   "id": "f0011",
+   "path": "/motions/aihub_gloss/f0011.json",
+   "source_take": "NIA_SL_FS0929_CROWD02_F",
+   "segment_sec": [
+    1.408,
+    2.782
+   ],
+   "position": "1/1",
+   "duration": 1.6667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.553,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "11시간": {
+   "id": "f0012",
+   "path": "/motions/aihub_gloss/f0012.json",
+   "source_take": "NIA_SL_FS0941_CROWD03_F",
+   "segment_sec": [
+    0.679,
+    2.131
+   ],
+   "position": "1/1",
+   "duration": 1.7333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.5,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "11월": {
+   "id": "f0013",
+   "path": "/motions/aihub_gloss/f0013.json",
+   "source_take": "NIA_SL_FS0960_CROWD07_F",
+   "segment_sec": [
+    1.413,
+    3.899
+   ],
+   "position": "1/1",
+   "duration": 2.7667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.606,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "1250": {
+   "id": "f0014",
+   "path": "/motions/aihub_gloss/f0014.json",
+   "source_take": "NIA_SL_FS0994_CROWD07_F",
+   "segment_sec": [
+    1.637,
+    4.972
+   ],
+   "position": "1/1",
+   "duration": 3.6333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.667,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "12년": {
+   "id": "f0015",
+   "path": "/motions/aihub_gloss/f0015.json",
+   "source_take": "NIA_SL_FS0985_CROWD07_F",
+   "segment_sec": [
+    1.359,
+    3.642
+   ],
+   "position": "1/1",
+   "duration": 2.6,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.606,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "12분": {
+   "id": "f0016",
+   "path": "/motions/aihub_gloss/f0016.json",
+   "source_take": "NIA_SL_FS0870_CROWD08_F",
+   "segment_sec": [
+    1.512,
+    2.823
+   ],
+   "position": "1/1",
+   "duration": 1.6,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.791,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "12월": {
+   "id": "f0017",
+   "path": "/motions/aihub_gloss/f0017.json",
+   "source_take": "NIA_SL_FS0961_CROWD07_F",
+   "segment_sec": [
+    1.629,
+    4.223
+   ],
+   "position": "1/1",
+   "duration": 2.9,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.583,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "13분": {
+   "id": "f0018",
+   "path": "/motions/aihub_gloss/f0018.json",
+   "source_take": "NIA_SL_FS0871_CROWD08_F",
+   "segment_sec": [
+    1.521,
+    2.998
+   ],
+   "position": "1/1",
+   "duration": 1.7667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.786,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "13살": {
+   "id": "f0019",
+   "path": "/motions/aihub_gloss/f0019.json",
+   "source_take": "NIA_SL_FS0833_CROWD08_F",
+   "segment_sec": [
+    2.852,
+    3.99
+   ],
+   "position": "1/1",
+   "duration": 1.4333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.811,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "14분": {
+   "id": "f0020",
+   "path": "/motions/aihub_gloss/f0020.json",
+   "source_take": "NIA_SL_FS0872_CROWD08_F",
+   "segment_sec": [
+    1.64,
+    3.046
+   ],
+   "position": "1/1",
+   "duration": 1.7,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.8,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "15분": {
+   "id": "f0021",
+   "path": "/motions/aihub_gloss/f0021.json",
+   "source_take": "NIA_SL_FS0873_CROWD08_F",
+   "segment_sec": [
+    1.665,
+    3.161
+   ],
+   "position": "1/1",
+   "duration": 1.8,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.794,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "16분": {
+   "id": "f0022",
+   "path": "/motions/aihub_gloss/f0022.json",
+   "source_take": "NIA_SL_FS0874_CROWD07_F",
+   "segment_sec": [
+    0.67,
+    2.999
+   ],
+   "position": "1/1",
+   "duration": 2.6,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.673,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "17분": {
+   "id": "f0023",
+   "path": "/motions/aihub_gloss/f0023.json",
+   "source_take": "NIA_SL_FS0875_CROWD08_F",
+   "segment_sec": [
+    1.459,
+    2.901
+   ],
+   "position": "1/1",
+   "duration": 1.7667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.817,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "18분": {
+   "id": "f0024",
+   "path": "/motions/aihub_gloss/f0024.json",
+   "source_take": "NIA_SL_FS0876_CROWD08_F",
+   "segment_sec": [
+    1.513,
+    3.018
+   ],
+   "position": "1/1",
+   "duration": 1.8,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.817,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "18살": {
+   "id": "f0025",
+   "path": "/motions/aihub_gloss/f0025.json",
+   "source_take": "NIA_SL_FS0834_CROWD08_F",
+   "segment_sec": [
+    2.085,
+    3.179
+   ],
+   "position": "1/1",
+   "duration": 1.4,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.816,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "19분": {
+   "id": "f0026",
+   "path": "/motions/aihub_gloss/f0026.json",
+   "source_take": "NIA_SL_FS0877_CROWD08_F",
+   "segment_sec": [
+    1.375,
+    2.898
+   ],
+   "position": "1/1",
+   "duration": 1.8,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.835,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "1년": {
+   "id": "f0027",
+   "path": "/motions/aihub_gloss/f0027.json",
+   "source_take": "NIA_SL_FS0974_CROWD07_F",
+   "segment_sec": [
+    1.39,
+    3.673
+   ],
+   "position": "1/1",
+   "duration": 2.6,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.606,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "1달": {
+   "id": "f0028",
+   "path": "/motions/aihub_gloss/f0028.json",
+   "source_take": "NIA_SL_FS0962_CROWD07_F",
+   "segment_sec": [
+    1.464,
+    3.568
+   ],
+   "position": "1/1",
+   "duration": 2.4333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.689,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "1명": {
+   "id": "f0029",
+   "path": "/motions/aihub_gloss/f0029.json",
+   "source_take": "NIA_SL_FS0822_CROWD08_F",
+   "segment_sec": [
+    0.916,
+    1.96
+   ],
+   "position": "1/1",
+   "duration": 1.3333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.688,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "1분": {
+   "id": "f0030",
+   "path": "/motions/aihub_gloss/f0030.json",
+   "source_take": "NIA_SL_FS0859_CROWD08_F",
+   "segment_sec": [
+    2.147,
+    3.129
+   ],
+   "position": "1/1",
+   "duration": 1.2667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.799,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "1월": {
+   "id": "f0031",
+   "path": "/motions/aihub_gloss/f0031.json",
+   "source_take": "NIA_SL_FS0950_CROWD08_F",
+   "segment_sec": [
+    1.231,
+    3.333
+   ],
+   "position": "1/1",
+   "duration": 2.4,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.549,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "1호선": {
+   "id": "f0032",
+   "path": "/motions/aihub_gloss/f0032.json",
+   "source_take": "NIA_SL_FS0813_CROWD08_F",
+   "segment_sec": [
+    1.699,
+    2.772
+   ],
+   "position": "1/1",
+   "duration": 1.4,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.645,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "2": {
+   "id": "f0033",
+   "path": "/motions/aihub_gloss/f0033.json",
+   "source_take": "NIA_SL_FS0802_CROWD09_F",
+   "segment_sec": [
+    1.878,
+    2.929
+   ],
+   "position": "1/1",
+   "duration": 1.3333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.777,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "20분": {
+   "id": "f0034",
+   "path": "/motions/aihub_gloss/f0034.json",
+   "source_take": "NIA_SL_FS0878_CROWD08_F",
+   "segment_sec": [
+    1.432,
+    3.009
+   ],
+   "position": "1/1",
+   "duration": 1.9,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.799,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "21분": {
+   "id": "f0035",
+   "path": "/motions/aihub_gloss/f0035.json",
+   "source_take": "NIA_SL_FS0879_CROWD08_F",
+   "segment_sec": [
+    1.776,
+    3.598
+   ],
+   "position": "1/1",
+   "duration": 2.1,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.795,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "22분": {
+   "id": "f0036",
+   "path": "/motions/aihub_gloss/f0036.json",
+   "source_take": "NIA_SL_FS0880_CROWD07_F",
+   "segment_sec": [
+    1.73,
+    3.488
+   ],
+   "position": "1/1",
+   "duration": 2.0667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.798,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "23분": {
+   "id": "f0037",
+   "path": "/motions/aihub_gloss/f0037.json",
+   "source_take": "NIA_SL_FS0881_CROWD07_F",
+   "segment_sec": [
+    1.486,
+    3.217
+   ],
+   "position": "1/1",
+   "duration": 2.0333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.791,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "24분": {
+   "id": "f0038",
+   "path": "/motions/aihub_gloss/f0038.json",
+   "source_take": "NIA_SL_FS0882_CROWD07_F",
+   "segment_sec": [
+    1.712,
+    3.507
+   ],
+   "position": "1/1",
+   "duration": 2.1,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.791,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "24살": {
+   "id": "f0039",
+   "path": "/motions/aihub_gloss/f0039.json",
+   "source_take": "NIA_SL_FS0835_CROWD08_F",
+   "segment_sec": [
+    2.354,
+    3.708
+   ],
+   "position": "1/1",
+   "duration": 1.6667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.829,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "25분": {
+   "id": "f0040",
+   "path": "/motions/aihub_gloss/f0040.json",
+   "source_take": "NIA_SL_FS0883_CROWD07_F",
+   "segment_sec": [
+    2.108,
+    3.676
+   ],
+   "position": "1/1",
+   "duration": 1.8667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.795,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "26분": {
+   "id": "f0041",
+   "path": "/motions/aihub_gloss/f0041.json",
+   "source_take": "NIA_SL_FS0884_CROWD07_F",
+   "segment_sec": [
+    1.339,
+    2.934
+   ],
+   "position": "1/1",
+   "duration": 1.9,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.818,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "27분": {
+   "id": "f0042",
+   "path": "/motions/aihub_gloss/f0042.json",
+   "source_take": "NIA_SL_FS0885_CROWD07_F",
+   "segment_sec": [
+    1.848,
+    3.443
+   ],
+   "position": "1/1",
+   "duration": 1.9,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.773,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "28분": {
+   "id": "f0043",
+   "path": "/motions/aihub_gloss/f0043.json",
+   "source_take": "NIA_SL_FS0886_CROWD07_F",
+   "segment_sec": [
+    1.457,
+    3.215
+   ],
+   "position": "1/1",
+   "duration": 2.0667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.846,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "29분": {
+   "id": "f0044",
+   "path": "/motions/aihub_gloss/f0044.json",
+   "source_take": "NIA_SL_FS0887_CROWD07_F",
+   "segment_sec": [
+    1.423,
+    3.091
+   ],
+   "position": "1/1",
+   "duration": 1.9667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.801,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "2년": {
+   "id": "f0045",
+   "path": "/motions/aihub_gloss/f0045.json",
+   "source_take": "NIA_SL_FS0975_CROWD07_F",
+   "segment_sec": [
+    1.557,
+    3.998
+   ],
+   "position": "1/1",
+   "duration": 2.7333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.642,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "2달": {
+   "id": "f0046",
+   "path": "/motions/aihub_gloss/f0046.json",
+   "source_take": "NIA_SL_FS0963_CROWD07_F",
+   "segment_sec": [
+    1.341,
+    3.095
+   ],
+   "position": "1/1",
+   "duration": 2.0333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.699,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "2명": {
+   "id": "f0047",
+   "path": "/motions/aihub_gloss/f0047.json",
+   "source_take": "NIA_SL_FS0823_CROWD09_F",
+   "segment_sec": [
+    1.966,
+    2.903
+   ],
+   "position": "1/1",
+   "duration": 1.2667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.69,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "2분": {
+   "id": "f0048",
+   "path": "/motions/aihub_gloss/f0048.json",
+   "source_take": "NIA_SL_FS0860_CROWD04_F",
+   "segment_sec": [
+    1.073,
+    2.048
+   ],
+   "position": "1/1",
+   "duration": 1.2667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.692,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "2시": {
+   "id": "f0049",
+   "path": "/motions/aihub_gloss/f0049.json",
+   "source_take": "NIA_SL_FS0920_CROWD03_F",
+   "segment_sec": [
+    0.832,
+    2.499
+   ],
+   "position": "1/1",
+   "duration": 1.9667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.538,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "2일": {
+   "id": "f0050",
+   "path": "/motions/aihub_gloss/f0050.json",
+   "source_take": "NIA_SL_FS0944_CROWD08_F",
+   "segment_sec": [
+    1.264,
+    2.752
+   ],
+   "position": "1/1",
+   "duration": 1.8,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.696,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "2호선": {
+   "id": "f0051",
+   "path": "/motions/aihub_gloss/f0051.json",
+   "source_take": "NIA_SL_FS0814_CROWD08_F",
+   "segment_sec": [
+    1.959,
+    2.767
+   ],
+   "position": "1/1",
+   "duration": 1.1333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.683,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "2회": {
+   "id": "f0052",
+   "path": "/motions/aihub_gloss/f0052.json",
+   "source_take": "NIA_SL_FS0848_CROWD08_F",
+   "segment_sec": [
+    2.495,
+    3.596
+   ],
+   "position": "1/1",
+   "duration": 1.4,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.64,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "30분": {
+   "id": "f0053",
+   "path": "/motions/aihub_gloss/f0053.json",
+   "source_take": "NIA_SL_FS0888_CROWD07_F",
+   "segment_sec": [
+    1.884,
+    3.489
+   ],
+   "position": "1/1",
+   "duration": 1.9,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.804,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "31분": {
+   "id": "f0054",
+   "path": "/motions/aihub_gloss/f0054.json",
+   "source_take": "NIA_SL_FS0889_CROWD07_F",
+   "segment_sec": [
+    2.256,
+    3.716
+   ],
+   "position": "1/1",
+   "duration": 1.7667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.805,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "32분": {
+   "id": "f0055",
+   "path": "/motions/aihub_gloss/f0055.json",
+   "source_take": "NIA_SL_FS0890_CROWD05_F",
+   "segment_sec": [
+    0.703,
+    2.498
+   ],
+   "position": "1/1",
+   "duration": 2.0667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.678,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "3300": {
+   "id": "f0056",
+   "path": "/motions/aihub_gloss/f0056.json",
+   "source_take": "NIA_SL_FS0998_CROWD07_F",
+   "segment_sec": [
+    1.236,
+    3.87
+   ],
+   "position": "1/1",
+   "duration": 2.9333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.65,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "34분": {
+   "id": "f0057",
+   "path": "/motions/aihub_gloss/f0057.json",
+   "source_take": "NIA_SL_FS0892_CROWD05_F",
+   "segment_sec": [
+    1.14,
+    2.518
+   ],
+   "position": "1/1",
+   "duration": 1.6667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.704,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "36분": {
+   "id": "f0058",
+   "path": "/motions/aihub_gloss/f0058.json",
+   "source_take": "NIA_SL_FS0894_CROWD05_F",
+   "segment_sec": [
+    1.239,
+    2.916
+   ],
+   "position": "1/1",
+   "duration": 1.9667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.505,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "37분": {
+   "id": "f0059",
+   "path": "/motions/aihub_gloss/f0059.json",
+   "source_take": "NIA_SL_FS0895_CROWD05_F",
+   "segment_sec": [
+    0.907,
+    2.394
+   ],
+   "position": "1/1",
+   "duration": 1.7667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.575,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "38분": {
+   "id": "f0060",
+   "path": "/motions/aihub_gloss/f0060.json",
+   "source_take": "NIA_SL_FS0896_CROWD05_F",
+   "segment_sec": [
+    0.771,
+    2.339
+   ],
+   "position": "1/1",
+   "duration": 1.8667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.666,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "39분": {
+   "id": "f0061",
+   "path": "/motions/aihub_gloss/f0061.json",
+   "source_take": "NIA_SL_FS0897_CROWD05_F",
+   "segment_sec": [
+    1.013,
+    2.382
+   ],
+   "position": "1/1",
+   "duration": 1.6667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.665,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "3명": {
+   "id": "f0062",
+   "path": "/motions/aihub_gloss/f0062.json",
+   "source_take": "NIA_SL_FS0824_CROWD02_F",
+   "segment_sec": [
+    0.949,
+    2.559
+   ],
+   "position": "1/1",
+   "duration": 1.9,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.675,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "3분": {
+   "id": "f0063",
+   "path": "/motions/aihub_gloss/f0063.json",
+   "source_take": "NIA_SL_FS0861_CROWD04_F",
+   "segment_sec": [
+    1.109,
+    2.106
+   ],
+   "position": "1/1",
+   "duration": 1.3,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.691,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "3월": {
+   "id": "f0064",
+   "path": "/motions/aihub_gloss/f0064.json",
+   "source_take": "NIA_SL_FS0952_CROWD08_F",
+   "segment_sec": [
+    1.173,
+    3.436
+   ],
+   "position": "1/1",
+   "duration": 2.5667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.52,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "3일": {
+   "id": "f0065",
+   "path": "/motions/aihub_gloss/f0065.json",
+   "source_take": "NIA_SL_FS0945_CROWD08_F",
+   "segment_sec": [
+    1.441,
+    3.18
+   ],
+   "position": "1/1",
+   "duration": 2.0333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.681,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "3호선": {
+   "id": "f0066",
+   "path": "/motions/aihub_gloss/f0066.json",
+   "source_take": "NIA_SL_FS0815_CROWD08_F",
+   "segment_sec": [
+    1.701,
+    2.903
+   ],
+   "position": "1/1",
+   "duration": 1.5,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.685,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "3회": {
+   "id": "f0067",
+   "path": "/motions/aihub_gloss/f0067.json",
+   "source_take": "NIA_SL_FS0849_CROWD04_F",
+   "segment_sec": [
+    0.967,
+    1.979
+   ],
+   "position": "1/1",
+   "duration": 1.3,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.693,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "4": {
+   "id": "f0068",
+   "path": "/motions/aihub_gloss/f0068.json",
+   "source_take": "NIA_SL_FS0804_CROWD09_F",
+   "segment_sec": [
+    2.255,
+    3.586
+   ],
+   "position": "1/1",
+   "duration": 1.6333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.803,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "42분": {
+   "id": "f0069",
+   "path": "/motions/aihub_gloss/f0069.json",
+   "source_take": "NIA_SL_FS0900_CROWD05_F",
+   "segment_sec": [
+    0.726,
+    2.285
+   ],
+   "position": "1/1",
+   "duration": 1.8667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.663,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "43분": {
+   "id": "f0070",
+   "path": "/motions/aihub_gloss/f0070.json",
+   "source_take": "NIA_SL_FS0901_CROWD05_F",
+   "segment_sec": [
+    0.741,
+    2.481
+   ],
+   "position": "1/1",
+   "duration": 2.0333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.681,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "44분": {
+   "id": "f0071",
+   "path": "/motions/aihub_gloss/f0071.json",
+   "source_take": "NIA_SL_FS0902_CROWD05_F",
+   "segment_sec": [
+    0.995,
+    2.382
+   ],
+   "position": "1/1",
+   "duration": 1.7,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.709,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "44회": {
+   "id": "f0072",
+   "path": "/motions/aihub_gloss/f0072.json",
+   "source_take": "NIA_SL_FS0857_CROWD03_F",
+   "segment_sec": [
+    1.528,
+    5.249
+   ],
+   "position": "1/1",
+   "duration": 4.0333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.798,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "45분": {
+   "id": "f0073",
+   "path": "/motions/aihub_gloss/f0073.json",
+   "source_take": "NIA_SL_FS0903_CROWD05_F",
+   "segment_sec": [
+    0.898,
+    2.286
+   ],
+   "position": "1/1",
+   "duration": 1.7,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.677,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "46분": {
+   "id": "f0074",
+   "path": "/motions/aihub_gloss/f0074.json",
+   "source_take": "NIA_SL_FS0904_CROWD05_F",
+   "segment_sec": [
+    0.818,
+    2.206
+   ],
+   "position": "1/1",
+   "duration": 1.7,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.681,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "47분": {
+   "id": "f0075",
+   "path": "/motions/aihub_gloss/f0075.json",
+   "source_take": "NIA_SL_FS0905_CROWD04_F",
+   "segment_sec": [
+    0.828,
+    2.159
+   ],
+   "position": "1/1",
+   "duration": 1.6333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.66,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "48분": {
+   "id": "f0076",
+   "path": "/motions/aihub_gloss/f0076.json",
+   "source_take": "NIA_SL_FS0906_CROWD04_F",
+   "segment_sec": [
+    0.904,
+    2.5
+   ],
+   "position": "1/1",
+   "duration": 1.9,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.671,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "49분": {
+   "id": "f0077",
+   "path": "/motions/aihub_gloss/f0077.json",
+   "source_take": "NIA_SL_FS0907_CROWD04_F",
+   "segment_sec": [
+    1.069,
+    2.665
+   ],
+   "position": "1/1",
+   "duration": 1.8667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.722,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "4km": {
+   "id": "f0078",
+   "path": "/motions/aihub_gloss/f0078.json",
+   "source_take": "NIA_SL_FS0986_CROWD07_F",
+   "segment_sec": [
+    1.185,
+    3.127
+   ],
+   "position": "1/1",
+   "duration": 2.2333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.745,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "4년": {
+   "id": "f0079",
+   "path": "/motions/aihub_gloss/f0079.json",
+   "source_take": "NIA_SL_FS0977_CROWD07_F",
+   "segment_sec": [
+    1.374,
+    3.93
+   ],
+   "position": "1/1",
+   "duration": 2.8333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.647,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "4명": {
+   "id": "f0080",
+   "path": "/motions/aihub_gloss/f0080.json",
+   "source_take": "NIA_SL_FS0825_CROWD02_F",
+   "segment_sec": [
+    1.198,
+    2.901
+   ],
+   "position": "1/1",
+   "duration": 2.0333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.719,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "4분": {
+   "id": "f0081",
+   "path": "/motions/aihub_gloss/f0081.json",
+   "source_take": "NIA_SL_FS0862_CROWD03_F",
+   "segment_sec": [
+    1.706,
+    3.572
+   ],
+   "position": "1/1",
+   "duration": 2.1667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.783,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "4시": {
+   "id": "f0082",
+   "path": "/motions/aihub_gloss/f0082.json",
+   "source_take": "NIA_SL_FS0922_CROWD03_F",
+   "segment_sec": [
+    0.893,
+    2.782
+   ],
+   "position": "1/1",
+   "duration": 2.2,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.623,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "4월": {
+   "id": "f0083",
+   "path": "/motions/aihub_gloss/f0083.json",
+   "source_take": "NIA_SL_FS0953_CROWD08_F",
+   "segment_sec": [
+    1.164,
+    3.759
+   ],
+   "position": "1/1",
+   "duration": 2.9,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.581,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "4호선": {
+   "id": "f0084",
+   "path": "/motions/aihub_gloss/f0084.json",
+   "source_take": "NIA_SL_FS0816_CROWD08_F",
+   "segment_sec": [
+    2.036,
+    3.044
+   ],
+   "position": "1/1",
+   "duration": 1.3,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.733,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "4회": {
+   "id": "f0085",
+   "path": "/motions/aihub_gloss/f0085.json",
+   "source_take": "NIA_SL_FS0850_CROWD08_F",
+   "segment_sec": [
+    2.196,
+    3.238
+   ],
+   "position": "1/1",
+   "duration": 1.3667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.786,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "5": {
+   "id": "f0086",
+   "path": "/motions/aihub_gloss/f0086.json",
+   "source_take": "NIA_SL_FS0805_CROWD09_F",
+   "segment_sec": [
+    1.983,
+    3.213
+   ],
+   "position": "1/1",
+   "duration": 1.5333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.811,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "51분": {
+   "id": "f0087",
+   "path": "/motions/aihub_gloss/f0087.json",
+   "source_take": "NIA_SL_FS0909_CROWD04_F",
+   "segment_sec": [
+    0.963,
+    2.351
+   ],
+   "position": "1/1",
+   "duration": 1.7,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.469,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "52분": {
+   "id": "f0088",
+   "path": "/motions/aihub_gloss/f0088.json",
+   "source_take": "NIA_SL_FS0910_CROWD04_F",
+   "segment_sec": [
+    1.391,
+    2.822
+   ],
+   "position": "1/1",
+   "duration": 1.7333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.676,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "53분": {
+   "id": "f0089",
+   "path": "/motions/aihub_gloss/f0089.json",
+   "source_take": "NIA_SL_FS0911_CROWD04_F",
+   "segment_sec": [
+    1.257,
+    3.046
+   ],
+   "position": "1/1",
+   "duration": 2.1,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.609,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "54분": {
+   "id": "f0090",
+   "path": "/motions/aihub_gloss/f0090.json",
+   "source_take": "NIA_SL_FS0912_CROWD04_F",
+   "segment_sec": [
+    1.084,
+    2.866
+   ],
+   "position": "1/1",
+   "duration": 2.0667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.655,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "55000": {
+   "id": "f0091",
+   "path": "/motions/aihub_gloss/f0091.json",
+   "source_take": "NIA_SL_FS0996_CROWD07_F",
+   "segment_sec": [
+    1.283,
+    5.364
+   ],
+   "position": "1/1",
+   "duration": 4.3667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.696,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "55분": {
+   "id": "f0092",
+   "path": "/motions/aihub_gloss/f0092.json",
+   "source_take": "NIA_SL_FS0913_CROWD04_F",
+   "segment_sec": [
+    1.198,
+    2.744
+   ],
+   "position": "1/1",
+   "duration": 1.8667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.566,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "56분": {
+   "id": "f0093",
+   "path": "/motions/aihub_gloss/f0093.json",
+   "source_take": "NIA_SL_FS0914_CROWD04_F",
+   "segment_sec": [
+    1.071,
+    2.624
+   ],
+   "position": "1/1",
+   "duration": 1.8333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.579,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "57분": {
+   "id": "f0094",
+   "path": "/motions/aihub_gloss/f0094.json",
+   "source_take": "NIA_SL_FS0915_CROWD04_F",
+   "segment_sec": [
+    0.959,
+    2.655
+   ],
+   "position": "1/1",
+   "duration": 2.0,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.568,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "58분": {
+   "id": "f0095",
+   "path": "/motions/aihub_gloss/f0095.json",
+   "source_take": "NIA_SL_FS0916_CROWD04_F",
+   "segment_sec": [
+    0.831,
+    2.369
+   ],
+   "position": "1/1",
+   "duration": 1.8667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.664,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "59분": {
+   "id": "f0096",
+   "path": "/motions/aihub_gloss/f0096.json",
+   "source_take": "NIA_SL_FS0917_CROWD04_F",
+   "segment_sec": [
+    0.982,
+    2.42
+   ],
+   "position": "1/1",
+   "duration": 1.7333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.721,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "5km": {
+   "id": "f0097",
+   "path": "/motions/aihub_gloss/f0097.json",
+   "source_take": "NIA_SL_FS0987_CROWD07_F",
+   "segment_sec": [
+    1.228,
+    3.196
+   ],
+   "position": "1/1",
+   "duration": 2.2667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.657,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "5년": {
+   "id": "f0098",
+   "path": "/motions/aihub_gloss/f0098.json",
+   "source_take": "NIA_SL_FS0978_CROWD07_F",
+   "segment_sec": [
+    1.322,
+    4.115
+   ],
+   "position": "1/1",
+   "duration": 3.1,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.6,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "5달": {
+   "id": "f0099",
+   "path": "/motions/aihub_gloss/f0099.json",
+   "source_take": "NIA_SL_FS0966_CROWD07_F",
+   "segment_sec": [
+    1.215,
+    2.767
+   ],
+   "position": "1/1",
+   "duration": 1.8667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.705,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "5명": {
+   "id": "f0100",
+   "path": "/motions/aihub_gloss/f0100.json",
+   "source_take": "NIA_SL_FS0826_CROWD02_F",
+   "segment_sec": [
+    1.328,
+    2.644
+   ],
+   "position": "1/1",
+   "duration": 1.6333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.675,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "5시": {
+   "id": "f0101",
+   "path": "/motions/aihub_gloss/f0101.json",
+   "source_take": "NIA_SL_FS0923_CROWD03_F",
+   "segment_sec": [
+    0.92,
+    2.458
+   ],
+   "position": "1/1",
+   "duration": 1.8333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.573,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "5월": {
+   "id": "f0102",
+   "path": "/motions/aihub_gloss/f0102.json",
+   "source_take": "NIA_SL_FS0954_CROWD08_F",
+   "segment_sec": [
+    1.264,
+    3.466
+   ],
+   "position": "1/1",
+   "duration": 2.5,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.604,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "5호선": {
+   "id": "f0103",
+   "path": "/motions/aihub_gloss/f0103.json",
+   "source_take": "NIA_SL_FS0817_CROWD09_F",
+   "segment_sec": [
+    1.037,
+    2.196
+   ],
+   "position": "1/1",
+   "duration": 1.4333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.683,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "5회": {
+   "id": "f0104",
+   "path": "/motions/aihub_gloss/f0104.json",
+   "source_take": "NIA_SL_FS0851_CROWD04_F",
+   "segment_sec": [
+    1.226,
+    2.268
+   ],
+   "position": "1/1",
+   "duration": 1.3667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.695,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "6": {
+   "id": "f0105",
+   "path": "/motions/aihub_gloss/f0105.json",
+   "source_take": "NIA_SL_FS0806_CROWD09_F",
+   "segment_sec": [
+    2.324,
+    3.662
+   ],
+   "position": "1/1",
+   "duration": 1.6333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.831,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "60분": {
+   "id": "f0106",
+   "path": "/motions/aihub_gloss/f0106.json",
+   "source_take": "NIA_SL_FS0918_CROWD04_F",
+   "segment_sec": [
+    0.837,
+    2.54
+   ],
+   "position": "1/1",
+   "duration": 2.0,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.702,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "60회": {
+   "id": "f0107",
+   "path": "/motions/aihub_gloss/f0107.json",
+   "source_take": "NIA_SL_FS0858_CROWD08_F",
+   "segment_sec": [
+    2.521,
+    3.437
+   ],
+   "position": "1/1",
+   "duration": 1.2333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.712,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "65살": {
+   "id": "f0108",
+   "path": "/motions/aihub_gloss/f0108.json",
+   "source_take": "NIA_SL_FS0836_CROWD08_F",
+   "segment_sec": [
+    2.508,
+    4.032
+   ],
+   "position": "1/1",
+   "duration": 1.8,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.803,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "6달": {
+   "id": "f0109",
+   "path": "/motions/aihub_gloss/f0109.json",
+   "source_take": "NIA_SL_FS0967_CROWD07_F",
+   "segment_sec": [
+    1.478,
+    3.045
+   ],
+   "position": "1/1",
+   "duration": 1.8667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.696,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "6명": {
+   "id": "f0110",
+   "path": "/motions/aihub_gloss/f0110.json",
+   "source_take": "NIA_SL_FS0827_CROWD02_F",
+   "segment_sec": [
+    1.113,
+    2.452
+   ],
+   "position": "1/1",
+   "duration": 1.6333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.696,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "6분": {
+   "id": "f0111",
+   "path": "/motions/aihub_gloss/f0111.json",
+   "source_take": "NIA_SL_FS0864_CROWD08_F",
+   "segment_sec": [
+    1.936,
+    3.377
+   ],
+   "position": "1/1",
+   "duration": 1.7333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.791,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "6살": {
+   "id": "f0112",
+   "path": "/motions/aihub_gloss/f0112.json",
+   "source_take": "NIA_SL_FS0832_CROWD08_F",
+   "segment_sec": [
+    2.332,
+    3.441
+   ],
+   "position": "1/1",
+   "duration": 1.4333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.809,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "6시": {
+   "id": "f0113",
+   "path": "/motions/aihub_gloss/f0113.json",
+   "source_take": "NIA_SL_FS0924_CROWD02_F",
+   "segment_sec": [
+    0.906,
+    2.588
+   ],
+   "position": "1/1",
+   "duration": 1.9667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.533,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "6시15분": {
+   "id": "f0114",
+   "path": "/motions/aihub_gloss/f0114.json",
+   "source_take": "NIA_SL_FS0992_CROWD07_F",
+   "segment_sec": [
+    1.216,
+    3.979
+   ],
+   "position": "1/1",
+   "duration": 3.0667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.669,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "6월": {
+   "id": "f0115",
+   "path": "/motions/aihub_gloss/f0115.json",
+   "source_take": "NIA_SL_FS0955_CROWD02_F",
+   "segment_sec": [
+    0.751,
+    2.435
+   ],
+   "position": "1/1",
+   "duration": 2.0,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.474,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "6호선": {
+   "id": "f0116",
+   "path": "/motions/aihub_gloss/f0116.json",
+   "source_take": "NIA_SL_FS0818_CROWD08_F",
+   "segment_sec": [
+    2.286,
+    3.008
+   ],
+   "position": "1/1",
+   "duration": 1.0333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.699,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "6회": {
+   "id": "f0117",
+   "path": "/motions/aihub_gloss/f0117.json",
+   "source_take": "NIA_SL_FS0852_CROWD04_F",
+   "segment_sec": [
+    1.286,
+    2.224
+   ],
+   "position": "1/1",
+   "duration": 1.2333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.674,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "7": {
+   "id": "f0118",
+   "path": "/motions/aihub_gloss/f0118.json",
+   "source_take": "NIA_SL_FS0807_CROWD09_F",
+   "segment_sec": [
+    1.921,
+    3.624
+   ],
+   "position": "1/1",
+   "duration": 2.0,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.834,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "7년": {
+   "id": "f0119",
+   "path": "/motions/aihub_gloss/f0119.json",
+   "source_take": "NIA_SL_FS0980_CROWD07_F",
+   "segment_sec": [
+    1.294,
+    3.885
+   ],
+   "position": "1/1",
+   "duration": 2.9,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.619,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "7달": {
+   "id": "f0120",
+   "path": "/motions/aihub_gloss/f0120.json",
+   "source_take": "NIA_SL_FS0968_CROWD07_F",
+   "segment_sec": [
+    1.238,
+    2.834
+   ],
+   "position": "1/1",
+   "duration": 1.9,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.723,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "7명": {
+   "id": "f0121",
+   "path": "/motions/aihub_gloss/f0121.json",
+   "source_take": "NIA_SL_FS0828_CROWD02_F",
+   "segment_sec": [
+    1.107,
+    2.342
+   ],
+   "position": "1/1",
+   "duration": 1.5333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.731,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "7분": {
+   "id": "f0122",
+   "path": "/motions/aihub_gloss/f0122.json",
+   "source_take": "NIA_SL_FS0865_CROWD08_F",
+   "segment_sec": [
+    1.857,
+    3.661
+   ],
+   "position": "1/1",
+   "duration": 2.1,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.786,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "7시": {
+   "id": "f0123",
+   "path": "/motions/aihub_gloss/f0123.json",
+   "source_take": "NIA_SL_FS0925_CROWD02_F",
+   "segment_sec": [
+    0.837,
+    2.504
+   ],
+   "position": "1/1",
+   "duration": 1.9667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.503,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "7시간": {
+   "id": "f0124",
+   "path": "/motions/aihub_gloss/f0124.json",
+   "source_take": "NIA_SL_FS0937_CROWD10_F",
+   "segment_sec": [
+    1.243,
+    3.813
+   ],
+   "position": "1/1",
+   "duration": 2.8667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.586,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "7월": {
+   "id": "f0125",
+   "path": "/motions/aihub_gloss/f0125.json",
+   "source_take": "NIA_SL_FS0956_CROWD08_F",
+   "segment_sec": [
+    1.181,
+    3.372
+   ],
+   "position": "1/1",
+   "duration": 2.5,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.565,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "7호선": {
+   "id": "f0126",
+   "path": "/motions/aihub_gloss/f0126.json",
+   "source_take": "NIA_SL_FS0819_CROWD09_F",
+   "segment_sec": [
+    0.999,
+    2.144
+   ],
+   "position": "1/1",
+   "duration": 1.4667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.74,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "7회": {
+   "id": "f0127",
+   "path": "/motions/aihub_gloss/f0127.json",
+   "source_take": "NIA_SL_FS0853_CROWD03_F",
+   "segment_sec": [
+    1.618,
+    3.165
+   ],
+   "position": "1/1",
+   "duration": 1.8333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.793,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "8": {
+   "id": "f0128",
+   "path": "/motions/aihub_gloss/f0128.json",
+   "source_take": "NIA_SL_FS0808_CROWD09_F",
+   "segment_sec": [
+    2.589,
+    4.321
+   ],
+   "position": "1/1",
+   "duration": 2.0333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.791,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "8년": {
+   "id": "f0129",
+   "path": "/motions/aihub_gloss/f0129.json",
+   "source_take": "NIA_SL_FS0981_CROWD07_F",
+   "segment_sec": [
+    1.407,
+    3.841
+   ],
+   "position": "1/1",
+   "duration": 2.7333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.627,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "8달": {
+   "id": "f0130",
+   "path": "/motions/aihub_gloss/f0130.json",
+   "source_take": "NIA_SL_FS0969_CROWD07_F",
+   "segment_sec": [
+    1.524,
+    3.198
+   ],
+   "position": "1/1",
+   "duration": 1.9667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.721,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "8명": {
+   "id": "f0131",
+   "path": "/motions/aihub_gloss/f0131.json",
+   "source_take": "NIA_SL_FS0829_CROWD02_F",
+   "segment_sec": [
+    0.996,
+    2.505
+   ],
+   "position": "1/1",
+   "duration": 1.8333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.76,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "8분": {
+   "id": "f0132",
+   "path": "/motions/aihub_gloss/f0132.json",
+   "source_take": "NIA_SL_FS0866_CROWD08_F",
+   "segment_sec": [
+    1.674,
+    3.387
+   ],
+   "position": "1/1",
+   "duration": 2.0,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.794,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "8시": {
+   "id": "f0133",
+   "path": "/motions/aihub_gloss/f0133.json",
+   "source_take": "NIA_SL_FS0926_CROWD02_F",
+   "segment_sec": [
+    1.439,
+    3.028
+   ],
+   "position": "1/1",
+   "duration": 1.8667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.51,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "8월": {
+   "id": "f0134",
+   "path": "/motions/aihub_gloss/f0134.json",
+   "source_take": "NIA_SL_FS0957_CROWD08_F",
+   "segment_sec": [
+    1.215,
+    3.478
+   ],
+   "position": "1/1",
+   "duration": 2.5667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.559,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "8호선": {
+   "id": "f0135",
+   "path": "/motions/aihub_gloss/f0135.json",
+   "source_take": "NIA_SL_FS0820_CROWD02_F",
+   "segment_sec": [
+    0.998,
+    2.2
+   ],
+   "position": "1/1",
+   "duration": 1.5,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.781,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "8회": {
+   "id": "f0136",
+   "path": "/motions/aihub_gloss/f0136.json",
+   "source_take": "NIA_SL_FS0854_CROWD03_F",
+   "segment_sec": [
+    1.989,
+    3.78
+   ],
+   "position": "1/1",
+   "duration": 2.1,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.809,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "9": {
+   "id": "f0137",
+   "path": "/motions/aihub_gloss/f0137.json",
+   "source_take": "NIA_SL_FS0809_CROWD08_F",
+   "segment_sec": [
+    2.18,
+    3.797
+   ],
+   "position": "1/1",
+   "duration": 1.9,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.812,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "9년": {
+   "id": "f0138",
+   "path": "/motions/aihub_gloss/f0138.json",
+   "source_take": "NIA_SL_FS0982_CROWD07_F",
+   "segment_sec": [
+    1.253,
+    3.591
+   ],
+   "position": "1/1",
+   "duration": 2.6333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.621,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "9명": {
+   "id": "f0139",
+   "path": "/motions/aihub_gloss/f0139.json",
+   "source_take": "NIA_SL_FS0830_CROWD02_F",
+   "segment_sec": [
+    0.873,
+    2.33
+   ],
+   "position": "1/1",
+   "duration": 1.7333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.818,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "9분": {
+   "id": "f0140",
+   "path": "/motions/aihub_gloss/f0140.json",
+   "source_take": "NIA_SL_FS0867_CROWD04_F",
+   "segment_sec": [
+    0.87,
+    2.212
+   ],
+   "position": "1/1",
+   "duration": 1.6333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.69,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "9시": {
+   "id": "f0141",
+   "path": "/motions/aihub_gloss/f0141.json",
+   "source_take": "NIA_SL_FS0927_CROWD02_F",
+   "segment_sec": [
+    0.883,
+    2.858
+   ],
+   "position": "1/1",
+   "duration": 2.2667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.608,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "9시간": {
+   "id": "f0142",
+   "path": "/motions/aihub_gloss/f0142.json",
+   "source_take": "NIA_SL_FS0939_CROWD03_F",
+   "segment_sec": [
+    0.435,
+    1.759
+   ],
+   "position": "1/1",
+   "duration": 1.6,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.495,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "9호선": {
+   "id": "f0143",
+   "path": "/motions/aihub_gloss/f0143.json",
+   "source_take": "NIA_SL_FS0821_CROWD08_F",
+   "segment_sec": [
+    1.765,
+    2.659
+   ],
+   "position": "1/1",
+   "duration": 1.2,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.741,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "9회": {
+   "id": "f0144",
+   "path": "/motions/aihub_gloss/f0144.json",
+   "source_take": "NIA_SL_FS0855_CROWD04_F",
+   "segment_sec": [
+    1.252,
+    2.39
+   ],
+   "position": "1/1",
+   "duration": 1.4333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.82,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "N서울타워": {
+   "id": "f0145",
+   "path": "/motions/aihub_gloss/f0145.json",
+   "source_take": "NIA_SL_FS0674_CROWD03_F",
+   "segment_sec": [
+    0.703,
+    7.127
+   ],
+   "position": "1/1",
+   "duration": 6.7,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.8,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "가락시장": {
+   "id": "f0146",
+   "path": "/motions/aihub_gloss/f0146.json",
+   "source_take": "NIA_SL_FS0729_CROWD06_F",
+   "segment_sec": [
+    0.912,
+    4.951
+   ],
+   "position": "1/1",
+   "duration": 4.3333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.656,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "가산디지털단지": {
+   "id": "f0147",
+   "path": "/motions/aihub_gloss/f0147.json",
+   "source_take": "NIA_SL_FS0730_CROWD10_F",
+   "segment_sec": [
+    1.715,
+    9.859
+   ],
+   "position": "1/1",
+   "duration": 8.4333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.644,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "검암": {
+   "id": "f0148",
+   "path": "/motions/aihub_gloss/f0148.json",
+   "source_take": "NIA_SL_FS0731_CROWD06_F",
+   "segment_sec": [
+    0.942,
+    3.047
+   ],
+   "position": "1/1",
+   "duration": 2.4,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.478,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "경복궁": {
+   "id": "f0149",
+   "path": "/motions/aihub_gloss/f0149.json",
+   "source_take": "NIA_SL_FS0676_CROWD06_F",
+   "segment_sec": [
+    1.107,
+    6.087
+   ],
+   "position": "1/1",
+   "duration": 5.2667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.631,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "경희궁": {
+   "id": "f0150",
+   "path": "/motions/aihub_gloss/f0150.json",
+   "source_take": "NIA_SL_FS0677_CROWD06_F",
+   "segment_sec": [
+    1.119,
+    4.34
+   ],
+   "position": "1/1",
+   "duration": 3.5333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.585,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "계양": {
+   "id": "f0151",
+   "path": "/motions/aihub_gloss/f0151.json",
+   "source_take": "NIA_SL_FS0732_CROWD06_F",
+   "segment_sec": [
+    0.946,
+    4.098
+   ],
+   "position": "1/1",
+   "duration": 3.4333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.606,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "관악산": {
+   "id": "f0152",
+   "path": "/motions/aihub_gloss/f0152.json",
+   "source_take": "NIA_SL_FS0678_CROWD06_F",
+   "segment_sec": [
+    1.002,
+    6.618
+   ],
+   "position": "1/1",
+   "duration": 5.9,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.596,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "광운대": {
+   "id": "f0153",
+   "path": "/motions/aihub_gloss/f0153.json",
+   "source_take": "NIA_SL_FS0734_CROWD10_F",
+   "segment_sec": [
+    1.429,
+    5.762
+   ],
+   "position": "1/1",
+   "duration": 4.6333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.664,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "교대": {
+   "id": "f0154",
+   "path": "/motions/aihub_gloss/f0154.json",
+   "source_take": "NIA_SL_FS0735_CROWD10_F",
+   "segment_sec": [
+    1.555,
+    3.579
+   ],
+   "position": "1/1",
+   "duration": 2.3333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.615,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "국립민속박물관": {
+   "id": "f0155",
+   "path": "/motions/aihub_gloss/f0155.json",
+   "source_take": "NIA_SL_FS0680_CROWD06_F",
+   "segment_sec": [
+    1.29,
+    13.605
+   ],
+   "position": "1/1",
+   "duration": 12.6333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.595,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "국립중앙박물관": {
+   "id": "f0156",
+   "path": "/motions/aihub_gloss/f0156.json",
+   "source_take": "NIA_SL_FS0682_CROWD07_F",
+   "segment_sec": [
+    1.306,
+    7.804
+   ],
+   "position": "1/1",
+   "duration": 6.8,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.552,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "군자": {
+   "id": "f0157",
+   "path": "/motions/aihub_gloss/f0157.json",
+   "source_take": "NIA_SL_FS0736_CROWD06_F",
+   "segment_sec": [
+    0.855,
+    2.833
+   ],
+   "position": "1/1",
+   "duration": 2.2667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.567,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "금정": {
+   "id": "f0158",
+   "path": "/motions/aihub_gloss/f0158.json",
+   "source_take": "NIA_SL_FS0737_CROWD10_F",
+   "segment_sec": [
+    1.423,
+    4.054
+   ],
+   "position": "1/1",
+   "duration": 2.9333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.623,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "기흥": {
+   "id": "f0159",
+   "path": "/motions/aihub_gloss/f0159.json",
+   "source_take": "NIA_SL_FS0738_CROWD06_F",
+   "segment_sec": [
+    1.056,
+    4.478
+   ],
+   "position": "1/1",
+   "duration": 3.7333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.647,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "까치산": {
+   "id": "f0160",
+   "path": "/motions/aihub_gloss/f0160.json",
+   "source_take": "NIA_SL_FS0739_CROWD06_F",
+   "segment_sec": [
+    0.684,
+    4.782
+   ],
+   "position": "1/1",
+   "duration": 4.4,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.568,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "남산공원": {
+   "id": "f0161",
+   "path": "/motions/aihub_gloss/f0161.json",
+   "source_take": "NIA_SL_FS0685_CROWD09_F",
+   "segment_sec": [
+    0.993,
+    6.128
+   ],
+   "position": "1/1",
+   "duration": 5.4333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.707,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "남한산성": {
+   "id": "f0162",
+   "path": "/motions/aihub_gloss/f0162.json",
+   "source_take": "NIA_SL_FS0686_CROWD09_F",
+   "segment_sec": [
+    0.999,
+    6.134
+   ],
+   "position": "1/1",
+   "duration": 5.4667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.691,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "넷째": {
+   "id": "f0163",
+   "path": "/motions/aihub_gloss/f0163.json",
+   "source_take": "NIA_SL_FS0840_CROWD08_F",
+   "segment_sec": [
+    2.833,
+    4.157
+   ],
+   "position": "1/1",
+   "duration": 1.6333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.757,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "다섯째": {
+   "id": "f0164",
+   "path": "/motions/aihub_gloss/f0164.json",
+   "source_take": "NIA_SL_FS0841_CROWD08_F",
+   "segment_sec": [
+    2.306,
+    3.66
+   ],
+   "position": "1/1",
+   "duration": 1.6333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.731,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "당산": {
+   "id": "f0165",
+   "path": "/motions/aihub_gloss/f0165.json",
+   "source_take": "NIA_SL_FS0741_CROWD10_F",
+   "segment_sec": [
+    1.703,
+    4.414
+   ],
+   "position": "1/1",
+   "duration": 3.0,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.666,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "대곡": {
+   "id": "f0166",
+   "path": "/motions/aihub_gloss/f0166.json",
+   "source_take": "NIA_SL_FS0742_CROWD06_F",
+   "segment_sec": [
+    1.119,
+    3.613
+   ],
+   "position": "1/1",
+   "duration": 2.8,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.545,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "대림": {
+   "id": "f0167",
+   "path": "/motions/aihub_gloss/f0167.json",
+   "source_take": "NIA_SL_FS0743_CROWD06_F",
+   "segment_sec": [
+    1.405,
+    5.125
+   ],
+   "position": "1/1",
+   "duration": 4.0,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.633,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "덕수궁": {
+   "id": "f0168",
+   "path": "/motions/aihub_gloss/f0168.json",
+   "source_take": "NIA_SL_FS0688_CROWD09_F",
+   "segment_sec": [
+    1.096,
+    4.787
+   ],
+   "position": "1/1",
+   "duration": 4.0,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.685,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "도곡": {
+   "id": "f0169",
+   "path": "/motions/aihub_gloss/f0169.json",
+   "source_take": "NIA_SL_FS0744_CROWD10_F",
+   "segment_sec": [
+    1.681,
+    4.066
+   ],
+   "position": "1/1",
+   "duration": 2.6667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.659,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "도봉산": {
+   "id": "f0170",
+   "path": "/motions/aihub_gloss/f0170.json",
+   "source_take": "NIA_SL_FS0689_CROWD09_F",
+   "segment_sec": [
+    0.873,
+    4.495
+   ],
+   "position": "1/1",
+   "duration": 3.9,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.689,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "도산공원": {
+   "id": "f0171",
+   "path": "/motions/aihub_gloss/f0171.json",
+   "source_take": "NIA_SL_FS0690_CROWD09_F",
+   "segment_sec": [
+    0.913,
+    6.311
+   ],
+   "position": "1/1",
+   "duration": 5.7,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.688,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "독립문": {
+   "id": "f0172",
+   "path": "/motions/aihub_gloss/f0172.json",
+   "source_take": "NIA_SL_FS0691_CROWD04_F",
+   "segment_sec": [
+    0.831,
+    4.133
+   ],
+   "position": "1/1",
+   "duration": 3.6,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.767,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "동대문": {
+   "id": "f0173",
+   "path": "/motions/aihub_gloss/f0173.json",
+   "source_take": "NIA_SL_FS0745_CROWD06_F",
+   "segment_sec": [
+    1.24,
+    5.464
+   ],
+   "position": "1/1",
+   "duration": 4.5,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.654,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "동대문디자인플라자": {
+   "id": "f0174",
+   "path": "/motions/aihub_gloss/f0174.json",
+   "source_take": "NIA_SL_FS0692_CROWD09_F",
+   "segment_sec": [
+    1.14,
+    9.615
+   ],
+   "position": "1/1",
+   "duration": 8.7667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.65,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "동대문역사문화공원": {
+   "id": "f0175",
+   "path": "/motions/aihub_gloss/f0175.json",
+   "source_take": "NIA_SL_FS0746_CROWD06_F",
+   "segment_sec": [
+    0.934,
+    15.813
+   ],
+   "position": "1/1",
+   "duration": 15.0333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.638,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "동묘앞": {
+   "id": "f0176",
+   "path": "/motions/aihub_gloss/f0176.json",
+   "source_take": "NIA_SL_FS0747_CROWD06_F",
+   "segment_sec": [
+    0.999,
+    6.312
+   ],
+   "position": "1/1",
+   "duration": 5.6333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.629,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "둘째": {
+   "id": "f0177",
+   "path": "/motions/aihub_gloss/f0177.json",
+   "source_take": "NIA_SL_FS0838_CROWD08_F",
+   "segment_sec": [
+    2.499,
+    3.808
+   ],
+   "position": "1/1",
+   "duration": 1.6333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.681,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "디지털미디어시티": {
+   "id": "f0178",
+   "path": "/motions/aihub_gloss/f0178.json",
+   "source_take": "NIA_SL_FS0749_CROWD10_F",
+   "segment_sec": [
+    0.79,
+    9.396
+   ],
+   "position": "1/1",
+   "duration": 8.9,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.71,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "망우": {
+   "id": "f0179",
+   "path": "/motions/aihub_gloss/f0179.json",
+   "source_take": "NIA_SL_FS0751_CROWD05_F",
+   "segment_sec": [
+    0.981,
+    2.965
+   ],
+   "position": "1/1",
+   "duration": 2.2667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.511,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "모란": {
+   "id": "f0180",
+   "path": "/motions/aihub_gloss/f0180.json",
+   "source_take": "NIA_SL_FS0752_CROWD05_F",
+   "segment_sec": [
+    1.199,
+    3.148
+   ],
+   "position": "1/1",
+   "duration": 2.2667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.57,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "미금": {
+   "id": "f0181",
+   "path": "/motions/aihub_gloss/f0181.json",
+   "source_take": "NIA_SL_FS0753_CROWD09_F",
+   "segment_sec": [
+    1.589,
+    3.888
+   ],
+   "position": "1/1",
+   "duration": 2.6,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.626,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "보문": {
+   "id": "f0182",
+   "path": "/motions/aihub_gloss/f0182.json",
+   "source_take": "NIA_SL_FS0754_CROWD05_F",
+   "segment_sec": [
+    0.821,
+    3.166
+   ],
+   "position": "1/1",
+   "duration": 2.6333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.609,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "보신각": {
+   "id": "f0183",
+   "path": "/motions/aihub_gloss/f0183.json",
+   "source_take": "NIA_SL_FS0693_CROWD04_F",
+   "segment_sec": [
+    1.01,
+    4.254
+   ],
+   "position": "1/1",
+   "duration": 3.5333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.751,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "복정": {
+   "id": "f0184",
+   "path": "/motions/aihub_gloss/f0184.json",
+   "source_take": "NIA_SL_FS0755_CROWD05_F",
+   "segment_sec": [
+    0.804,
+    3.51
+   ],
+   "position": "1/1",
+   "duration": 3.0,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.599,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "봉은사": {
+   "id": "f0185",
+   "path": "/motions/aihub_gloss/f0185.json",
+   "source_take": "NIA_SL_FS0694_CROWD09_F",
+   "segment_sec": [
+    1.222,
+    4.518
+   ],
+   "position": "1/1",
+   "duration": 3.6,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.665,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "북촌한옥마을": {
+   "id": "f0186",
+   "path": "/motions/aihub_gloss/f0186.json",
+   "source_take": "NIA_SL_FS0695_CROWD09_F",
+   "segment_sec": [
+    1.461,
+    12.622
+   ],
+   "position": "1/1",
+   "duration": 11.4667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.623,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "북한산": {
+   "id": "f0187",
+   "path": "/motions/aihub_gloss/f0187.json",
+   "source_take": "NIA_SL_FS0696_CROWD10_F",
+   "segment_sec": [
+    1.096,
+    5.079
+   ],
+   "position": "1/1",
+   "duration": 4.3,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.688,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "북한산성": {
+   "id": "f0188",
+   "path": "/motions/aihub_gloss/f0188.json",
+   "source_take": "NIA_SL_FS0697_CROWD10_F",
+   "segment_sec": [
+    0.894,
+    6.126
+   ],
+   "position": "1/1",
+   "duration": 5.5333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.697,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "불광": {
+   "id": "f0189",
+   "path": "/motions/aihub_gloss/f0189.json",
+   "source_take": "NIA_SL_FS0756_CROWD04_F",
+   "segment_sec": [
+    0.987,
+    3.939
+   ],
+   "position": "1/1",
+   "duration": 3.2667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.542,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "사당": {
+   "id": "f0190",
+   "path": "/motions/aihub_gloss/f0190.json",
+   "source_take": "NIA_SL_FS0757_CROWD10_F",
+   "segment_sec": [
+    1.767,
+    4.1
+   ],
+   "position": "1/1",
+   "duration": 2.6333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.798,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "삼각지": {
+   "id": "f0191",
+   "path": "/motions/aihub_gloss/f0191.json",
+   "source_take": "NIA_SL_FS0758_CROWD03_F",
+   "segment_sec": [
+    1.067,
+    4.73
+   ],
+   "position": "1/1",
+   "duration": 3.9333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.587,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "삼청동": {
+   "id": "f0192",
+   "path": "/motions/aihub_gloss/f0192.json",
+   "source_take": "NIA_SL_FS0698_CROWD10_F",
+   "segment_sec": [
+    1.222,
+    5.916
+   ],
+   "position": "1/1",
+   "duration": 5.0,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.693,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "상봉": {
+   "id": "f0193",
+   "path": "/motions/aihub_gloss/f0193.json",
+   "source_take": "NIA_SL_FS0759_CROWD03_F",
+   "segment_sec": [
+    0.897,
+    4.844
+   ],
+   "position": "1/1",
+   "duration": 4.2667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.634,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "서대문형무소": {
+   "id": "f0194",
+   "path": "/motions/aihub_gloss/f0194.json",
+   "source_take": "NIA_SL_FS0699_CROWD06_F",
+   "segment_sec": [
+    0.849,
+    8.721
+   ],
+   "position": "1/1",
+   "duration": 8.1667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.58,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "서울광장": {
+   "id": "f0195",
+   "path": "/motions/aihub_gloss/f0195.json",
+   "source_take": "NIA_SL_FS0700_CROWD10_F",
+   "segment_sec": [
+    1.578,
+    6.636
+   ],
+   "position": "1/1",
+   "duration": 5.3667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.691,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "서울랜드": {
+   "id": "f0196",
+   "path": "/motions/aihub_gloss/f0196.json",
+   "source_take": "NIA_SL_FS0701_CROWD10_F",
+   "segment_sec": [
+    0.934,
+    5.372
+   ],
+   "position": "1/1",
+   "duration": 4.7333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.689,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "석계": {
+   "id": "f0197",
+   "path": "/motions/aihub_gloss/f0197.json",
+   "source_take": "NIA_SL_FS0760_CROWD10_F",
+   "segment_sec": [
+    1.429,
+    4.174
+   ],
+   "position": "1/1",
+   "duration": 3.0667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.783,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "석촌": {
+   "id": "f0198",
+   "path": "/motions/aihub_gloss/f0198.json",
+   "source_take": "NIA_SL_FS0761_CROWD10_F",
+   "segment_sec": [
+    1.779,
+    4.784
+   ],
+   "position": "1/1",
+   "duration": 3.3,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.784,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "석촌호수": {
+   "id": "f0199",
+   "path": "/motions/aihub_gloss/f0199.json",
+   "source_take": "NIA_SL_FS0702_CROWD10_F",
+   "segment_sec": [
+    1.014,
+    5.54
+   ],
+   "position": "1/1",
+   "duration": 4.8333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.691,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "선릉": {
+   "id": "f0200",
+   "path": "/motions/aihub_gloss/f0200.json",
+   "source_take": "NIA_SL_FS0762_CROWD03_F",
+   "segment_sec": [
+    0.755,
+    4.59
+   ],
+   "position": "1/1",
+   "duration": 4.1333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.614,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "선정릉": {
+   "id": "f0201",
+   "path": "/motions/aihub_gloss/f0201.json",
+   "source_take": "NIA_SL_FS0703_CROWD10_F",
+   "segment_sec": [
+    0.99,
+    5.549
+   ],
+   "position": "1/1",
+   "duration": 4.8667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.697,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "성신여대입구": {
+   "id": "f0202",
+   "path": "/motions/aihub_gloss/f0202.json",
+   "source_take": "NIA_SL_FS0764_CROWD10_F",
+   "segment_sec": [
+    1.586,
+    7.568
+   ],
+   "position": "1/1",
+   "duration": 6.3,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.784,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "세빛섬": {
+   "id": "f0203",
+   "path": "/motions/aihub_gloss/f0203.json",
+   "source_take": "NIA_SL_FS0704_CROWD09_F",
+   "segment_sec": [
+    1.601,
+    6.602
+   ],
+   "position": "1/1",
+   "duration": 5.3,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.562,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "셋째": {
+   "id": "f0204",
+   "path": "/motions/aihub_gloss/f0204.json",
+   "source_take": "NIA_SL_FS0839_CROWD08_F",
+   "segment_sec": [
+    2.402,
+    4.06
+   ],
+   "position": "1/1",
+   "duration": 1.9333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.687,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "소사": {
+   "id": "f0205",
+   "path": "/motions/aihub_gloss/f0205.json",
+   "source_take": "NIA_SL_FS0765_CROWD03_F",
+   "segment_sec": [
+    0.888,
+    3.224
+   ],
+   "position": "1/1",
+   "duration": 2.6333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.497,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "송파나루공원": {
+   "id": "f0206",
+   "path": "/motions/aihub_gloss/f0206.json",
+   "source_take": "NIA_SL_FS0705_CROWD10_F",
+   "segment_sec": [
+    0.975,
+    7.53
+   ],
+   "position": "1/1",
+   "duration": 6.8333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.678,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "숭례문": {
+   "id": "f0207",
+   "path": "/motions/aihub_gloss/f0207.json",
+   "source_take": "NIA_SL_FS0706_CROWD10_F",
+   "segment_sec": [
+    1.079,
+    4.639
+   ],
+   "position": "1/1",
+   "duration": 3.8667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.69,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "신설동": {
+   "id": "f0208",
+   "path": "/motions/aihub_gloss/f0208.json",
+   "source_take": "NIA_SL_FS0770_CROWD03_F",
+   "segment_sec": [
+    0.813,
+    5.349
+   ],
+   "position": "1/1",
+   "duration": 4.8333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.653,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "양재": {
+   "id": "f0209",
+   "path": "/motions/aihub_gloss/f0209.json",
+   "source_take": "NIA_SL_FS0772_CROWD03_F",
+   "segment_sec": [
+    0.996,
+    3.884
+   ],
+   "position": "1/1",
+   "duration": 3.2,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.665,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "여덞째": {
+   "id": "f0210",
+   "path": "/motions/aihub_gloss/f0210.json",
+   "source_take": "NIA_SL_FS0844_CROWD08_F",
+   "segment_sec": [
+    2.003,
+    3.156
+   ],
+   "position": "1/1",
+   "duration": 1.4333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.747,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "여섯째": {
+   "id": "f0211",
+   "path": "/motions/aihub_gloss/f0211.json",
+   "source_take": "NIA_SL_FS0842_CROWD08_F",
+   "segment_sec": [
+    2.513,
+    3.815
+   ],
+   "position": "1/1",
+   "duration": 1.6,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.691,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "여의도공원": {
+   "id": "f0212",
+   "path": "/motions/aihub_gloss/f0212.json",
+   "source_take": "NIA_SL_FS0708_CROWD06_F",
+   "segment_sec": [
+    0.987,
+    7.831
+   ],
+   "position": "1/1",
+   "duration": 7.1333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.617,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "열째": {
+   "id": "f0213",
+   "path": "/motions/aihub_gloss/f0213.json",
+   "source_take": "NIA_SL_FS0846_CROWD08_F",
+   "segment_sec": [
+    2.592,
+    4.042
+   ],
+   "position": "1/1",
+   "duration": 1.7667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.781,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "예술의전당": {
+   "id": "f0214",
+   "path": "/motions/aihub_gloss/f0214.json",
+   "source_take": "NIA_SL_FS0709_CROWD06_F",
+   "segment_sec": [
+    1.261,
+    7.736
+   ],
+   "position": "1/1",
+   "duration": 6.8,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.551,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "운현궁": {
+   "id": "f0215",
+   "path": "/motions/aihub_gloss/f0215.json",
+   "source_take": "NIA_SL_FS0710_CROWD10_F",
+   "segment_sec": [
+    1.175,
+    5.218
+   ],
+   "position": "1/1",
+   "duration": 4.3333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.688,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "원인재": {
+   "id": "f0216",
+   "path": "/motions/aihub_gloss/f0216.json",
+   "source_take": "NIA_SL_FS0780_CROWD10_F",
+   "segment_sec": [
+    1.621,
+    5.851
+   ],
+   "position": "1/1",
+   "duration": 4.5333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.823,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "이대": {
+   "id": "f0217",
+   "path": "/motions/aihub_gloss/f0217.json",
+   "source_take": "NIA_SL_FS0711_CROWD10_F",
+   "segment_sec": [
+    1.433,
+    3.262
+   ],
+   "position": "1/1",
+   "duration": 2.1333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.68,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "이매": {
+   "id": "f0218",
+   "path": "/motions/aihub_gloss/f0218.json",
+   "source_take": "NIA_SL_FS0782_CROWD10_F",
+   "segment_sec": [
+    1.674,
+    4.286
+   ],
+   "position": "1/1",
+   "duration": 2.9,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.771,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "이촌": {
+   "id": "f0219",
+   "path": "/motions/aihub_gloss/f0219.json",
+   "source_take": "NIA_SL_FS0783_CROWD10_F",
+   "segment_sec": [
+    1.651,
+    4.676
+   ],
+   "position": "1/1",
+   "duration": 3.3333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.791,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "익선동한옥마을": {
+   "id": "f0220",
+   "path": "/motions/aihub_gloss/f0220.json",
+   "source_take": "NIA_SL_FS0713_CROWD10_F",
+   "segment_sec": [
+    0.954,
+    9.513
+   ],
+   "position": "1/1",
+   "duration": 8.8667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.693,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "인사동": {
+   "id": "f0221",
+   "path": "/motions/aihub_gloss/f0221.json",
+   "source_take": "NIA_SL_FS0714_CROWD10_F",
+   "segment_sec": [
+    0.886,
+    4.663
+   ],
+   "position": "1/1",
+   "duration": 4.0667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.695,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "인왕산": {
+   "id": "f0222",
+   "path": "/motions/aihub_gloss/f0222.json",
+   "source_take": "NIA_SL_FS0715_CROWD10_F",
+   "segment_sec": [
+    1.401,
+    5.555
+   ],
+   "position": "1/1",
+   "duration": 4.4333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.691,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "일곱째": {
+   "id": "f0223",
+   "path": "/motions/aihub_gloss/f0223.json",
+   "source_take": "NIA_SL_FS0843_CROWD08_F",
+   "segment_sec": [
+    2.506,
+    4.03
+   ],
+   "position": "1/1",
+   "duration": 1.8,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.733,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "전쟁기념관": {
+   "id": "f0224",
+   "path": "/motions/aihub_gloss/f0224.json",
+   "source_take": "NIA_SL_FS0716_CROWD10_F",
+   "segment_sec": [
+    1.248,
+    7.063
+   ],
+   "position": "1/1",
+   "duration": 6.1,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.685,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "정자": {
+   "id": "f0225",
+   "path": "/motions/aihub_gloss/f0225.json",
+   "source_take": "NIA_SL_FS0784_CROWD10_F",
+   "segment_sec": [
+    1.881,
+    4.949
+   ],
+   "position": "1/1",
+   "duration": 3.3667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.829,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "종묘": {
+   "id": "f0226",
+   "path": "/motions/aihub_gloss/f0226.json",
+   "source_take": "NIA_SL_FS0717_CROWD10_F",
+   "segment_sec": [
+    1.152,
+    3.931
+   ],
+   "position": "1/1",
+   "duration": 3.0667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.677,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "주안": {
+   "id": "f0227",
+   "path": "/motions/aihub_gloss/f0227.json",
+   "source_take": "NIA_SL_FS0786_CROWD10_F",
+   "segment_sec": [
+    1.617,
+    4.12
+   ],
+   "position": "1/1",
+   "duration": 2.8,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.825,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "창덕궁": {
+   "id": "f0228",
+   "path": "/motions/aihub_gloss/f0228.json",
+   "source_take": "NIA_SL_FS0718_CROWD06_F",
+   "segment_sec": [
+    1.192,
+    5.743
+   ],
+   "position": "1/1",
+   "duration": 4.8667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.57,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "창동": {
+   "id": "f0229",
+   "path": "/motions/aihub_gloss/f0229.json",
+   "source_take": "NIA_SL_FS0788_CROWD10_F",
+   "segment_sec": [
+    1.835,
+    5.38
+   ],
+   "position": "1/1",
+   "duration": 3.8333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.821,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "청계천": {
+   "id": "f0230",
+   "path": "/motions/aihub_gloss/f0230.json",
+   "source_take": "NIA_SL_FS0719_CROWD09_F",
+   "segment_sec": [
+    1.666,
+    5.25
+   ],
+   "position": "1/1",
+   "duration": 3.9,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.656,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "청구": {
+   "id": "f0231",
+   "path": "/motions/aihub_gloss/f0231.json",
+   "source_take": "NIA_SL_FS0789_CROWD10_F",
+   "segment_sec": [
+    1.985,
+    4.939
+   ],
+   "position": "1/1",
+   "duration": 3.2667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.812,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "청량리": {
+   "id": "f0232",
+   "path": "/motions/aihub_gloss/f0232.json",
+   "source_take": "NIA_SL_FS0790_CROWD09_F",
+   "segment_sec": [
+    1.799,
+    6.11
+   ],
+   "position": "1/1",
+   "duration": 4.6333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.837,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "청와대": {
+   "id": "f0233",
+   "path": "/motions/aihub_gloss/f0233.json",
+   "source_take": "NIA_SL_FS0720_CROWD06_F",
+   "segment_sec": [
+    1.134,
+    5.966
+   ],
+   "position": "1/1",
+   "duration": 5.1,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.619,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "초지": {
+   "id": "f0234",
+   "path": "/motions/aihub_gloss/f0234.json",
+   "source_take": "NIA_SL_FS0791_CROWD09_F",
+   "segment_sec": [
+    1.967,
+    4.37
+   ],
+   "position": "1/1",
+   "duration": 2.7,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.826,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "총신대입구": {
+   "id": "f0235",
+   "path": "/motions/aihub_gloss/f0235.json",
+   "source_take": "NIA_SL_FS0792_CROWD09_F",
+   "segment_sec": [
+    1.417,
+    6.543
+   ],
+   "position": "1/1",
+   "duration": 5.4333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.799,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "태릉입구": {
+   "id": "f0236",
+   "path": "/motions/aihub_gloss/f0236.json",
+   "source_take": "NIA_SL_FS0795_CROWD09_F",
+   "segment_sec": [
+    1.692,
+    5.508
+   ],
+   "position": "1/1",
+   "duration": 4.1333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.799,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "통인시장": {
+   "id": "f0237",
+   "path": "/motions/aihub_gloss/f0237.json",
+   "source_take": "NIA_SL_FS0721_CROWD10_F",
+   "segment_sec": [
+    0.957,
+    5.918
+   ],
+   "position": "1/1",
+   "duration": 5.2667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.692,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "판교": {
+   "id": "f0238",
+   "path": "/motions/aihub_gloss/f0238.json",
+   "source_take": "NIA_SL_FS0796_CROWD09_F",
+   "segment_sec": [
+    1.84,
+    3.98
+   ],
+   "position": "1/1",
+   "duration": 2.4333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.832,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "풍물시장": {
+   "id": "f0239",
+   "path": "/motions/aihub_gloss/f0239.json",
+   "source_take": "NIA_SL_FS0722_CROWD07_F",
+   "segment_sec": [
+    0.981,
+    5.499
+   ],
+   "position": "1/1",
+   "duration": 4.8,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.545,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "하늘공원": {
+   "id": "f0240",
+   "path": "/motions/aihub_gloss/f0240.json",
+   "source_take": "NIA_SL_FS0723_CROWD07_F",
+   "segment_sec": [
+    0.989,
+    6.57
+   ],
+   "position": "1/1",
+   "duration": 5.9,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.636,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "하옵째": {
+   "id": "f0241",
+   "path": "/motions/aihub_gloss/f0241.json",
+   "source_take": "NIA_SL_FS0845_CROWD02_F",
+   "segment_sec": [
+    1.508,
+    2.698
+   ],
+   "position": "1/1",
+   "duration": 1.4667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.801,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "한강공원": {
+   "id": "f0242",
+   "path": "/motions/aihub_gloss/f0242.json",
+   "source_take": "NIA_SL_FS0724_CROWD06_F",
+   "segment_sec": [
+    1.07,
+    7.322
+   ],
+   "position": "1/1",
+   "duration": 6.5333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.623,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "한강시민공원": {
+   "id": "f0243",
+   "path": "/motions/aihub_gloss/f0243.json",
+   "source_take": "NIA_SL_FS0725_CROWD06_F",
+   "segment_sec": [
+    1.011,
+    9.381
+   ],
+   "position": "1/1",
+   "duration": 8.6667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.623,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "합정": {
+   "id": "f0244",
+   "path": "/motions/aihub_gloss/f0244.json",
+   "source_take": "NIA_SL_FS0797_CROWD09_F",
+   "segment_sec": [
+    1.885,
+    4.24
+   ],
+   "position": "1/1",
+   "duration": 2.6667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.827,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "해방촌": {
+   "id": "f0245",
+   "path": "/motions/aihub_gloss/f0245.json",
+   "source_take": "NIA_SL_FS0726_CROWD06_F",
+   "segment_sec": [
+    0.919,
+    3.931
+   ],
+   "position": "1/1",
+   "duration": 3.3,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.561,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "회기": {
+   "id": "f0246",
+   "path": "/motions/aihub_gloss/f0246.json",
+   "source_take": "NIA_SL_FS0798_CROWD02_F",
+   "segment_sec": [
+    1.011,
+    2.865
+   ],
+   "position": "1/1",
+   "duration": 2.1333,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.599,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "회룡": {
+   "id": "f0247",
+   "path": "/motions/aihub_gloss/f0247.json",
+   "source_take": "NIA_SL_FS0799_CROWD09_F",
+   "segment_sec": [
+    1.613,
+    3.996
+   ],
+   "position": "1/1",
+   "duration": 2.6667,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.832,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "효산공원앞": {
+   "id": "f0248",
+   "path": "/motions/aihub_gloss/f0248.json",
+   "source_take": "NIA_SL_FS0800_CROWD09_F",
+   "segment_sec": [
+    1.148,
+    6.554
+   ],
+   "position": "1/1",
+   "duration": 5.7,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.736,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
+  },
+  "흥인지문": {
+   "id": "f0249",
+   "path": "/motions/aihub_gloss/f0249.json",
+   "source_take": "NIA_SL_FS0728_CROWD10_F",
+   "segment_sec": [
+    1.995,
+    8.583
+   ],
+   "position": "1/1",
+   "duration": 6.9,
+   "occurrences": 1,
+   "nonmanual": [],
+   "hand_confidence": 0.614,
+   "penetration_after_cm": {
+    "left": 0.0,
+    "right": 0.0
+   },
+   "context": [],
+   "from": "fingerspell"
   }
  },
- "word_glosses": 785
+ "word_glosses": 785,
+ "fingerspell_glosses": 249
 }

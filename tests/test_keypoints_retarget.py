@@ -275,5 +275,44 @@ class DepthFix(unittest.TestCase):
         self.assertFalse(rv.fix_hand_depth(hand, np.array([0, 0, 2.3]), 0.15, 0.5))
 
 
+class Lift2D(unittest.TestCase):
+    """지문자(2D만 있음) 3D 복원: 실측 손바닥 모양을 돌려 화면에 투영한 뒤 되찾는지"""
+
+    def test_palm_rotation_recovered(self):
+        import lift_2d
+        ref = lift_2d.load_ref()['right']
+        T = np.asarray(ref['palm_local'])
+        rng = np.random.default_rng(3)
+        errs = []
+        for _ in range(30):
+            R = rand_rot(rng)
+            if (R @ lift_2d.unit(T[2]))[2] > -0.2:   # 손가락이 카메라 쪽(앞)을 향한 경우만(아래팔 방향 단서와 일치)
+                continue
+            pts = np.zeros((21, 2))
+            pts[lift_2d.PALM] = (T @ R.T)[:, :2] * 900   # px
+            conf = np.ones(21)
+            R2, s = lift_2d.fit_palm(pts, conf, ref, fore_dir=R @ lift_2d.unit(T[2]))
+            errs.append(np.degrees(np.arccos(np.clip(R2[:, 2] @ R[:, 2], -1, 1))))
+            self.assertAlmostEqual(s, 900, delta=900 * 0.05)
+        self.assertTrue(errs)
+        self.assertLess(max(errs), 5)
+
+    def test_straight_finger_stays_straight(self):
+        import lift_2d
+        ref = lift_2d.load_ref()['right']
+        T = np.asarray(ref['palm_local'])
+        obs = np.zeros((21, 2))
+        obs[lift_2d.PALM] = T[:, :2] * 900          # 손바닥이 카메라를 정면으로 봄
+        for f in lift_2d.FINGERS:                   # 손가락을 손바닥 평면에서 곧게 편 위치
+            d = obs[f[0]] / np.linalg.norm(obs[f[0]])
+            for k in range(1, 4):
+                obs[f[k]] = obs[f[k - 1]] + d * ref['bone_len'][f'{f[k - 1]}-{f[k]}'] * 900
+        for a, b in zip(lift_2d.THUMB[:-1], lift_2d.THUMB[1:]):
+            obs[b] = obs[a] + np.array([-1.0, 0.3]) * ref['bone_len'][f'{a}-{b}'] * 900
+        h = lift_2d.lift_hand(obs, np.ones(21), ref, fore_dir=np.array([0, -1.0, 0]))
+        tip = h[8] - h[5]
+        self.assertLess(abs(tip[2]) / np.linalg.norm(tip), 0.15)   # 깊이 성분 거의 없음
+
+
 if __name__ == '__main__':
     unittest.main()

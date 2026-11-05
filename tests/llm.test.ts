@@ -141,4 +141,12 @@ test("규칙이 확실하면 LLM 생략: 모든 단어에 동작이 있고 확�
   // 동작 없는 말(먹다)·모르는 말·뜻이 애매한 말이 섞이면 LLM을 불러 본다
   assert.equal(ruleIsConfident(planSentence("밥을 먹다", lex)), false);
   assert.equal(ruleIsConfident(planSentence("학교를간다", lex)), false);
+  // 뜻이 여러 개인 말(배)이 두 번 나오면 규칙만 믿지 않는다
+  assert.equal(ruleIsConfident(planSentence("배를 타고 배를 타요", lex)), false);
+});
+
+test("부정은 하나만: LLM이 못하다를 따로 줘도 동사 뒤 부정 수어 하나", () => {
+  const r = verify("배를 못 타요", { glosses: [{ word: "배", sense: "교통" }, { word: "타다" }, { word: "못하다" }], negation: true });
+  const lemmas = r.plan.order.map((t) => t.lemma);
+  assert.equal(lemmas.filter((l) => l === "못하다" || l === "아니다").length, 1);
 });

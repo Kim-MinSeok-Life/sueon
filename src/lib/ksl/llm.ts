@@ -36,9 +36,17 @@ export const LLM_LIMITS = { maxWords: 20, maxWordLength: 20, maxNoteLength: 200 
 /**
  * 규칙 분석만으로 충분한가(속도 개선, 11/5 결정): 확신도 high이고 모든 수어 단어에 동작이 있으면 LLM을 부르지 않는다.
  * 오타·모르는 말·뜻이 애매한 말·동작 없는 말이 하나라도 있으면 LLM 후보를 받아 본다.
+ * 뜻이 여러 개인 말이 한 문장에 두 번 이상 나오면("배가 아파서 배를 못 타요") 규칙은 같은 뜻으로 고르기 쉬우므로 LLM을 부른다.
  */
 export function ruleIsConfident(rule: SignPlan): boolean {
-  return rule.confidence === "high" && rule.order.length > 0 && rule.order.every((t) => t.status === "playable");
+  if (rule.confidence !== "high" || !rule.order.length || !rule.order.every((t) => t.status === "playable")) return false;
+  const seen = new Set<string>();
+  for (const t of rule.order) {
+    if (!t.alternatives?.length) continue;
+    if (seen.has(t.lemma)) return false;
+    seen.add(t.lemma);
+  }
+  return true;
 }
 
 /**
@@ -177,8 +185,10 @@ export function verifyCandidate(input: string, cand: LlmCandidate | null, lex: L
   if (ungrounded.length * 3 > kept.length) return reject("입력에 없는 말을 너무 많이 덧붙임", notes);
 
   // 부정은 규칙과 같은 방식(동사 뒤 부정 수어 하나)으로 통일한다
-  const negation = cand.negation || rule.negation || kept.some((g) => g.word === "않다");
-  const content = kept.filter((g, i) => !(negation && (g.word === "아니다" || g.word === "않다"))
+  // ("못 타요"를 LLM이 타다·못하다로 주면 부정이 두 번 나오던 문제, 11/5 정확도 측정에서 발견)
+  const NEG_MARKERS = new Set(["아니다", "않다", "못하다"]);
+  const negation = cand.negation || rule.negation || kept.some((g) => g.word === "않다" || g.word === "못하다");
+  const content = kept.filter((g, i) => !(negation && NEG_MARKERS.has(g.word))
     // "충전하세요"를 충전·하다로 쪼갠 경우: 명사 바로 뒤의 하다·되다는 말씨일 뿐이라 뺀다(11/5 실측)
     && !((g.word === "하다" || g.word === "되다") && i > 0 && lex.nouns.has(kept[i - 1].word)));
   const lemmas = content.map((g) => g.word);
