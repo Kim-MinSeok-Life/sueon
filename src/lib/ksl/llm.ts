@@ -6,7 +6,7 @@
  *  - 이 파일(규칙): 후보를 기존 사전·동작 목록으로 검사한다.
  *      1 없는 단어 금지: 국립국어원 사전에도 동작 목록에도 없는 말은 버린다(지문자 표시한 고유명사만 허용)
  *      2 근거 검사: 입력 문장이나 규칙 분석 결과에서 찾을 수 없는 말을 덧붙이면 기록하고 확인을 요청한다
- *      3 누락 검사: 규칙 분석이 찾은 동작 있는 단어를 LLM이 빼면 기록한다
+ *      3 누락 검사: 규칙 분석이 찾은 동작 있는 단어를 LLM이 조금 빼면 되살리고, 절반 넘게 빼면 후보를 버린다
  *      4 뜻 검사: LLM이 준 뜻 힌트가 사전 분류와 맞을 때만 그 뜻을 쓰고, 동작의 뜻과 다르면 재생하지 않는다
  *      5 어순: 시간 앞·의문사 뒤·부정 동사 뒤 규칙을 다시 적용한다(같은 그룹 안에서는 LLM 순서 유지)
  *    검사에서 크게 어긋나면 LLM 후보를 버리고 규칙 결과(planner.ts)를 그대로 쓴다.
@@ -14,7 +14,7 @@
  *
  * 공급자별 호출 코드는 서버 전용 파일 llmProviders.ts에 있다. 이 파일은 브라우저·서버·테스트 어디서나 쓴다.
  */
-import { findMotion, isWhWord, orderTokens, resolveToken, strip, type Lexicon, type PlanToken, type SignPlan } from "./planner.ts";
+import { findMotion, isWhWord, numberGloss, orderTokens, predicateStems, resolveToken, strip, SYNONYMS, type Lexicon, type PlanToken, type SignPlan } from "./planner.ts";
 
 /** LLM이 돌려줘야 하는 형식(정리 후) */
 export interface LlmCandidate {
@@ -34,6 +34,14 @@ export interface LlmVerification {
 export const LLM_LIMITS = { maxWords: 20, maxWordLength: 20, maxNoteLength: 200 } as const;
 
 /**
+ * 규칙 분석만으로 충분한가(속도 개선, 11/5 결정): 확신도 high이고 모든 수어 단어에 동작이 있으면 LLM을 부르지 않는다.
+ * 오타·모르는 말·뜻이 애매한 말·동작 없는 말이 하나라도 있으면 LLM 후보를 받아 본다.
+ */
+export function ruleIsConfident(rule: SignPlan): boolean {
+  return rule.confidence === "high" && rule.order.length > 0 && rule.order.every((t) => t.status === "playable");
+}
+
+/**
  * 시스템 프롬프트. allowed는 동작이 있는 수어 단어 목록(public/motions/aihub_gloss/index.json의 키).
  * 목록 밖의 말도 쓸 수 있게 하되(사전에 있으면 '동작 없음'으로 표시) 검사기가 다시 거른다.
  */
@@ -42,11 +50,13 @@ export function buildSystemPrompt(allowed: string[]): string {
     "너는 한국어 문장을 한국수어(KSL) 단어 순서 후보로 바꾸는 보조 도구다. 번역의 정확성을 보장하지 않으며, 결과는 규칙·사전으로 다시 검사된다.",
     "규칙:",
     "1. 각 단어는 사전 기본형으로 쓴다(명사, 용언은 '-다' 형). 조사·어미·높임 보조용언('주세요')은 뺀다.",
-    "2. 아래 '동작 있는 단어' 목록에 같은 뜻의 말이 있으면 반드시 그 말을 쓴다(예: 요금→돈, 정류장→곳).",
-    "3. 목록에 없는 말은 국립국어원 한국수어사전에 있을 법한 표준 기본형으로 쓴다. 입력에 없는 내용을 지어내지 않는다.",
+    "2. 가능한 한 아래 '동작 있는 단어' 목록 안의 말로만 쓴다. 같거나 비슷한 뜻의 목록 단어가 있으면 반드시 그 말로 바꾼다(예: 요금→돈, 정류장·역→곳, 돕다→도와주다, 1호선→1호).",
+    "3. 목록으로 바꿀 수 없는 말만 국립국어원 한국수어사전의 표준 기본형으로 쓴다. 문장 뜻에 꼭 필요하지 않은 말은 빼도 된다. 입력에 없는 내용을 지어내지 않는다.",
     "4. 사람·장소 이름처럼 지문자가 필요한 고유명사는 fingerspell: true로 표시한다.",
     "5. 어순: 시간 표현은 앞, 의문사(무엇·어디·언제·누구·왜·얼마·몇·방법)는 끝, 부정은 동사 뒤.",
-    "6. 뜻이 여러 개인 단어(예: 배)는 sense에 분류 한 단어를 적는다(예: 교통, 신체, 과일).",
+    "6. 뜻이 여러 개인 단어(예: 배)에만 sense에 분류 한 단어를 적는다(예: 교통, 신체, 과일). 다른 단어에는 sense를 쓰지 않는다.",
+    "7. 같은 단어가 문장에 여러 번 나오면 나온 만큼 따로 쓰고 각각 sense를 적는다. 한 단어를 겹쳐 쓰지 않는다(오다오다 ✗).",
+    "8. 음성 인식 오류·오타·띄어쓰기 오류(예: 택씨→택시, 학교를간다→학교 가다)는 문맥에 맞게 고쳐서 쓴다.",
     '출력은 JSON 하나만: {"glosses":[{"word":"택시","sense":"교통"}],"question":"wh"|"yesno"|null,"negation":false,"note":"짧은 설명"}',
     `동작 있는 단어: ${allowed.join(", ")}`,
   ].join("\n");
@@ -88,7 +98,12 @@ const PRONOUN_SOURCES: Record<string, RegExp> = { "나": /(저|제|내|나)/, "�
 /** 입력 문장이나 규칙 분석에서 그 단어의 근거를 찾을 수 있는가 */
 function grounded(word: string, input: string, rule: SignPlan): boolean {
   const flat = input.replace(/\s+/g, "");
+  // AI-Hub 표기처럼 겹친 말(오다오다)은 앞 절반으로 근거를 찾는다
+  const half = word.length % 2 === 0 ? word.slice(0, word.length / 2) : "";
+  if (half && half + half === word && half !== word && grounded(half, input, rule)) return true;
   const stem = word.endsWith("다") && word.length >= 2 ? word.slice(0, -1) : word;
+  // 용언 활용형(오다→와·왔, 걷다→걸어)이 입력에 있으면 근거로 본다(규칙 분석과 같은 계산)
+  if (word.endsWith("다") && predicateStems(word).some((s) => flat.includes(s))) return true;
   if (rule.tokens.some((t) => t.lemma === word) || rule.corrections.some((c) => c.to === word)) return true;
   if (flat.includes(stem) || (stem.length >= 3 && flat.includes(stem.slice(0, 2)))) return true;
   // 활용으로 첫 글자 받침이 바뀌는 용언(타다→탔, 가다→갔)은 첫 글자 초성·중성이 같으면 근거로 본다
@@ -137,7 +152,18 @@ export function verifyCandidate(input: string, cand: LlmCandidate | null, lex: L
   if (!cand.glosses.length) return reject("빈 후보");
 
   const notes: string[] = [];
-  const words = cand.glosses.filter((g, i) => cand.glosses.findIndex((x) => x.word === g.word) === i); // 중복 제거
+  // 같은 단어가 떨어져서 여러 번 나오는 것은 살린다("배가 고파서 배를 타기 전에 배를 먹었다" = 신체·선박·과일).
+  // 바로 이어서 같은 말을 반복하거나 "오다오다"처럼 겹쳐 쓴 것만 하나로 정리한다(실측에서 나온 LLM 실수)
+  const words: LlmCandidate["glosses"] = [];
+  for (const g of cand.glosses) {
+    const half = g.word.length % 2 === 0 ? g.word.slice(0, g.word.length / 2) : "";
+    // 단, 동작 목록에 겹친 모양 그대로 있는 말은 진짜 수어 단어다(AI-Hub 표기 '오다오다' 등)
+    const word = half && half + half === g.word && !lex.motions.has(g.word) && (lex.senses.has(half) || lex.motions.has(half)) ? half : g.word;
+    if (word !== g.word) notes.push(`겹쳐 쓴 말 정리: ${g.word} → ${word}`);
+    if (words.at(-1)?.word === word && words.at(-1)?.sense === g.sense) continue;
+    // 숫자 표기도 규칙과 같게(1호선 → 1호)
+    words.push({ ...g, word: /^\d/.test(word) ? numberGloss(word, lex) : word });
+  }
   // 1 없는 단어 금지
   const known = (w: string) => lex.motions.has(w) || lex.senses.has(w) || !!findMotion(w, lex) || /^\d/.test(w);
   const invented = words.filter((g) => !known(g.word) && !g.fingerspell).map((g) => g.word);
@@ -152,7 +178,9 @@ export function verifyCandidate(input: string, cand: LlmCandidate | null, lex: L
 
   // 부정은 규칙과 같은 방식(동사 뒤 부정 수어 하나)으로 통일한다
   const negation = cand.negation || rule.negation || kept.some((g) => g.word === "않다");
-  const content = kept.filter((g) => !(negation && (g.word === "아니다" || g.word === "않다")));
+  const content = kept.filter((g, i) => !(negation && (g.word === "아니다" || g.word === "않다"))
+    // "충전하세요"를 충전·하다로 쪼갠 경우: 명사 바로 뒤의 하다·되다는 말씨일 뿐이라 뺀다(11/5 실측)
+    && !((g.word === "하다" || g.word === "되다") && i > 0 && lex.nouns.has(kept[i - 1].word)));
   const lemmas = content.map((g) => g.word);
   let ambiguous = 0;
   const tokens = content.map((g) => {
@@ -166,6 +194,12 @@ export function verifyCandidate(input: string, cand: LlmCandidate | null, lex: L
       if (n) notes.push(n);
       else if (r.ambiguous) ambiguous++;
     } else if (r.ambiguous) ambiguous++;
+    // 동작이 없는 말은 AI-Hub 문장에서 같은 뜻으로 쓰인 동작 단어로 바꾼다(규칙 분석의 유의어 표와 같음: 역→곳 등)
+    const syn = r.token.status !== "playable" ? SYNONYMS[r.token.lemma] : undefined;
+    if (syn && findMotion(syn, lex)) {
+      notes.push(`유의어로 바꿈: ${r.token.lemma} → ${syn}(동작 있는 말)`);
+      return resolveToken(g.word, { lemma: syn, kind }, lemmas.filter((l) => l !== g.word), lex).token;
+    }
     return r.token;
   });
 
@@ -173,8 +207,20 @@ export function verifyCandidate(input: string, cand: LlmCandidate | null, lex: L
   const llmSet = new Set(tokens.map((t) => t.lemma));
   const rulePlayable = rule.tokens.filter((t) => t.status === "playable").map((t) => t.lemma);
   const dropped = rulePlayable.filter((l) => !llmSet.has(l));
-  if (dropped.length) notes.push(`규칙 분석에는 있는데 LLM이 뺀 말: ${dropped.join(", ")}`);
-  if (dropped.length * 2 > rulePlayable.length && rulePlayable.length >= 2) return reject("규칙이 찾은 단어를 절반 넘게 뺌", notes);
+  if (dropped.length * 2 > rulePlayable.length && rulePlayable.length >= 2) {
+    notes.push(`규칙 분석에는 있는데 LLM이 뺀 말: ${dropped.join(", ")}`);
+    return reject("규칙이 찾은 단어를 절반 넘게 뺌", notes);
+  }
+  // 조금 뺀 경우에는 규칙 결과에서 되살린다. 같은 문장도 실행마다 LLM 답이 달라 '얼마'처럼 핵심어가 빠진 적이 있음(11/5 실측)
+  for (const lemma of dropped) {
+    const restored = rule.tokens.find((t) => t.lemma === lemma && t.status === "playable");
+    // 규칙 결과에서의 자리 앞에 있던 단어 바로 뒤에 넣는다(안녕하세요가 맨 뒤로 가지 않게)
+    if (!restored) continue;
+    const before = rule.tokens.slice(0, rule.tokens.indexOf(restored)).map((t) => t.lemma);
+    const at = tokens.reduce((pos, t, i) => (before.includes(t.lemma) ? i + 1 : pos), 0);
+    tokens.splice(at, 0, restored);
+  }
+  if (dropped.length) notes.push(`LLM이 빠뜨린 말을 규칙 결과에서 되살림: ${dropped.join(", ")}`);
 
   // 5 어순 규칙 재적용
   const order = orderTokens(tokens, negation, lex);

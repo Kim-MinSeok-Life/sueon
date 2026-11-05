@@ -93,7 +93,8 @@ export function predicateStems(lemma: string): string[] {
     for (const j of ["ㄴ", "ㄹ", "ㅂ"]) forms.push(addJong(S, j));
   } else {
     forms.push(S + (bright ? "아" : "어"));
-    if (jong === "ㅂ") { const d = dropJong(S); if (d) forms.push(d + "워", d + "우"); }
+    // ㅂ 불규칙: 춥다→추워. 단 돕다·곱다는 '와'(도와, 고와)
+    if (jong === "ㅂ") { const d = dropJong(S); if (d) forms.push(d + (S === "돕" || S === "곱" ? "와" : "워"), d + "우"); }
     if (jong === "ㄷ") { const d = dropJong(S); const l = d && addJong(d, "ㄹ"); if (l) forms.push(l + (bright ? "아" : "어"), l); }
     if (jong === "ㅅ") { const d = dropJong(S); if (d) forms.push(d + (bright ? "아" : "어")); }
     if (jong === "ㄹ") { const d = dropJong(S); if (d) { forms.push(d); for (const j of ["ㄴ", "ㅂ"]) forms.push(addJong(d, j)); } }
@@ -115,12 +116,13 @@ const PARTICLES = new Set(["", "이", "가", "은", "는", "을", "를", "에", 
   "에를", "에서를", "로를", "으로를", "에다", "에다가", "에게서", "한테서", "께서는", "에서도", "까지는", "부터는", "만을", "만은",
   "으로도", "로도", "와는", "과는", "하고는", "이랑은", "랑은"]);
 const COMMON_PARTICLE = new Set(["이", "가", "을", "를", "은", "는", "도", "의", "에"]);
-const ENDING_HEAD = /^(다|요|고|서|니|는|은|을|면|으|지|죠|네|나|까|세|시|습|ㅂ|어|아|야|도|게|기|던|든|자|려|러|며|냐|래|군|구|ㄴ|ㄹ)/;
+// 드리다·드릴: 높임 보조용언("도와드릴까요", "알려드릴게요")은 어미처럼 떼어 낸다
+const ENDING_HEAD = /^(다|요|고|서|니|는|은|을|면|으|지|죠|네|나|까|세|시|습|ㅂ|어|아|야|도|게|기|던|든|자|려|러|며|냐|래|군|구|ㄴ|ㄹ|드리|드릴|드려|드립|드렸)/;
 const NOUN_VERB = /^(하|해|했|합|한|할|함|하세|되|돼|됐|된|될|됩|나|났|난|날)/;
 // 요청·보조 표현: 수어 단어가 아니라 높임·부탁의 말씨(표정·자세로 표현)
 const AUX = new Set(["주세요", "줘요", "줘", "주십시오", "주실래요", "주시겠어요", "주실", "주시면", "줄래요", "주세용", "있어요", "있습니까"]);
 // AI-Hub 교통 문장에서 같은 뜻을 나타낸 수어 단어(동작이 있는 쪽)로 바꾼다
-const SYNONYMS: Record<string, string> = { "요금": "돈", "운임": "돈", "역": "곳", "정류장": "곳", "정거장": "곳", "이후": "후", "뒤": "후", "어떻게": "방법" };
+export const SYNONYMS: Record<string, string> = { "돕다": "도와주다", "오다": "오다오다", "요금": "돈", "운임": "돈", "역": "곳", "정류장": "곳", "정거장": "곳", "이후": "후", "뒤": "후", "어떻게": "방법" };
 
 function isEnding(rest: string) {
   return rest === "" || (rest.length <= 6 && ENDING_HEAD.test(rest));
@@ -181,9 +183,18 @@ export function normalizeTokens(text: string, corrections: Correction[]): { toke
 // ---------------------------------------------------------------- 2·3. 형태 분석 + 오타 교정
 interface Parsed { lemma: string; kind: PlanToken["kind"]; rest: string }
 
+/**
+ * 숫자+단위를 동작 목록의 표기로 맞춘다. AI-Hub 문장은 "1호선"을 수어 '1호'로 표기했다(1·2·3·5·8·9호 동작 있음).
+ * 맞는 동작이 없으면 그대로 두고, 화면에는 "지숫자 동작 필요"로 표시된다.
+ */
+export function numberGloss(lemma: string, lex: Pick<Lexicon, "motions">): string {
+  const line = lemma.match(/^(\d+)호선$/);
+  return line && lex.motions.has(`${line[1]}호`) ? `${line[1]}호` : lemma;
+}
+
 function parseExact(tok: string, lex: Lexicon): Parsed | null {
   const num = tok.match(/^(\d+(?:시간|시|분|호선|호|회|사람|원|번|살|개|명|층|월|일)?)(.*)$/);
-  if (num && PARTICLES.has(num[2])) return { lemma: num[1], kind: "number", rest: num[2] };
+  if (num && PARTICLES.has(num[2])) return { lemma: numberGloss(num[1], lex), kind: "number", rest: num[2] };
   // "배가 아파요": 사전에 '배가(倍加)'도 있지만 흔한 쓰임은 '배+가'. 짧은 명사+주요 조사 우선(긴 쪽에 동작이 있으면 예외)
   const last = tok.at(-1) ?? "";
   if (tok.length >= 2 && COMMON_PARTICLE.has(last) && lex.nouns.has(tok.slice(0, -1)) && !lex.motions.has(tok)) {
@@ -206,7 +217,9 @@ function parseExact(tok: string, lex: Lexicon): Parsed | null {
     // "전하기·위해": '전(앞)+하기', '위(신체)+해'가 아니라 사전에 있는 용언 '전하다·위하다'. 명사 동작은 findMotion이 뜻이 같을 때만 빌려 씀
     if (NOUN_VERB.test(noun.rest) && pred.lemma.startsWith(noun.lemma) && lex.senses.has(pred.lemma)) return pred;
     // "가요": 명사(노래)와 용언(가다+요) 모두 가능 → 통째 명사 일치가 아니거나 동작이 용언 쪽에만 있으면 용언
-    const nm = lex.motions.has(noun.lemma), pm = lex.motions.has(pred.lemma);
+    // 유의어로 동작에 닿는 쪽도 "동작 있음"으로 본다("와요": 명사 '와'가 아니라 오다 → 오다오다)
+    const hasMotion = (l: string) => lex.motions.has(l) || (!!SYNONYMS[l] && lex.motions.has(SYNONYMS[l]));
+    const nm = hasMotion(noun.lemma), pm = hasMotion(pred.lemma);
     if (pm && !nm) return pred;
     if (nm && !pm) return noun;
     return noun.lemma.length > pred.lemma.length - 1 && noun.rest === "" && pred.rest !== "" ? pred : noun;

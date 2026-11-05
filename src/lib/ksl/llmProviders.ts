@@ -4,15 +4,18 @@
  * 고르는 순서(SUEON_LLM_PROVIDER)
  *  - "anthropic": ANTHROPIC_API_KEY 필요. 공식 SDK(@anthropic-ai/sdk) 사용
  *  - "openai":    OPENAI_API_KEY 필요. Chat Completions를 fetch로 호출(기존 /api/analyze 방식 유지)
+ *  - "gemini":    GEMINI_API_KEY 필요(Google AI Studio 무료 등급 가능). Gemini의 OpenAI 호환 주소로 같은 방식 호출
  *  - "mock":      개발 전용 가짜 응답(키·비용 없음). 화면 흐름 확인용이며 번역 결과가 아니다
- *  - 비우면: ANTHROPIC_API_KEY → OPENAI_API_KEY 순으로 있는 쪽, 둘 다 없으면 null(규칙 분석만)
+ *  - 비우면: ANTHROPIC_API_KEY → OPENAI_API_KEY → GEMINI_API_KEY 순으로 있는 쪽, 없으면 null(규칙 분석만)
  *
- * 2026-11-02 기준 실제 API 호출은 한 번도 하지 않았다(키 없음·비용 결정 전). 키를 넣은 뒤 첫 호출로 검증해야 한다.
+ * 2026-11-05: 무료 등급을 위해 gemini 추가. 실제 응답은 키를 넣은 뒤 첫 호출로 검증해야 한다.
  */
 import Anthropic from "@anthropic-ai/sdk";
 
+const GEMINI_OPENAI_URL = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions";
+
 export interface LlmProvider {
-  id: "anthropic" | "openai" | "mock";
+  id: "anthropic" | "openai" | "gemini" | "mock";
   model: string;
   /** 시스템 프롬프트 + 사용자 문장 → 모델이 돌려준 원문 텍스트(JSON 기대) */
   complete(system: string, user: string, signal: AbortSignal): Promise<string>;
@@ -26,6 +29,13 @@ export function getLlmProvider(env: NodeJS.ProcessEnv = process.env): LlmProvide
   }
   if (choice === "openai" || (!choice && env.OPENAI_API_KEY)) {
     return env.OPENAI_API_KEY ? openaiProvider(env.OPENAI_API_KEY, env.SUEON_LLM_MODEL || "gpt-4o-mini") : null;
+  }
+  if (choice === "gemini" || (!choice && env.GEMINI_API_KEY)) {
+    return env.GEMINI_API_KEY
+      // 짧은 변환 작업이라 생각 단계를 줄인다(기본값이면 20초를 넘겨 시간 초과가 났음)
+      ? openaiProvider(env.GEMINI_API_KEY, env.SUEON_LLM_MODEL || "gemini-3.5-flash-lite", "gemini", GEMINI_OPENAI_URL,
+        { reasoning_effort: env.SUEON_LLM_REASONING || "low" })
+      : null;
   }
   return null;
 }
@@ -49,17 +59,27 @@ function anthropicProvider(apiKey: string, model: string): LlmProvider {
   };
 }
 
-function openaiProvider(apiKey: string, model: string): LlmProvider {
+/** OpenAI Chat Completions 형식(OpenAI 본가, Gemini 호환 주소 공용) */
+function openaiProvider(apiKey: string, model: string, id: "openai" | "gemini" = "openai",
+  url = "https://api.openai.com/v1/chat/completions", extra: Record<string, unknown> = {}): LlmProvider {
+  const call = (body: object, signal: AbortSignal) => fetch(url, {
+    method: "POST", signal, cache: "no-store",
+    headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
   return {
-    id: "openai", model,
+    id, model,
     async complete(system, user, signal) {
-      const res = await fetch("https://api.openai.com/v1/chat/completions", {
-        method: "POST", signal, cache: "no-store",
-        headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
-        body: JSON.stringify({ model, temperature: 0, response_format: { type: "json_object" },
-          messages: [{ role: "system", content: system }, { role: "user", content: user }] }),
-      });
-      if (!res.ok) throw new Error(`OpenAI 요청 실패(${res.status})`);
+      const base = { model, temperature: 0, messages: [{ role: "system", content: system }, { role: "user", content: user }] };
+      let res = await call({ ...base, ...extra, response_format: { type: "json_object" } }, signal);
+      // JSON 모드나 추가 옵션을 지원하지 않는 호환 주소면 400 → 기본 요청으로 한 번 더(응답 정리는 parseCandidate가 함)
+      if (res.status === 400) res = await call(base, signal);
+      if (!res.ok) {
+        // 원인 파악용으로 상태와 응답 앞부분만 서버 로그에 남긴다(키는 남기지 않음)
+        const detail = (await res.text()).slice(0, 300);
+        console.error(`[llm:${id}] 요청 실패 ${res.status}: ${detail}`);
+        throw new Error(`${id} 요청 실패(${res.status}): ${detail}`);
+      }
       const data = await res.json() as { choices?: { message?: { content?: string } }[] };
       return data.choices?.[0]?.message?.content ?? "";
     },

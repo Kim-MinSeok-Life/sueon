@@ -46,7 +46,9 @@ export async function POST(request: NextRequest) {
     if (!candidate) return NextResponse.json({ error: "LLM 응답 형식 오류", fallback: "rules" }, { status: 502 });
     return NextResponse.json({ candidate, provider: provider.id, model: provider.model,
       disclaimer: "LLM 후보를 규칙·사전으로 검사한 결과이며 한국수어 번역의 정확성을 보장하지 않습니다." });
-  } catch {
-    return NextResponse.json({ error: "LLM 분석을 완료하지 못했습니다.", fallback: "rules" }, { status: 502 });
+  } catch (e) {
+    // 개발 모드에서만 실패 이유(공급자 응답 앞부분, 키 없음)를 함께 돌려준다
+    const detail = process.env.NODE_ENV !== "production" && e instanceof Error ? e.message.slice(0, 400) : undefined;
+    return NextResponse.json({ error: "LLM 분석을 완료하지 못했습니다.", fallback: "rules", ...(detail ? { detail } : {}) }, { status: 502 });
   }
 }
