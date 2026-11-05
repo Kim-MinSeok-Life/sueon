@@ -18,8 +18,9 @@ interface CompareItem {
   motion_take: string;
   motion_segment: [number, number] | null;
   occurrences?: number;
-  video_take: string;
-  video_segment: [number, number];
+  /** 원본 영상이 없으면 null(지문자·일부 단어 영상): 아바타만 반복 재생하고 국립국어원 표준 영상과 비교 */
+  video_take: string | null;
+  video_segment: [number, number] | null;
   video_duration: number | null;
   video_glosses: string[];
   same_actor: boolean;
@@ -36,6 +37,9 @@ const VERDICT_TEXT: Record<Verdict, string> = { same: "같음", different: "다�
 const DEMO_WORDS = new Set(["안녕하세요", "돕다", "도와주다", "무엇", "서울역", "1호", "타다", "가다", "교통카드", "매표소", "사다", "오른쪽", "있다",
   "엘리베이터", "왼쪽", "천천히", "조심", "경복궁", "3호", "5분", "지하철", "후", "오다", "곳", "내리다"]);
 const niklUrl = (id: number) => `https://sldict.korean.go.kr/front/sign/signContentsView.do?origin_no=${id}&top_category=CTE`;
+
+// 원본 영상이 있으면 '아바타 = 원본' 판정, 없으면 '아바타 = 국립국어원' 판정이 있어야 검수 완료
+const isDone = (it: CompareItem, r?: Review) => !!(it.video_take ? r?.avatar : r?.nikl);
 
 function loadReviews(): Record<string, Review> {
   try { return JSON.parse(localStorage.getItem(STORE) ?? "{}"); } catch { return {}; }
@@ -74,8 +78,8 @@ export default function ComparePage() {
       const r = reviews[it.key];
       if (query && !it.label.includes(query.trim())) return false;
       if (filter === "demo") return DEMO_WORDS.has(it.label);
-      if (filter === "todo") return !r?.avatar;
-      if (filter === "done") return !!r?.avatar;
+      if (filter === "todo") return !isDone(it, r);
+      if (filter === "done") return isDone(it, r);
       if (filter === "problem") return r?.avatar === "different" || r?.nikl === "different" || r?.avatar === "unsure";
       return true;
     });
@@ -86,7 +90,7 @@ export default function ComparePage() {
 
   // 영상에서 보여 줄 구간: 해당 수어 단어(앞뒤 여유 포함) 또는 문장 전체
   const range = useMemo((): [number, number] => {
-    if (!item) return [0, 0];
+    if (!item || !item.video_segment) return [0, 0];
     if (wholeSentence || item.kind === "word") return [0, item.video_duration ?? 1e9];
     return [Math.max(0, item.video_segment[0] - PAD), item.video_segment[1] + PAD];
   }, [item, wholeSentence]);
@@ -101,18 +105,19 @@ export default function ComparePage() {
   }, [item]);
 
   const playBoth = useCallback(() => {
+    if (item && !item.video_take) { playerRef.current?.replay(); return; }
     const v = videoRef.current;
     if (!v) return;
     v.playbackRate = speed;
     v.currentTime = range[0];
     void v.play().catch(() => {});
-  }, [range, speed]);
+  }, [range, speed, item]);
 
   // 영상 시각 → 아바타 동작 시각. 수어 단어 구간(영상)과 핵심 구간(동작)을 직선으로 대응시킨다
   const toClipTime = useCallback((vt: number) => {
     if (!item || !clip) return 0;
     const seg = clip.retarget?.gloss_segments?.[0];
-    if (item.kind === "gloss" && seg) {
+    if (item.kind === "gloss" && seg && item.video_segment) {
       const [vs, ve] = item.video_segment;
       const [cs, ce] = [seg[1], seg[2]];
       return Math.max(0, Math.min(clip.duration, cs + (vt - vs) * (ce - cs) / Math.max(0.01, ve - vs)));
@@ -129,6 +134,11 @@ export default function ComparePage() {
     const player = playerRef.current;
     if (!clip || !player || stage.kind !== "ready") return;
     player.load([clip]);
+    if (!item?.video_take) { // 원본 영상 없음: 아바타만 재생(반복 켜져 있으면 끝날 때마다 다시)
+      player.replay();
+      const id = loop ? window.setInterval(() => player.replay(), (clip.duration + 0.8) * 1000) : 0;
+      return () => window.clearInterval(id);
+    }
     let raf = 0;
     let last = -1;
     const tick = () => {
@@ -142,14 +152,14 @@ export default function ComparePage() {
     raf = requestAnimationFrame(tick);
     playBoth();
     return () => cancelAnimationFrame(raf);
-  }, [clip, stage.kind, toClipTime, playBoth]);
+  }, [clip, stage.kind, toClipTime, playBoth, item, loop]);
 
   // 이전·다음 단어 영상을 미리 받아 두어 넘길 때 검은 화면을 줄인다
   useEffect(() => {
     const items = manifest?.items ?? [];
     for (const i of [selected + 1, selected - 1]) {
       const it = items[i];
-      if (it) void fetch(`/api/aihub-video/${it.video_take}`).then((r) => r.arrayBuffer()).catch(() => {});
+      if (it?.video_take) void fetch(`/api/aihub-video/${it.video_take}`).then((r) => r.arrayBuffer()).catch(() => {});
     }
   }, [manifest, selected]);
 
@@ -188,7 +198,7 @@ export default function ComparePage() {
   const handleStatus = useCallback((s: StageStatus) => setStage(s), []);
 
   if (process.env.NODE_ENV === "production") return <main className="app"><p>개발 모드 전용 화면입니다.</p></main>;
-  const reviewed = manifest ? manifest.items.filter((it) => reviews[it.key]?.avatar).length : 0;
+  const reviewed = manifest ? manifest.items.filter((it) => isDone(it, reviews[it.key])).length : 0;
 
   return (
     <main className="app compare">
@@ -213,7 +223,7 @@ export default function ComparePage() {
             const r = reviews[it.key];
             return <li key={it.key}><button type="button" aria-current={i === selected} onClick={() => setSelected(i)}>
               <span>{it.label}</span>
-              <span className={`mini mini-${r?.avatar ?? "none"}`}>{r?.avatar ? VERDICT_TEXT[r.avatar] : it.kind === "word" ? "단어" : ""}</span>
+              <span className={`mini mini-${r?.avatar ?? r?.nikl ?? "none"}`}>{r?.avatar ? VERDICT_TEXT[r.avatar] : r?.nikl ? VERDICT_TEXT[r.nikl] : !it.video_take ? "영상 없음" : it.kind === "word" ? "단어" : ""}</span>
             </button></li>;
           })}</ul>
         </aside>
@@ -221,8 +231,10 @@ export default function ComparePage() {
         {item && <section className="compare-main">
           <div className="compare-pair">
             <figure>
-              <figcaption>원본 영상 · {item.video_take}{item.same_actor ? "" : " (다른 촬영자)"}</figcaption>
-              <video ref={videoRef} key={item.video_take} src={`/api/aihub-video/${item.video_take}`} muted playsInline preload="auto" onTimeUpdate={onTime} />
+              <figcaption>{item.video_take ? <>원본 영상 · {item.video_take}{item.same_actor ? "" : " (다른 촬영자)"}</> : "원본 영상 없음"}</figcaption>
+              {item.video_take
+                ? <video ref={videoRef} key={item.video_take} src={`/api/aihub-video/${item.video_take}`} muted playsInline preload="auto" onTimeUpdate={onTime} />
+                : <p className="muted">{item.motion_take.includes("CROWD") ? "지문자(일반인 촬영) 원본 영상은 받지 않았습니다." : "이 단어의 원본 영상 파일이 없습니다."} 아래 국립국어원 표준 영상과 아바타를 비교해 주세요.</p>}
             </figure>
             <figure>
               <figcaption>아바타 · {item.motion_take}에서 분할</figcaption>
@@ -249,14 +261,14 @@ export default function ComparePage() {
 
           <div className="panel compare-info">
             <h2>{item.label} <span className="muted">({item.kind === "gloss" ? `문장 속 수어 단어 · 촬영 문장 ${item.occurrences ?? "?"}회 등장` : "단어 단독 촬영"})</span></h2>
-            <p className="muted">영상 문장의 수어 단어: {item.video_glosses.join(" · ")}
-              {item.kind === "gloss" && <> · 이 단어 구간 {item.video_segment[0].toFixed(2)}~{item.video_segment[1].toFixed(2)}초</>}</p>
-            <div className="verdicts">
+            <p className="muted">{item.video_take ? <>영상 문장의 수어 단어: {item.video_glosses.join(" · ")}</> : <>동작 출처: {item.motion_take}</>}
+              {item.kind === "gloss" && item.video_segment && <> · 이 단어 구간 {item.video_segment[0].toFixed(2)}~{item.video_segment[1].toFixed(2)}초</>}</p>
+            {item.video_take && <div className="verdicts">
               <span>아바타 = 원본 영상?</span>
               {(["same", "different", "unsure"] as Verdict[]).map((v) => <button type="button" key={v} aria-pressed={review.avatar === v} onClick={() => save({ avatar: v })}>{VERDICT_TEXT[v]}</button>)}
-            </div>
+            </div>}
             <div className="verdicts">
-              <span>원본 영상 = 국립국어원 수어?</span>
+              <span>{item.video_take ? "원본 영상 = 국립국어원 수어?" : "아바타 = 국립국어원 수어?"}</span>
               {(["same", "different", "unsure"] as Verdict[]).map((v) => <button type="button" key={v} aria-pressed={review.nikl === v} onClick={() => save({ nikl: v })}>{VERDICT_TEXT[v]}</button>)}
               <a href={`https://sldict.korean.go.kr/front/search/searchAllList.do?searchKeyword=${encodeURIComponent(item.label)}`} target="_blank" rel="noreferrer">국립국어원 수어사전에서 찾기 ↗</a>
             </div>
