@@ -60,6 +60,9 @@ export default function ComparePage() {
   const [clip, setClip] = useState<MotionClip | null>(null);
   const playerRef = useRef<MotionPlayer | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const niklRef = useRef<HTMLVideoElement>(null);
+  const [niklId, setNiklId] = useState<number | null>(null);
+  const [nikl, setNikl] = useState<{ video: string | null; page: string; error?: string } | null>(null);
 
   useEffect(() => {
     if (process.env.NODE_ENV === "production") return;
@@ -88,6 +91,17 @@ export default function ComparePage() {
   const review = item ? reviews[item.key] ?? {} : {};
   const senses = useMemo(() => item ? dict.filter((e) => e.w.some(([w]) => w === item.label)) : [], [dict, item]);
 
+  // 국립국어원 표준 영상: 기본은 첫 번째 뜻. 뜻 목록에서 다른 뜻을 고를 수 있다
+  useEffect(() => { setNiklId(senses[0]?.id ?? null); }, [senses]);
+  useEffect(() => {
+    setNikl(null);
+    if (niklId == null) return;
+    let alive = true;
+    fetch(`/api/nikl-video?id=${niklId}`).then((r) => r.json()).then((b) => { if (alive) setNikl(b); })
+      .catch(() => alive && setNikl({ video: null, page: "", error: "국립국어원 영상을 찾지 못했습니다." }));
+    return () => { alive = false; };
+  }, [niklId]);
+
   // 영상에서 보여 줄 구간: 해당 수어 단어(앞뒤 여유 포함) 또는 문장 전체
   const range = useMemo((): [number, number] => {
     if (!item || !item.video_segment) return [0, 0];
@@ -105,6 +119,8 @@ export default function ComparePage() {
   }, [item]);
 
   const playBoth = useCallback(() => {
+    const n = niklRef.current;
+    if (n) { n.playbackRate = speed; n.currentTime = 0; void n.play().catch(() => {}); }
     if (item && !item.video_take) { playerRef.current?.replay(); return; }
     const v = videoRef.current;
     if (!v) return;
@@ -183,7 +199,7 @@ export default function ComparePage() {
     const rows = manifest.items.filter((it) => reviews[it.key]).map((it) => ({
       word: it.label, kind: it.kind, avatar_motion: it.motion_path, avatar_take: it.motion_take,
       video_take: it.video_take, same_actor: it.same_actor,
-      avatar_vs_video: reviews[it.key].avatar ?? null, video_vs_nikl: reviews[it.key].nikl ?? null,
+      avatar_vs_video: reviews[it.key].avatar ?? null, avatar_vs_nikl: reviews[it.key].nikl ?? null,
       memo: reviews[it.key].memo ?? "", reviewed_at: reviews[it.key].at,
     }));
     const blob = new Blob([JSON.stringify({ format: "sueon-video-review/v1", exported_at: new Date().toISOString(), rows }, null, 1)], { type: "application/json" });
@@ -203,7 +219,7 @@ export default function ComparePage() {
   return (
     <main className="app compare">
       <header className="compare-head">
-        <h1>원본 영상 ↔ 아바타 비교</h1>
+        <h1>원본 영상 ↔ 아바타 ↔ 국립국어원 비교</h1>
         <p className="muted">
           {manifest ? <>영상 있는 단어 {manifest.summary.with_video}개 / 전체 {manifest.summary.targets}개 · 검수 {reviewed}개 · 영상 촬영자 {manifest.summary.video_actors.join(", ")}</> : error || "비교표 불러오는 중…"}
         </p>
@@ -242,6 +258,13 @@ export default function ComparePage() {
                 {stage.kind === "loading" && <p className="stage-loading">아바타 불러오는 중 {Math.round(stage.progress * 100)}%</p>}
               </AvatarStage>
             </figure>
+            <figure>
+              <figcaption>국립국어원 한국수어사전 표준 영상{niklId != null ? ` · ${niklId}` : ""}</figcaption>
+              {nikl?.video
+                ? <video ref={niklRef} key={nikl.video} src={nikl.video} muted playsInline autoPlay loop={loop} controls preload="auto" />
+                : <p className="muted">{niklId == null ? "국립국어원 사전에 같은 표제어가 없습니다. 아래 '국립국어원 수어사전에서 찾기'로 검색해 주세요."
+                  : nikl ? (nikl.error ?? "영상이 없습니다.") : "표준 영상 찾는 중…"}</p>}
+            </figure>
           </div>
           <div className="controls">
             <div className="buttons">
@@ -268,13 +291,14 @@ export default function ComparePage() {
               {(["same", "different", "unsure"] as Verdict[]).map((v) => <button type="button" key={v} aria-pressed={review.avatar === v} onClick={() => save({ avatar: v })}>{VERDICT_TEXT[v]}</button>)}
             </div>}
             <div className="verdicts">
-              <span>{item.video_take ? "원본 영상 = 국립국어원 수어?" : "아바타 = 국립국어원 수어?"}</span>
+              <span>아바타 = 국립국어원 수어?</span>
               {(["same", "different", "unsure"] as Verdict[]).map((v) => <button type="button" key={v} aria-pressed={review.nikl === v} onClick={() => save({ nikl: v })}>{VERDICT_TEXT[v]}</button>)}
               <a href={`https://sldict.korean.go.kr/front/search/searchAllList.do?searchKeyword=${encodeURIComponent(item.label)}`} target="_blank" rel="noreferrer">국립국어원 수어사전에서 찾기 ↗</a>
             </div>
             <textarea placeholder="메모 (예: 오른손 손 모양이 다름, 끝부분이 잘림)" value={review.memo ?? ""} onChange={(e) => save({ memo: e.target.value })} rows={2} />
             {senses.length > 0 && <ul className="senses">{senses.map((e) => <li key={e.id}>
-              <a href={niklUrl(e.id)} target="_blank" rel="noreferrer"><b>수어사전 {e.id} 표준 영상 ↗</b></a> · {e.c}{e.w.find(([w]) => w === item.label)?.[1] ? ` · (${e.w.find(([w]) => w === item.label)?.[1]})` : ""}<br />{e.h || "수형 설명 없음"}
+              <button type="button" aria-pressed={niklId === e.id} onClick={() => setNiklId(e.id)}>이 뜻 영상 보기</button>{" "}
+              <a href={niklUrl(e.id)} target="_blank" rel="noreferrer"><b>수어사전 {e.id} ↗</b></a> · {e.c}{e.w.find(([w]) => w === item.label)?.[1] ? ` · (${e.w.find(([w]) => w === item.label)?.[1]})` : ""}<br />{e.h || "수형 설명 없음"}
             </li>)}</ul>}
             <div className="buttons"><button type="button" onClick={exportReviews} disabled={!Object.keys(reviews).length}>검수 결과 내려받기 (JSON)</button></div>
           </div>
