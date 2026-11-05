@@ -1,0 +1,39 @@
+{
+ "what": "지문자(2D만 있음) 3D 복원 정확도 검증: REAL02 단어 3D가 있는 촬영본에서 2D만 보고 복원한 뼈 방향과 실제 3D 뼈 방향의 각도 차이(도)",
+ "data": "AI-Hub REAL02 단어 키포인트 무작위 60개 촬영본(6프레임 간격). 앞 30개로 뼈 길이·손바닥 모양 기준값을 만들고 뒤 30개로만 검증",
+ "baseline": "flat_2d_median_deg = 깊이 없이 2D를 그대로 쓴 경우",
+ "script": "scripts/lift_2d.py build-ref / validate",
+ "date": "2026-11-05",
+ "result": {
+  "finger": {
+   "n": 4896,
+   "median_deg": 20.7,
+   "p90_deg": 68.3,
+   "flat_2d_median_deg": 33.7
+  },
+  "thumb": {
+   "n": 1224,
+   "median_deg": 16.4,
+   "p90_deg": 71.5,
+   "flat_2d_median_deg": 20.2
+  },
+  "palm_normal": {
+   "n": 408,
+   "median_deg": 9.1,
+   "p90_deg": 50.0,
+   "flat_2d_median_deg": 56.1
+  },
+  "forearm": {
+   "n": 408,
+   "median_deg": 11.0,
+   "p90_deg": 61.0,
+   "flat_2d_median_deg": 23.5
+  },
+  "upper_arm": {
+   "n": 408,
+   "median_deg": 4.9,
+   "p90_deg": 28.3,
+   "flat_2d_median_deg": 4.9
+  }
+ }
+}
