@@ -32,6 +32,10 @@ interface Review { avatar?: Verdict; nikl?: Verdict; memo?: string; at?: string 
 const STORE = "sueon-video-review-v1";
 const PAD = 0.15; // 동작 사전 클립과 같은 앞뒤 여유(초)
 const VERDICT_TEXT: Record<Verdict, string> = { same: "같음", different: "다름", unsure: "애매" };
+// 시연 대화(지하철역 길 안내 2가지)의 역무원 대사에 나오는 수어 단어. 최종 검수를 이 단어부터 한다
+const DEMO_WORDS = new Set(["안녕하세요", "돕다", "도와주다", "무엇", "서울역", "1호", "타다", "가다", "교통카드", "매표소", "사다", "오른쪽", "있다",
+  "엘리베이터", "왼쪽", "천천히", "조심", "경복궁", "3호", "5분", "지하철", "후", "오다", "곳", "내리다"]);
+const niklUrl = (id: number) => `https://sldict.korean.go.kr/front/sign/signContentsView.do?origin_no=${id}&top_category=CTE`;
 
 function loadReviews(): Record<string, Review> {
   try { return JSON.parse(localStorage.getItem(STORE) ?? "{}"); } catch { return {}; }
@@ -43,7 +47,7 @@ export default function ComparePage() {
   const [dict, setDict] = useState<DictEntry[]>([]);
   const [selected, setSelected] = useState(0);
   const [query, setQuery] = useState("");
-  const [filter, setFilter] = useState<"all" | "todo" | "done" | "problem">("all");
+  const [filter, setFilter] = useState<"all" | "demo" | "todo" | "done" | "problem">("all");
   const [speed, setSpeed] = useState(1);
   const [wholeSentence, setWholeSentence] = useState(false);
   const [loop, setLoop] = useState(true);
@@ -69,6 +73,7 @@ export default function ComparePage() {
     return all.map((it, i) => ({ it, i })).filter(({ it }) => {
       const r = reviews[it.key];
       if (query && !it.label.includes(query.trim())) return false;
+      if (filter === "demo") return DEMO_WORDS.has(it.label);
       if (filter === "todo") return !r?.avatar;
       if (filter === "done") return !!r?.avatar;
       if (filter === "problem") return r?.avatar === "different" || r?.nikl === "different" || r?.avatar === "unsure";
@@ -202,7 +207,7 @@ export default function ComparePage() {
         <aside className="panel compare-list">
           <input type="search" placeholder="단어 찾기" value={query} onChange={(e) => setQuery(e.target.value)} aria-label="단어 찾기" />
           <select value={filter} onChange={(e) => setFilter(e.target.value as typeof filter)} aria-label="검수 상태로 거르기">
-            <option value="all">전체</option><option value="todo">검수 전</option><option value="done">검수 완료</option><option value="problem">다름·애매</option>
+            <option value="all">전체</option><option value="demo">시연 단어</option><option value="todo">검수 전</option><option value="done">검수 완료</option><option value="problem">다름·애매</option>
           </select>
           <ul>{items.map(({ it, i }) => {
             const r = reviews[it.key];
@@ -257,7 +262,7 @@ export default function ComparePage() {
             </div>
             <textarea placeholder="메모 (예: 오른손 손 모양이 다름, 끝부분이 잘림)" value={review.memo ?? ""} onChange={(e) => save({ memo: e.target.value })} rows={2} />
             {senses.length > 0 && <ul className="senses">{senses.map((e) => <li key={e.id}>
-              <b>수어사전 {e.id}</b> · {e.c}{e.w.find(([w]) => w === item.label)?.[1] ? ` · (${e.w.find(([w]) => w === item.label)?.[1]})` : ""}<br />{e.h || "수형 설명 없음"}
+              <a href={niklUrl(e.id)} target="_blank" rel="noreferrer"><b>수어사전 {e.id} 표준 영상 ↗</b></a> · {e.c}{e.w.find(([w]) => w === item.label)?.[1] ? ` · (${e.w.find(([w]) => w === item.label)?.[1]})` : ""}<br />{e.h || "수형 설명 없음"}
             </li>)}</ul>}
             <div className="buttons"><button type="button" onClick={exportReviews} disabled={!Object.keys(reviews).length}>검수 결과 내려받기 (JSON)</button></div>
           </div>
