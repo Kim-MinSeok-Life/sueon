@@ -332,6 +332,7 @@ avatar.vrm(T-포즈 뼈 위치) + data/avatar_body_front.json ──────
 |---|---|---|---|
 | anthropic | 공식 SDK `client.beta.messages.create` | `claude-opus-5-5` | `output_config.effort: "low"`, `fallbacks: "default"`(beta `server-side-fallback-2026-07-01`), `stop_reason: "refusal"`이면 실패 처리 |
 | openai | Chat Completions | `gpt-4o-mini` | `response_format: json_object` |
+| gemini | Gemini의 OpenAI 호환 주소(`generativelanguage.googleapis.com/v1beta/openai`) | `gemini-3.5-flash-lite` | Google AI Studio 무료 등급. 2026-11-05 실측: `gemini-2.5-flash`·`2.5-flash-lite`는 새 계정 404, `gemini-3.8-flash`·`3.7-flash`는 혼잡(503)·20초 초과, `3.5-flash-lite`·`3.1-flash-lite`는 약 2초. `reasoning_effort: low`. JSON 모드를 거부(400)하면 JSON 모드 없이 재요청. 실패 시 상태·응답 앞 300자를 서버 로그에 남김(키 제외) |
 | mock | 준비된 답 | — | 개발 모드 전용 |
 
 **프롬프트·응답**

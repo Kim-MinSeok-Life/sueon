@@ -94,7 +94,7 @@ PowerShell 보안 설정 때문에 `npm`만 입력하면 "스크립트를 실행
 | 순서 | Windows | Mac |
 |:---:|---|---|
 | 1 | `copy .env.example .env.local` | `cp .env.example .env.local` |
-| 2 | `.env.local`을 열어 쓸 줄의 맨 앞 `#`을 지우고 값을 채우기 | 같음 |
+| 2 | `.env.local`을 열어 쓸 줄의 맨 앞 `#`을 지우고 값을 채우기. 무료로 하려면 `SUEON_LLM_PROVIDER=gemini`, `GEMINI_API_KEY=키` (Google AI Studio에서 발급) | 같음 |
 | 3 | 앱을 껐다(`Ctrl + C`) 다시 켜기 | 같음 |
 
 - `.env.local`은 Git·ZIP에 **들어가지 않아요**(`.gitignore`). 다른 사람에게 보내지 마세요.

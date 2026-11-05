@@ -13,12 +13,16 @@ const dictionary: DictEntry[] = [
   { id: 2, w: [["아프다"]], c: "인간 > 신체", d: true, h: "", j: null },
   { id: 3, w: [["나"]], c: "인간", d: true, h: "", j: null },
   { id: 4, w: [["요금"]], c: "경제생활", d: true, h: "", j: null },
+  { id: 5, w: [["역"]], c: "사회생활 > 교통", d: true, h: "", j: null },
+  { id: 6, w: [["오다"]], c: "기타", d: true, h: "", j: null },
+  { id: 7, w: [["고프다"]], c: "인간 > 신체", d: true, h: "", j: null },
 ];
 const glossItems = {
   "택시": { path: "/m/taxi.json" }, "기본": { path: "/m/base.json" }, "돈": { path: "/m/money.json" },
   "얼마": { path: "/m/howmuch.json" }, "타다": { path: "/m/ride.json" }, "가다": { path: "/m/go.json" },
   "밤": { path: "/m/night.json" }, "아니다": { path: "/m/no.json" },
   "배": { path: "/m/ship.json", context: ["타다", "가다"] },
+  "곳": { path: "/m/place.json" }, "내리다": { path: "/m/off.json" }, "다음": { path: "/m/next.json" },
 };
 const lex = buildLexicon({ glossItems, dictionary });
 const verify = (text: string, raw: unknown) => verifyCandidate(text, parseCandidate(raw), lex, planSentence(text, lex));
@@ -89,6 +93,25 @@ test("누락 검사: 규칙이 찾은 동작 단어를 절반 넘게 빼면 규�
   assert.equal(verify("택시", null).accepted, false);
 });
 
+test("실측 보완(11/5): 떨어진 반복 단어는 각자 뜻 유지, 겹쳐 쓴 말 정리, 동작 없는 말은 유의어로", () => {
+  // 같은 '배'가 세 번: LLM이 준 뜻을 각각 따라야 한다(예전엔 중복 제거로 하나만 남았음)
+  const three = verify("배가 고파서 배를 타기 전에 배를 먹었어요", { glosses: [
+    { word: "배", sense: "신체" }, { word: "고프다" }, { word: "배", sense: "교통" }, { word: "타다" }, { word: "배", sense: "과일" }, { word: "먹다" }] });
+  assert.deepEqual(three.plan.tokens.filter((t) => t.lemma === "배").map((t) => t.sense?.id), [7847, 7846, 7845]);
+  // "오다오다" → "오다"
+  const doubled = verify("버스 언제 와요?", { glosses: [{ word: "택시" }, { word: "오다오다" }] });
+  assert.ok(doubled.plan.tokens.some((t) => t.lemma === "오다"));
+  assert.ok(doubled.notes.some((n) => n.includes("겹쳐 쓴 말 정리")));
+  // 동작 없는 '역' → 동작 있는 '곳'
+  const station = verify("다음 역에서 내려요", { glosses: [{ word: "다음" }, { word: "역" }, { word: "내리다" }] });
+  assert.ok(station.plan.order.some((t) => t.lemma === "곳" && t.status === "playable"));
+  // LLM이 핵심어(얼마)를 빠뜨리면 규칙 결과에서 되살리고, 의문사라 맨 뒤로
+  const missing = verify("택시 기본요금 얼마예요?", { glosses: [{ word: "택시" }, { word: "기본" }, { word: "돈" }] });
+  assert.equal(missing.accepted, true);
+  assert.deepEqual(missing.plan.order.map((t) => t.lemma), ["택시", "기본", "돈", "얼마"]);
+  assert.equal(missing.plan.question, "wh");
+});
+
 test("공급자 선택: 키가 없으면 null(규칙 분석), mock은 개발에서만", () => {
   assert.equal(getLlmProvider({ NODE_ENV: "development" } as NodeJS.ProcessEnv), null);
   assert.equal(getLlmProvider({ NODE_ENV: "development", SUEON_LLM_PROVIDER: "anthropic" } as NodeJS.ProcessEnv), null);
@@ -96,4 +119,8 @@ test("공급자 선택: 키가 없으면 null(규칙 분석), mock은 개발에�
   assert.equal(getLlmProvider({ NODE_ENV: "production", SUEON_LLM_PROVIDER: "mock" } as NodeJS.ProcessEnv), null);
   assert.equal(getLlmProvider({ NODE_ENV: "development", OPENAI_API_KEY: "x" } as NodeJS.ProcessEnv)?.id, "openai");
   assert.equal(getLlmProvider({ NODE_ENV: "development", ANTHROPIC_API_KEY: "x" } as NodeJS.ProcessEnv)?.model, "claude-opus-5-5");
+  // 무료 등급용 Gemini: 키만 있으면 자동 선택, 모델은 SUEON_LLM_MODEL로 바꿀 수 있음
+  assert.equal(getLlmProvider({ NODE_ENV: "development", GEMINI_API_KEY: "x" } as NodeJS.ProcessEnv)?.id, "gemini");
+  assert.equal(getLlmProvider({ NODE_ENV: "development", SUEON_LLM_PROVIDER: "gemini" } as NodeJS.ProcessEnv), null);
+  assert.equal(getLlmProvider({ NODE_ENV: "development", SUEON_LLM_PROVIDER: "gemini", GEMINI_API_KEY: "x", SUEON_LLM_MODEL: "gemini-2.5-flash-lite" } as NodeJS.ProcessEnv)?.model, "gemini-2.5-flash-lite");
 });
