@@ -89,6 +89,8 @@ def segments(morph, take):
 def find_reference(take: str, gloss: str, videos, morph, prefer_actor: str):
     """같은 문장의 영상 중 같은 촬영자 → 다른 촬영자 순으로 찾는다(정면 카메라 우선)."""
     m = TAKE_RE.fullmatch(take)
+    if not m:  # 지문자(CROWD) 동작: 원본 영상을 받지 않아 비교 대상 아님
+        return None, None
     kind_id = f'NIA_SL_{m[2]}{m[3]}'
     cands = sorted({t for t in videos if t.startswith(kind_id + '_')},
                    key=lambda t: (TAKE_RE.fullmatch(t)[4] != prefer_actor, TAKE_RE.fullmatch(t)[5] != 'F', t))
