@@ -256,3 +256,13 @@ test("'다시'는 부사 그대로, 따로 떨어진 '하다'와 '-면 되다'�
   assert.deepEqual(planSentence("다시", l).order.map((t) => t.lemma), ["다시"]);
   assert.deepEqual(planSentence("충전은 여기서 하시면 됩니다", l).order.map((t) => t.lemma), ["충전", "여기"]);
 });
+
+test("'-셔야 하다'·방향 표현·'조심히'", () => {
+  const d: DictEntry[] = [{ id: 1, w: [["가시다"]], c: "기타", d: true, h: "", j: null }, { id: 2, w: [["방황"]], c: "기타", d: true, h: "", j: null },
+    { id: 3, w: [["하다"]], c: "기타", d: true, h: "", j: null }];
+  const l = buildLexicon({ dictionary: d, glossItems: { "가다": { path: "/m/go.json" }, "강남": { path: "/m/gn.json" }, "조심": { path: "/m/care.json" } } });
+  const g = (s: string) => planSentence(s, l).order.map((t) => t.lemma);
+  assert.deepEqual(g("강남 방면으로 가셔야 해요"), ["강남", "가다"]);
+  assert.deepEqual(g("강남 방향으로 가세요"), ["강남", "가다"]);
+  assert.deepEqual(g("조심히 가세요"), ["조심", "가다"]);
+});
