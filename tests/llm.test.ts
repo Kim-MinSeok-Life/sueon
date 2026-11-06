@@ -163,3 +163,7 @@ test("LLM 교정 문장(text)과 말 순서가 뒤바뀐 문장", () => {
   assert.equal(verifyCandidate(input, c, l, rule).plan.correctedText, "급하시면 9호선으로 갈아타세요");
   assert.equal(ruleIsConfident(planSentence("급하시면 9호선으로 갈아타세요", l), "급하시면 9호선으로 갈아타세요"), true);
 });
+
+test("LLM 후보의 방향·방면·쪽은 수어 단어에서 뺌", () => {
+  assert.deepEqual(parseCandidate('{"glosses":[{"word":"종합운동장"},{"word":"방면"},{"word":"가다"}]}')?.glosses.map((g) => g.word), ["종합운동장", "가다"]);
+});
