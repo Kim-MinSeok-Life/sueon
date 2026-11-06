@@ -130,7 +130,7 @@ export default function SignTranslator() {
   async function analyze(input: string, lex: Lexicon): Promise<SignPlan> {
     const rule = planSentence(input, lex);
     if (!llm.enabled) return rule;
-    if (ruleIsConfident(rule)) return { ...rule, llmNotes: ["규칙 분석이 확실해 LLM을 부르지 않음(속도)"] };
+    if (ruleIsConfident(rule, input)) return { ...rule, llmNotes: ["규칙 분석이 확실해 LLM을 부르지 않음(속도)"] };
     const cached = llmCacheRef.current.get(input);
     if (cached) return { ...cached, llmNotes: [...(cached.llmNotes ?? []), "같은 문장의 이전 LLM 결과 사용(캐시)"] };
     try {
@@ -181,6 +181,8 @@ export default function SignTranslator() {
       const p = await analyze(trimmed, lexicon);
       if (requestSeq !== seqRef.current) return;
       setPlan(p);
+      // LLM이 오인식·띄어쓰기·어순을 바로잡았으면 입력칸과 말풍선을 고친 문장으로 바꾼다
+      if (p.correctedText) { setText(p.correctedText); setSentence(p.correctedText); }
       setSegments([]);
       // 확실하지 않은 부분이 있어도 동작이 있는 단어는 바로 재생하고, 이해한 내용을 아래에 보여 고칠 수 있게 한다
       // (예전: 재생 전에 확인을 강제 → 한 단어만 애매해도 아무것도 안 나와 불편하다는 사용자 피드백)

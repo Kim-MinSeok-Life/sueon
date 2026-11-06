@@ -150,3 +150,16 @@ test("부정은 하나만: LLM이 못하다를 따로 줘도 동사 뒤 부정 �
   const lemmas = r.plan.order.map((t) => t.lemma);
   assert.equal(lemmas.filter((l) => l === "못하다" || l === "아니다").length, 1);
 });
+
+// 사용자 요청(2026-11-06): 오인식·어순을 바로잡은 문장을 화면에 다시 써 준다
+test("LLM 교정 문장(text)과 말 순서가 뒤바뀐 문장", () => {
+  const c = parseCandidate('{"text":"급하시면 9호선으로 갈아타세요","glosses":[{"word":"급하다"},{"word":"9호"},{"word":"갈아타다"}],"question":null,"negation":false,"note":""}');
+  assert.equal(c?.text, "급하시면 9호선으로 갈아타세요");
+  assert.equal(parseCandidate('{"text":"<script>","glosses":[{"word":"가다"}]}')?.text, undefined);
+  const l = buildLexicon({ glossItems: { "급하다": { path: "/m/a.json" }, "9호": { path: "/m/b.json" }, "갈아타다": { path: "/m/c.json" } } });
+  const input = "갈아타세요 9호선으로 급하시면";
+  const rule = planSentence(input, l);
+  assert.equal(ruleIsConfident(rule, input), false);
+  assert.equal(verifyCandidate(input, c, l, rule).plan.correctedText, "급하시면 9호선으로 갈아타세요");
+  assert.equal(ruleIsConfident(planSentence("급하시면 9호선으로 갈아타세요", l), "급하시면 9호선으로 갈아타세요"), true);
+});

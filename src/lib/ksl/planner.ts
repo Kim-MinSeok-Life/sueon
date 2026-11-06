@@ -62,6 +62,8 @@ export interface SignPlan {
   source: "rules" | "llm";
   /** LLM 후보를 쓰지 않았거나 고친 이유(검증 기록) */
   llmNotes?: string[];
+  /** LLM이 음성 오인식·띄어쓰기·어순을 바로잡은 한국어 문장(화면에 보여 줄 문장). 규칙 분석만 했으면 없음 */
+  correctedText?: string;
 }
 
 // "가방2"처럼 같은 단어의 변이형 번호만 뗀다. "5" "12"처럼 숫자만 있는 말(지숫자)은 그대로 둔다
