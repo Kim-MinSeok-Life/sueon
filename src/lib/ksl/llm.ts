@@ -22,6 +22,8 @@ export interface LlmCandidate {
   question: "yesno" | "wh" | null;
   negation: boolean;
   note: string;
+  /** 오인식·띄어쓰기·어순을 바로잡은 자연스러운 한국어 문장(뜻은 그대로) */
+  text?: string;
 }
 
 export interface LlmVerification {
@@ -38,7 +40,10 @@ export const LLM_LIMITS = { maxWords: 20, maxWordLength: 20, maxNoteLength: 200 
  * 오타·모르는 말·뜻이 애매한 말·동작 없는 말이 하나라도 있으면 LLM 후보를 받아 본다.
  * 뜻이 여러 개인 말이 한 문장에 두 번 이상 나오면("배가 아파서 배를 못 타요") 규칙은 같은 뜻으로 고르기 쉬우므로 LLM을 부른다.
  */
-export function ruleIsConfident(rule: SignPlan): boolean {
+export function ruleIsConfident(rule: SignPlan, input = ""): boolean {
+  // "갈아타세요 9호선으로 급하시면"처럼 조사·연결어미로 끝나면 말 순서가 뒤바뀐 문장 → LLM이 순서를 바로잡게 한다
+  const last = input.replace(/[.,!?？~…\s]+$/, "").split(/\s+/).at(-1) ?? "";
+  if (/(면|고|서|는데|니까|지만|으로|로|에서|에게|을|를)$/.test(last)) return false;
   if (rule.confidence !== "high" || !rule.order.length || !rule.order.every((t) => t.status === "playable")) return false;
   const seen = new Set<string>();
   for (const t of rule.order) {
@@ -61,11 +66,13 @@ export function buildSystemPrompt(allowed: string[]): string {
     "2. 가능한 한 아래 '동작 있는 단어' 목록 안의 말로만 쓴다. 같거나 비슷한 뜻의 목록 단어가 있으면 반드시 그 말로 바꾼다(예: 요금→돈, 정류장·역→곳, 돕다→도와주다, 1호선→1호).",
     "3. 목록으로 바꿀 수 없는 말만 국립국어원 한국수어사전의 표준 기본형으로 쓴다. 문장 뜻에 꼭 필요하지 않은 말은 빼도 된다. 입력에 없는 내용을 지어내지 않는다.",
     "4. 사람·장소 이름처럼 지문자가 필요한 고유명사는 fingerspell: true로 표시한다.",
-    "5. 어순: 시간 표현은 앞, 의문사(무엇·어디·언제·누구·왜·얼마·몇·방법)는 끝, 부정은 동사 뒤.",
+    "5. 어순: 시간 표현은 앞, 의문사(무엇·어디·언제·누구·왜·얼마·몇·방법)는 끝, 부정은 동사 뒤. 방향·방면·쪽은 단어로 쓰지 않는다('가다'로 나타냄).",
     "6. 뜻이 여러 개인 단어(예: 배)에만 sense에 분류 한 단어를 적는다(예: 교통, 신체, 과일). 다른 단어에는 sense를 쓰지 않는다.",
     "7. 같은 단어가 문장에 여러 번 나오면 나온 만큼 따로 쓰고 각각 sense를 적는다. 한 단어를 겹쳐 쓰지 않는다(오다오다 ✗).",
-    "8. 음성 인식 오류·오타·띄어쓰기 오류(예: 택씨→택시, 학교를간다→학교 가다)는 문맥에 맞게 고쳐서 쓴다.",
-    '출력은 JSON 하나만: {"glosses":[{"word":"택시","sense":"교통"}],"question":"wh"|"yesno"|null,"negation":false,"note":"짧은 설명"}',
+    "8. 음성 인식 오류·오타·띄어쓰기 오류(예: 택씨→택시, 학교를간다→학교 가다, 휴정합니다→추정합니다)는 문맥에 맞게 고쳐서 쓴다.",
+    "8-1. 대화는 주로 지하철·버스·길 안내 상황이다. 소리가 비슷해 잘못 들린 말은 지우지 말고 이 상황에 맞는 말로 고친다(예: 박명·방명→방면, 구호선→9호선, 편이점→편의점, 지현→지연).",
+    "9. text에는 입력을 바르게 고친 한국어 문장을 쓴다: 음성 인식 오류·오타·띄어쓰기를 고치고, 말 순서가 뒤바뀐 문장(예: 갈아타세요 9호선으로 급하시면)은 자연스러운 순서(급하시면 9호선으로 갈아타세요)로 바꾼다. 뜻과 말투(예: -셔야 해요, -시면 돼요)는 그대로 두고, 고친 낱말 말고는 원래 표현을 바꾸지 않으며, 내용을 더하거나 빼지 않는다. glosses는 고친 문장을 기준으로 만든다.",
+    '출력은 JSON 하나만: {"text":"고친 한국어 문장","glosses":[{"word":"택시","sense":"교통"}],"question":"wh"|"yesno"|null,"negation":false,"note":"짧은 설명"}',
     `동작 있는 단어: ${allowed.join(", ")}`,
   ].join("\n");
 }
@@ -86,6 +93,8 @@ export function parseCandidate(raw: unknown): LlmCandidate | null {
     const item = typeof g === "string" ? { word: g } : g && typeof g === "object" ? g as Record<string, unknown> : null;
     const word = typeof item?.word === "string" ? strip(item.word).slice(0, LLM_LIMITS.maxWordLength) : "";
     if (!word || !/^[가-힣0-9]+$/.test(word)) continue;
+    // 방향·방면·쪽은 수어에서 '가다'의 손 방향으로 나타내므로 단어로 쓰지 않는다(규칙 분석과 같게)
+    if (/^(방향|방면|쪽)$/.test(word)) continue;
     glosses.push({
       word,
       ...(typeof item?.sense === "string" && item.sense.trim() ? { sense: item.sense.trim().slice(0, 20) } : {}),
@@ -97,6 +106,8 @@ export function parseCandidate(raw: unknown): LlmCandidate | null {
     question: o.question === "wh" || o.question === "yesno" ? o.question : null,
     negation: o.negation === true,
     note: typeof o.note === "string" ? o.note.slice(0, LLM_LIMITS.maxNoteLength) : "",
+    // 화면에 그대로 보여 주므로 한글·숫자·기본 문장부호만, 200자까지
+    ...(typeof o.text === "string" && /^[가-힣0-9a-zA-Z\s.,!?~·'"()-]{1,200}$/.test(o.text.trim()) ? { text: o.text.trim() } : {}),
   };
 }
 
@@ -246,6 +257,7 @@ export function verifyCandidate(input: string, cand: LlmCandidate | null, lex: L
     plan: {
       input, tokens, order, question, negation, corrections: rule.corrections, confidence,
       needsConfirm: confidence !== "high", reasons, source: "llm", llmNotes: notes,
+      ...(cand.text && cand.text.replace(/\s+/g, "") !== input.replace(/\s+/g, "") ? { correctedText: cand.text } : {}),
     },
     accepted: true,
     notes,

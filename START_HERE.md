@@ -1,7 +1,7 @@
 # SUEO:N 처음 실행하기 🙌
 
 > [!TIP]
-> GitHub에 올리기·팀 작업은 [`GITHUB_GUIDE.md`](GITHUB_GUIDE.md), 프로젝트 소개는 [`README.md`](README.md)를 보세요.
+> 프로젝트 소개는 [`README.md`](README.md)를 보세요.
 > IntelliJ에서는 편집 창 오른쪽 위 **Preview** 아이콘을 누르면 표가 정리된 모습으로 보여요.
 
 | 걸리는 시간 | 준비물 | 주의 |
