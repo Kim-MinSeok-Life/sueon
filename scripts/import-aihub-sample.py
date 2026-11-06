@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""사용자가 직접 받은 AI-Hub 경량 샘플을 VRM 실험 모션으로 변환한다.
+"""이용 신청으로 받은 AI-Hub 경량 샘플을 VRM 실험 모션으로 변환한다.
 
 표현의 한국어 뜻/언어적 정확성을 판정하지 않는다. 공개 배포 권한도 자동으로 얻지 않는다.
 """
@@ -158,7 +158,7 @@ def main():
             clip={'format':'sueon-keyframes/v1','motion_id':f'AIHUB-SAMPLE-{code}',
                   'kind':'test','label':f'AI-Hub {code} 원본 3D 키포인트 근사 동작',
                   'space':'vrm-normalized-humanoid','duration':duration,
-                  'source':'AI-Hub 수어 영상(데이터셋 103), 사용자가 제공한 경량 샘플에서 실험적으로 파생; 한국수어 의미·정확성 미검증',
+                  'source':'AI-Hub 수어 영상(데이터셋 103), 이용 신청으로 받은 경량 샘플에서 실험적으로 파생; 한국수어 의미·정확성 미검증',
                   'keyframes':keyframes}
             path=OUT/f'{code.lower()}_approx.json'
             path.write_text(json.dumps(clip,ensure_ascii=False,separators=(',',':')),encoding='utf-8')

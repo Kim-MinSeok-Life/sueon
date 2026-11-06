@@ -46,7 +46,7 @@ export interface ExpressionEntry {
   source_video?: string;
   gloss_interval_sec?: [number, number];
   motion_quality?: "experimental_unvalidated";
-  /** 이전 변환식(attempt1~4) 모션 경로. 개발 비교(?legacy=1)용 */
+  /** 초기 변환식 모션 경로. 개발 비교(?legacy=1)용 */
   legacy_motion_path?: string;
   /** 모션을 만든 실제 촬영본 (예: NIA_SL_WORD1502_REAL02_F) */
   motion_take?: string;

@@ -556,7 +556,7 @@ def retarget(kp: dict, rest: dict, sigma=1.0, trim=True, chest_weight=0.6, ik=Tr
         before = {s: np.array([penetration(p, body_front) for p in points(frames, s)]) for s in offsets}
         stats['penetration_before_cm'] = {s: round(float(v.max()) * 100, 2) for s, v in before.items()}
         for s in offsets:
-            # 사용자 요청: 손·팔을 기본적으로 조금 더 앞으로. 얼굴 근처 손은 얼굴에 닿아야 하므로 빼지 않음(관통은 아래에서 별도 방지)
+            # 손·팔을 기본적으로 조금 더 앞으로. 얼굴 근처 손은 얼굴에 닿아야 하므로 빼지 않음(관통은 아래에서 별도 방지)
             offsets[s][:, 2] = forward * (1 - head_w[s])
         frames = run()
         for _ in range(4):  # 손을 옮기면 아래팔 각도도 바뀌므로 남은 관통을 반복 보정

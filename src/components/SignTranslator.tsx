@@ -185,7 +185,7 @@ export default function SignTranslator() {
       // 입력칸의 글이 최종 내용: "수어로 보기"에서는 글을 바꾸지 않는다(교정은 음성 → 글 단계에서만, polishSpeech)
       setSegments([]);
       // 확실하지 않은 부분이 있어도 동작이 있는 단어는 바로 재생하고, 이해한 내용을 아래에 보여 고칠 수 있게 한다
-      // (예전: 재생 전에 확인을 강제 → 한 단어만 애매해도 아무것도 안 나와 불편하다는 사용자 피드백)
+      // (예전: 재생 전에 확인을 강제 → 한 단어만 애매해도 아무것도 안 나와 불편함)
       setAwaitingConfirm(debugMode && p.needsConfirm && !confirmed); // 제품 화면에서는 확인을 묻지 않음(개발 모드 ?debug=1에서만)
       toLoad = p.order.filter((t) => t.status === "playable" && t.motion).map(planEntry);
     } else {
