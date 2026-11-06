@@ -96,6 +96,7 @@ export default function SignTranslator() {
   const seqRef = useRef(0);
   /** 같은 문장의 LLM 검증 결과(새로고침하면 비워짐) */
   const llmCacheRef = useRef(new Map<string, SignPlan>());
+  const polishSeqRef = useRef(0);
 
   useEffect(() => {
     // 실사용 화면과 관절 실험 도구를 명확히 분리한다.
@@ -181,8 +182,7 @@ export default function SignTranslator() {
       const p = await analyze(trimmed, lexicon);
       if (requestSeq !== seqRef.current) return;
       setPlan(p);
-      // LLM이 오인식·띄어쓰기·어순을 바로잡았으면 입력칸과 말풍선을 고친 문장으로 바꾼다
-      if (p.correctedText) { setText(p.correctedText); setSentence(p.correctedText); }
+      // 입력칸의 글이 최종 내용: "수어로 보기"에서는 글을 바꾸지 않는다(교정은 음성 → 글 단계에서만, polishSpeech)
       setSegments([]);
       // 확실하지 않은 부분이 있어도 동작이 있는 단어는 바로 재생하고, 이해한 내용을 아래에 보여 고칠 수 있게 한다
       // (예전: 재생 전에 확인을 강제 → 한 단어만 애매해도 아무것도 안 나와 불편하다는 사용자 피드백)
@@ -215,6 +215,37 @@ export default function SignTranslator() {
     if (recorderRef.current?.state === "recording") recorderRef.current.stop();
   }
 
+  /**
+   * 음성 → 글 단계에서 바로 교정: 말이 끝나면 Gemini가 잘못 들린 말·띄어쓰기·어순을 바로잡은 문장을 입력칸에 넣는다.
+   * 규칙 분석이 확실한 문장은 LLM을 부르지 않는다. 받은 결과는 저장해 두어 "수어로 보기"에서 다시 부르지 않는다.
+   */
+  async function polishSpeech(words: string) {
+    setText(words);
+    const lex = lexicon;
+    const done = () => setVoiceMessage("문장을 확인한 뒤 \"수어로 보기\"를 눌러 주세요.");
+    if (!lex || !llm.enabled) return done();
+    const rule = planSentence(words, lex);
+    if (ruleIsConfident(rule, words)) return done();
+    const seq = ++polishSeqRef.current;
+    setVoiceMessage("말한 내용을 다듬는 중이에요…");
+    try {
+      const res = await fetch("/api/analyze", { method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: words }), signal: AbortSignal.timeout(8000) });
+      const payload = await res.json() as { candidate?: unknown };
+      if (seq !== polishSeqRef.current) return;
+      if (!res.ok) return done();
+      const plan = verifyCandidate(words, parseCandidate(payload.candidate), lex, rule).plan;
+      const fixed = plan.correctedText;
+      const cache = llmCacheRef.current;
+      cache.set(words, plan);
+      if (fixed) cache.set(fixed, { ...plan, input: fixed, correctedText: undefined });
+      if (cache.size > 200) cache.delete(cache.keys().next().value!);
+      // 그사이 사용자가 직접 고쳤으면 덮어쓰지 않는다
+      if (fixed) setText((cur) => (cur === words ? fixed : cur));
+      setVoiceMessage(fixed ? "잘못 들린 말을 고쳤어요. 확인한 뒤 \"수어로 보기\"를 눌러 주세요." : "문장을 확인한 뒤 \"수어로 보기\"를 눌러 주세요.");
+    } catch { if (seq === polishSeqRef.current) done(); }
+  }
+
   async function startVoice() {
     if (voiceState !== "idle") { stopVoice(); return; }
     setVoiceMessage("");
@@ -227,7 +258,7 @@ export default function SignTranslator() {
         rec.interimResults = false;
         rec.onresult = (event) => {
           const words = Array.from(event.results).map((r) => r[0].transcript).join(" ").trim();
-          if (words) { setText(words.slice(0, 200)); setVoiceMessage("문장을 확인한 뒤 \"수어로 보기\"를 눌러 주세요."); }
+          if (words) void polishSpeech(words.slice(0, 200));
         };
         rec.onerror = (event) => setVoiceMessage(voiceErrorText(event.error));
         rec.onend = () => { recognitionRef.current = null; setVoiceState("idle"); };
@@ -258,8 +289,7 @@ export default function SignTranslator() {
           const res = await fetch("/api/transcribe", { method: "POST", body: form });
           const payload = await res.json() as { text?: string; error?: string };
           if (!res.ok || !payload.text) throw new Error(payload.error || "음성 인식 실패");
-          setText(payload.text.slice(0,200));
-          setVoiceMessage("서버 음성 인식 완료 · 내용을 확인해 주세요.");
+          void polishSpeech(payload.text.slice(0, 200));
         } catch { setVoiceMessage("음성 인식에 실패했습니다. 텍스트로 입력해 주세요."); }
         finally { recorderRef.current = null; setVoiceState("idle"); }
       };
