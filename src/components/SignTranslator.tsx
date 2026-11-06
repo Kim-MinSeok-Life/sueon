@@ -58,6 +58,14 @@ const tokenNote = (t: PlanToken) => [
   t.sense && t.alternatives?.length ? `의미 선택: ${t.sense.reason} · 수어사전 ${t.sense.id}` : null,
   t.sense && t.status !== "playable" && t.sense.handshape ? `수형: ${t.sense.handshape}` : null,
 ].filter(Boolean).join(" · ");
+// 음성 인식 오류 코드를 사용자용 문장으로. 브라우저는 https 또는 localhost 주소에서만 마이크를 허용한다
+const voiceErrorText = (code: string) =>
+  code === "not-allowed" || code === "service-not-allowed"
+    ? (window.isSecureContext ? "마이크 사용이 허용되지 않았어요. 주소창의 마이크 아이콘에서 허용해 주세요." : "이 주소에서는 마이크를 쓸 수 없어요. 글로 입력해 주세요.")
+    : code === "no-speech" ? "말소리가 들리지 않았어요. 다시 눌러 말해 주세요."
+    : code === "audio-capture" ? "마이크를 찾을 수 없어요. 연결을 확인해 주세요."
+    : code === "network" ? "인터넷 연결을 확인해 주세요."
+    : "음성을 알아듣지 못했어요. 다시 말하거나 글로 입력해 주세요.";
 const correctionText = (c: SignPlan["corrections"][number]) =>
   c.to ? `${c.from}→${c.to}${c.reason === "typo" ? "(오타 교정)" : ""}` : `'${c.from}' 뺌`;
 
@@ -217,9 +225,9 @@ export default function SignTranslator() {
         rec.interimResults = false;
         rec.onresult = (event) => {
           const words = Array.from(event.results).map((r) => r[0].transcript).join(" ").trim();
-          if (words) { setText(words.slice(0, 200)); setVoiceMessage("음성 인식 완료 · 문장을 확인한 후 변환하세요."); }
+          if (words) { setText(words.slice(0, 200)); setVoiceMessage("문장을 확인한 뒤 \"수어로 보기\"를 눌러 주세요."); }
         };
-        rec.onerror = (event) => setVoiceMessage(`음성 인식 실패: ${event.error} · 텍스트 입력을 사용할 수 있습니다.`);
+        rec.onerror = (event) => setVoiceMessage(voiceErrorText(event.error));
         rec.onend = () => { recognitionRef.current = null; setVoiceState("idle"); };
         recognitionRef.current = rec;
         setVoiceState("listening");
