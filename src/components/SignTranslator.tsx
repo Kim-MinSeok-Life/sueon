@@ -20,7 +20,8 @@ const PUBLIC_ENTRIES = ENTRIES.filter((e) => e.kind === "ksl" || (SHOW_SAMPLES &
 const DEMO_ENTRIES = ENTRIES.filter((e) => e.kind === "test");
 // ?debug=1&legacy=1: 이전 변환식(REAL01 근사) 모션과 새 REAL02 리타기팅 모션 비교
 const legacyMotion = () => typeof window !== "undefined" && new URLSearchParams(window.location.search).get("legacy") === "1";
-const EXAMPLES = SHOW_SAMPLES ? ["택시 기본요금 얼마예요?", "다음 역에서 내려요", "지하철 어디서 타요?", "배를 탔어요", "골키퍼", "고민", "안녕하세요"] : ["안녕하세요", "감사합니다", "화장실은 어디예요?"];
+// 예시 문장: 지하철역 길 안내 시연 대사(모든 단어가 원본 촬영 영상과 대조 가능한 동작)
+const EXAMPLES = SHOW_SAMPLES ? ["안녕하세요, 도와줄까요?", "고속터미널은 3호선을 타고 가세요.", "교통카드는 편의점에서 사세요.", "화장실은 왼쪽에 있어요.", "천천히 조심해서 가세요."] : ["안녕하세요", "감사합니다", "화장실은 어디예요?"];
 
 type Recognition = {
   lang: string;
@@ -57,6 +58,14 @@ const tokenNote = (t: PlanToken) => [
   t.sense && t.alternatives?.length ? `의미 선택: ${t.sense.reason} · 수어사전 ${t.sense.id}` : null,
   t.sense && t.status !== "playable" && t.sense.handshape ? `수형: ${t.sense.handshape}` : null,
 ].filter(Boolean).join(" · ");
+// 음성 인식 오류 코드를 사용자용 문장으로. 브라우저는 https 또는 localhost 주소에서만 마이크를 허용한다
+const voiceErrorText = (code: string) =>
+  code === "not-allowed" || code === "service-not-allowed"
+    ? (window.isSecureContext ? "마이크 사용이 허용되지 않았어요. 주소창의 마이크 아이콘에서 허용해 주세요." : "이 주소에서는 마이크를 쓸 수 없어요. 글로 입력해 주세요.")
+    : code === "no-speech" ? "말소리가 들리지 않았어요. 다시 눌러 말해 주세요."
+    : code === "audio-capture" ? "마이크를 찾을 수 없어요. 연결을 확인해 주세요."
+    : code === "network" ? "인터넷 연결을 확인해 주세요."
+    : "음성을 알아듣지 못했어요. 다시 말하거나 글로 입력해 주세요.";
 const correctionText = (c: SignPlan["corrections"][number]) =>
   c.to ? `${c.from}→${c.to}${c.reason === "typo" ? "(오타 교정)" : ""}` : `'${c.from}' 뺌`;
 
@@ -87,6 +96,7 @@ export default function SignTranslator() {
   const seqRef = useRef(0);
   /** 같은 문장의 LLM 검증 결과(새로고침하면 비워짐) */
   const llmCacheRef = useRef(new Map<string, SignPlan>());
+  const polishSeqRef = useRef(0);
 
   useEffect(() => {
     // 실사용 화면과 관절 실험 도구를 명확히 분리한다.
@@ -121,7 +131,7 @@ export default function SignTranslator() {
   async function analyze(input: string, lex: Lexicon): Promise<SignPlan> {
     const rule = planSentence(input, lex);
     if (!llm.enabled) return rule;
-    if (ruleIsConfident(rule)) return { ...rule, llmNotes: ["규칙 분석이 확실해 LLM을 부르지 않음(속도)"] };
+    if (ruleIsConfident(rule, input)) return { ...rule, llmNotes: ["규칙 분석이 확실해 LLM을 부르지 않음(속도)"] };
     const cached = llmCacheRef.current.get(input);
     if (cached) return { ...cached, llmNotes: [...(cached.llmNotes ?? []), "같은 문장의 이전 LLM 결과 사용(캐시)"] };
     try {
@@ -172,10 +182,11 @@ export default function SignTranslator() {
       const p = await analyze(trimmed, lexicon);
       if (requestSeq !== seqRef.current) return;
       setPlan(p);
+      // 입력칸의 글이 최종 내용: "수어로 보기"에서는 글을 바꾸지 않는다(교정은 음성 → 글 단계에서만, polishSpeech)
       setSegments([]);
       // 확실하지 않은 부분이 있어도 동작이 있는 단어는 바로 재생하고, 이해한 내용을 아래에 보여 고칠 수 있게 한다
       // (예전: 재생 전에 확인을 강제 → 한 단어만 애매해도 아무것도 안 나와 불편하다는 사용자 피드백)
-      setAwaitingConfirm(p.needsConfirm && !confirmed);
+      setAwaitingConfirm(debugMode && p.needsConfirm && !confirmed); // 제품 화면에서는 확인을 묻지 않음(개발 모드 ?debug=1에서만)
       toLoad = p.order.filter((t) => t.status === "playable" && t.motion).map(planEntry);
     } else {
       setPlan(null);
@@ -204,6 +215,37 @@ export default function SignTranslator() {
     if (recorderRef.current?.state === "recording") recorderRef.current.stop();
   }
 
+  /**
+   * 음성 → 글 단계에서 바로 교정: 말이 끝나면 Gemini가 잘못 들린 말·띄어쓰기·어순을 바로잡은 문장을 입력칸에 넣는다.
+   * 규칙 분석이 확실한 문장은 LLM을 부르지 않는다. 받은 결과는 저장해 두어 "수어로 보기"에서 다시 부르지 않는다.
+   */
+  async function polishSpeech(words: string) {
+    setText(words);
+    const lex = lexicon;
+    const done = () => setVoiceMessage("문장을 확인한 뒤 \"수어로 보기\"를 눌러 주세요.");
+    if (!lex || !llm.enabled) return done();
+    const rule = planSentence(words, lex);
+    if (ruleIsConfident(rule, words)) return done();
+    const seq = ++polishSeqRef.current;
+    setVoiceMessage("말한 내용을 다듬는 중이에요…");
+    try {
+      const res = await fetch("/api/analyze", { method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: words }), signal: AbortSignal.timeout(8000) });
+      const payload = await res.json() as { candidate?: unknown };
+      if (seq !== polishSeqRef.current) return;
+      if (!res.ok) return done();
+      const plan = verifyCandidate(words, parseCandidate(payload.candidate), lex, rule).plan;
+      const fixed = plan.correctedText;
+      const cache = llmCacheRef.current;
+      cache.set(words, plan);
+      if (fixed) cache.set(fixed, { ...plan, input: fixed, correctedText: undefined });
+      if (cache.size > 200) cache.delete(cache.keys().next().value!);
+      // 그사이 사용자가 직접 고쳤으면 덮어쓰지 않는다
+      if (fixed) setText((cur) => (cur === words ? fixed : cur));
+      setVoiceMessage(fixed ? "잘못 들린 말을 고쳤어요. 확인한 뒤 \"수어로 보기\"를 눌러 주세요." : "문장을 확인한 뒤 \"수어로 보기\"를 눌러 주세요.");
+    } catch { if (seq === polishSeqRef.current) done(); }
+  }
+
   async function startVoice() {
     if (voiceState !== "idle") { stopVoice(); return; }
     setVoiceMessage("");
@@ -216,9 +258,9 @@ export default function SignTranslator() {
         rec.interimResults = false;
         rec.onresult = (event) => {
           const words = Array.from(event.results).map((r) => r[0].transcript).join(" ").trim();
-          if (words) { setText(words.slice(0, 200)); setVoiceMessage("음성 인식 완료 · 문장을 확인한 후 변환하세요."); }
+          if (words) void polishSpeech(words.slice(0, 200));
         };
-        rec.onerror = (event) => setVoiceMessage(`음성 인식 실패: ${event.error} · 텍스트 입력을 사용할 수 있습니다.`);
+        rec.onerror = (event) => setVoiceMessage(voiceErrorText(event.error));
         rec.onend = () => { recognitionRef.current = null; setVoiceState("idle"); };
         recognitionRef.current = rec;
         setVoiceState("listening");
@@ -247,8 +289,7 @@ export default function SignTranslator() {
           const res = await fetch("/api/transcribe", { method: "POST", body: form });
           const payload = await res.json() as { text?: string; error?: string };
           if (!res.ok || !payload.text) throw new Error(payload.error || "음성 인식 실패");
-          setText(payload.text.slice(0,200));
-          setVoiceMessage("서버 음성 인식 완료 · 내용을 확인해 주세요.");
+          void polishSpeech(payload.text.slice(0, 200));
         } catch { setVoiceMessage("음성 인식에 실패했습니다. 텍스트로 입력해 주세요."); }
         finally { recorderRef.current = null; setVoiceState("idle"); }
       };
@@ -279,11 +320,15 @@ export default function SignTranslator() {
   const summary = useMemo(() => {
     if (plan) {
       const playable = plan.order.filter((t) => t.status === "playable").length;
-      if (!playable) return "이해한 수어 단어 중 아직 동작 데이터가 있는 단어가 없습니다.";
+      if (!playable) return "아직 수어로 보여 드릴 수 있는 단어가 없어요. 다른 말로 입력해 주세요.";
       if (awaitingConfirm) return `동작이 있는 ${playable}개 단어를 먼저 보여 드려요. 확실하지 않은 부분이 있으니 아래 내용을 확인해 주세요.`;
-      // f…: 지문자 영상(2D 좌표만 있음)을 3D로 복원한 숫자·역 이름 동작
-      const fsCount = plan.order.filter((t) => t.status === "playable" && t.motion?.path.includes("/aihub_gloss/f")).length;
-      return `수어 단어 ${plan.order.length}개 중 ${playable}개를 실제 촬영 영상에서 옮긴 동작으로 이어서 재생합니다.${fsCount ? ` 이 중 ${fsCount}개는 지문자·지숫자 영상의 2D 좌표를 3D로 복원한 동작입니다.` : ""} ${plan.source === "llm" ? "LLM 후보를 규칙·사전으로 검사한 분석이며" : "규칙 기반 분석이며"} 한국수어 문법·정확성은 검증되지 않았습니다.`;
+      if (debugMode) {
+        // 개발 모드: 동작 출처·분석 방식 설명. f…는 지문자 영상(2D 좌표만 있음)을 3D로 복원한 숫자·역 이름 동작
+        const fsCount = plan.order.filter((t) => t.status === "playable" && t.motion?.path.includes("/aihub_gloss/f")).length;
+        return `수어 단어 ${plan.order.length}개 중 ${playable}개를 실제 촬영 영상에서 옮긴 동작으로 이어서 재생합니다.${fsCount ? ` 이 중 ${fsCount}개는 지문자·지숫자 영상의 2D 좌표를 3D로 복원한 동작입니다.` : ""} ${plan.source === "llm" ? "LLM 후보를 규칙·사전으로 검사한 분석이며" : "규칙 기반 분석이며"} 한국수어 문법·정확성은 검증되지 않았습니다.`;
+      }
+      return playable === plan.order.length ? `수어 단어 ${playable}개를 이어서 보여 드려요.`
+        : `수어 단어 ${plan.order.length}개 중 ${playable}개를 보여 드려요. 나머지 단어는 준비 중이에요.`;
     }
     if (!segments.length) return "";
     const playable = segments.filter((s) => s.status === "playable").length;
@@ -293,7 +338,7 @@ export default function SignTranslator() {
     if (segments.some((s) => s.entry?.expression_id.startsWith("AIHUB-SAMPLE-"))) return "AI-Hub 촬영본(REAL02)의 3D 관절과 같은 촬영본의 표제어·수어 구간으로 만든 실험용 재생입니다. 한국수어 의미·손형 정확성은 아직 검증되지 않았습니다.";
     if (segments.some((s) => s.entry?.kind === "test")) return "개발용 관절 제어 테스트이며 한국수어가 아닙니다.";
     return unsupported || missing ? "지원되는 표현만 재생합니다. 일부 표현은 아직 제공되지 않습니다." : "동작을 재생합니다.";
-  }, [segments, plan, awaitingConfirm]);
+  }, [segments, plan, awaitingConfirm, debugMode]);
 
   const friendlyName = (s: MatchSegment) => {
     if (s.entry?.kind === "test") {
@@ -336,12 +381,12 @@ export default function SignTranslator() {
           </div>
           {voiceMessage && <p className="voice-message" role="status">{voiceMessage}</p>}
         </form>
-        <details className="examples-toggle">
+        {debugMode && <details className="examples-toggle">
           <summary>예시 문장</summary>
           <div className="examples" aria-label="예시 문장">
             {EXAMPLES.map((example) => <button type="button" key={example} className="chip" onClick={() => { setText(example); void convert(example); }}>{example}</button>)}
           </div>
-        </details>
+        </details>}
       </section>
 
       <section className="stage-col" aria-labelledby="avatar-title">
@@ -353,14 +398,14 @@ export default function SignTranslator() {
         </div>
         <AvatarStage onPlayer={handlePlayer} onStatus={handleStatus} viewMode={viewMode}
           expression={plan?.question ? QUESTION_EXPRESSION[plan.question] : null}>
-          {sentence && <div className="bubble" aria-label="입력한 문장">{plan ? describePlan(plan) || sentence : segments.some((s) => s.entry?.expression_id.startsWith("AIHUB-SAMPLE-")) ? "AI-Hub 3D 키포인트 동작 · 정확도 미검증" : segments.some((s) => s.entry?.kind === "test") ? "관절 테스트 · 한국수어 아님" : sentence}</div>}
+          {sentence && <div className="bubble" aria-label="입력한 문장">{plan ? (debugMode ? describePlan(plan) || sentence : sentence) : segments.some((s) => s.entry?.expression_id.startsWith("AIHUB-SAMPLE-")) ? "AI-Hub 3D 키포인트 동작 · 정확도 미검증" : segments.some((s) => s.entry?.kind === "test") ? "관절 테스트 · 한국수어 아님" : sentence}</div>}
           {stage.kind === "loading" && <p className="stage-loading">아바타 불러오는 중 {Math.round(stage.progress * 100)}%</p>}
-          {samplePlaying && <p className="test-flag">{current?.motion_id.startsWith("AIHUB-") ? "AI-Hub 3D 리타기팅 · 한국수어 정확도 미검증" : "관절 제어용 테스트 · 한국수어 아님"}</p>}
+          {debugMode && samplePlaying && <p className="test-flag">{current?.motion_id.startsWith("AIHUB-") ? "AI-Hub 3D 리타기팅 · 한국수어 정확도 미검증" : "관절 제어용 테스트 · 한국수어 아님"}</p>}
         </AvatarStage>
         <div className="controls">
           <div className="now" role="status">
             {stage.kind === "error" ? <span className="now-error">{stage.message}</span> : current && status !== "idle" ?
-              <><span>{currentGloss ? `수어: ${currentGloss}` : samplePlaying ? "정확도 미검증 모션" : "재생 중"}</span><progress max={current.duration} value={Math.min(playerState?.time ?? 0, current.duration)} aria-label="재생 진행률" /></> :
+              <><span>{currentGloss ? `수어: ${currentGloss}` : samplePlaying && debugMode ? "정확도 미검증 모션" : "재생 중"}</span><progress max={current.duration} value={Math.min(playerState?.time ?? 0, current.duration)} aria-label="재생 진행률" /></> :
               <span className="muted">{hasPlayable ? "재생 완료" : stage.kind === "ready" ? "문장을 입력해 주세요" : "아바타 준비 중"}</span>}
           </div>
           <div className="buttons">
@@ -375,19 +420,19 @@ export default function SignTranslator() {
         {plan && <section className="result" aria-live="polite">
           <h2>이렇게 이해했어요</h2>
           <p className="summary">{summary}</p>
-          {(plan.source === "llm" || plan.llmNotes?.length) && <p className="plan-source">
+          {debugMode && (plan.source === "llm" || plan.llmNotes?.length) && <p className="plan-source">
             {plan.source === "llm" ? `분석: LLM 후보(${llm.provider}) + 규칙·사전 검증` : "분석: 규칙 기반"}
           </p>}
           <ul className="segments">{plan.order.map((t, i) => <li className={`seg seg-${t.status === "playable" ? "test" : t.status === "unknown" ? "bad" : "pending"}`} key={`${t.lemma}-${i}`}>
-            <span className="seg-word">{tokenLabel(t)}</span><span className="badge">{t.status === "playable" ? "동작 있음" : t.status === "unknown" ? "모르는 말" : "동작 없음"}</span>
-            {tokenNote(t) ? <span className="seg-note">{tokenNote(t)}</span> : null}
+            <span className="seg-word">{tokenLabel(t)}</span><span className="badge">{t.status === "playable" ? "수어" : debugMode ? (t.status === "unknown" ? "모르는 말" : "동작 없음") : "준비 중"}</span>
+            {debugMode && tokenNote(t) ? <span className="seg-note">{tokenNote(t)}</span> : null}
           </li>)}</ul>
-          {(plan.question || plan.negation || plan.corrections.length > 0) && <ul className="plan-notes">
+          {debugMode && (plan.question || plan.negation || plan.corrections.length > 0) && <ul className="plan-notes">
             {plan.question && <li>{plan.question === "wh" ? "의문사 질문 → 의문사를 문장 끝에 두고 눈썹을 모으는 표정(근사, 미검증)" : "예/아니요 질문 → 눈썹을 올리는 표정(근사, 미검증)"}</li>}
             {plan.negation && <li>부정 표현 → 동사 뒤에 부정 수어</li>}
             {plan.corrections.length > 0 && <li>정리: {plan.corrections.map(correctionText).join(", ")}</li>}
           </ul>}
-          {plan.llmNotes?.length ? <details className="llm-notes"><summary>LLM 검증 기록</summary>
+          {debugMode && plan.llmNotes?.length ? <details className="llm-notes"><summary>LLM 검증 기록</summary>
             <ul>{plan.llmNotes.map((n, i) => <li key={i}>{n}</li>)}</ul></details> : null}
           {awaitingConfirm && <div className="confirm-box" role="alert">
             <p>{plan.reasons.join(" · ")}</p>
