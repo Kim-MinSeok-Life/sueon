@@ -118,7 +118,7 @@ const PARTICLES = new Set(["", "이", "가", "은", "는", "을", "를", "에", 
   "으로도", "로도", "와는", "과는", "하고는", "이랑은", "랑은"]);
 const COMMON_PARTICLE = new Set(["이", "가", "을", "를", "은", "는", "도", "의", "에"]);
 // 드리다·드릴: 높임 보조용언("도와드릴까요", "알려드릴게요")은 어미처럼 떼어 낸다
-const ENDING_HEAD = /^(다|요|고|서|니|는|은|을|면|으|지|죠|네|나|까|세|시|습|ㅂ|어|아|야|도|게|기|던|든|자|려|러|며|냐|래|군|구|ㄴ|ㄹ|드리|드릴|드려|드립|드렸)/;
+const ENDING_HEAD = /^(다|요|고|서|니|는|은|을|면|으|지|죠|네|나|까|세|시|셔|습|ㅂ|어|아|야|도|게|기|던|든|자|려|러|며|냐|래|군|구|ㄴ|ㄹ|드리|드릴|드려|드립|드렸)/;
 const NOUN_VERB = /^(하|해|했|합|한|할|함|하세|되|돼|됐|된|될|됩|나|났|난|날)/;
 // 요청·보조 표현: 수어 단어가 아니라 높임·부탁의 말씨(표정·자세로 표현)
 const AUX = new Set(["주세요", "줘요", "줘", "주십시오", "주실래요", "주시겠어요", "주실", "주시면", "줄래요", "주세용", "있어요", "있습니까"]);
@@ -223,7 +223,7 @@ function parseExact(tok: string, lex: Lexicon): Parsed | null {
     if (!lemma || !isEnding(rest) || rest === "시") continue;
     if (!pred) pred = { lemma, kind: "pred", rest };
     if (lex.motions.has(pred.lemma)) break;
-    if (lex.motions.has(lemma) && rest.startsWith("시")) { pred = { lemma, kind: "pred", rest }; break; }
+    if (lex.motions.has(lemma) && /^(시|셔|세)/.test(rest)) { pred = { lemma, kind: "pred", rest }; break; }
   }
   if (noun && pred) {
     // "전하기·위해": '전(앞)+하기', '위(신체)+해'가 아니라 사전에 있는 용언 '전하다·위하다'. 명사 동작은 findMotion이 뜻이 같을 때만 빌려 씀
@@ -334,6 +334,8 @@ export function findMotion(lemma: string, lex: Pick<Lexicon, "motions" | "senses
 // ---------------------------------------------------------------- 6. 어순
 const TIME_WORDS = new Set(["오늘", "내일", "어제", "지금", "아침", "점심", "저녁", "밤", "낮", "새벽", "주말", "평일", "이번", "지난", "모레", "요즘"]);
 const WH_WORDS = new Set(["무엇", "뭐", "어디", "언제", "누구", "왜", "어떻게", "얼마", "몇", "방법"]);
+// 부사: 동작 있는 같은 뜻 단어로("조심히 가세요" → 조심 · 가다)
+const ADVERB: Record<string, string> = { "조심히": "조심", "조심해서": "조심" };
 const PRONOUN: Record<string, string> = { "저": "나", "제": "나", "내": "나", "뭐": "무엇" };
 const QUESTION_END = /(까|까요|나요|니|냐|가요|ㄹ까|죠)$/;
 
@@ -365,10 +367,15 @@ export function planSentence(text: string, lex: Lexicon): SignPlan {
     // 부탁 보조용언("내려 주세요")은 앞에 용언이 있을 때 뺀다
     if (AUX.has(w) && parsed.at(-1)?.p?.kind === "pred") { corrections.push({ from: w, to: "", reason: "aux" }); continue; }
     // "타고 가시면 됩니다 / 기다리시면 돼요": '-면 되다'는 권유하는 말씨라 수어 단어로 옮기지 않는다
-    if (/^(됩니다|돼요|되요|됩니까|되세요|돼)$/.test(w) && i > 0 && words[i - 1].endsWith("면")) {
+    if ((/^(됩니다|돼요|되요|됩니까|되세요|돼)$/.test(w) && i > 0 && words[i - 1].endsWith("면")) ||
+      // "가셔야 해요 / 타셔야 합니다": '-야 하다'(해야 함)도 말씨
+      (/^(해요|합니다|해|하죠)$/.test(w) && i > 0 && words[i - 1].endsWith("야"))) {
       corrections.push({ from: w, to: "", reason: "aux" }); continue;
     }
-    const mapped = PRONOUN[w.replace(/(가|는|도)$/, "")];
+    // "종합운동장 방면으로 가세요": 방향은 수어에서 '가다'의 손 방향으로 나타내므로 따로 옮기지 않는다
+    // (사전에 없는 '방향'을 오타로 보고 '방황'으로 바꾸던 문제)
+    if (/^(방향|방면|쪽)(으로|으로는|에|에서|은|는|이|가)?$/.test(w) && parsed.length) { corrections.push({ from: w, to: "", reason: "aux" }); continue; }
+    const mapped = PRONOUN[w.replace(/(가|는|도)$/, "")] ?? ADVERB[w];
     if (mapped) { parsed.push({ surface: w, p: { lemma: mapped, kind: "noun", rest: "" }, typo: false }); continue; }
     const exact = parseExact(w, lex);
     // "충전은 여기서 하시면 됩니다": 따로 떨어진 '하다'는 앞 명사(충전)의 동사 꼬리라 수어 단어로 옮기지 않는다
