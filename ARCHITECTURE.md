@@ -132,7 +132,7 @@ avatar.vrm(T-포즈 뼈 위치) + data/avatar_body_front.json ──────
 | `src/lib/MotionPlayer.ts` | 키프레임 재생기 |
 | `src/lib/motion.ts`, `types.ts` | 클립 검증·로딩, 데이터 타입 |
 | `src/lib/matcher.ts` | 옛 사전 매처(`#` 명령, 등록 표현) |
-| `src/lib/poseSafety*.ts` | attempt4 손목·몸통 근사 보정(`AIHUB-SAMPLE-*` 옛 동작에만 적용) |
+| `src/lib/poseSafety*.ts` | 초기 손목·몸통 근사 보정(`AIHUB-SAMPLE-*` 옛 동작에만 적용) |
 | `src/lib/SkeletonOverlay.ts` | 원본 관절 겹쳐 보기(`?debug=1&skeleton=1`) |
 | `src/proxy.ts` | 운영 모드에서 AI-Hub 파생 동작 경로 403 |
 
@@ -143,7 +143,7 @@ avatar.vrm(T-포즈 뼈 위치) + data/avatar_body_front.json ──────
 | `public/models/avatar.vrm` | 아바타(VRM 1.0, 휴머노이드 본 54, 손가락 30) | ✅ |
 | `public/motions/aihub_gloss/` | 수어 단어 동작 1,351(문장 속 `g…` 317 + 단어 영상 `w…` 785 + 지문자 `f…` 249) + `index.json` — AI-Hub 파생 | ✅ |
 | `public/motions/aihub_real02/` | 단어 단독 9 + 원본 관절 오버레이 — AI-Hub 파생 | ✅ |
-| `public/motions/sample`, `stabilized` | attempt1~3 옛 근사 동작(비교용) | ✅ |
+| `public/motions/sample`, `stabilized` | 초기 근사 동작(비교용) | ✅ |
 | `public/motions/test/` | 관절 테스트 동작 2(수어 아님) | ✅ |
 | `public/ksl/dictionary.json` | 국립국어원 사전 3,734 항목(뜻 분류·수형 설명) | ✅ |
 | `data/expressions.json` | 등록 표현(단어 예시·`#`명령용) | ✅ |

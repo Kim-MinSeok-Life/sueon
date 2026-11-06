@@ -36,7 +36,7 @@ export interface LlmVerification {
 export const LLM_LIMITS = { maxWords: 20, maxWordLength: 20, maxNoteLength: 200 } as const;
 
 /**
- * 규칙 분석만으로 충분한가(속도 개선, 11/5 결정): 확신도 high이고 모든 수어 단어에 동작이 있으면 LLM을 부르지 않는다.
+ * 규칙 분석만으로 충분한가(속도 개선): 확신도 high이고 모든 수어 단어에 동작이 있으면 LLM을 부르지 않는다.
  * 오타·모르는 말·뜻이 애매한 말·동작 없는 말이 하나라도 있으면 LLM 후보를 받아 본다.
  * 뜻이 여러 개인 말이 한 문장에 두 번 이상 나오면("배가 아파서 배를 못 타요") 규칙은 같은 뜻으로 고르기 쉬우므로 LLM을 부른다.
  */
