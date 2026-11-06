@@ -123,7 +123,8 @@ const NOUN_VERB = /^(하|해|했|합|한|할|함|하세|되|돼|됐|된|될|됩|
 // 요청·보조 표현: 수어 단어가 아니라 높임·부탁의 말씨(표정·자세로 표현)
 const AUX = new Set(["주세요", "줘요", "줘", "주십시오", "주실래요", "주시겠어요", "주실", "주시면", "줄래요", "주세용", "있어요", "있습니까"]);
 // AI-Hub 교통 문장에서 같은 뜻을 나타낸 수어 단어(동작이 있는 쪽)로 바꾼다
-export const SYNONYMS: Record<string, string> = { "돕다": "도와주다", "오다": "오다오다", "요금": "돈", "운임": "돈", "역": "곳", "정류장": "곳", "정거장": "곳", "이후": "후", "뒤": "후", "어떻게": "방법" };
+// 도움·구매·구입: 국립국어원 사전에서 '돕다', '사다'와 같은 항목(같은 수어)
+export const SYNONYMS: Record<string, string> = { "돕다": "도와주다", "도움": "도와주다", "구매": "사다", "구입": "사다", "구매하다": "사다", "구입하다": "사다", "오다": "오다오다", "요금": "돈", "운임": "돈", "역": "곳", "정류장": "곳", "정거장": "곳", "이후": "후", "뒤": "후", "어떻게": "방법" };
 
 function isEnding(rest: string) {
   return rest === "" || (rest.length <= 6 && ENDING_HEAD.test(rest));
@@ -213,11 +214,15 @@ function parseExact(tok: string, lex: Lexicon): Parsed | null {
     const rest = tok.slice(n);
     if (lex.nouns.has(p) && (PARTICLES.has(rest) || NOUN_VERB.test(rest))) noun = { lemma: p, kind: "noun", rest };
   }
-  for (let n = tok.length; n >= 1 && !pred; n--) {
+  // 긴 어간부터 찾되, 동작이 없으면 더 짧은 어간도 본다: "가시면" = '가시다'가 아니라 가다+높임 '-시-'+면
+  for (let n = tok.length; n >= 1; n--) {
     const p = tok.slice(0, n);
     const rest = tok.slice(n);
     const lemma = lex.predStems.get(p);
-    if (lemma && isEnding(rest)) pred = { lemma, kind: "pred", rest };
+    if (!lemma || !isEnding(rest)) continue;
+    if (!pred) pred = { lemma, kind: "pred", rest };
+    if (lex.motions.has(pred.lemma)) break;
+    if (lex.motions.has(lemma) && rest.startsWith("시")) { pred = { lemma, kind: "pred", rest }; break; }
   }
   if (noun && pred) {
     // "전하기·위해": '전(앞)+하기', '위(신체)+해'가 아니라 사전에 있는 용언 '전하다·위하다'. 명사 동작은 findMotion이 뜻이 같을 때만 빌려 씀
@@ -358,6 +363,10 @@ export function planSentence(text: string, lex: Lexicon): SignPlan {
     }
     // 부탁 보조용언("내려 주세요")은 앞에 용언이 있을 때 뺀다
     if (AUX.has(w) && parsed.at(-1)?.p?.kind === "pred") { corrections.push({ from: w, to: "", reason: "aux" }); continue; }
+    // "타고 가시면 됩니다 / 기다리시면 돼요": '-면 되다'는 권유하는 말씨라 수어 단어로 옮기지 않는다
+    if (/^(됩니다|돼요|되요|됩니까|되세요|돼)$/.test(w) && i > 0 && words[i - 1].endsWith("면") && parsed.at(-1)?.p?.kind === "pred") {
+      corrections.push({ from: w, to: "", reason: "aux" }); continue;
+    }
     const mapped = PRONOUN[w.replace(/(가|는|도)$/, "")];
     if (mapped) { parsed.push({ surface: w, p: { lemma: mapped, kind: "noun", rest: "" }, typo: false }); continue; }
     const exact = parseExact(w, lex);

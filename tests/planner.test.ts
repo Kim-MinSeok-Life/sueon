@@ -231,3 +231,19 @@ test("자음·모음만 있는 말(ㅇㅇ, ㅋㅋ)은 오타 교정하지 않고
   const l = buildLexicon({ glossItems: { "화장실": { path: "/m/wc.json" }, "왜": { path: "/m/why.json" } } });
   assert.deepEqual(planSentence("ㅇㅇ 화장실 ㅋㅋ", l).order.map((t) => t.lemma), ["화장실"]);
 });
+
+// 사용자 피드백(2026-11-06): 시연 대사를 자연스러운 말투로("가시면 됩니다", "구매하세요", "도움이 필요하신가요")
+test("높임 '-시-'·'-면 되다'·같은 뜻 단어(도움·구매)", () => {
+  const d: DictEntry[] = [
+    { id: 1, w: [["가시"]], c: "식물", d: true, h: "", j: null }, { id: 2, w: [["가시다"]], c: "기타", d: true, h: "", j: null },
+    { id: 3, w: [["가다"]], c: "인간", d: true, h: "", j: null }, { id: 4, w: [["되다"]], c: "기타", d: true, h: "", j: null },
+    { id: 5, w: [["구매"], ["사다"]], c: "경제", d: true, h: "", j: null }, { id: 6, w: [["도움"]], c: "사회", d: true, h: "", j: null },
+    { id: 7, w: [["필요"]], c: "개념", d: true, h: "", j: null },
+  ];
+  const l = buildLexicon({ dictionary: d, glossItems: { "가다": { path: "/m/go.json" }, "타다": { path: "/m/ride.json" }, "되다": { path: "/m/be.json" },
+    "사다": { path: "/m/buy.json" }, "도와주다": { path: "/m/help.json" }, "필요": { path: "/m/need.json" } } });
+  const g = (s: string) => planSentence(s, l).order.map((t) => t.lemma);
+  assert.deepEqual(g("타고 가시면 됩니다"), ["타다", "가다"]);
+  assert.deepEqual(g("구매하세요"), ["사다"]);
+  assert.deepEqual(g("도움이 필요하신가요?"), ["도와주다", "필요"]);
+});
