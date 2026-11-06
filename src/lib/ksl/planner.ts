@@ -219,7 +219,8 @@ function parseExact(tok: string, lex: Lexicon): Parsed | null {
     const p = tok.slice(0, n);
     const rest = tok.slice(n);
     const lemma = lex.predStems.get(p);
-    if (!lemma || !isEnding(rest)) continue;
+    // '시' 하나로 끝나는 말은 어미가 아니다("다시"를 '달다+시'로 읽지 않게. 높임은 "가시면·가세요"처럼 뒤에 어미가 붙음)
+    if (!lemma || !isEnding(rest) || rest === "시") continue;
     if (!pred) pred = { lemma, kind: "pred", rest };
     if (lex.motions.has(pred.lemma)) break;
     if (lex.motions.has(lemma) && rest.startsWith("시")) { pred = { lemma, kind: "pred", rest }; break; }
@@ -364,12 +365,16 @@ export function planSentence(text: string, lex: Lexicon): SignPlan {
     // 부탁 보조용언("내려 주세요")은 앞에 용언이 있을 때 뺀다
     if (AUX.has(w) && parsed.at(-1)?.p?.kind === "pred") { corrections.push({ from: w, to: "", reason: "aux" }); continue; }
     // "타고 가시면 됩니다 / 기다리시면 돼요": '-면 되다'는 권유하는 말씨라 수어 단어로 옮기지 않는다
-    if (/^(됩니다|돼요|되요|됩니까|되세요|돼)$/.test(w) && i > 0 && words[i - 1].endsWith("면") && parsed.at(-1)?.p?.kind === "pred") {
+    if (/^(됩니다|돼요|되요|됩니까|되세요|돼)$/.test(w) && i > 0 && words[i - 1].endsWith("면")) {
       corrections.push({ from: w, to: "", reason: "aux" }); continue;
     }
     const mapped = PRONOUN[w.replace(/(가|는|도)$/, "")];
     if (mapped) { parsed.push({ surface: w, p: { lemma: mapped, kind: "noun", rest: "" }, typo: false }); continue; }
     const exact = parseExact(w, lex);
+    // "충전은 여기서 하시면 됩니다": 따로 떨어진 '하다'는 앞 명사(충전)의 동사 꼬리라 수어 단어로 옮기지 않는다
+    if (exact?.lemma === "하다" && !lex.motions.has("하다") && parsed.some((x) => x.p?.kind === "noun")) {
+      corrections.push({ from: w, to: "", reason: "aux" }); continue;
+    }
     if (exact) { parsed.push({ surface: w, p: exact, typo: false }); continue; }
     const compound = parseCompound(w, lex);
     if (compound) { for (const c of compound) parsed.push({ surface: c.lemma, p: c, typo: false }); continue; }
