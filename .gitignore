@@ -44,3 +44,8 @@ AGENTS.md
 /scripts/build_dev_pdf.py
 /sueon_3rd_claudeCode_log.md
 /docs/제출/
+
+# 팀 내부용(로컬에만 보관): 협업 가이드, 데이터 처리 중간 리포트
+/GITHUB_GUIDE.md
+/reports/aihub_*.json
+/reports/retarget_report*.json
