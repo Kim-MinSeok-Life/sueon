@@ -366,7 +366,7 @@ export default function SignTranslator() {
         </div>
         <AvatarStage onPlayer={handlePlayer} onStatus={handleStatus} viewMode={viewMode}
           expression={plan?.question ? QUESTION_EXPRESSION[plan.question] : null}>
-          {sentence && <div className="bubble" aria-label="입력한 문장">{plan ? describePlan(plan) || sentence : segments.some((s) => s.entry?.expression_id.startsWith("AIHUB-SAMPLE-")) ? "AI-Hub 3D 키포인트 동작 · 정확도 미검증" : segments.some((s) => s.entry?.kind === "test") ? "관절 테스트 · 한국수어 아님" : sentence}</div>}
+          {sentence && <div className="bubble" aria-label="입력한 문장">{plan ? (debugMode ? describePlan(plan) || sentence : sentence) : segments.some((s) => s.entry?.expression_id.startsWith("AIHUB-SAMPLE-")) ? "AI-Hub 3D 키포인트 동작 · 정확도 미검증" : segments.some((s) => s.entry?.kind === "test") ? "관절 테스트 · 한국수어 아님" : sentence}</div>}
           {stage.kind === "loading" && <p className="stage-loading">아바타 불러오는 중 {Math.round(stage.progress * 100)}%</p>}
           {debugMode && samplePlaying && <p className="test-flag">{current?.motion_id.startsWith("AIHUB-") ? "AI-Hub 3D 리타기팅 · 한국수어 정확도 미검증" : "관절 제어용 테스트 · 한국수어 아님"}</p>}
         </AvatarStage>
