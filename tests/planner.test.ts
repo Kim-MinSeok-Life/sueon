@@ -247,3 +247,12 @@ test("높임 '-시-'·'-면 되다'·같은 뜻 단어(도움·구매)", () => {
   assert.deepEqual(g("구매하세요"), ["사다"]);
   assert.deepEqual(g("도움이 필요하신가요?"), ["도와주다", "필요"]);
 });
+
+test("'다시'는 부사 그대로, 따로 떨어진 '하다'와 '-면 되다'는 뺌", () => {
+  const d: DictEntry[] = [{ id: 1, w: [["달다"]], c: "기타", d: true, h: "", j: null }, { id: 2, w: [["하다"]], c: "기타", d: true, h: "", j: null },
+    { id: 3, w: [["되다"]], c: "기타", d: true, h: "", j: null }];
+  const l = buildLexicon({ dictionary: d, glossItems: { "다시": { path: "/m/again.json" }, "달다": { path: "/m/hang.json" }, "충전": { path: "/m/charge.json" },
+    "여기": { path: "/m/here.json" }, "되다": { path: "/m/be.json" } } });
+  assert.deepEqual(planSentence("다시", l).order.map((t) => t.lemma), ["다시"]);
+  assert.deepEqual(planSentence("충전은 여기서 하시면 됩니다", l).order.map((t) => t.lemma), ["충전", "여기"]);
+});
