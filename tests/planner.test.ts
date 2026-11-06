@@ -225,3 +225,44 @@ test("지숫자: '5'는 변이형 번호로 지우지 않고, '5번'처럼 단�
   assert.equal(numberGloss("7번", l), "7번");
   assert.deepEqual(planSentence("사당역에서 5분 뒤에 내려요", l).order.filter((t) => t.status === "playable").map((t) => t.lemma), ["5분", "사당", "곳", "내리다"]); // 시간 표현은 앞으로
 });
+
+// 사용자 피드백(2026-11-05): 확인 상자를 없애면서 "ㅇㅇ"가 '왜'로 바뀌어 그대로 재생되던 문제
+test("자음·모음만 있는 말(ㅇㅇ, ㅋㅋ)은 오타 교정하지 않고 군말로 뺌", () => {
+  const l = buildLexicon({ glossItems: { "화장실": { path: "/m/wc.json" }, "왜": { path: "/m/why.json" } } });
+  assert.deepEqual(planSentence("ㅇㅇ 화장실 ㅋㅋ", l).order.map((t) => t.lemma), ["화장실"]);
+});
+
+// 사용자 피드백(2026-11-06): 시연 대사를 자연스러운 말투로("가시면 됩니다", "구매하세요", "도움이 필요하신가요")
+test("높임 '-시-'·'-면 되다'·같은 뜻 단어(도움·구매)", () => {
+  const d: DictEntry[] = [
+    { id: 1, w: [["가시"]], c: "식물", d: true, h: "", j: null }, { id: 2, w: [["가시다"]], c: "기타", d: true, h: "", j: null },
+    { id: 3, w: [["가다"]], c: "인간", d: true, h: "", j: null }, { id: 4, w: [["되다"]], c: "기타", d: true, h: "", j: null },
+    { id: 5, w: [["구매"], ["사다"]], c: "경제", d: true, h: "", j: null }, { id: 6, w: [["도움"]], c: "사회", d: true, h: "", j: null },
+    { id: 7, w: [["필요"]], c: "개념", d: true, h: "", j: null },
+  ];
+  const l = buildLexicon({ dictionary: d, glossItems: { "가다": { path: "/m/go.json" }, "타다": { path: "/m/ride.json" }, "되다": { path: "/m/be.json" },
+    "사다": { path: "/m/buy.json" }, "도와주다": { path: "/m/help.json" }, "필요": { path: "/m/need.json" } } });
+  const g = (s: string) => planSentence(s, l).order.map((t) => t.lemma);
+  assert.deepEqual(g("타고 가시면 됩니다"), ["타다", "가다"]);
+  assert.deepEqual(g("구매하세요"), ["사다"]);
+  assert.deepEqual(g("도움이 필요하신가요?"), ["도와주다", "필요"]);
+});
+
+test("'다시'는 부사 그대로, 따로 떨어진 '하다'와 '-면 되다'는 뺌", () => {
+  const d: DictEntry[] = [{ id: 1, w: [["달다"]], c: "기타", d: true, h: "", j: null }, { id: 2, w: [["하다"]], c: "기타", d: true, h: "", j: null },
+    { id: 3, w: [["되다"]], c: "기타", d: true, h: "", j: null }];
+  const l = buildLexicon({ dictionary: d, glossItems: { "다시": { path: "/m/again.json" }, "달다": { path: "/m/hang.json" }, "충전": { path: "/m/charge.json" },
+    "여기": { path: "/m/here.json" }, "되다": { path: "/m/be.json" } } });
+  assert.deepEqual(planSentence("다시", l).order.map((t) => t.lemma), ["다시"]);
+  assert.deepEqual(planSentence("충전은 여기서 하시면 됩니다", l).order.map((t) => t.lemma), ["충전", "여기"]);
+});
+
+test("'-셔야 하다'·방향 표현·'조심히'", () => {
+  const d: DictEntry[] = [{ id: 1, w: [["가시다"]], c: "기타", d: true, h: "", j: null }, { id: 2, w: [["방황"]], c: "기타", d: true, h: "", j: null },
+    { id: 3, w: [["하다"]], c: "기타", d: true, h: "", j: null }];
+  const l = buildLexicon({ dictionary: d, glossItems: { "가다": { path: "/m/go.json" }, "강남": { path: "/m/gn.json" }, "조심": { path: "/m/care.json" } } });
+  const g = (s: string) => planSentence(s, l).order.map((t) => t.lemma);
+  assert.deepEqual(g("강남 방면으로 가셔야 해요"), ["강남", "가다"]);
+  assert.deepEqual(g("강남 방향으로 가세요"), ["강남", "가다"]);
+  assert.deepEqual(g("조심히 가세요"), ["조심", "가다"]);
+});
