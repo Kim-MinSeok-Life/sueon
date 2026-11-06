@@ -5,8 +5,8 @@
 | 자료 | 출처 | 라이선스·조건 | Git | 공유 ZIP |
 |---|---|---|:---:|:---:|
 | 3D 아바타 `public/models/avatar.vrm` | pixiv Inc. VRM 샘플 | VRM Public License 1.0 (재배포·수정 허용) | ✅ | ✅ |
-| 수어 단어 동작 `public/motions/aihub_gloss`, `aihub_real02` | AI-Hub 수어 영상(데이터셋 103) 파생 | 경진대회 목적 이용약관 동의 · AI 학습용. 재사용 조건은 **AI-Hub 이용약관**을 따름 | ✅ | ✅ |
-| 옛 근사 동작 `public/motions/sample`, `stabilized` | AI-Hub 경량 샘플 파생(attempt1~3) | 위와 같음 | ✅ | ✅ |
+| 수어 단어 동작 `public/motions/aihub_gloss`, `aihub_real02` | AI-Hub 수어 영상(데이터셋 103) 파생 | 이용약관 동의 · AI 학습용. 재사용 조건은 **AI-Hub 이용약관**을 따름 | ✅ | ✅ |
+| 옛 근사 동작 `public/motions/sample`, `stabilized` | AI-Hub 경량 샘플 파생(초기) | 위와 같음 | ✅ | ✅ |
 | 발췌 키포인트 `data/keypoints/` | AI-Hub 원본 좌표 발췌 | 원본 데이터로 취급 | ❌ | ✅(팀 내부만) |
 | 형태소 원본 `data/morphemes/` (작은 JSON 몇 개) | AI-Hub 형태소 라벨 | 권한 확인 때 함께 검토 | ✅ | ✅ |
 | 수어사전 `public/ksl/dictionary.json` | 국립국어원 한국수어사전(공공데이터포털 15135637) | 공공데이터포털 이용 조건 확인 필요 | ✅ | ✅ |
@@ -48,15 +48,15 @@ VRM 파일 안의 이용 조건(`VRMC_vrm.meta`, 파일에서 직접 읽은 값)
 
 | 시기 | 원본 | 처리 | 결과 |
 |---|---|---|---|
-| attempt1~3 | 경량 샘플 `New_sample.zip`(이용 신청 후 전달받음) | `import-aihub-sample.py`로 근사 회전 변환 → `stabilize-sample-motions.py`로 급회전 완화 | `motions/sample`, `motions/stabilized` (8단어) |
-| attempt5 | `[라벨]02_real_word_keypoint.zip`(촬영자 REAL02) | `aihub_keypoints.py`(발췌·단위 정규화) → `retarget_vrm.py`(수학적 리타기팅) | `motions/aihub_real02` (단어 9개) |
-| attempt5~6 | `[라벨]02_real_sen_keypoint.zip` + `[라벨]01_real_sen_morpheme.zip`(REAL02 문장) | `build_gloss_library.py`로 형태소 구간을 잘라 리타기팅 | `motions/aihub_gloss` 문장 속 단어 317개(g…) |
+| 1단계 | 경량 샘플 `New_sample.zip`(이용 신청 후 전달받음) | `import-aihub-sample.py`로 근사 회전 변환 → `stabilize-sample-motions.py`로 급회전 완화 | `motions/sample`, `motions/stabilized` (8단어) |
+| 2단계 | `[라벨]02_real_word_keypoint.zip`(촬영자 REAL02) | `aihub_keypoints.py`(발췌·단위 정규화) → `retarget_vrm.py`(수학적 리타기팅) | `motions/aihub_real02` (단어 9개) |
+| 3단계 | `[라벨]02_real_sen_keypoint.zip` + `[라벨]01_real_sen_morpheme.zip`(REAL02 문장) | `build_gloss_library.py`로 형태소 구간을 잘라 리타기팅 | `motions/aihub_gloss` 문장 속 단어 317개(g…) |
 | 2026-11 | `[라벨]02_real_word_keypoint.zip` + `[라벨]01_real_word_morpheme.zip`(REAL02 단어) | `add_word_glosses.py`로 단어 구간을 잘라 리타기팅 | `motions/aihub_gloss` 단어 영상 785개(w…) |
 | 2026-11 | `[라벨]01_crowd_keypoint.zip` + `[라벨]01_crowd_morpheme.zip`(지문자, 일반인 CROWD01~10, **2D 좌표만**) | `lift_2d.py`로 2D → 3D 기하 복원(뼈 길이·손바닥 모양은 REAL02 3D 실측값) → `add_fingerspell_glosses.py`로 리타기팅 | `motions/aihub_gloss` 숫자·역 이름 지문자 249개(f…) |
 
 - 모두 **AI 모델 학습 결과가 아니라** 실제 촬영 좌표를 수학적으로 옮긴 것입니다.
 - 지문자(f…)는 깊이를 추정했으므로 실제 농인 3D(g…, w…)보다 손 모양 정확도가 낮습니다. 검증 수치: `reports/lift_2d_validation_2026-11-05.json`.
-- attempt3까지의 근사 동작은 촬영자(REAL01)와 라벨(REAL16)이 달랐습니다. attempt5부터는 같은 촬영자(REAL02)의 형태소를 씁니다.
+- 초기 근사 동작은 촬영자(REAL01)와 라벨(REAL16)이 달랐습니다. 2단계부터는 같은 촬영자(REAL02)의 형태소를 씁니다.
 - 원본 출처: [AI-Hub 수어 영상 (데이터셋 103)](https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=103)
 - 아바타 저작권과 AI-Hub 데이터 이용권은 별개입니다.
 

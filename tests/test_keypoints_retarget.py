@@ -193,7 +193,7 @@ class BodyClearance(unittest.TestCase):
         for side in ('left', 'right'):
             worst = max(rv.penetration(rv.arm_points(f['local'], f['world'], rest, side), bf) for f in frames)
             self.assertLess(worst, 0.002)
-            # 사용자 요청: 손은 기본 3cm 이상 앞으로(얼굴에 닿는 손은 예외: 머리 가까울수록 덜 뺌)
+            # 손은 기본 3cm 이상 앞으로(얼굴에 닿는 손은 예외: 머리 가까울수록 덜 뺌)
             self.assertTrue(all(f['forward'][side][2] >= 0.03 * (1 - f['head_weight'][side]) - 1e-9 for f in frames))
 
 
