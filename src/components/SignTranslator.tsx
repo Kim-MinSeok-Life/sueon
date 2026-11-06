@@ -349,12 +349,12 @@ export default function SignTranslator() {
           </div>
           {voiceMessage && <p className="voice-message" role="status">{voiceMessage}</p>}
         </form>
-        <details className="examples-toggle">
+        {debugMode && <details className="examples-toggle">
           <summary>예시 문장</summary>
           <div className="examples" aria-label="예시 문장">
             {EXAMPLES.map((example) => <button type="button" key={example} className="chip" onClick={() => { setText(example); void convert(example); }}>{example}</button>)}
           </div>
-        </details>
+        </details>}
       </section>
 
       <section className="stage-col" aria-labelledby="avatar-title">
